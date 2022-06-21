@@ -1,0 +1,51 @@
+:root {
+  --white: hsl(0, 0%, 85%);
+  --black: hsl(0, 0%, 15%);
+  --border-color: hsl(158deg 29% 57%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--black);
+    --foreground: var(--white);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: var(--black);
+    --foreground: var(--white);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: var(--background);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figcaption,
+li::marker {
+  color: var(--foreground);
+}
+
+.profile-picture {
+  aspect-ratio: 1;
+  border: 2px solid var(--border-color);
+  border-radius: 100%;
+  width: 160px;
+}
