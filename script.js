@@ -1,44 +1,41 @@
-// Query selectors
-const themeButton = document.querySelector('#theme-btn')
-const headTag = document.getElementsByTagName('head')[0]
-const preferredColorScheme = localStorage.getItem('color-scheme')
+const colorSchemeStorageKey = 'color-scheme'
+const theme = document.querySelector('#theme-switch')
+const preferredColorScheme = window.matchMedia('(prefers-color-scheme: dark)')
 
-
-function getCurrentColorScheme() {
-    if (preferredColorScheme === null && window.matchMedia('(prefers-color-scheme: dark)')) {
-        return localStorage.setItem('color-scheme', 'dark')
-
-    } else if (preferredColorScheme === null && window.matchMedia('(prefers-color-scheme: light)')) {
-        return localStorage.setItem('color-scheme', 'light')
-    }
-
-    return localStorage.getItem("color-scheme")
-}
-
-const currentColorScheme = getCurrentColorScheme()
-function colorSchemeMetadata() {
-    const colorScheme = document.createElement('meta')
-    colorScheme.name = 'color-scheme'
-    colorScheme.content = currentColorScheme
-    headTag.insertBefore(colorScheme, headTag.children[2])
-
-    return colorScheme
-}
-colorSchemeMetadata()
-
-// TODO: Provide a better way to check the dark mode
-function checkColorScheme() {
-    let { content } = colorSchemeMetadata()
-    if (content === 'light') {
-        content = 'dark'
-        themeButton.textContent = content
-        localStorage.setItem('color-scheme', content)
-    } else if (content === 'dark') {
-        content = 'light'
-        themeButton.textContent = content
-        localStorage.setItem('color-scheme', content)
+function getColorPreference() {
+    if (localStorage.getItem(colorSchemeStorageKey)) {
+        return localStorage.getItem(colorSchemeStorageKey)
+    } else {
+        return preferredColorScheme.matches ? 'dark' : 'light'
     }
 }
 
+function setColorPreference() {
+    localStorage.setItem(colorSchemeStorageKey, theme.value)
+    reflectColorPreference()
+}
 
-themeButton.addEventListener('click', checkColorScheme)
+function reflectColorPreference() {
+    document.documentElement.setAttribute('data-theme', getColorPreference())
+
+    theme?.setAttribute('aria-label', theme.value)
+    theme.textContent = getColorPreference()
+}
+
+function onClick() {
+    theme.value = theme.value === 'light' ? 'dark' : 'light'
+
+    setColorPreference()
+}
+
+preferredColorScheme.addEventListener('change', ({ matches: isDark }) => {
+    theme.value = isDark ? 'dark' : 'light'
+    setColorPreference()
+})
+
+window.onload = () => {
+    reflectColorPreference()
+
+    document.querySelector('#theme-switch').addEventListener('click', onClick)
+}
+
