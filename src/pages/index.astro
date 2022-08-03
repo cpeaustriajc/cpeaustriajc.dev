@@ -2,7 +2,7 @@
 import { Image } from "@astrojs/image/components"
 import DefaultLayout from "@/layouts/default.astro";
 import MyPicture from "@/assets/me.png"
-import "@/components/ThemeSwitch.ts"
+import ThemeSwitch from "@/components/ThemeSwitch.svelte"
 ---
 
 <DefaultLayout>
@@ -20,7 +20,7 @@ import "@/components/ThemeSwitch.ts"
         </li>
       </ul>
     </nav>
-    <theme-switch client:load></theme-switch>
+    <ThemeSwitch client:load></ThemeSwitch>
   </header>
   <main>
     <section id="hero" class="container-sm">

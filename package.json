@@ -11,8 +11,7 @@
   },
   "devDependencies": {
     "@astrojs/image": "^0.3.0",
-    "@astrojs/lit": "^0.3.2",
-    "@webcomponents/template-shadowroot": "^0.1.0",
-    "lit": "^2.2.8"
+    "@astrojs/svelte": "^0.5.1",
+    "svelte": "^3.49.0"
   }
 }
