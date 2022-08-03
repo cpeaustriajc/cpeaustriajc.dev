@@ -8,5 +8,11 @@
   "license": "CC-BY-4.0",
   "dependencies": {
     "astro": "1.0.0-rc.4"
+  },
+  "devDependencies": {
+    "@astrojs/image": "^0.3.0",
+    "@astrojs/lit": "^0.3.2",
+    "@webcomponents/template-shadowroot": "^0.1.0",
+    "lit": "^2.2.8"
   }
 }
