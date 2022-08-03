@@ -1,0 +1,38 @@
+---
+import Default from "@/layouts/default.astro";
+---
+
+<header>
+  <nav class="navigation">
+    <ul>
+      <li>
+        <a href="#hero">Home</a>
+      </li>
+      <li>
+        <a href="#about">About</a>
+      </li>
+      <li>
+        <a href="#contact">Contact</a>
+      </li>
+    </ul>
+    <button type="button" id="theme-switch" title="Toggles Light & Dark theme" aria-label="auto" class="btn"
+      aria-live="polite">Dark</button>
+  </nav>
+</header>
+<main>
+  <section id="hero" class="container-sm">
+    <figure class="profile">
+      <img src="/me.png" alt="Photo of John Carlo Austria, author of the website" class="profile-picture">
+      <figcaption>This is me!</figcaption>
+    </figure>
+  </section>
+  <section id="about" class="container-sm">
+    <h2>About</h2>
+    <p>A student in Pamantasan ng Lungsod ng San Pablo that is passionate
+      about programming.</p>
+  </section>
+  <section id="contact" class="container-sm">
+    <h2>Contact</h2>
+    <a href="mailto:johncarloaustria@protonmail.com">E-mail</a>
+  </section>
+</main>
