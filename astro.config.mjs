@@ -5,5 +5,6 @@ import svelte from "@astrojs/svelte";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [image(), svelte()]
+  site: "jaycedotbin.github.io",
+  integrations: [image(), svelte()],
 });
