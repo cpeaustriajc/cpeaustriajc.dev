@@ -1,19 +1,15 @@
 ---
 import { Image } from "@astrojs/image/components"
 import Posts from "@/components/Posts.astro";
-import BaseLayout from "@/layouts/BaseLayout.astro";
+import DefaultLayout from "@/layouts/DefaultLayout.astro";
 import MyPicture from "@/assets/me.jpeg"
-import Head from "@/components/Head.astro";
+import Header from "@/components/Header.astro";
 ---
 
-<Head>
-  <title>Home | John Carlo Austria</title>
-  <meta name="description"
-    content="John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines; Homepage section">
-  <link rel="canonical" href="https://jaycedotbin.github.io/">
-</Head>
+<DefaultLayout title="Home | John Carlo Austria"
+  description="John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines; Homepage section">
 
-<BaseLayout>
+  <Header />
   <main class="px-4">
     <section>
       <h1 class="text-5xl">John Carlo Austria - Frontend Developer</h1>
@@ -49,4 +45,5 @@ import Head from "@/components/Head.astro";
       <a href="/blog" class="underline text-blue-400">See more</a>
     </section>
   </main>
-</BaseLayout>
+
+</DefaultLayout>

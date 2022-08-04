@@ -1,19 +1,12 @@
 ---
-import Head from "@/components/Head.astro";
 import Posts from "@/components/Posts.astro";
-import BaseLayout from "@/layouts/BaseLayout.astro";
+import DefaultLayout from "@/layouts/DefaultLayout.astro";
 ---
 
-<Head>
-    <title>Blog | John Carlo Austria</title>
-    <meta name="description"
-        content="John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines; Blog section">
-</Head>
-
-<BaseLayout>
-
+<DefaultLayout title="Blog | John Carlo Austria"
+    description="John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines; Blog section">
     <main>
         <h1>Blog Posts</h1>
         <Posts />
     </main>
-</BaseLayout>
+</DefaultLayout>
