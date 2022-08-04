@@ -1,0 +1,26 @@
+---
+interface Frontmatter {
+    title: string;
+    description: string;
+    date: Date
+    image_url: string;
+}
+
+const requestPosts = await Astro.glob<Frontmatter>("../pages/posts/*.md")
+
+const posts = Astro.url.pathname !== "/blog" ? requestPosts.slice(0, 5) : requestPosts
+---
+
+<ul class="py-4">
+    {posts.map((post) => (
+    <li class="my-4 px-2">
+        <a href={post.url}>
+            <article class="rounded-md dark:bg-slate-900 p-2">
+                <h3>{post.frontmatter.title}</h3>
+                <p>{post.frontmatter.description}</p>
+            </article>
+        </a>
+    </li>
+    ))}
+
+</ul>

@@ -1,52 +1,52 @@
 ---
 import { Image } from "@astrojs/image/components"
-import DefaultLayout from "@/layouts/DefaultLayout.astro";
-import MyPicture from "@/assets/me.png"
+import Posts from "@/components/Posts.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import MyPicture from "@/assets/me.jpeg"
+import Head from "@/components/Head.astro";
 ---
 
-<head>
+<Head>
   <title>Home | John Carlo Austria</title>
   <meta name="description"
     content="John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines; Homepage section">
   <link rel="canonical" href="https://jaycedotbin.github.io/">
-</head>
+</Head>
 
-<DefaultLayout>
-  <header class="p-2">
-    <nav>
-      <ul class="flex justify-end gap-2">
-        <li>
-          <a href="#hero">Home</a>
-        </li>
-        <li>
-          <a href="#about">About</a>
-        </li>
-        <li>
-          <a href="#blog">Blog</a>
-        </li>
-        <li>
-          <a href="#contact">Contact</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <section id="hero">
-      <h1>John Carlo Austria - Frontend Developer</h1>
+<BaseLayout>
+  <main class="px-4">
+    <section>
+      <h1 class="text-5xl">John Carlo Austria - Frontend Developer</h1>
       <figure>
-        <Image format="webp" src={MyPicture} width={180} height={180} alt="John Carlo Austria, Creator of website"
-          class="rounded-full" />
+        <Image format="webp" src={MyPicture} width={512} height={512} quality={80}
+          alt="John Carlo Austria, Creator of website" class="rounded-full" />
         <figcaption>This is me!</figcaption>
       </figure>
     </section>
-    <section id="about">
+    <section>
       <h2>About</h2>
       <p>A student in Pamantasan ng Lungsod ng San Pablo that is passionate
         about programming.</p>
     </section>
-    <section id="contact">
+    <section>
       <h2>Contact</h2>
-      <a href="mailto:johncarloaustria@protonmail.com" class="underline text-blue-400">E-mail</a>
+      <p>
+        You can find my professional profile in these links, I prefer email as my main method of communication
+        professionally.
+      </p>
+      <ul>
+        <li>
+          <a href="https://github.com/jaycedotbin" rel="noreferrer" class="underline text-blue-400">Github</a>
+        </li>
+        <li>
+          <a href="mailto:johncarloaustria@protonmail.com" class="underline text-blue-400">E-mail</a>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2>Blog</h2>
+      <Posts />
+      <a href="/blog" class="underline text-blue-400">See more</a>
     </section>
   </main>
-</DefaultLayout>
+</BaseLayout>
