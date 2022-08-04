@@ -3,7 +3,7 @@
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
-		"build": "astro check && tsc --noEmit && astro build"
+		"build": "astro build"
 	},
 	"license": "CC-BY-4.0",
 	"dependencies": {
