@@ -7,6 +7,8 @@ export interface SEOProps {
 }
 
 const { title, description } = Astro.props as SEOProps;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <html dir="ltr" lang="en">
@@ -18,7 +20,7 @@ const { title, description } = Astro.props as SEOProps;
   <meta name="description" content={description}>
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
-  <link rel="canonical" href="https://jaycedotbin.github.io/">
+  <link rel="canonical" href={canonicalURL}>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
