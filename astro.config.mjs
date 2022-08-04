@@ -1,10 +1,11 @@
 import { defineConfig } from "astro/config";
 import image from "@astrojs/image";
 
-import svelte from "@astrojs/svelte";
+import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://jaycedotbin.github.io",
-  integrations: [image(), svelte()],
+	integrations: [image(), tailwind()],
+	site: "https://jaycedotbin.github.io",
+	vite: { ssr: { noExternal: ["@fontsource/inter"] } },
 });

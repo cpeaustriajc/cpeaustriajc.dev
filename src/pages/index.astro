@@ -1,14 +1,13 @@
 ---
 import { Image } from "@astrojs/image/components"
-import DefaultLayout from "@/layouts/default.astro";
+import DefaultLayout from "@/layouts/DefaultLayout.astro";
 import MyPicture from "@/assets/me.png"
-import ThemeSwitch from "@/components/ThemeSwitch.svelte"
 ---
 
 <DefaultLayout>
-  <header>
-    <nav class="navigation">
-      <ul>
+  <header class="p-2">
+    <nav>
+      <ul class="flex justify-end gap-2">
         <li>
           <a href="#hero">Home</a>
         </li>
@@ -16,27 +15,30 @@ import ThemeSwitch from "@/components/ThemeSwitch.svelte"
           <a href="#about">About</a>
         </li>
         <li>
+          <a href="#blog">Blog</a>
+        </li>
+        <li>
           <a href="#contact">Contact</a>
         </li>
       </ul>
     </nav>
-    <ThemeSwitch client:load></ThemeSwitch>
   </header>
   <main>
-    <section id="hero" class="container-sm">
-      <figure class="profile">
-        <Image format="webp" src={MyPicture} width={180} height={180} alt="John Carlo Austria, Creator of website" />
+    <section id="hero">
+      <figure>
+        <Image format="webp" src={MyPicture} width={180} height={180} alt="John Carlo Austria, Creator of website"
+          class="rounded-full" />
         <figcaption>This is me!</figcaption>
       </figure>
     </section>
-    <section id="about" class="container-sm">
+    <section id="about">
       <h2>About</h2>
       <p>A student in Pamantasan ng Lungsod ng San Pablo that is passionate
         about programming.</p>
     </section>
-    <section id="contact" class="container-sm">
+    <section id="contact">
       <h2>Contact</h2>
-      <a href="mailto:johncarloaustria@protonmail.com">E-mail</a>
+      <a href="mailto:johncarloaustria@protonmail.com" class="underline text-blue-400">E-mail</a>
     </section>
   </main>
 </DefaultLayout>
