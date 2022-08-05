@@ -1,26 +1,34 @@
 ---
+import { Picture } from "@astrojs/image/components";
+
 interface Frontmatter {
-    title: string;
     description: string;
+    title: string;
     date: Date
     image_url: string;
+    image_alt: string;
 }
 
-const requestPosts = await Astro.glob<Frontmatter>("../pages/posts/*.md")
+const requestPosts = await Astro.glob<Frontmatter>("../pages/posts/*.mdx")
 
 const posts = Astro.url.pathname !== "/blog" ? requestPosts.slice(0, 5) : requestPosts
 ---
 
-<ul class="py-4">
+<ul class="py-4 px-0 list-none">
     {posts.map((post) => (
     <li class="my-4">
-        <a href={post.url}>
-            <article class="rounded-md dark:bg-slate-900 p-2">
-                <h3>{post.frontmatter.title}</h3>
-                <p>{post.frontmatter.description}</p>
-            </article>
-        </a>
+        <figure class="rounded-md dark:bg-slate-900 prose dark:prose-invert">
+            <h3 class="pt-4 px-4">
+                <a href={post.url}>
+                    {post.frontmatter.title}
+                </a>
+            </h3>
+            <a href={post.url}>
+                <Picture src={import.meta.env.MODE === "production" ? post.frontmatter.image_url : import("../" + post.frontmatter.image_url)} alt={post.frontmatter.image_alt} widths={[1280, 1920]}
+                    sizes="(max-width: 800px), 100vw, 800px" aspectRatio="16:9" />
+            </a>
+            <figcaption class="p-4">{post.frontmatter.description}</figcaption>
+        </figure>
     </li>
     ))}
-
 </ul>
