@@ -1,12 +1,17 @@
 ---
+import Head from "@/components/Head.astro";
 import Posts from "@/components/Posts.astro";
 import DefaultLayout from "@/layouts/DefaultLayout.astro";
 ---
 
-<DefaultLayout title="Blog | John Carlo Austria"
-    description="John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines; Blog section">
-    <main>
+<DefaultLayout>
+
+    <Head slot="head" title="Blog | John Carlo Austria"
+        description="John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines; Blog section">
+    </Head>
+
+    <Fragment slot="content">
         <h1>Blog Posts</h1>
         <Posts />
-    </main>
+    </Fragment>
 </DefaultLayout>

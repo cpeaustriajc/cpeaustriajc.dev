@@ -13,7 +13,7 @@ const posts = Astro.url.pathname !== "/blog" ? requestPosts.slice(0, 5) : reques
 
 <ul class="py-4">
     {posts.map((post) => (
-    <li class="my-4 px-2">
+    <li class="my-4">
         <a href={post.url}>
             <article class="rounded-md dark:bg-slate-900 p-2">
                 <h3>{post.frontmatter.title}</h3>

@@ -1,35 +1,20 @@
 ---
 import "@fontsource/inter";
-
-export interface SEOProps {
-  title: string;
-  description: string;
-}
-
-const { title, description } = Astro.props as SEOProps;
-
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
 ---
 
 <html dir="ltr" lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{title}</title>
-  <meta name="description" content={description}>
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
-  <link rel="canonical" href={canonicalURL}>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="manifest" href="/site.webmanifest">
-</head>
+
+<slot name="head" />
 
 <body class="font-sans antialiased dark:bg-gray-800 dark:text-gray-50">
-  <slot />
+  <Header />
+  <main class="px-4">
+    <slot name="content" />
+  </main>
+  <Footer />
 </body>
 
 </html>

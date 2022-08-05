@@ -1,22 +1,24 @@
 ---
-import { Image } from "@astrojs/image/components"
+import { Picture } from "@astrojs/image/components"
 import Posts from "@/components/Posts.astro";
 import DefaultLayout from "@/layouts/DefaultLayout.astro";
 import MyPicture from "@/assets/me.jpeg"
-import Header from "@/components/Header.astro";
+import Head from "@/components/Head.astro";
 ---
 
-<DefaultLayout title="Home | John Carlo Austria"
-  description="John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines; Homepage section">
+<DefaultLayout>
 
-  <Header />
-  <main class="px-4">
+  <Head slot="head" title="Home | John Carlo Austria"
+    description="John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines; Homepage section">
+  </Head>
+  <Fragment slot="content">
+
     <section>
-      <h1 class="text-5xl">John Carlo Austria - Frontend Developer</h1>
+      <h1 class="text-5xl text-center">Frontend Developer</h1>
       <figure>
-        <Image format="webp" src={MyPicture} width={512} height={512} quality={80}
-          alt="John Carlo Austria, Creator of website" class="rounded-full" />
-        <figcaption>This is me!</figcaption>
+        <Picture src={MyPicture} widths={[128, 256, 512]} sizes="(max-width: 800px) 100vw, 800px" aspectRatio="1:1"
+          alt="John Carlo Austria, Creator of website" class="profile-picture" />
+        <figcaption class="text-center">This is me!</figcaption>
       </figure>
     </section>
     <section>
@@ -44,6 +46,11 @@ import Header from "@/components/Header.astro";
       <Posts />
       <a href="/blog" class="underline text-blue-400">See more</a>
     </section>
-  </main>
-
+  </Fragment>
 </DefaultLayout>
+
+<style is:global>
+  .profile-picture img {
+    @apply rounded-full mx-auto;
+  }
+</style>
