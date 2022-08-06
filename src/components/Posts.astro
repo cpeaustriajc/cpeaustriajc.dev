@@ -9,7 +9,7 @@ interface Frontmatter {
     image_alt: string;
 }
 
-const requestPosts = await Astro.glob<Frontmatter>("../pages/posts/*.mdx")
+const requestPosts = await Astro.glob<Frontmatter>("../pages/posts/*.md")
 
 const posts = Astro.url.pathname !== "/blog" ? requestPosts.slice(0, 5) : requestPosts
 ---
