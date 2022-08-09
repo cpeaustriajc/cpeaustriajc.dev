@@ -1,8 +1,7 @@
 ---
-import { Picture } from "@astrojs/image/components"
+import { Content } from "@/pages/content/Home.md"
 import Posts from "@/components/Posts.astro";
 import DefaultLayout from "@/layouts/DefaultLayout.astro";
-import MyPicture from "@/assets/me.jpeg";
 import Head from "@/components/Head.astro";
 ---
 
@@ -12,42 +11,14 @@ import Head from "@/components/Head.astro";
     description="John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines; Homepage section">
   </Head>
   <Fragment slot="content">
-
-    <section class="prose md:prose-lg lg:prose-xl dark:prose-invert">
-      <h1 class="text-center">Frontend Developer</h1>
-      <figure>
-        <Picture src={MyPicture} widths={[128, 256, 512]} sizes="(max-width: 800px) 100vw, 800px" aspectRatio="1:1"
-          alt="John Carlo Austria, Creator of website" class="profile-picture" />
-        <figcaption class="text-center">This is me!</figcaption>
-      </figure>
-    </section>
-    <section class="prose md:prose-lg lg:prose-xl dark:prose-invert">
-      <h2>About</h2>
-      <p>A student in Pamantasan ng Lungsod ng San Pablo that is passionate
-        about programming.</p>
-    </section>
-    <section class="prose md:prose-lg lg:prose-xl dark:prose-invert">
-      <h2>Contact</h2>
-      <p>
-        You can find my professional profile in these links, I prefer email as my main method of communication
-        professionally.
-      </p>
-      <ul>
-        <li>
-          <a href="https://github.com/jaycedotbin" rel="noreferrer" class="underline text-blue-500">Github</a>
-        </li>
-        <li>
-          <a href="mailto:johncarloaustria@protonmail.com" class="underline text-blue-500">E-mail</a>
-        </li>
-      </ul>
-    </section>
-    <section class="prose md:prose-lg lg:prose-xl dark:prose-invert">
-      <h2>Blog</h2>
-      <p>This is where I share my thoughts about... anything! Topics like software engineering philosophy, opinions
-        about technologies and life are the things that I like to write</p>
-      <Posts />
-      <a href="/blog" class="underline text-blue-500">See more</a>
-    </section>
+    <article class="prose md:prose-lg lg:prose-xl dark:prose-invert dark:prose-a:text-blue-300">
+      <Content />
+    </article>
+    <h2 class="my-8 text-2xl">Blog</h2>
+    <p>This is where I share my thoughts about... anything! Topics like software engineering philosophy, opinions
+      about technologies and life are the things that I like to write</p>
+    <Posts />
+    <a href="/blog" class="underline dark:text-blue-300 text-blue-800">See more</a>
   </Fragment>
 </DefaultLayout>
 
