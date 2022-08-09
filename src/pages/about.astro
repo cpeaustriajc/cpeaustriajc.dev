@@ -1,0 +1,17 @@
+---
+import DefaultLayout from "@/layouts/DefaultLayout.astro";
+import Head from "@/components/Head.astro";
+import { Content } from "@/pages/content/About.md";
+---
+
+<DefaultLayout>
+
+    <Head slot="head" title="About | John Carlo Austria"
+        description="John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines; About section">
+    </Head>
+    <Fragment slot="content">
+        <article class="prose md:prose-lg lg:prose-xl dark:prose-invert dark:prose-a:text-blue-300">
+            <Content />
+        </article>
+    </Fragment>
+</DefaultLayout>
