@@ -3,6 +3,18 @@ const sitemap = new URL("sitemap-index.xml", Astro.url.origin)
 ---
 
 <footer class="px-4 my-8 lg:w-1/2 lg:mx-auto">
-    <p>Site created by: John Carlo Austria</p>
-    <a href={sitemap} class="dark:text-blue-300 text-blue-800 underline">Sitemap.xml</a>
+    <hr class="my-8" />
+    <p class="text-center">Site created by: John Carlo Austria</p>
+    <ul class="space-y-4">
+        <li>
+            <a href="/" class="dark:text-blue-300 text-blue-800 underline">Home</a>
+        </li>
+        <li>
+            <a href="/about" class="dark:text-blue-300 text-blue-800 underline">About</a>
+        </li>
+
+        <li>
+            <a href={sitemap} class="dark:text-blue-300 text-blue-800 underline">Sitemap.xml</a>
+        </li>
+    </ul>
 </footer>

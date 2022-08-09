@@ -17,18 +17,17 @@ const posts = Astro.url.pathname !== "/blog" ? requestPosts.slice(0, 5) : reques
 <ul class="py-4 px-0 list-none">
     {posts.map((post) => (
     <li class="my-4">
-        <figure class="rounded-md dark:bg-slate-900 bg-slate-100 max-w-[640px] h-fit">
-            <h3 class="pt-4 px-4 text-lg">
-                <a href={post.url} class="text-blue-800 dark:text-blue-300 underline">
-                    {post.frontmatter.title}
-                </a>
+        <figure class="rounded-md dark:bg-slate-900 bg-slate-100 max-w-[640px] h-fit p-4">
+            <h3 class="text-2xl font-bold py-4">
+                {post.frontmatter.title}
             </h3>
-            <a href={post.url}>
-                <Picture src={import.meta.env.MODE==="production" ? post.frontmatter.image_url : import("../" +
-                    post.frontmatter.image_url)} alt={post.frontmatter.image_alt} widths={[1280, 1920]}
-                    sizes="(max-width: 800px), 100vw, 800px" aspectRatio="16:9" />
+            <Picture src={import.meta.env.MODE==="production" ? post.frontmatter.image_url : import("../" +
+                post.frontmatter.image_url)} alt={post.frontmatter.image_alt} widths={[1280, 1920]}
+                sizes="(max-width: 800px), 100vw, 800px" aspectRatio="16:9" />
+            <figcaption class="py-4">{post.frontmatter.description}</figcaption>
+            <a href={post.url} class="text-blue-800 dark:text-blue-300 underline">
+                See more &RightArrow;
             </a>
-            <figcaption class="p-4">{post.frontmatter.description}</figcaption>
         </figure>
     </li>
     ))}

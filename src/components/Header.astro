@@ -1,15 +1,21 @@
 <header class="flex flex-row px-4 py-4 my-4 min-h-fit h-16 lg:w-1/2 lg:mx-auto">
-    <a href="/" class="flex-grow">
-        <img src="/android-chrome-512x512.png" width={32} height={32} alt="Site Logo">
-    </a>
+    <div class="flex-grow">
+        <a href="/">
+            <img src="/android-chrome-512x512.png" width={32} height={32} alt="Site Logo">
+        </a>
+    </div>
     <nav>
-        <ul class="flex flex-row justify-self-end gap-2">
+        <ul class="flex flex-row justify-self-end gap-4">
             <li>
-                <a href="/about" class="text-lg">About</a>
+                <a href="/" class="text-xl font-bold underline dark:text-blue-300 text-blue-800">Home</a>
             </li>
 
             <li>
-                <a href="/blog" class="text-lg">Blog</a>
+                <a href="/about" class="text-xl font-bold underline dark:text-blue-300 text-blue-800">About</a>
+            </li>
+
+            <li>
+                <a href="/blog" class="text-xl font-bold underline dark:text-blue-300 text-blue-800">Blog</a>
             </li>
         </ul>
     </nav>
