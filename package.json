@@ -7,8 +7,9 @@
 	},
 	"license": "CC-BY-4.0",
 	"engines": {
-		"node": ">=16",
-		"vscode": "^1.22.0"
+		"node": "^16",
+		"vscode": "^1.22.0",
+		"yarn": "^yarn@3.2.2"
 	},
 	"packageManager": "yarn@3.2.2",
 	"dependencies": {
