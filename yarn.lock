@@ -15,16 +15,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/compiler@npm:^0.22.1":
-  version: 0.22.1
-  resolution: "@astrojs/compiler@npm:0.22.1"
-  checksum: 1d6aac35ca027a88a3235771bb2a1d457e98c685d8d009f1b8d7bf1c892ec0bd9faa1fe39314ed6b1ca4dff1d6bd0823a7ab1644ccb2efd4bdd91ce104ee2e4d
+"@astrojs/compiler@npm:^0.23.1":
+  version: 0.23.1
+  resolution: "@astrojs/compiler@npm:0.23.1"
+  checksum: 39272d1aa4f53dab07d3bd5e725d0df6b150c527179d93fcfafa1e4f67fcf23b74c73b75e883c9d5463b4587c00739bd7704f71f9c82876eed40efdfd48ae74c
   languageName: node
   linkType: hard
 
-"@astrojs/image@npm:^0.3.1":
-  version: 0.3.1
-  resolution: "@astrojs/image@npm:0.3.1"
+"@astrojs/image@npm:^0.3.2":
+  version: 0.3.2
+  resolution: "@astrojs/image@npm:0.3.2"
   dependencies:
     etag: ^1.8.1
     image-size: ^1.0.1
@@ -32,7 +32,7 @@ __metadata:
     sharp: ^0.30.6
     slash: ^4.0.0
     tiny-glob: ^0.2.9
-  checksum: 60a62d4d9626af6c0c1607297b67ae14ee5e12e6d53edc7f20146e7ee8bdc1d4385895eeb39566bf2aceb22e6420d4a0ec07b0c70d52e5bb7df71f30b60a8082
+  checksum: 2668933956d1bc582032cec1acadf1608e25666eba88a6d9ac3a612ba008877c0be290991a1c8c39e1ea320c661ee9544d6f9a02a99a7a065724275a6a75daf1
   languageName: node
   linkType: hard
 
@@ -56,9 +56,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/markdown-remark@npm:^0.14.0":
-  version: 0.14.0
-  resolution: "@astrojs/markdown-remark@npm:0.14.0"
+"@astrojs/markdown-remark@npm:^0.14.1":
+  version: 0.14.1
+  resolution: "@astrojs/markdown-remark@npm:0.14.1"
   dependencies:
     "@astrojs/micromark-extension-mdx-jsx": ^1.0.3
     "@astrojs/prism": ^0.7.0
@@ -81,7 +81,7 @@ __metadata:
     unist-util-map: ^3.1.1
     unist-util-visit: ^4.1.0
     vfile: ^5.3.2
-  checksum: 695fa3e3f6cc879467eacf597f817afff1934e3f14ff97f2958280b706bd7cf053d2caa8b22f549499d5f90b68d343ae704291b1c6d455d7c6ed3a7aca9da82a
+  checksum: 65b4f80bd8cd0e3d3929bd9959047109e64ba16359415ac03891fd70ddcf1569bfffac67654f9253c4bf344c419cf9f7957de80fb4d9ad2f730b52f82c524ea2
   languageName: node
   linkType: hard
 
@@ -457,10 +457,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/inter@npm:^4.5.11":
-  version: 4.5.11
-  resolution: "@fontsource/inter@npm:4.5.11"
-  checksum: 5d30b0c40f04b4bfc74cbae0ba87aceba1204ee43706d779ef2183959a01fe56b724cadad996ecca920f5be30058c75ca9eb0b58957d57982a3d6711341150b0
+"@fontsource/inter@npm:^4.5.12":
+  version: 4.5.12
+  resolution: "@fontsource/inter@npm:4.5.12"
+  checksum: 7637978d4355f52cf348bbe40a2e1bfa535c290057bef27c022343234b00c07b138c86a2b52260825c1ecc5cc9f59c68fd6ff08311111c70c04f82ace592920b
   languageName: node
   linkType: hard
 
@@ -963,13 +963,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro@npm:^1.0.0-rc.5":
-  version: 1.0.0-rc.6
-  resolution: "astro@npm:1.0.0-rc.6"
+"astro@npm:^1.0.0-rc.8":
+  version: 1.0.0-rc.8
+  resolution: "astro@npm:1.0.0-rc.8"
   dependencies:
-    "@astrojs/compiler": ^0.22.1
+    "@astrojs/compiler": ^0.23.1
     "@astrojs/language-server": ^0.20.0
-    "@astrojs/markdown-remark": ^0.14.0
+    "@astrojs/markdown-remark": ^0.14.1
     "@astrojs/telemetry": ^0.4.1
     "@astrojs/webapi": ^0.12.0
     "@babel/core": ^7.18.2
@@ -1024,7 +1024,7 @@ __metadata:
     zod: ^3.17.3
   bin:
     astro: astro.js
-  checksum: 75959c870ef10c34ab945410c7321d14e749db848c0a45d7687c67c3131693cddfe66e3778e942a0b3afe98118b0cea3ec15df8a720b8da8a9c60a05b170588f
+  checksum: b5d221f30a730500038f64a67cc0926822afcf11befa06f4321caf2fa878204c4a06fcf0e89463ab179e16d3fbdd99190c49244aa6e2636538c8ff47f075ecbd
   languageName: node
   linkType: hard
 
@@ -4556,13 +4556,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@astrojs/image": ^0.3.1
+    "@astrojs/image": ^0.3.2
     "@astrojs/sitemap": ^0.3.0
     "@astrojs/tailwind": ^0.2.5
-    "@fontsource/inter": ^4.5.11
+    "@fontsource/inter": ^4.5.12
     "@tailwindcss/typography": ^0.5.4
-    astro: ^1.0.0-rc.5
-    tailwindcss: ^3.1.7
+    astro: ^1.0.0-rc.8
+    tailwindcss: ^3.1.8
   languageName: unknown
   linkType: soft
 
@@ -4982,7 +4982,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:^3.0.24, tailwindcss@npm:^3.1.7":
+"tailwindcss@npm:^3.0.24":
   version: 3.1.7
   resolution: "tailwindcss@npm:3.1.7"
   dependencies:
@@ -5014,6 +5014,41 @@ __metadata:
     tailwind: lib/cli.js
     tailwindcss: lib/cli.js
   checksum: adbc9869b72f741e9a0fc281b79710863617a588fd5d897316b676f789b6482c79f46f324223300ca962afbe55bed3ec16a37a6ccf4bb2c99c53cf8c5dd9700d
+  languageName: node
+  linkType: hard
+
+"tailwindcss@npm:^3.1.8":
+  version: 3.1.8
+  resolution: "tailwindcss@npm:3.1.8"
+  dependencies:
+    arg: ^5.0.2
+    chokidar: ^3.5.3
+    color-name: ^1.1.4
+    detective: ^5.2.1
+    didyoumean: ^1.2.2
+    dlv: ^1.1.3
+    fast-glob: ^3.2.11
+    glob-parent: ^6.0.2
+    is-glob: ^4.0.3
+    lilconfig: ^2.0.6
+    normalize-path: ^3.0.0
+    object-hash: ^3.0.0
+    picocolors: ^1.0.0
+    postcss: ^8.4.14
+    postcss-import: ^14.1.0
+    postcss-js: ^4.0.0
+    postcss-load-config: ^3.1.4
+    postcss-nested: 5.0.6
+    postcss-selector-parser: ^6.0.10
+    postcss-value-parser: ^4.2.0
+    quick-lru: ^5.1.1
+    resolve: ^1.22.1
+  peerDependencies:
+    postcss: ^8.0.9
+  bin:
+    tailwind: lib/cli.js
+    tailwindcss: lib/cli.js
+  checksum: 86480301fc6ae1e392c2aba8264ab425bd919078176b010fda724518a7c265e950da5f4120c69c9041509c318207985fa9d680b6f5021e23f8214135a61a54b6
   languageName: node
   linkType: hard
 

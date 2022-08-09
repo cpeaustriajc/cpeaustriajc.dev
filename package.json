@@ -12,14 +12,14 @@
 	},
 	"packageManager": "yarn@3.2.2",
 	"dependencies": {
-		"@fontsource/inter": "^4.5.11",
-		"astro": "^1.0.0-rc.5"
+		"@fontsource/inter": "^4.5.12",
+		"astro": "^1.0.0-rc.8"
 	},
 	"devDependencies": {
-		"@astrojs/image": "^0.3.1",
+		"@astrojs/image": "^0.3.2",
 		"@astrojs/sitemap": "^0.3.0",
 		"@astrojs/tailwind": "^0.2.5",
 		"@tailwindcss/typography": "^0.5.4",
-		"tailwindcss": "^3.1.7"
+		"tailwindcss": "^3.1.8"
 	}
 }
