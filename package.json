@@ -9,9 +9,9 @@
 	"engines": {
 		"node": "^16",
 		"vscode": "^1.22.0",
-		"yarn": "^yarn@3.2.2"
+		"npm": "^npm@8"
 	},
-	"packageManager": "yarn@3.2.2",
+	"packageManager": "npm@8.16.0",
 	"dependencies": {
 		"@fontsource/inter": "^4.5.12",
 		"astro": "^1.0.0-rc.8"
