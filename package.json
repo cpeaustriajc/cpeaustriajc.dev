@@ -1,4 +1,6 @@
 {
+	"name": "@jaycedotbin/me",
+	"version": "0.0.1",
 	"private": true,
 	"scripts": {
 		"dev": "astro dev",
@@ -9,17 +11,17 @@
 	"engines": {
 		"node": "^16.15.0",
 		"vscode": "^1.22.0",
-		"npm": "^8.5.5"
+		"npm": "^7.9.0"
 	},
-	"packageManager": "npm@8.16.0",
+	"packageManager": "pnpm@7.9.0",
 	"dependencies": {
 		"@fontsource/inter": "^4.5.12",
-		"astro": "^1.0.0-rc.8"
+		"astro": "^1.0.1"
 	},
 	"devDependencies": {
-		"@astrojs/image": "^0.3.2",
-		"@astrojs/sitemap": "^0.3.0",
-		"@astrojs/tailwind": "^0.2.5",
+		"@astrojs/image": "^0.3.3",
+		"@astrojs/sitemap": "^1.0.0",
+		"@astrojs/tailwind": "^1.0.0",
 		"@tailwindcss/typography": "^0.5.4",
 		"tailwindcss": "^3.1.8"
 	}
