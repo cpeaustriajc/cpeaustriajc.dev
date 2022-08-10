@@ -1,5 +1,6 @@
 ---
 import { Picture } from "@astrojs/image/components";
+import type { MarkdownInstance } from "astro";
 
 interface Frontmatter {
     description: string;
@@ -9,9 +10,11 @@ interface Frontmatter {
     image_alt: string;
 }
 
-const requestPosts = await Astro.glob<Frontmatter>("../pages/posts/*.md")
+const response = await Astro.glob<Frontmatter>("../pages/posts/*.md")
 
-const posts = Astro.url.pathname !== "/blog" ? requestPosts.slice(0, 5) : requestPosts
+const posts = Astro.url.pathname !== "/blog" ? response.slice(0, 5) : response
+
+const getCorrectURL = (post: MarkdownInstance<Frontmatter>) => import.meta.env.PROD ? post.frontmatter.image_url : import("../" + post.frontmatter.image_url) as unknown as string
 ---
 
 <ul class="py-4 px-0 list-none">
@@ -21,8 +24,7 @@ const posts = Astro.url.pathname !== "/blog" ? requestPosts.slice(0, 5) : reques
             <h3 class="text-2xl font-bold py-4">
                 {post.frontmatter.title}
             </h3>
-            <Picture src={import.meta.env.MODE==="production" ? post.frontmatter.image_url : import("../" +
-                post.frontmatter.image_url)} alt={post.frontmatter.image_alt} widths={[1280, 1920]}
+            <Picture src={getCorrectURL(post)} alt={post.frontmatter.image_alt} widths={[1280, 1920]}
                 sizes="(max-width: 800px), 100vw, 800px" aspectRatio="16:9" />
             <figcaption class="py-4">{post.frontmatter.description}</figcaption>
             <a href={post.url} class="text-blue-800 dark:text-blue-300 underline">
