@@ -3,7 +3,8 @@ import Head from "@/components/Head.astro";
 import DefaultLayout from "@/layouts/DefaultLayout.astro";
 import { Picture } from "@astrojs/image/components";
 
-const { content } = Astro.props;
+const getCorrectURL = (content: { image_url: string }) => import.meta.env.PROD ? content.image_url : import("../" + content.image_url) as unknown as string
+
 ---
 
 <DefaultLayout>
@@ -16,8 +17,7 @@ const { content } = Astro.props;
                 <h1>{content.title}</h1>
             </header>
             <figure class="text-center my-2 md:my-4 lg:my-8">
-                <Picture src={import.meta.env.MODE==="production" ? content.image_url : import("../" +
-                    content.image_url)} widths={[320, 640, 1280, 1920]} alt={content.image_alt}
+                <Picture src={getCorrectURL(content)} widths={[320, 640, 1280, 1920]} alt={content.image_alt}
                     sizes="(max-width: 768px), (max-width: 800px) 100vw, 800px" aspectRatio="16:9" />
                 <figcaption class="my-2 text-center text-sm font-bold">{content.image_alt}
                 </figcaption>
