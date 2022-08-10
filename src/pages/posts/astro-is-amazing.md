@@ -9,12 +9,15 @@ image_url: /assets/astro.png
 image_alt: The banner for Astro, a static site generator
 ---
 
-As of this writing, Astro has finally reached it's release candidate stage and will probably have a
-stable release on the end of this year.
+~~As of this writing, Astro has finally reached it's release candidate stage and will probably have
+a stable release on the end of this year.~~
 
-Even though it is still in this state, it already looks promising because it provides amazing
+~~Even though it is still in this state, it already looks promising because it provides amazing
 developer experience, and you can use it to build personal portfolio perfectly because it is simple
-by design, there are no extra features that you would find when building web applications.
+by design, there are no extra features that you would find when building web applications.~~
+
+Asto has reached **v1.0.0**! Read more about it in this
+[blog post](https://astro.build/blog/astro-1/).
 
 ## What makes Astro stand out to its other competitors?
 
