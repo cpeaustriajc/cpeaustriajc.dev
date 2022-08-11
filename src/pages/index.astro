@@ -11,19 +11,20 @@ import { Image } from "@astrojs/image/components";
     description="John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines; Homepage section">
   </Head>
   <Fragment slot="content">
-    <article class="prose md:prose-lg lg:prose-xl dark:prose-invert dark:prose-a:text-blue-300">
+    <article
+      class="prose md:prose-lg lg:prose-xl dark:prose-invert dark:prose-a:text-blue-300 prose-a:text-blue-800 prose-a:dark:visited:text-purple-300 prose-a:visited:text-purple-800">
       <h1>Hey There!</h1>
 
-      <section class="flex flex-col md:flex-row md:justify-between">
-        <div class="self-center text-center md:text-start">
+      <header class="flex flex-col md:flex-row md:justify-between">
+        <section class="self-center text-center md:text-start">
           <p>My name is <strong>John Carlo B. Austria</strong></p>
           <p>I am a <strong>Frontend Developer</strong></p>
-        </div>
-        <div class="m-auto">
+        </section>
+        <section class="m-auto">
           <Image src={import("@/assets/me.jpeg")} alt="John Carlo Austria, The creator of this site (This is me!)."
-            width={320} class="rounded-full" />
-        </div>
-      </section>
+            format={"webp"} width={320} class="rounded-full" loading={"eager"} />
+        </section>
+      </header>
       <p>
         I started programming back in 2017 when messing around with game's overall graphics by modding as
         much as I can and implementing shaders to make it look good and add fancy effects.
@@ -60,12 +61,13 @@ import { Image } from "@astrojs/image/components";
         them.
       </p>
       <a href="/about">See more &RightArrow;</a>
+      <h2>Blog</h2>
+      <p>
+        This is where I share my thoughts about... anything! Topics like software engineering
+        philosophy, opinions about technologies and life are the things that I like to write...
+      </p>
+      <a href="/blog">See more &RightArrow;</a>
     </article>
-    <h2 class="my-8 text-2xl">Blog</h2>
-    <p class="text-xl">This is where I share my thoughts about... anything! Topics like software engineering philosophy,
-      opinions
-      about technologies and life are the things that I like to write</p>
     <Posts />
-    <a href="/blog" class="underline dark:text-blue-300 text-blue-800 text-xl">See more &RightArrow;</a>
   </Fragment>
 </DefaultLayout>

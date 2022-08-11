@@ -1,7 +1,12 @@
 ---
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description } = Astro.props;
+interface HeadProps {
+    title: string;
+    description: string;
+}
+
+const { title, description } = Astro.props as HeadProps;
 ---
 
 <head>
