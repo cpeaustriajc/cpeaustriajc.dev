@@ -1,9 +1,8 @@
 ---
+import Head from "@/components/Head.astro";
 import Posts from "@/components/Posts.astro";
 import DefaultLayout from "@/layouts/DefaultLayout.astro";
-import Head from "@/components/Head.astro";
 import { Image } from "@astrojs/image/components";
-import MyPicture from "@/assets/me.jpeg"
 ---
 
 <DefaultLayout>
@@ -21,8 +20,8 @@ import MyPicture from "@/assets/me.jpeg"
           <p>I am a <strong>Frontend Developer</strong></p>
         </div>
         <div class="m-auto">
-          <Image src={MyPicture} alt="John Carlo Austria, The creator of this site (This is me!)." width={320}
-            class="rounded-full" />
+          <Image src={import("@/assets/me.jpeg")} alt="John Carlo Austria, The creator of this site (This is me!)."
+            width={320} class="rounded-full" />
         </div>
       </section>
       <p>
