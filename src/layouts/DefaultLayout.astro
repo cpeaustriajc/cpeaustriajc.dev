@@ -5,16 +5,13 @@ import Footer from "@/components/Footer.astro";
 ---
 
 <html dir="ltr" lang="en">
+	<slot name="head" />
 
-
-<slot name="head" />
-
-<body class="font-sans antialiased dark:bg-gray-800 dark:text-gray-50">
-  <Header />
-  <main class="px-4 lg:w-1/2 lg:mx-auto">
-    <slot name="content" />
-  </main>
-  <Footer />
-</body>
-
+	<body class="font-sans antialiased dark:bg-gray-800 dark:text-gray-50">
+		<Header />
+		<main class="px-4 lg:w-1/2 lg:mx-auto">
+			<slot name="content" />
+		</main>
+		<Footer />
+	</body>
 </html>

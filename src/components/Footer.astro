@@ -1,20 +1,79 @@
 ---
-const sitemap = new URL("sitemap-index.xml", Astro.url.origin)
+const sitemap = new URL("sitemap-index.xml", Astro.url.origin);
 ---
 
-<footer class="px-4 my-8 lg:w-1/2 lg:mx-auto">
-    <hr class="my-8" />
-    <p class="text-center">Site created by: John Carlo Austria</p>
-    <ul class="space-y-4">
-        <li>
-            <a href="/" class="dark:text-blue-300 text-blue-800 underline">Home</a>
-        </li>
-        <li>
-            <a href="/about" class="dark:text-blue-300 text-blue-800 underline">About</a>
-        </li>
-
-        <li>
-            <a href={sitemap} class="dark:text-blue-300 text-blue-800 underline">Sitemap.xml</a>
-        </li>
-    </ul>
+<footer class="grid grid-cols-3 px-4 my-8 lg:w-1/2 lg:mx-auto">
+	<hr class="col-span-full my-8" />
+	<header class="col-span-full my-8">
+		<h3 class="text-center font-bold text-lg">Site created by: John Carlo Austria</h3>
+	</header>
+	<ul class="space-y-4 justify-center">
+		<li>
+			<a
+				href="/"
+				class="dark:text-blue-300 text-blue-800 visited:text-purple-800 dark:visited:text-purple-300 underline"
+				>Home
+			</a>
+		</li>
+		<li class="space-y-4">
+			<a
+				href="/about"
+				class="dark:text-blue-300 text-blue-800 visited:text-purple-800 dark:visited:text-purple-300 underline"
+				>About
+			</a>
+		</li>
+		<li>
+			<a
+				href="/blog"
+				class="dark:text-blue-300 text-blue-800 visited:text-purple-800 dark:visited:text-purple-300 underline"
+				>Blog
+			</a>
+		</li>
+	</ul>
+	<ul class="space-y-4">
+		<li>
+			<a
+				href="https://github.com/jaycedotbin"
+				class="dark:text-blue-300 text-blue-800 visited:text-purple-800 dark:visited:text-purple-300 underline"
+				>Github
+			</a>
+		</li>
+		<li>
+			<a
+				href="https://www.linkedin.com/in/jaycedotbin/"
+				class="dark:text-blue-300 text-blue-800 visited:text-purple-800 dark:visited:text-purple-300 underline"
+				>LinkedIn
+			</a>
+		</li>
+		<li>
+			<a
+				href="https://twitter.com/jaycedotbin"
+				class="dark:text-blue-300 text-blue-800 visited:text-purple-800 dark:visited:text-purple-300 underline"
+				>Twitter
+			</a>
+		</li>
+	</ul>
+	<ul class="space-y-4">
+		<li>
+			<a
+				href="mailto:johncarloaustria@proton.me"
+				class="dark:text-blue-300 text-blue-800 visited:text-purple-800 dark:visited:text-purple-300 underline"
+				>Email
+			</a>
+		</li>
+		<li>
+			<a
+				href={sitemap}
+				class="dark:text-blue-300 text-blue-800 visited:text-purple-800 dark:visited:text-purple-300 underline"
+				>Sitemap.xml
+			</a>
+		</li>
+		<li>
+			<a
+				href="/uses"
+				class="dark:text-blue-300 text-blue-800 visited:text-purple-800 dark:visited:text-purple-300 underline"
+				>Uses
+			</a>
+		</li>
+	</ul>
 </footer>
