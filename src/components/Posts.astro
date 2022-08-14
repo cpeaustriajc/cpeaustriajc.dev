@@ -1,5 +1,4 @@
 ---
-
 export interface Frontmatter {
 	description: string;
 	title: string;
@@ -22,6 +21,8 @@ const posts = Astro.url.pathname !== "/blog" ? response.slice(0, 5) : response;
 					<img
 						src={post.frontmatter.image_url}
 						alt={post.frontmatter.image_alt}
+						width={1280}
+						height={720}
 					/>
 					<figcaption class="py-4">{post.frontmatter.description}</figcaption>
 					<a href={post.url} class="text-blue-800 underline dark:text-blue-300">

@@ -1,7 +1,7 @@
 ---
 import Head from "@/components/Head.astro";
 import Posts from "@/components/Posts.astro";
-import { SpotifyNowPlaying } from "@/components/SpotifyNowPlaying";
+import SpotifyNowPlaying from "@/components/SpotifyNowPlaying.svelte";
 import DefaultLayout from "@/layouts/DefaultLayout.astro";
 
 const response = await fetch(`${import.meta.env.PUBLIC_SPOTIFY_API_URL}/api/spotify-now-playing`);
@@ -32,6 +32,8 @@ const results = await response.json();
 						src="/me.jpeg"
 						alt="John Carlo Austria, The creator of this site (This is me!)."
 						class="rounded-full"
+						width={320}
+						height={320}
 					/>
 				</section>
 			</header>
