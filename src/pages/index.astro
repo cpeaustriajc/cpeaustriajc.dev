@@ -84,6 +84,6 @@ const results = await response.json();
 			<a href="/blog">See more &RightArrow;</a>
 		</article>
 		<Posts />
-		<SpotifyNowPlaying client:visible spotify={results} />
+		<SpotifyNowPlaying client:visible data={results} />
 	</Fragment>
 </DefaultLayout>
