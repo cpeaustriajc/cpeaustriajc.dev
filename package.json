@@ -19,7 +19,7 @@
 	"dependencies": {
 		"@astrojs/vercel": "^1.0.0",
 		"@fontsource/inter": "^4.5.12",
-		"astro": "^1.0.3",
+		"astro": "^1.0.5",
 		"node-fetch": "^3.2.10"
 	},
 	"devDependencies": {
