@@ -8,9 +8,8 @@ export default async function handler(req, res) {
 	const response = await getNowPlaying();
 
 	if (response.status === 204 || response.status > 400) {
-		return new res.status(200).json({ isPlaying: false });
+		return res.status(200).json({ isPlaying: false });
 	}
-
 	const song = await response.json();
 
 	const isPlaying = song.is_playing;
@@ -19,7 +18,6 @@ export default async function handler(req, res) {
 	const album = song.item.album.name;
 	const albumImageURL = song.item.album.images[0].url;
 	const songURL = song.item.external_urls.spotify;
-
 	return res.status(200).json({
 		album,
 		albumImageURL,

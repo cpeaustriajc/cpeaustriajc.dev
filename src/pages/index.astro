@@ -5,8 +5,8 @@ import { SpotifyNowPlaying } from "@/components/SpotifyNowPlaying";
 import DefaultLayout from "@/layouts/DefaultLayout.astro";
 import { Image } from "@astrojs/image/components";
 
-const response = await fetch("http://localhost:3000/api/spotify-now-playing");
-const nowPlaying = await response.json();
+const response = await fetch(`${import.meta.env.PUBLIC_SPOTIFY_API_URL}/api/spotify-now-playing`);
+const results = await response.json();
 ---
 
 <DefaultLayout>
@@ -84,6 +84,6 @@ const nowPlaying = await response.json();
 			<a href="/blog">See more &RightArrow;</a>
 		</article>
 		<Posts />
-		<SpotifyNowPlaying client:visible nowPlaying={nowPlaying} />
+		<SpotifyNowPlaying client:visible spotify={results} />
 	</Fragment>
 </DefaultLayout>

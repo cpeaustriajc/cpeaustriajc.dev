@@ -1,8 +1,18 @@
 import { css, html, LitElement } from "lit";
 
+/**
+ * @typedef SpotifyAttribute
+ * @property {string} album
+ * @property {string} albumImageURL
+ * @property {string} artist
+ * @property {boolean} isPlaying
+ * @property {string} songURL
+ * @property {string} title
+ */
+
 export class SpotifyNowPlaying extends LitElement {
 	static properties = {
-		nowPlaying: { type: Object },
+		spotify: { type: Object },
 	};
 
 	static styles = css`
@@ -28,27 +38,36 @@ export class SpotifyNowPlaying extends LitElement {
 
 	constructor() {
 		super();
-		this.nowPlaying = {};
+		/**
+		 * @type {SpotifyAttribute}
+		 */
+		this.spotify = {};
 	}
 	connectedCallback() {
 		super.connectedCallback();
 	}
 
 	render() {
-		return html`
-			<div>
-				<p>Now Playing in Spotify:</p>
+		if (this.spotify.isPlaying) {
+			return html`
 				<div>
-					<img src="${this.nowPlaying.albumImageURL}" width="100" height="100" />
+					<p>Now Playing in Spotify:</p>
+					<div>
+						<img src="${this.spotify.albumImageURL}" width="100" height="100" />
+					</div>
+					<div>
+						<a .href="${this.spotify.songURL}"
+							>${this.spotify.title} by ${this.nowPlaying.artist} from the album
+							${this.spotify.album}</a
+						>
+					</div>
 				</div>
-				<div>
-					<a .href="${this.nowPlaying.songURL}"
-						>${this.nowPlaying.title} by ${this.nowPlaying.artist} from the album
-						${this.nowPlaying.album}</a
-					>
-				</div>
-			</div>
-		`;
+			`;
+		} else {
+			return html` <div>
+				<p>There aren't any song that are being played at spotify as of this moment!</p>
+			</div>`;
+		}
 	}
 }
 
