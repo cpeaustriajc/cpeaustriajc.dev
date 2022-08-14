@@ -11,7 +11,10 @@ const { content } = Astro.props as MarkdownContentProps;
 ---
 
 <DefaultLayout>
-	<Head slot="head" title={content.title} description={content.description} />
+	<Head slot="head">
+		<title>{content.title}</title>
+		<meta name="description" content={content.description}/>
+	</Head>
 	<Fragment slot="content">
 		<article
 			class="prose md:prose-xl lg:prose-2xl dark:prose-invert dark:prose-a:text-blue-300 prose-a:text-blue-800"

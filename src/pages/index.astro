@@ -9,11 +9,13 @@ const results = await response.json();
 ---
 
 <DefaultLayout>
-	<Head
-		slot="head"
-		title="Home | John Carlo Austria"
-		description="John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines; Homepage section"
-	/>
+	<Head slot="head">
+		<title>Home | John Carlo Austria</title>
+		<meta
+			name="description"
+			content="John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines; Homepage section"
+		/>
+	</Head>
 	<Fragment slot="content">
 		<article
 			class="prose md:prose-lg lg:prose-xl dark:prose-invert dark:prose-a:text-blue-300 prose-a:text-blue-800 prose-a:dark:visited:text-purple-300 prose-a:visited:text-purple-800"

@@ -5,11 +5,13 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
 ---
 
 <DefaultLayout>
-	<Head
-		slot="head"
-		title="Blog | John Carlo Austria"
-		description="John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines; Blog section"
-	/>
+	<Head slot="head">
+		<title>Blog | John Carlo Austria</title>
+		<meta
+			name="description"
+			content="John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines; Blog section"
+		/>
+	</Head>
 
 	<Fragment slot="content">
 		<h1 class="text-5xl">Blog Posts</h1>
