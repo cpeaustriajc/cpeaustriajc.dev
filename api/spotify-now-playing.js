@@ -1,4 +1,4 @@
-import { getNowPlaying } from "../lib/spotify.js";
+import { getNowPlaying } from "./lib/_spotify";
 
 /**
  * credits: https://github.com/leerob/leerob.io/blob/main/pages/api/now-playing.ts

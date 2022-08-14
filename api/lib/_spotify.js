@@ -1,4 +1,4 @@
-const fetch = require("isomorphic-unfetch");
+import fetch from "node-fetch";
 
 const client_id = process.env.SPOTIFY_CLIENT_ID;
 const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
