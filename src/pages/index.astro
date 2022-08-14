@@ -3,7 +3,6 @@ import Head from "@/components/Head.astro";
 import Posts from "@/components/Posts.astro";
 import { SpotifyNowPlaying } from "@/components/SpotifyNowPlaying";
 import DefaultLayout from "@/layouts/DefaultLayout.astro";
-import { Image } from "@astrojs/image/components";
 
 const response = await fetch(`${import.meta.env.PUBLIC_SPOTIFY_API_URL}/api/spotify-now-playing`);
 const results = await response.json();
@@ -27,13 +26,10 @@ const results = await response.json();
 					<p>I am a <strong>Frontend Developer</strong></p>
 				</section>
 				<section class="m-auto">
-					<Image
-						src={import("@/assets/me.jpeg")}
+					<img
+						src="/me.jpeg"
 						alt="John Carlo Austria, The creator of this site (This is me!)."
-						format={"webp"}
-						width={320}
 						class="rounded-full"
-						loading={"eager"}
 					/>
 				</section>
 			</header>

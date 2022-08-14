@@ -1,6 +1,4 @@
 ---
-import { Picture } from "@astrojs/image/components";
-import type { MarkdownInstance } from "astro";
 
 export interface Frontmatter {
 	description: string;
@@ -13,11 +11,6 @@ export interface Frontmatter {
 const response = await Astro.glob<Frontmatter>("../pages/posts/*.md");
 
 const posts = Astro.url.pathname !== "/blog" ? response.slice(0, 5) : response;
-
-const getCorrectURL = (post: MarkdownInstance<Frontmatter>) =>
-	import.meta.env.PROD
-		? post.frontmatter.image_url
-		: (import("../" + post.frontmatter.image_url) as unknown as string);
 ---
 
 <ul class="py-4 px-0 list-none">
@@ -26,12 +19,9 @@ const getCorrectURL = (post: MarkdownInstance<Frontmatter>) =>
 			<li class="my-4">
 				<figure class="h-fit max-w-[640px] rounded-md bg-slate-100 p-4 dark:bg-slate-900">
 					<h3 class="py-4 text-2xl font-bold">{post.frontmatter.title}</h3>
-					<Picture
-						src={getCorrectURL(post)}
+					<img
+						src={post.frontmatter.image_url}
 						alt={post.frontmatter.image_alt}
-						widths={[1280, 1920]}
-						sizes="(max-width: 800px), 100vw, 800px"
-						aspectRatio="16:9"
 					/>
 					<figcaption class="py-4">{post.frontmatter.description}</figcaption>
 					<a href={post.url} class="text-blue-800 underline dark:text-blue-300">
