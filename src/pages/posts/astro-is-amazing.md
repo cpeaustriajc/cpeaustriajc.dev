@@ -5,7 +5,7 @@ description:
     Building my personal site with Astro is so good! I would recommend Astro if you want to rebuild
     your personal site!
 date: Aug 4, 2022
-image_url: /astro.png
+image_url: /astro.webp
 image_alt: The Banner for Astro, a Static Site Generator
 ---
 
