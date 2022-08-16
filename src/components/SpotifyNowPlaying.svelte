@@ -14,7 +14,7 @@
 {#if data.isPlaying}
 	<a href={data.songURL} class="container">
 		<div class="now-playing">
-			<p class="text-sm">
+			<p>
 				Now Playing | Powered by <span class="spotify">Spotify</span>
 			</p>
 			<span class="music-bars">
