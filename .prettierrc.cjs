@@ -4,6 +4,7 @@ module.exports = {
 	tabWidth: 4,
 	useTabs: true,
 	printWidth: 100,
+	proseWrap: "always",
 	plugins: [require.resolve("prettier-plugin-astro")],
 	overrides: [
 		{
