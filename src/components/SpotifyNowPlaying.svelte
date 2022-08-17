@@ -17,11 +17,162 @@
 			<p>
 				Now Playing | Powered by <span class="spotify">Spotify</span>
 			</p>
-			<span class="music-bars">
-				<span class="music-bar" />
-				<span class="music-bar" />
-				<span class="music-bar" />
-			</span>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				xmlns:xlink="http://www.w3.org/1999/xlink"
+				style="background: transparent;"
+				width="24px"
+				height="24px"
+				viewBox="0 0 100 100"
+				preserveAspectRatio="xMidYMid"
+			>
+				<g transform="rotate(180 50 50)">
+					<rect
+						x="6.111111111111111"
+						y="12.5"
+						width="10"
+						height="40"
+						fill="#1ed760"
+						ry="4"
+					>
+						<animate
+							attributeName="height"
+							calcMode="spline"
+							values="50;75;10;50"
+							dur="1s"
+							keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.5 0 0.5 1"
+							repeatCount="indefinite"
+							begin="-0.75s"
+						/>
+					</rect>
+					<rect
+						x="17.22222222222222"
+						y="12.5"
+						width="10"
+						height="40"
+						fill="#1ed760"
+						ry="4"
+					>
+						<animate
+							attributeName="height"
+							calcMode="spline"
+							values="50;75;10;50"
+							dur="1s"
+							keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.5 0 0.5 1"
+							repeatCount="indefinite"
+							begin="-0.875s"
+						/>
+					</rect>
+					<rect
+						x="28.333333333333336"
+						y="12.5"
+						width="10"
+						height="40"
+						fill="#1ed760"
+						ry="4"
+					>
+						<animate
+							attributeName="height"
+							calcMode="spline"
+							values="50;75;10;50"
+							dur="1s"
+							keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.5 0 0.5 1"
+							repeatCount="indefinite"
+							begin="-0.25s"
+						/>
+					</rect>
+					<rect
+						x="39.44444444444444"
+						y="12.5"
+						width="10"
+						height="40"
+						fill="#1ed760"
+						ry="4"
+					>
+						<animate
+							attributeName="height"
+							calcMode="spline"
+							values="50;75;10;50"
+							dur="1s"
+							keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.5 0 0.5 1"
+							repeatCount="indefinite"
+							begin="-0.5s"
+						/>
+					</rect>
+					<rect
+						x="50.55555555555556"
+						y="12.5"
+						width="10"
+						height="40"
+						fill="#1ed760"
+						ry="4"
+					>
+						<animate
+							attributeName="height"
+							calcMode="spline"
+							values="50;75;10;50"
+							dur="1s"
+							keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.5 0 0.5 1"
+							repeatCount="indefinite"
+							begin="-0.625s"
+						/>
+					</rect>
+					<rect
+						x="61.66666666666667"
+						y="12.5"
+						width="10"
+						height="40"
+						fill="#1ed760"
+						ry="4"
+					>
+						<animate
+							attributeName="height"
+							calcMode="spline"
+							values="50;75;10;50"
+							dur="1s"
+							keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.5 0 0.5 1"
+							repeatCount="indefinite"
+							begin="0s"
+						/>
+					</rect>
+					<rect
+						x="72.77777777777777"
+						y="12.5"
+						width="10"
+						height="40"
+						fill="#1ed760"
+						ry="4"
+					>
+						<animate
+							attributeName="height"
+							calcMode="spline"
+							values="50;75;10;50"
+							dur="1s"
+							keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.5 0 0.5 1"
+							repeatCount="indefinite"
+							begin="-0.375s"
+						/>
+					</rect>
+					<rect
+						x="83.88888888888889"
+						y="12.5"
+						width="10"
+						height="40"
+						fill="#1ed760"
+						ry="4"
+					>
+						<animate
+							attributeName="height"
+							calcMode="spline"
+							values="50;75;10;50"
+							dur="1s"
+							keySplines="0.5 0 0.5 1;0.5 0 0.5 1;0.5 0 0.5 1"
+							repeatCount="indefinite"
+							begin="-0.125s"
+						/>
+					</rect>
+				</g>
+			</svg>
 		</div>
 		<div class="album-title">
 			<div>
@@ -95,33 +246,6 @@
 	.spotify {
 		color: #1ed760;
 		font-weight: bold;
-	}
-
-	.music-bars {
-		position: relative;
-		display: flex;
-		justify-content: space-evenly;
-		width: 26px;
-		height: 26px;
-	}
-
-	.music-bar {
-		width: 4px;
-		height: 100%;
-		background-color: #1ed760;
-		border-top-left-radius: 8px;
-		border-top-right-radius: 8px;
-		transform-origin: bottom;
-		animation: bounce 2.2s ease infinite alternate;
-		content: "";
-	}
-
-	.music-bar:nth-of-type(2) {
-		animation-delay: -2.2s; /* Start at the end of animation */
-	}
-
-	.music-bar:nth-of-type(3) {
-		animation-delay: -3.7s; /* Start mid-way of return of animation */
 	}
 
 	@media screen and (min-width: 768px) {
