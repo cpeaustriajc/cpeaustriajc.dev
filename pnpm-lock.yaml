@@ -4,37 +4,37 @@ specifiers:
   '@astrojs/sitemap': ^1.0.0
   '@astrojs/svelte': ^1.0.0
   '@astrojs/tailwind': ^1.0.0
-  '@astrojs/vercel': ^1.0.0
+  '@astrojs/vercel': ^1.0.1
   '@fontsource/inter': ^4.5.12
   '@tailwindcss/typography': ^0.5.4
   '@types/prettier': ^2.7.0
-  astro: ^1.0.5
+  astro: ^1.0.7
   node-fetch: ^3.2.10
   prettier: ^2.7.1
-  prettier-plugin-astro: ^0.5.0
+  prettier-plugin-astro: ^0.5.2
   prettier-plugin-tailwindcss: ^0.1.13
   svelte: 3.49.0
   typescript: ^4.7.4
-  vercel: ^28.1.0
+  vercel: ^28.1.1
 
 dependencies:
-  '@astrojs/vercel': 1.0.0
+  '@astrojs/vercel': 1.0.1
   '@fontsource/inter': 4.5.12
-  astro: 1.0.5
+  astro: 1.0.7
   node-fetch: 3.2.10
 
 devDependencies:
   '@astrojs/sitemap': 1.0.0
-  '@astrojs/svelte': 1.0.0_t2is4qsumypfqw7cn3njojmcvu
+  '@astrojs/svelte': 1.0.0_eukj6rrd5vur5lnckkqvpitj6e
   '@astrojs/tailwind': 1.0.0
   '@tailwindcss/typography': 0.5.4
   '@types/prettier': 2.7.0
   prettier: 2.7.1
-  prettier-plugin-astro: 0.5.0
+  prettier-plugin-astro: 0.5.2
   prettier-plugin-tailwindcss: 0.1.13_prettier@2.7.1
   svelte: 3.49.0
   typescript: 4.7.4
-  vercel: 28.1.0
+  vercel: 28.1.1
 
 packages:
 
@@ -125,7 +125,7 @@ packages:
       zod: 3.18.0
     dev: true
 
-  /@astrojs/svelte/1.0.0_t2is4qsumypfqw7cn3njojmcvu:
+  /@astrojs/svelte/1.0.0_eukj6rrd5vur5lnckkqvpitj6e:
     resolution: {integrity: sha512-WmvcEe86j/3wL2xWURo1Kxtgh+s0CVys2j7xQboHr0ZeH9TBlkQuacAT8mWccD1/MikhDVqL/1hnF/n+vRKuGw==}
     engines: {node: ^14.18.0 || >=16.12.0}
     peerDependencies:
@@ -134,7 +134,7 @@ packages:
       '@sveltejs/vite-plugin-svelte': 1.0.1_svelte@3.49.0+vite@3.0.7
       postcss-load-config: 3.1.4_postcss@8.4.16
       svelte: 3.49.0
-      svelte-preprocess: 4.10.7_mnkd27beccdmrgnp6emk6vbv5m
+      svelte-preprocess: 4.10.7_mjw7fdxzputoremlmvwimuwz6e
       svelte2tsx: 0.5.13_uslzfc62di2n2otc2tvfklnwji
       vite: 3.0.7
     transitivePeerDependencies:
@@ -181,8 +181,8 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/vercel/1.0.0:
-    resolution: {integrity: sha512-Tu2KKaIaPu/3ru0e2l455ltY6SOCKXHNtE88ccEydVslrrQl8oeBXIgZY2e8ylVdzGCKmiYFcRudaAO3IYRMiA==}
+  /@astrojs/vercel/1.0.1:
+    resolution: {integrity: sha512-3OP8TvYbVBt9zkqmKAotQJ9OqhtcKbmEWvtAN04Knw4i+e/KFOrok83k+aNKFi99QFHBDQX7Ougu/3XIVHyEkg==}
     dependencies:
       '@astrojs/webapi': 1.0.0
       '@vercel/nft': 0.18.2
@@ -228,6 +228,30 @@ packages:
       semver: 6.3.0
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /@babel/core/7.18.13:
+    resolution: {integrity: sha512-ZisbOvRRusFktksHSG6pjj1CSvkPkcZq/KHD45LAkVP/oiHJkNBZWfpvlLmX8OtHDG8IuzsFlVRWo08w7Qxn0A==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      '@ampproject/remapping': 2.2.0
+      '@babel/code-frame': 7.18.6
+      '@babel/generator': 7.18.13
+      '@babel/helper-compilation-targets': 7.18.9_@babel+core@7.18.13
+      '@babel/helper-module-transforms': 7.18.9
+      '@babel/helpers': 7.18.9
+      '@babel/parser': 7.18.13
+      '@babel/template': 7.18.10
+      '@babel/traverse': 7.18.13
+      '@babel/types': 7.18.13
+      convert-source-map: 1.8.0
+      debug: 4.3.4
+      gensync: 1.0.0-beta.2
+      json5: 2.2.1
+      semver: 6.3.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
 
   /@babel/generator/7.18.12:
     resolution: {integrity: sha512-dfQ8ebCN98SvyL7IxNMCUtZQSq5R7kxgN+r8qYTGDmmSion1hX2C0zq2yo1bsCDhXixokv1SAWTZUMYbO/V5zg==}
@@ -236,6 +260,15 @@ packages:
       '@babel/types': 7.18.10
       '@jridgewell/gen-mapping': 0.3.2
       jsesc: 2.5.2
+
+  /@babel/generator/7.18.13:
+    resolution: {integrity: sha512-CkPg8ySSPuHTYPJYo7IRALdqyjM9HCbt/3uOBEFbzyGVP6Mn8bwFPB0jX6982JVNBlYzM1nnPkfjuXSOPtQeEQ==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      '@babel/types': 7.18.13
+      '@jridgewell/gen-mapping': 0.3.2
+      jsesc: 2.5.2
+    dev: true
 
   /@babel/helper-annotate-as-pure/7.18.6:
     resolution: {integrity: sha512-duORpUiYrEpzKIop6iNbjnwKLAKnJ47csTyRACyEmWj0QdUrm5aqNJGHSSEQSUAvNW0ojX0dOmK9dZduvkfeXA==}
@@ -255,6 +288,20 @@ packages:
       '@babel/helper-validator-option': 7.18.6
       browserslist: 4.21.3
       semver: 6.3.0
+    dev: false
+
+  /@babel/helper-compilation-targets/7.18.9_@babel+core@7.18.13:
+    resolution: {integrity: sha512-tzLCyVmqUiFlcFoAPLA/gL9TeYrF61VLNtb+hvkuVaB5SUjW7jcfrglBIX1vUIoT7CLP3bBlIMeyEsIl2eFQNg==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': ^7.0.0
+    dependencies:
+      '@babel/compat-data': 7.18.8
+      '@babel/core': 7.18.13
+      '@babel/helper-validator-option': 7.18.6
+      browserslist: 4.21.3
+      semver: 6.3.0
+    dev: true
 
   /@babel/helper-environment-visitor/7.18.9:
     resolution: {integrity: sha512-3r/aACDJ3fhQ/EVgFy0hpj8oHyHpQc+LPtJoY9SzTThAsStm4Ptegq92vqKoE3vD706ZVFWITnMnxucw+S9Ipg==}
@@ -348,6 +395,14 @@ packages:
     dependencies:
       '@babel/types': 7.18.10
 
+  /@babel/parser/7.18.13:
+    resolution: {integrity: sha512-dgXcIfMuQ0kgzLB2b9tRZs7TTFFaGM2AbtA4fJgUUYukzGH4jwsS7hzQHEGs67jdehpm22vkgKwvbU+aEflgwg==}
+    engines: {node: '>=6.0.0'}
+    hasBin: true
+    dependencies:
+      '@babel/types': 7.18.13
+    dev: true
+
   /@babel/plugin-syntax-jsx/7.18.6_@babel+core@7.18.10:
     resolution: {integrity: sha512-6mmljtAedFGTWu2p/8WIORGwy+61PLgOMPOdazc7YoJ9ZCWUyFy3A6CpPkRKLKD1ToAesxX8KGEViAiLo9N+7Q==}
     engines: {node: '>=6.9.0'}
@@ -397,6 +452,24 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
+  /@babel/traverse/7.18.13:
+    resolution: {integrity: sha512-N6kt9X1jRMLPxxxPYWi7tgvJRH/rtoU+dbKAPDM44RFHiMH8igdsaSBgFeskhSl/kLWLDUvIh1RXCrTmg0/zvA==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      '@babel/code-frame': 7.18.6
+      '@babel/generator': 7.18.13
+      '@babel/helper-environment-visitor': 7.18.9
+      '@babel/helper-function-name': 7.18.9
+      '@babel/helper-hoist-variables': 7.18.6
+      '@babel/helper-split-export-declaration': 7.18.6
+      '@babel/parser': 7.18.13
+      '@babel/types': 7.18.13
+      debug: 4.3.4
+      globals: 11.12.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /@babel/types/7.18.10:
     resolution: {integrity: sha512-MJvnbEiiNkpjo+LknnmRrqbY1GPUUggjv+wQVjetM/AONoupqRALB7I6jGqNUAZsKcRIEu2J6FRFvsczljjsaQ==}
     engines: {node: '>=6.9.0'}
@@ -404,6 +477,15 @@ packages:
       '@babel/helper-string-parser': 7.18.10
       '@babel/helper-validator-identifier': 7.18.6
       to-fast-properties: 2.0.0
+
+  /@babel/types/7.18.13:
+    resolution: {integrity: sha512-ePqfTihzW0W6XAU+aMw2ykilisStJfDnsejDCXRchCcMJ4O0+8DhPXf2YUbZ6wjBlsEmZwLK/sPweWtu8hcJYQ==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      '@babel/helper-string-parser': 7.18.10
+      '@babel/helper-validator-identifier': 7.18.6
+      to-fast-properties: 2.0.0
+    dev: true
 
   /@edge-runtime/format/1.1.0-beta.26:
     resolution: {integrity: sha512-05wywSsBZVE1iMezvYXW1ZMak6y2riJPVmEDK9RW9BECazykJtYOOQ+GG+oVaicNfxh2YtQTQD/WaI/4K3yKWA==}
@@ -737,8 +819,8 @@ packages:
     resolution: {integrity: sha512-aMChId8/dSGN5U5xRsrCCOcUYcQuYJYDXhdswCvO1owYhCise4hoXM79sf4clohnh9P/t9wgC3TgKG8jALMV1g==}
     dev: true
 
-  /@vercel/next/3.1.19:
-    resolution: {integrity: sha512-ht1cEK4XbLvGUTpsLElJRXmb0SCT1eURIlO7/KdSlpsrsB+FLvijc35OtezVVFvxNKgIMByYgm5G5mXfYgOpOQ==}
+  /@vercel/next/3.1.20:
+    resolution: {integrity: sha512-zOZ0qVob3vQZXtLOEZ/Wr1C3imVbUir1J+HAUW6fMpHdJdxxHDi5IgGQkbjeAePox5Kp0pGzxCDubPcbQOmGcg==}
     dev: true
 
   /@vercel/nft/0.18.2:
@@ -803,8 +885,8 @@ packages:
       - encoding
     dev: true
 
-  /@vercel/python/3.1.9:
-    resolution: {integrity: sha512-3pCIsozPG0lciZTa1RBZSVlCa83+WBVvYEZ31FUn+nRNy67/qFl+RZnO61wZQYncn4HJxQ9r80FAmRZu1hfYVA==}
+  /@vercel/python/3.1.10:
+    resolution: {integrity: sha512-peBRG9ET2MC3fjuy2E++AGtCjgb8GGN00rptkNCN3dD3pydyhh+GKSuE5l+R8Fp8WBXBMwtJRa83MjJT3goeHQ==}
     dev: true
 
   /@vercel/redwood/1.0.18:
@@ -1015,8 +1097,8 @@ packages:
       tslib: 2.4.0
     dev: false
 
-  /astro/1.0.5:
-    resolution: {integrity: sha512-+L45/SJfJ4yxQuRaaxXeIxf3BXGj80m7BIc9/7Cq5zFMxdvFLJ+4u6srntWY+4KlcrUcVBC/1mnhGbD80vYJQQ==}
+  /astro/1.0.7:
+    resolution: {integrity: sha512-QKG+/RbqZ3NNlLO3JuqJjYtdYUDM05H5UljURl1a9gM6WyuGobMkubW5Bhu1l6HmySZ6x7AZSnqsfcmHxdCxCQ==}
     engines: {node: ^14.18.0 || >=16.12.0, npm: '>=6.14.0'}
     hasBin: true
     dependencies:
@@ -1072,7 +1154,7 @@ packages:
       tsconfig-resolver: 3.0.1
       unist-util-visit: 4.1.0
       vfile: 5.3.4
-      vite: 3.0.5
+      vite: 3.0.9
       yargs-parser: 21.1.1
       zod: 3.18.0
     transitivePeerDependencies:
@@ -3832,8 +3914,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /prettier-plugin-astro/0.5.0:
-    resolution: {integrity: sha512-wBDZs0hlPWQDc7P7VmGe8pImci6F434Wd/otfLJwvCSXRb9J7AhmAigXhm5WPgCJuBA509Ovo/Ed+LAgZy4KWg==}
+  /prettier-plugin-astro/0.5.2:
+    resolution: {integrity: sha512-P6i5ARkfK0B0/uPWruH81lBPL1QcrJLVREKAuqih24Y7x4ySxdBMdaulEWpzhPuiXoRLQ9v0I1VTS4wb6KKDqg==}
     engines: {node: ^14.15.0 || >=16.0.0, npm: '>=6.14.0'}
     dependencies:
       '@astrojs/compiler': 0.19.0
@@ -4149,7 +4231,6 @@ packages:
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.2
-    dev: true
 
   /rollup/2.78.0:
     resolution: {integrity: sha512-4+YfbQC9QEVvKTanHhIAFVUFSRsezvQF8vFOJwtGfb9Bb+r014S+qryr9PSmw8x6sMnPkmFBGAvIFVQxvJxjtg==}
@@ -4471,7 +4552,7 @@ packages:
       svelte: 3.49.0
     dev: true
 
-  /svelte-preprocess/4.10.7_mnkd27beccdmrgnp6emk6vbv5m:
+  /svelte-preprocess/4.10.7_mjw7fdxzputoremlmvwimuwz6e:
     resolution: {integrity: sha512-sNPBnqYD6FnmdBrUmBCaqS00RyCsCpj2BG58A1JBswNF7b0OKviwxqVrOL/CKyJrLSClrSeqQv5BXNg2RUbPOw==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
@@ -4512,7 +4593,7 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@babel/core': 7.18.10
+      '@babel/core': 7.18.13
       '@types/pug': 2.0.6
       '@types/sass': 1.43.1
       detect-indent: 6.1.0
@@ -4889,8 +4970,8 @@ packages:
       sade: 1.8.1
     dev: false
 
-  /vercel/28.1.0:
-    resolution: {integrity: sha512-AorSrhLIpAIUxHdeEsL4LUp5WHE4wMzlul7ACA8WUBGx1oPyy4EkC6XCszQNsmmVhOPpIQzWX7Xg5ABJVto9RQ==}
+  /vercel/28.1.1:
+    resolution: {integrity: sha512-/9yps6Ybfloq01HnZWVw/dK+0y3ZrZ2TnxrwjRuT2DxApicznmKbRZvbXnRE6PtOgW8uHytFKL1m7LqnszhGYg==}
     engines: {node: '>= 14'}
     hasBin: true
     requiresBuild: true
@@ -4898,9 +4979,9 @@ packages:
       '@vercel/build-utils': 5.3.1
       '@vercel/go': 2.2.0
       '@vercel/hydrogen': 0.0.14
-      '@vercel/next': 3.1.19
+      '@vercel/next': 3.1.20
       '@vercel/node': 2.5.8
-      '@vercel/python': 3.1.9
+      '@vercel/python': 3.1.10
       '@vercel/redwood': 1.0.18
       '@vercel/remix': 1.0.19
       '@vercel/ruby': 1.3.27
@@ -4934,33 +5015,6 @@ packages:
       vfile-message: 3.1.2
     dev: false
 
-  /vite/3.0.5:
-    resolution: {integrity: sha512-bRvrt9Tw8EGW4jj64aYFTnVg134E8hgDxyl/eEHnxiGqYk7/pTPss6CWlurqPOUzqvEoZkZ58Ws+Iu8MB87iMA==}
-    engines: {node: ^14.18.0 || >=16.0.0}
-    hasBin: true
-    peerDependencies:
-      less: '*'
-      sass: '*'
-      stylus: '*'
-      terser: ^5.4.0
-    peerDependenciesMeta:
-      less:
-        optional: true
-      sass:
-        optional: true
-      stylus:
-        optional: true
-      terser:
-        optional: true
-    dependencies:
-      esbuild: 0.14.54
-      postcss: 8.4.16
-      resolve: 1.22.1
-      rollup: 2.78.0
-    optionalDependencies:
-      fsevents: 2.3.2
-    dev: false
-
   /vite/3.0.7:
     resolution: {integrity: sha512-dILhvKba1mbP1wCezVQx/qhEK7/+jVn9ciadEcyKMMhZpsuAi/eWZfJRMkmYlkSFG7Qq9NvJbgFq4XOBxugJsA==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -4987,6 +5041,33 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
+
+  /vite/3.0.9:
+    resolution: {integrity: sha512-waYABTM+G6DBTCpYAxvevpG50UOlZuynR0ckTK5PawNVt7ebX6X7wNXHaGIO6wYYFXSM7/WcuFuO2QzhBB6aMw==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    hasBin: true
+    peerDependencies:
+      less: '*'
+      sass: '*'
+      stylus: '*'
+      terser: ^5.4.0
+    peerDependenciesMeta:
+      less:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+      terser:
+        optional: true
+    dependencies:
+      esbuild: 0.14.54
+      postcss: 8.4.16
+      resolve: 1.22.1
+      rollup: 2.77.3
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: false
 
   /vscode-css-languageservice/6.0.1:
     resolution: {integrity: sha512-81n/eeYuJwQdvpoy6IK1258PtPbO720fl13FcJ5YQECPyHMFkmld1qKHwPJkyLbLPfboqJPM53ys4xW8v+iBVw==}
