@@ -1,4 +1,3 @@
-/** @type {import("@types/prettier").Config} */
 module.exports = {
 	arrowParens: "always",
 	tabWidth: 4,
