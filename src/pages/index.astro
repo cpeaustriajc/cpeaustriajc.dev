@@ -1,6 +1,7 @@
 ---
 import Head from "@/components/Head.astro";
 import Posts from "@/components/Posts.astro";
+import Video from "@/components/Video.svelte";
 import DefaultLayout from "@/layouts/DefaultLayout.astro";
 ---
 
@@ -39,19 +40,23 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
 					</p>
 				</section>
 				<section>
-					<video width="1280" class="rounded border-2 border-gray-600" autoplay loop>
-						<source src="/delorean-time-travel.webm" type="video/webm" />
-						<source src="/delorean-time-travel.mp4" type="video/mp4" />
-
-						Sorry, your browser doesn't support embedded videos.
-					</video>
+					<Video
+						client:visible
+						src={{
+							mp4: "/delorean-time-travel.webm",
+							webm: "/delorean-time-travel.mp4",
+						}}
+					/>
 				</section>
 			</article>
 			<article class="flex flex-row gap-8 py-8 px-4 lg:w-9/12 lg:mx-auto">
-				<video width="1280" class="rounded border-2 border-gray-600" autoplay loop>
-					<source src="/knowledge-tai-lopez.webm" type="video/webm" />
-					<source src="/knowledge-tai-lopez.mp4" type="video/mp4" />
-				</video>
+				<Video
+					client:visible
+					src={{
+						mp4: "/knowledge-tai-lopez.mp4",
+						webm: "/knowledge-tai-lopez.mp4",
+					}}
+				/>
 				<div class="max-w-prose">
 					<h2 class="text-4xl my-8">Programming Philosophy 🗿</h2>
 					<p class="text-2xl">
@@ -93,10 +98,14 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
 						</p>
 					</div>
 				</section>
-				<video width="1280" class="rounded border-2 border-gray-600" autoplay loop>
-					<source src="/miles-morales-spider-man.webm" type="video/webm" />
-					<source src="/miles-morales-spider-man.mp4" type="video/mp4" />
-				</video>
+
+				<Video
+					client:visible
+					src={{
+						mp4: "/miles-morales-spider-man.webm",
+						webm: "/miles-morales-spider-man.mp4",
+					}}
+				/>
 			</article>
 
 			<article class="py-8 align-middle px-4 lg:w-9/12 lg:mx-auto">
