@@ -1,8 +1,8 @@
 ---
 import Head from "@/components/Head.astro";
-import { Picture } from "@astrojs/image/components";
 import type { Frontmatter as MarkdownContent } from "@/components/Posts.astro";
 import DefaultLayout from "@/layouts/DefaultLayout.astro";
+import { Picture } from "@astrojs/image/components";
 
 interface MarkdownContentProps {
 	content: MarkdownContent;
@@ -15,27 +15,29 @@ const { content } = Astro.props as MarkdownContentProps;
 	<Head slot="head">
 		<title>{content.title}</title>
 		<meta name="description" content={content.description} />
+		<meta property="og:title" content={content.title} />
+		<meta property="og:url" content={Astro.url} />
 	</Head>
-	<Fragment slot="content">
-		<article
-			class="prose md:prose-xl lg:prose-2xl dark:prose-invert dark:prose-a:text-blue-300 prose-a:text-blue-800"
-		>
-			<header>
-				<h1>{content.title}</h1>
-			</header>
-			<figure class="text-center my-2 md:my-4 lg:my-8">
-				<Picture
-					src={import(`../assets/${content.image_name}.jpeg`)}
-					widths={[360, 720, 1280]}
-					alt={content.image_alt}
-					aspectRatio="16:9"
-					class="[&>img]:rounded-lg"
-				/>
-				<figcaption class="my-2 text-center text-sm font-bold">
-					{content.image_alt}
-				</figcaption>
-			</figure>
-			<slot />
-		</article>
-	</Fragment>
+	<article
+		class="pt-64 mx-auto prose md:prose-xl lg:prose-2xl dark:prose-invert dark:prose-a:text-blue-300 prose-a:text-blue-800"
+		slot="content"
+	>
+		<header>
+			<h1>{content.title}</h1>
+		</header>
+		<figure class="text-center my-2 md:my-4 lg:my-8">
+			<Picture
+				src={import(`../assets/${content.image_name}.jpeg`)}
+				sizes="(min-width: 50em) 360w, (min-width: 100em) 720w,"
+				widths={[360, 720, 1280]}
+				alt={content.image_alt}
+				aspectRatio="16:9"
+				class="[&>img]:rounded-lg"
+			/>
+			<figcaption class="text-center text-xs font-bold">
+				{content.image_alt}
+			</figcaption>
+		</figure>
+		<slot />
+	</article>
 </DefaultLayout>

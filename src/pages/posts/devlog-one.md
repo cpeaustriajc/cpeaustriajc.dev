@@ -5,6 +5,7 @@ description:
     This is the first entry of my devlog series, this is for me to retain my knowledge about what I
     learned about programming, I wanna do a weekly series of this if possible.
 date: Aug 16, 2022
+topic: devlog
 image_name: devlog-1
 image_alt:
     Sometimes, you know what you are doing as a developer, sometimes you feel like the stupidest
@@ -30,7 +31,9 @@ for people to track their progress on the shows that they are watching but I wan
 be more than just animes, I wanted it to cover different genres of media like reality shows, etc.
 
 But instead of, finishing the project like a normal programmer, I decided to play with other
-technologies, and using the project as a way to test these tech.
+technologies, and using the project as a way to test these tech.\
+
+This is one of the few
 
 ## References:
 

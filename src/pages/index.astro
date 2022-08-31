@@ -13,72 +13,104 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
 		/>
 	</Head>
 	<Fragment slot="content">
-		<article class="prose md:prose-lg lg:prose-xl dark:prose-invert">
-			<h1>Hey There!</h1>
-
-			<header class="flex flex-col md:flex-row md:justify-between">
-				<section class="self-center text-center md:text-start">
-					<p>My name is <strong>John Carlo B. Austria</strong></p>
-					<p>I am a <strong>Programmer</strong></p>
-				</section>
+		<article class="space-y-64">
+			<header
+				class="min-h-screen bg-[url('/graph-paper.svg')] bg-opacity-5 border border-neutral-400 dark:border-neutral-800"
+			>
+				<h1 class="text-5xl pt-16 font-normal text-center align-middle leading-10">
+					<span class="text-xl">My name is</span>
+					<br />
+					<strong>John Carlo B. Austria</strong><br />
+					<span class="text-xl">and I am a</span>
+					<br />
+					<strong>Programmer</strong>
+				</h1>
 			</header>
-			<p>
-				I started programming back in 2017 when messing around with game's overall graphics
-				by modding as much as I can and implementing shaders to make it look good and add
-				fancy effects.
-			</p>
 
-			<p>Nowadays, I do frontend development as I love to make good looking apps.</p>
-
-			<p>
-				My main philosophy about programming is to make <strong
-					>programming as simple as possible
-				</strong>, The computer can only understand Ones and Zeros, there shouldn't be any
-				kind of complex system or design that is working under the hood of a program that
-				will make it harder than it is for the computer to understand.
-			</p>
-
-			<section class="not-prose flex flex-row justify-between items-center">
-				<h2 class="text-5xl font-bold">About</h2>
-				<a
-					href="/about"
-					class="dark:hover:text-blue-300 transition-colors decoration-none ease-out duration-300"
-					>See more &rightarrow;</a
-				>
-			</section>
-			<p>
-				I am a student in Pamantasan ng Lungsod ng San Pablo that is passionate about
-				programming.
-			</p>
-			<p>
-				I am currently studying and taking a Bachelor's of Science in Computer Engineering
-				(BSCpE). I am really fascinated about computers, the amount of things that you can
-				do are almost limitless and I am always fascinated by the fact that these are only
-				just a bunch of switches that turn on and off!
-			</p>
-			<p>
-				Even though we only understand the basic components of them, we still need people to
-				understand the underlying parts of it. This is where my college specialization
-				shines.
-			</p>
-			<p>
-				I love trying out different kinds of technologies and what are their limits and what
-				can I do with them.
-			</p>
-
-			<article class="not-prose py-8 flex flex-row items-center justify-between align-middle">
-				<section>
-					<h2 class="text-5xl font-bold">Blog</h2>
+			<article
+				class="flex flex-col-reverse md:flex-row my-1 py-8 align-middle px-4 lg:w-9/12 lg:mx-auto"
+			>
+				<section class="max-w-prose">
+					<h2 class="text-4xl my-8">My Programming History 🕐</h2>
+					<p class="text-2xl">
+						I started programming back in 2017 when messing around with game's overall
+						graphics by modding as much as I can and implementing shaders to make it
+						look good and add fancy effects.
+					</p>
 				</section>
 				<section>
-					<a
-						href="/blog"
-						class="dark:text-white dark:hover:text-blue-300 transition-colors ease-out duration-300"
-						>See more &RightArrow;</a
-					>
+					<video width="1280" class="rounded border-2 border-gray-600" autoplay loop>
+						<source src="/delorean-time-travel.webm" type="video/webm" />
+						<source src="/delorean-time-travel.mp4" type="video/mp4" />
+
+						Sorry, your browser doesn't support embedded videos.
+					</video>
+				</section>
+			</article>
+			<article class="flex flex-row gap-8 py-8 px-4 lg:w-9/12 lg:mx-auto">
+				<video width="1280" class="rounded border-2 border-gray-600" autoplay loop>
+					<source src="/knowledge-tai-lopez.webm" type="video/webm" />
+					<source src="/knowledge-tai-lopez.mp4" type="video/mp4" />
+				</video>
+				<div class="max-w-prose">
+					<h2 class="text-4xl my-8">Programming Philosophy 🗿</h2>
+					<p class="text-2xl">
+						My main philosophy about programming is to make <strong
+							>programming as simple as possible
+						</strong>, The computer can only understand Ones and Zeros, there shouldn't
+						be any kind of complex system or design that is working under the hood of a
+						program that will make it harder than it is for the computer to understand.
+					</p>
+				</div>
+			</article>
+
+			<article class="flex flex-row gap-8 py-8 align-middle px-4 lg:w-9/12 lg:mx-auto">
+				<section class="max-w-prose">
+					<div class="flex items-center justify-between">
+						<h2 class="text-4xl my-8 font-bold">About</h2>
+					</div>
+					<div class="space-y-2">
+						<p>
+							I am a student in Pamantasan ng Lungsod ng San Pablo that is passionate
+							about programming.
+						</p>
+
+						<p>
+							I am currently studying and taking a Bachelor's of Science in Computer
+							Engineering (BSCpE). I am really fascinated about computers, the amount
+							of things that you can do are almost limitless and I am always
+							fascinated by the fact that these are only just a bunch of switches that
+							turn on and off!
+						</p>
+						<p>
+							Even though we only understand the basic components of them, we still
+							need people to understand the underlying parts of it. This is where my
+							college specialization shines.
+						</p>
+						<p>
+							I love trying out different kinds of technologies and what are their
+							limits and what can I do with them.
+						</p>
+					</div>
+				</section>
+				<video width="1280" class="rounded border-2 border-gray-600" autoplay loop>
+					<source src="/miles-morales-spider-man.webm" type="video/webm" />
+					<source src="/miles-morales-spider-man.mp4" type="video/mp4" />
+				</video>
+			</article>
+
+			<article class="py-8 align-middle px-4 lg:w-9/12 lg:mx-auto">
+				<section class="flex flex-row justify-between">
+					<div>
+						<h2 class="text-4xl font-bold">Blog</h2>
+					</div>
+				</section>
+				<section>
+					<ul class="grid grid-cols-1 md:grid-cols-2 py-4 gap-4 list-none">
+						<Posts />
+					</ul>
 				</section>
 			</article>
 		</article>
-		<Posts />
 	</Fragment>
 </DefaultLayout>

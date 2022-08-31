@@ -1,6 +1,6 @@
 ---
-import DefaultLayout from "@/layouts/DefaultLayout.astro";
 import Head from "@/components/Head.astro";
+import DefaultLayout from "@/layouts/DefaultLayout.astro";
 ---
 
 <DefaultLayout>
@@ -11,112 +11,110 @@ import Head from "@/components/Head.astro";
 			content="John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines; About section"
 		/>
 	</Head>
-	<Fragment slot="content">
-		<article class="prose md:prose-lg lg:prose-xl dark:prose-invert dark:prose-a:text-blue-300">
-			<h1>About</h1>
-			<p>A little bit about me! Here you can find my biography and why I love tech.</p>
+	<article
+		class="mx-auto prose md:prose-lg lg:prose-xl dark:prose-invert dark:prose-a:text-blue-300"
+		slot="content"
+	>
+		<h1>About</h1>
+		<p>A little bit about me! Here you can find my biography and why I love tech.</p>
 
-			<h1>Links</h1>
+		<h1>Links</h1>
 
-			<p>You can find me in the following links below:</p>
-			<ul>
-				<li>
-					Github: <a href="https://github.com/jaycedotbin" rel="noreferrer"
-						>@jaycedotbin
-					</a>
-				</li>
-				<li>
-					Email: <a href="mailto:johncarloaustria@proton.me" rel="noreferrer"
-						>johncarloaustria@proton.me
-					</a>
-				</li>
-			</ul>
+		<p>You can find me in the following links below:</p>
+		<ul>
+			<li>
+				Github: <a href="https://github.com/jaycedotbin" rel="noreferrer">@jaycedotbin</a>
+			</li>
+			<li>
+				Email: <a href="mailto:johncarloaustria@proton.me" rel="noreferrer"
+					>johncarloaustria@proton.me
+				</a>
+			</li>
+		</ul>
 
-			<h2>Why I love tech</h2>
+		<h2>Why I love tech</h2>
 
-			<p>
-				I am a student in Pamantasan ng Lungsod ng San Pablo that is passionate about
-				programming.
-			</p>
+		<p>
+			I am a student in Pamantasan ng Lungsod ng San Pablo that is passionate about
+			programming.
+		</p>
 
-			<p>
-				I am currently studying and taking a Bachelor's of Science in Computer Engineering
-				(BSCpE). I am really fascinated about computers, the amount of things that you can
-				do are almost limitless and I am always fascinated by the fact that these are only
-				just a bunch of switches that turn on and off!
-			</p>
-			<p>
-				Even though we only understand the basic components of them, we still need people to
-				understand the underlying parts of it. This is where my college specialization
-				shines.
-			</p>
+		<p>
+			I am currently studying and taking a Bachelor's of Science in Computer Engineering
+			(BSCpE). I am really fascinated about computers, the amount of things that you can do
+			are almost limitless and I am always fascinated by the fact that these are only just a
+			bunch of switches that turn on and off!
+		</p>
+		<p>
+			Even though we only understand the basic components of them, we still need people to
+			understand the underlying parts of it. This is where my college specialization shines.
+		</p>
 
-			<p>
-				I love trying out different kinds of technologies and what are their limits and what
-				can I do with them.
-			</p>
+		<p>
+			I love trying out different kinds of technologies and what are their limits and what can
+			I do with them.
+		</p>
 
-			<h2>My Tech Stacks</h2>
+		<h2>My Tech Stacks</h2>
 
-			<p>
-				When building something, I like to get something up as quick as possible. The reason
-				for this, is it is hard to get something up and running, that's why I don't want a
-				certain kind of technology to be blocking my development workflow.
-			</p>
+		<p>
+			When building something, I like to get something up as quick as possible. The reason for
+			this, is it is hard to get something up and running, that's why I don't want a certain
+			kind of technology to be blocking my development workflow.
+		</p>
 
-			<h3>Frontend Frameworks</h3>
+		<h3>Frontend Frameworks</h3>
 
-			<p>
-				I use two frontend for building apps, React is the one that I have the most
-				experience with, Svelte is what I am considering to build my future apps with.
-			</p>
+		<p>
+			I use two frontend for building apps, React is the one that I have the most experience
+			with, Svelte is what I am considering to build my future apps with.
+		</p>
 
-			<ul>
-				<li>
-					<article>
-						<h4>React</h4>
-						<p>Frontend Framework where I have the most experience with.</p>
-					</article>
-				</li>
-				<li>
-					<article>
-						<h4>Svelte</h4>
-						<p>
-							Frontend Framework that is relatively new but I am very much interested
-							to work on, it's amazing!
-						</p>
-					</article>
-				</li>
-			</ul>
-
-			<h3>CSS Frameworks</h3>
-
-			<p>
-				I use tailwind as my main utility css framework, I don't write much plain css as
-				much ever since tailwind released, I can style my webpages really fast by just using
-				utility classes without leaving my HTML and that is important to me.
-			</p>
-
-			<p>
-				I have also used other CSS-IN-JS frameworks too, but I prefer native css or the one
-				that is builtin in the framework like the one in svelte
-			</p>
-			<ul>
-				<li>
-					<h4>Tailwind CSS</h4>
+		<ul>
+			<li>
+				<article>
+					<h4>React</h4>
+					<p>Frontend Framework where I have the most experience with.</p>
+				</article>
+			</li>
+			<li>
+				<article>
+					<h4>Svelte</h4>
 					<p>
-						My main CSS framework, with utility first in mind, I never have to leave my
-						HTML and keep writing HTML and my JavaScript logic in a single file!
+						Frontend Framework that is relatively new but I am very much interested to
+						work on, it's amazing!
 					</p>
-				</li>
-				<li>
-					<h4>Styled Components</h4>
-					<p>
-						I sometimes use this in my React apps, it complements React really well
-						being a component driven framework!
-					</p>
-				</li>
-			</ul>
-		</article>
-	</Fragment>
+				</article>
+			</li>
+		</ul>
+
+		<h3>CSS Frameworks</h3>
+
+		<p>
+			I use tailwind as my main utility css framework, I don't write much plain css as much
+			ever since tailwind released, I can style my webpages really fast by just using utility
+			classes without leaving my HTML and that is important to me.
+		</p>
+
+		<p>
+			I have also used other CSS-IN-JS frameworks too, but I prefer native css or the one that
+			is builtin in the framework like the one in svelte
+		</p>
+		<ul>
+			<li>
+				<h4>Tailwind CSS</h4>
+				<p>
+					My main CSS framework, with utility first in mind, I never have to leave my HTML
+					and keep writing HTML and my JavaScript logic in a single file!
+				</p>
+			</li>
+			<li>
+				<h4>Styled Components</h4>
+				<p>
+					I sometimes use this in my React apps, it complements React really well being a
+					component driven framework!
+				</p>
+			</li>
+		</ul>
+	</article>
 </DefaultLayout>
