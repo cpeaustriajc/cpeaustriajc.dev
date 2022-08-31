@@ -16,7 +16,7 @@ const posts = Astro.url.pathname !== "/blog" ? response.slice(0, 4) : response;
 
 {
 	posts.map((post) => (
-		<li class="border-2 border-transparent hover:border-sky-800 dark:hover:border-blue-400 rounded-md ease-out transition ">
+		<li class="rounded-md border-2 border-transparent transition ease-out hover:border-sky-800 dark:hover:border-blue-400 ">
 			<a href={post.url}>
 				<figure class="rounded bg-slate-100 dark:bg-neutral-800">
 					<Image
@@ -31,7 +31,7 @@ const posts = Astro.url.pathname !== "/blog" ? response.slice(0, 4) : response;
 						<h3 class="text-2xl font-bold">{post.frontmatter.title}</h3>
 					</header>
 					<figcaption class="p-4">
-						<p class="line-clamp-3 max-w-prose overflow-hidden">
+						<p class="max-w-prose overflow-hidden line-clamp-3">
 							{post.frontmatter.description}
 						</p>
 					</figcaption>

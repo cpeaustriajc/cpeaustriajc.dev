@@ -23,7 +23,7 @@ const posts = await Astro.glob<Frontmatter>("../pages/posts/*.md");
 				{
 					posts.map((post) => (
 						<li>
-							<button class="rounded-full bg-neutral-800 hover:bg-neutral-700 active:scale-95 transition ease-in px-2 py-1">
+							<button class="rounded-full bg-neutral-800 px-2 py-1 transition ease-in hover:bg-neutral-700 active:scale-95">
 								{post.frontmatter.topic}
 							</button>
 						</li>
