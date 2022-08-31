@@ -5,6 +5,7 @@ specifiers:
   '@astrojs/sitemap': ^1.0.0
   '@astrojs/tailwind': ^1.0.0
   '@fontsource/inter': ^4.5.12
+  '@tailwindcss/line-clamp': ^0.4.0
   '@tailwindcss/typography': ^0.5.4
   astro: ^1.1.1
   prettier: ^2.7.1
@@ -21,6 +22,7 @@ devDependencies:
   '@astrojs/image': 0.3.7
   '@astrojs/sitemap': 1.0.0
   '@astrojs/tailwind': 1.0.0
+  '@tailwindcss/line-clamp': 0.4.0_tailwindcss@3.1.8
   '@tailwindcss/typography': 0.5.4_tailwindcss@3.1.8
   prettier: 2.7.1
   prettier-plugin-astro: 0.5.3
@@ -506,6 +508,14 @@ packages:
       '@proload/core': 0.3.2
       tsm: 2.2.2
     dev: false
+
+  /@tailwindcss/line-clamp/0.4.0_tailwindcss@3.1.8:
+    resolution: {integrity: sha512-HQZo6gfx1D0+DU3nWlNLD5iA6Ef4JAXh0LeD8lOGrJwEDBwwJNKQza6WoXhhY1uQrxOuU8ROxV7CqiQV4CoiLw==}
+    peerDependencies:
+      tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
+    dependencies:
+      tailwindcss: 3.1.8_postcss@8.4.16
+    dev: true
 
   /@tailwindcss/typography/0.5.4_tailwindcss@3.1.8:
     resolution: {integrity: sha512-QEdg40EmGvE7kKoDei8zr5sf4D1pIayHj4R31bH3lX8x2BtTiR+jNejYPOkhbmy3DXgkMF9jC8xqNiGFAuL9Sg==}
