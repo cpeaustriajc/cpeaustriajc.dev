@@ -10,6 +10,7 @@ image_name: devlog-1
 image_alt:
     Sometimes, you know what you are doing as a developer, sometimes you feel like the stupidest
     person in the planet
+draft: true
 ---
 
 Being able to start a project and finish it when you are a beginner is tough, especially in web

@@ -8,6 +8,7 @@ date: Aug 4, 2022
 topic: astro
 image_name: astro
 image_alt: The Banner for Astro, a Static Site Generator
+draft: false
 ---
 
 ~~As of this writing, Astro has finally reached it's release candidate stage and will probably have

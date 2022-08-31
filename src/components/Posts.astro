@@ -7,6 +7,7 @@ export interface Frontmatter {
 	topic: string;
 	image_name: string;
 	image_alt: string;
+	draft: boolean;
 }
 
 const response = await Astro.glob<Frontmatter>("../pages/posts/*.md");
@@ -31,7 +32,7 @@ const posts = Astro.url.pathname !== "/blog" ? response.slice(0, 4) : response;
 						<h3 class="text-2xl font-bold">{post.frontmatter.title}</h3>
 					</header>
 					<figcaption class="p-4">
-						<p class="max-w-prose overflow-hidden line-clamp-3">
+						<p class="line-clamp-3 max-w-prose overflow-hidden">
 							{post.frontmatter.description}
 						</p>
 					</figcaption>
