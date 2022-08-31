@@ -1,6 +1,5 @@
 import image from "@astrojs/image";
 import sitemap from "@astrojs/sitemap";
-import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
 import type { ViteUserConfig } from "astro/config";
 import { defineConfig } from "astro/config";
@@ -14,6 +13,6 @@ const viteUserConfig: ViteUserConfig = {
 // https://astro.build/config
 export default defineConfig({
 	site: "https://jaycedotbin.github.io",
-	integrations: [tailwind(), sitemap(), image(), svelte()],
+	integrations: [tailwind(), sitemap(), image()],
 	vite: viteUserConfig,
 });

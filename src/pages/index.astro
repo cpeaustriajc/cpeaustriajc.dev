@@ -1,8 +1,12 @@
 ---
 import Head from "@/components/Head.astro";
-import Posts from "@/components/Posts.astro";
-import Video from "@/components/Video.svelte";
+import Post from "@/components/Post.astro";
+import Video from "@/components/Video.astro";
 import DefaultLayout from "@/layouts/DefaultLayout.astro";
+import type { Frontmatter } from "@/types/frontmatter";
+
+const posts = await Astro.glob<Frontmatter>("../pages/posts/*.md");
+const nonDraftPosts = posts.filter((post) => !post.frontmatter.draft);
 ---
 
 <DefaultLayout>
@@ -14,7 +18,7 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
 		/>
 	</Head>
 	<Fragment slot="content">
-		<article class="lg:space-y-64">
+		<main class="lg:space-y-64">
 			<header
 				class="min-h-screen bg-[url('/graph-paper.svg')] bg-opacity-5 border border-neutral-400 dark:border-neutral-800"
 			>
@@ -28,36 +32,26 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
 				</h1>
 			</header>
 
-			<article
-				class="flex flex-col-reverse lg:flex-row my-1 py-8 align-middle px-4 lg:w-9/12 lg:mx-auto"
+			<section
+				class="flex flex-col gap-8 lg:flex-row-reverse my-1 py-8 align-middle px-4 lg:w-9/12 lg:mx-auto"
 			>
-				<section class="max-w-prose">
+				<figure>
+					<Video mpfour="/delorean-time-travel.webm" webm="/delorean-time-travel.mp4" />
+				</figure>
+				<article class="max-w-prose prose dark:prose-invert">
 					<h2 class="text-4xl my-8">My Programming History 🕐</h2>
 					<p class="text-2xl">
 						I started programming back in 2017 when messing around with game's overall
 						graphics by modding as much as I can and implementing shaders to make it
 						look good and add fancy effects.
 					</p>
-				</section>
-				<section>
-					<Video
-						client:visible
-						src={{
-							mp4: "/delorean-time-travel.webm",
-							webm: "/delorean-time-travel.mp4",
-						}}
-					/>
-				</section>
-			</article>
-			<article class="flex flex-col lg:flex-row gap-8 py-8 px-4 lg:w-9/12 lg:mx-auto">
-				<Video
-					client:visible
-					src={{
-						mp4: "/knowledge-tai-lopez.mp4",
-						webm: "/knowledge-tai-lopez.mp4",
-					}}
-				/>
-				<div class="max-w-prose">
+				</article>
+			</section>
+			<section class="flex flex-col lg:flex-row gap-8 py-8 px-4 lg:w-9/12 lg:mx-auto">
+				<figure>
+					<Video mpfour="/knowledge-tai-lopez.mp4" webm="/knowledge-tai-lopez.mp4" />
+				</figure>
+				<article class="max-w-prose prose dark:prose-invert">
 					<h2 class="text-4xl my-8">Programming Philosophy 🗿</h2>
 					<p class="text-2xl">
 						My main philosophy about programming is to make <strong
@@ -66,62 +60,51 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
 						be any kind of complex system or design that is working under the hood of a
 						program that will make it harder than it is for the computer to understand.
 					</p>
-				</div>
-			</article>
+				</article>
+			</section>
 
-			<article
-				class="flex flex-col-reverse lg:flex-row gap-8 py-8 align-middle px-4 lg:w-9/12 lg:mx-auto"
+			<section
+				class="flex flex-col-reverse lg:flex-row gap-8 py-8 items-center px-4 lg:w-9/12 lg:mx-auto"
 			>
-				<section class="max-w-prose">
-					<div class="flex items-center justify-between">
-						<h2 class="text-4xl my-8 font-bold">About</h2>
-					</div>
-					<div class="space-y-2">
-						<p>
-							I am a student in Pamantasan ng Lungsod ng San Pablo that is passionate
-							about programming.
-						</p>
+				<article class="max-w-prose prose dark:prose-invert">
+					<h2 class="text-4xl my-8 font-bold">About</h2>
+					<p>
+						I am a student in Pamantasan ng Lungsod ng San Pablo that is passionate
+						about programming.
+					</p>
 
-						<p>
-							I am currently studying and taking a Bachelor's of Science in Computer
-							Engineering (BSCpE). I am really fascinated about computers, the amount
-							of things that you can do are almost limitless and I am always
-							fascinated by the fact that these are only just a bunch of switches that
-							turn on and off!
-						</p>
-						<p>
-							Even though we only understand the basic components of them, we still
-							need people to understand the underlying parts of it. This is where my
-							college specialization shines.
-						</p>
-						<p>
-							I love trying out different kinds of technologies and what are their
-							limits and what can I do with them.
-						</p>
-					</div>
-				</section>
+					<p>
+						I am currently studying and taking a Bachelor's of Science in Computer
+						Engineering (BSCpE). I am really fascinated about computers, the amount of
+						things that you can do are almost limitless and I am always fascinated by
+						the fact that these are only just a bunch of switches that turn on and off!
+					</p>
+					<p>
+						Even though we only understand the basic components of them, we still need
+						people to understand the underlying parts of it. This is where my college
+						specialization shines.
+					</p>
+					<p>
+						I love trying out different kinds of technologies and what are their limits
+						and what can I do with them.
+					</p>
+				</article>
+				<figure>
+					<Video
+						mpfour="/miles-morales-spider-man.webm"
+						webm="/miles-morales-spider-man.mp4"
+					/>
+				</figure>
+			</section>
 
-				<Video
-					client:visible
-					src={{
-						mp4: "/miles-morales-spider-man.webm",
-						webm: "/miles-morales-spider-man.mp4",
-					}}
-				/>
-			</article>
-
-			<article class="py-8 align-middle px-4 lg:w-9/12 lg:mx-auto">
-				<section class="flex flex-row justify-between">
-					<div>
-						<h2 class="text-4xl font-bold">Blog</h2>
-					</div>
-				</section>
-				<section>
-					<ul class="grid grid-cols-1 md:grid-cols-2 py-4 gap-4 list-none">
-						<Posts />
-					</ul>
-				</section>
-			</article>
-		</article>
+			<section class="py-8 align-middle px-4 lg:w-9/12 lg:mx-auto">
+				<header>
+					<h2 class="text-4xl font-bold">Blog</h2>
+				</header>
+				<ul class="grid grid-cols-1 md:grid-cols-2 py-4 gap-4 list-none">
+					{nonDraftPosts.map((post) => <Post post={post} />)}
+				</ul>
+			</section>
+		</main>
 	</Fragment>
 </DefaultLayout>

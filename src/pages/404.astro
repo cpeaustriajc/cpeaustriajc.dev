@@ -1,6 +1,7 @@
 ---
 import Head from "@/components/Head.astro";
 import DefaultLayout from "@/layouts/DefaultLayout.astro";
+import { Image } from "@astrojs/image/components";
 ---
 
 <DefaultLayout>
@@ -11,7 +12,15 @@ import DefaultLayout from "@/layouts/DefaultLayout.astro";
 			content="Uh oh! It seems you have visited a link in my website that does not exist, please go back as there is nothing to see here!"
 		/>
 	</Head>
-	<Fragment slot="content">
-		<h1>404 - Content not Found</h1>
-	</Fragment>
+	<main
+		class="min-h-screen flex flex-col items-center justify-center bg-[url('/graph-paper.svg')]"
+		slot="content"
+	>
+		<Image
+			src={import("../assets/cat-loading.jpg")}
+			aspectRatio="16:9"
+			class="rounded-md my-8 dark:border-neutral-700 border-neutral-200 border-2"
+		/>
+		<h1 class="text-5xl font-bold dark:text-neutral-50">404 - Content not Found</h1>
+	</main>
 </DefaultLayout>
