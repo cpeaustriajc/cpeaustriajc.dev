@@ -24,6 +24,7 @@
 		"astro": "^1.1.1"
 	},
 	"devDependencies": {
+		"@astrojs/image": "^0.3.7",
 		"@astrojs/sitemap": "^1.0.0",
 		"@astrojs/tailwind": "^1.0.0",
 		"@tailwindcss/typography": "^0.5.4",

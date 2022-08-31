@@ -3,7 +3,8 @@
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["src/*"]
-		}
+		},
+		"types": ["@astrojs/image/client"]
 	},
 	"extends": "astro/tsconfigs/strict"
 }

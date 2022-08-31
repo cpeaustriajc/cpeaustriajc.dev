@@ -1,9 +1,10 @@
 ---
+import { Image } from "@astrojs/image/components";
 export interface Frontmatter {
 	description: string;
 	title: string;
 	date: Date;
-	image_url: string;
+	image_name: string;
 	image_alt: string;
 }
 
@@ -18,8 +19,9 @@ const posts = Astro.url.pathname !== "/blog" ? response.slice(0, 5) : response;
 			<li class="my-4">
 				<figure class="h-fit max-w-[640px] rounded-md bg-slate-100 p-4 dark:bg-slate-900">
 					<h3 class="py-4 text-2xl font-bold">{post.frontmatter.title}</h3>
-					<img
-						src={post.frontmatter.image_url}
+					<Image
+						src={import(`../assets/${post.frontmatter.image_name}.jpeg`)}
+						format="webp"
 						alt={post.frontmatter.image_alt}
 						width={1280}
 						height={720}
