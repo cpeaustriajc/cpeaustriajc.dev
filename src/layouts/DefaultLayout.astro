@@ -1,13 +1,13 @@
 ---
-import "@fontsource/inter";
-import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
+import Header from "@/components/Header.astro";
+import "@fontsource/inter";
 ---
 
 <html dir="ltr" lang="en">
 	<slot name="head" />
 
-	<body class="font-sans antialiased dark:bg-gray-800 dark:text-gray-50">
+	<body class="font-sans antialiased dark:bg-neutral-900 dark:text-gray-50">
 		<Header />
 		<main class="px-4 lg:w-1/2 lg:mx-auto">
 			<slot name="content" />

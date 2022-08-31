@@ -13,24 +13,30 @@ const response = await Astro.glob<Frontmatter>("../pages/posts/*.md");
 const posts = Astro.url.pathname !== "/blog" ? response.slice(0, 5) : response;
 ---
 
-<ul class="py-4 px-0 list-none">
+<ul class="grid grid-cols-1 md:grid-cols-2 py-4 gap-4 list-none">
 	{
 		posts.map((post) => (
-			<li class="my-4">
-				<figure class="h-fit max-w-[640px] rounded-md bg-slate-100 p-4 dark:bg-slate-900">
-					<h3 class="py-4 text-2xl font-bold">{post.frontmatter.title}</h3>
-					<Image
-						src={import(`../assets/${post.frontmatter.image_name}.jpeg`)}
-						format="webp"
-						alt={post.frontmatter.image_alt}
-						width={1280}
-						height={720}
-					/>
-					<figcaption class="py-4">{post.frontmatter.description}</figcaption>
-					<a href={post.url} class="text-blue-800 underline dark:text-blue-300">
-						See more &RightArrow;
-					</a>
-				</figure>
+			<li class="border-2 border-transparent hover:border-blue-500 rounded-md ease-out transition ">
+				<a href={post.url}>
+					<figure class="rounded bg-slate-100 dark:bg-neutral-800">
+						<Image
+							src={import(`../assets/${post.frontmatter.image_name}.jpeg`)}
+							format="webp"
+							alt={post.frontmatter.image_alt}
+							width={1280}
+							aspectRatio="16:9"
+							class="rounded object-cover"
+						/>
+						<header class="p-4">
+							<h3 class="text-2xl font-bold">{post.frontmatter.title}</h3>
+						</header>
+						<figcaption class="p-4">
+							<p class="line-clamp-3 max-w-prose overflow-hidden">
+								{post.frontmatter.description}
+							</p>
+						</figcaption>
+					</figure>
+				</a>
 			</li>
 		))
 	}
