@@ -13,10 +13,12 @@ export interface Frontmatter {
 const response = await Astro.glob<Frontmatter>("../pages/posts/*.md");
 
 const posts = Astro.url.pathname !== "/blog" ? response.slice(0, 4) : response;
+
+const nonDraftPosts = posts.filter((post) => !post.frontmatter.draft);
 ---
 
 {
-	posts.map((post) => (
+	nonDraftPosts.map((post) => (
 		<li class="rounded-md border-2 border-transparent transition ease-out hover:border-sky-800 dark:hover:border-blue-400 ">
 			<a href={post.url}>
 				<figure class="rounded bg-slate-100 dark:bg-neutral-800">
