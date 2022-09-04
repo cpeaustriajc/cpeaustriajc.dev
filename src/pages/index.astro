@@ -22,7 +22,7 @@ const nonDraftPosts = posts.filter((post) => !post.frontmatter.draft);
 			<header
 				class="min-h-screen bg-[url('/graph-paper.svg')] bg-opacity-5 border border-neutral-400 dark:border-neutral-800"
 			>
-				<h1 class="text-5xl pt-16 font-normal text-center align-middle leading-10">
+				<h1 class="text-5xl pt-16 font-normal text-center leading-10">
 					<span class="text-xl">My name is</span>
 					<br />
 					<strong>John Carlo B. Austria</strong><br />
@@ -33,7 +33,7 @@ const nonDraftPosts = posts.filter((post) => !post.frontmatter.draft);
 			</header>
 
 			<section
-				class="flex flex-col gap-8 lg:flex-row-reverse my-1 py-8 align-middle px-4 lg:w-9/12 lg:mx-auto"
+				class="flex flex-col gap-8 lg:flex-row-reverse my-1 py-8 px-4 lg:w-9/12 lg:mx-auto"
 			>
 				<figure>
 					<Video mpfour="/delorean-time-travel.webm" webm="/delorean-time-travel.mp4" />
@@ -63,9 +63,7 @@ const nonDraftPosts = posts.filter((post) => !post.frontmatter.draft);
 				</article>
 			</section>
 
-			<section
-				class="flex flex-col-reverse lg:flex-row gap-8 py-8 items-center px-4 lg:w-9/12 lg:mx-auto"
-			>
+			<section class="flex flex-col-reverse lg:flex-row gap-8 py-8 px-4 lg:w-9/12 lg:mx-auto">
 				<article class="max-w-prose prose dark:prose-invert">
 					<h2 class="text-4xl my-8 font-bold">About</h2>
 					<p>
@@ -97,13 +95,36 @@ const nonDraftPosts = posts.filter((post) => !post.frontmatter.draft);
 				</figure>
 			</section>
 
-			<section class="py-8 align-middle px-4 lg:w-9/12 lg:mx-auto">
-				<header>
-					<h2 class="text-4xl font-bold">Blog</h2>
-				</header>
-				<ul class="grid grid-cols-1 md:grid-cols-2 py-4 gap-4 list-none">
-					{nonDraftPosts.map((post) => <Post post={post} />)}
-				</ul>
+			<section class="grid grid-cols-1 lg:grid-cols-2 lg:w-9/12 lg:mx-auto px-4 py-8">
+				<section class="flex flex-col-reverse col-span-2 lg:flex-row gap-8 py-8">
+					<article class="max-w-prose prose dark:prose-invert">
+						<h2 class="text-4xl font-bold">Blog</h2>
+
+						<p>
+							This is where I share my thoughts, devlogs, opinions, philosophy, etc.
+						</p>
+						<p>
+							I learn a lot of things everyday, to retain my knowledge, I need to keep
+							it somewhere where I can read it sometime.
+						</p>
+						<p>
+							So what better place to store all of my personal learnings? Here in my
+							personal site! I use Astro in it's full potential in this blog page!
+						</p>
+					</article>
+
+					<figure>
+						<Video
+							mpfour="/konosuba-s2-the-magic-lie-detector.mp4"
+							webm="/konosuba-s2-the-magic-lie-detector.webm"
+						/>
+					</figure>
+				</section>
+				<section class="col-span-2">
+					<ul class="grid grid-cols-1 md:grid-cols-2 py-4 gap-4 list-none">
+						{nonDraftPosts.map((post) => <Post post={post} />)}
+					</ul>
+				</section>
 			</section>
 		</main>
 	</Fragment>
