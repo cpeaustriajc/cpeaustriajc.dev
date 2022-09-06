@@ -21,18 +21,6 @@ const nonDraftPosts = posts.filter((post) => !post.frontmatter.draft);
 		<article class="lg:w-9/12 mx-8 lg:mx-auto">
 			<h1 class="text-5xl font-bold my-8">Blog Posts</h1>
 			<h2 class="text-4xl font-bold my-4">Topics</h2>
-			<!-- Not ready! -->
-			<!-- <ul class="flex flex-row gap-1 my-4 flex-wrap">
-				{
-					nonDraftPosts.map((post) => (
-						<li>
-							<button class="rounded-full bg-neutral-800 px-2 py-1 transition ease-in hover:bg-neutral-700 active:scale-95">
-								{post.frontmatter.topic}
-							</button>
-						</li>
-					))
-				}
-			</ul> -->
 			<ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 				{nonDraftPosts.map((post) => <Post post={post} />)}
 			</ul>

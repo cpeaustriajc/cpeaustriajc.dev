@@ -4,8 +4,11 @@ title: Devlog No. 1 — Node.js
 description:
     This is the first entry of my devlog series, this is for me to retain my knowledge about what I
     learned about programming, I wanna do a weekly series of this if possible.
-date: Aug 16, 2022
-topic: devlog
+date:
+    format: 2022-06-16
+    content: Aug 16, 2022
+topics:
+    - devlog
 image_name: devlog-1
 image_alt:
     Sometimes, you know what you are doing as a developer, sometimes you feel like the stupidest

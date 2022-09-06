@@ -4,8 +4,13 @@ title: Astro Is Amazing!
 description:
     Building my personal site with Astro is so good! I would recommend Astro if you want to rebuild
     your personal site!
-date: Aug 4, 2022
-topic: astro
+date:
+    format: 2022-04-06
+    content: Aug 4, 2022
+topics:
+    - astro
+    - webdev
+    - technology
 image_name: astro
 image_alt: The Banner for Astro, a Static Site Generator
 draft: false

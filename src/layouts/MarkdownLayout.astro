@@ -21,7 +21,6 @@ const { src } = await getImage({
 <DefaultLayout>
 	<Head slot="head">
 		<title>{content.title}</title>
-		<link rel="preload" as="image" href={`${Astro.url.origin}${src}`} />
 		<meta name="description" content={content.description} />
 		<meta property="og:title" content={content.title} />
 		<meta property="og:url" content={Astro.url.href} />
@@ -41,6 +40,23 @@ const { src } = await getImage({
 	>
 		<header>
 			<h1>{content.title}</h1>
+			<p>
+				Written:
+				<time
+					class="font-bold dark:text-neutral-50 text-neutral-900"
+					datetime={content.date.format}
+					>{content.date.content}
+				</time>
+			</p>
+			<ul class="not-prose flex flex-row list-none gap-2" aria-label="Topics">
+				{
+					content.topics.map((topic) => (
+						<li class="place-self-start rounded-full bg-neutral-800 px-2 py-1 text-xs before:content-['•']">
+							{topic}
+						</li>
+					))
+				}
+			</ul>
 			<figure class="text-center my-2 md:my-4 lg:my-8">
 				<Picture
 					src={import(`../assets/${content.image_name}.jpeg`)}
