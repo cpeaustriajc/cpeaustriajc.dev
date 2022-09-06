@@ -10,7 +10,12 @@ interface MarkdownContentProps {
 }
 
 const { content } = Astro.props as MarkdownContentProps;
-const { src } = await getImage({ src: content.image_name, width: 1920, height: 1080 });
+const { src } = await getImage({
+	src: content.image_name,
+	width: 1920,
+	height: 1080,
+	format: "webp",
+});
 ---
 
 <DefaultLayout>
