@@ -17,9 +17,13 @@ import { Image } from "@astrojs/image/components";
 		slot="content"
 	>
 		<Image
-			src={import("../assets/cat-loading.jpg")}
+			src={import("../assets/cat-loading.jpeg")}
 			aspectRatio="16:9"
+			format="webp"
+			width={640}
+			height={360}
 			class="rounded-md my-8 dark:border-neutral-700 border-neutral-200 border-2"
+			alt="Cat does not understand where you want to go? Cat is not happy, cat wants to go back to the home page :<"
 		/>
 		<h1 class="text-5xl font-bold dark:text-neutral-50">404 - Content not Found</h1>
 	</main>

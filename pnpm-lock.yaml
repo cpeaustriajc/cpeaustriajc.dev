@@ -1,34 +1,32 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@astrojs/image': ^0.3.7
+  '@astrojs/image': ^0.5.0
   '@astrojs/sitemap': ^1.0.0
   '@astrojs/tailwind': ^1.0.0
   '@fontsource/inter': ^4.5.12
-  '@tailwindcss/line-clamp': ^0.4.0
-  '@tailwindcss/typography': ^0.5.4
-  astro: ^1.1.2
+  '@tailwindcss/line-clamp': ^0.4.2
+  '@tailwindcss/typography': ^0.5.7
+  astro: ^1.1.5
   prettier: ^2.7.1
   prettier-plugin-astro: ^0.5.4
   prettier-plugin-tailwindcss: ^0.1.13
-  svelte: ^3.46.4
   tailwindcss: ^3.1.8
   typescript: ^4.8.2
 
 dependencies:
   '@fontsource/inter': 4.5.12
-  astro: 1.1.2
+  astro: 1.1.5
 
 devDependencies:
-  '@astrojs/image': 0.3.7
+  '@astrojs/image': 0.5.0
   '@astrojs/sitemap': 1.0.0
   '@astrojs/tailwind': 1.0.0
-  '@tailwindcss/line-clamp': 0.4.0_tailwindcss@3.1.8
-  '@tailwindcss/typography': 0.5.4_tailwindcss@3.1.8
+  '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.1.8
+  '@tailwindcss/typography': 0.5.7_tailwindcss@3.1.8
   prettier: 2.7.1
   prettier-plugin-astro: 0.5.4
   prettier-plugin-tailwindcss: 0.1.13_prettier@2.7.1
-  svelte: 3.49.0
   tailwindcss: 3.1.8_postcss@8.4.16
   typescript: 4.8.2
 
@@ -45,15 +43,13 @@ packages:
   /@astrojs/compiler/0.23.4:
     resolution: {integrity: sha512-vNZIa5Tf5nOqBEGJvM6xyYBnGcz4MAp+bBPnyVI0UYRjsIWlP7RgMdCpRV0OOh5kgh00BoAypGv27kcoJCMVfA==}
 
-  /@astrojs/image/0.3.7:
-    resolution: {integrity: sha512-A6029ed1ZfhcaZJLnII0XCl29VzeFJp07VqelOGi3yyi7VAXREHZa3bT23V5YQt/goPwKac8gZn2/pgnYPea6Q==}
+  /@astrojs/image/0.5.0:
+    resolution: {integrity: sha512-sXY6jO0BtXSI8vyFmO6nw8QWropA1ur0rY/ZL0Tx3+u83vR3YYKJAEn05CJ4qXeu6yO0am0xbVA3vmf5fU+ImQ==}
     dependencies:
-      etag: 1.8.1
       image-size: 1.0.2
-      mrmime: 1.0.1
+      magic-string: 0.25.9
+      mime: 3.0.0
       sharp: 0.30.7
-      slash: 4.0.0
-      tiny-glob: 0.2.9
     dev: true
 
   /@astrojs/language-server/0.23.0:
@@ -511,22 +507,23 @@ packages:
       tsm: 2.2.2
     dev: false
 
-  /@tailwindcss/line-clamp/0.4.0_tailwindcss@3.1.8:
-    resolution: {integrity: sha512-HQZo6gfx1D0+DU3nWlNLD5iA6Ef4JAXh0LeD8lOGrJwEDBwwJNKQza6WoXhhY1uQrxOuU8ROxV7CqiQV4CoiLw==}
+  /@tailwindcss/line-clamp/0.4.2_tailwindcss@3.1.8:
+    resolution: {integrity: sha512-HFzAQuqYCjyy/SX9sLGB1lroPzmcnWv1FHkIpmypte10hptf4oPUfucryMKovZh2u0uiS9U5Ty3GghWfEJGwVw==}
     peerDependencies:
       tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
     dependencies:
       tailwindcss: 3.1.8_postcss@8.4.16
     dev: true
 
-  /@tailwindcss/typography/0.5.4_tailwindcss@3.1.8:
-    resolution: {integrity: sha512-QEdg40EmGvE7kKoDei8zr5sf4D1pIayHj4R31bH3lX8x2BtTiR+jNejYPOkhbmy3DXgkMF9jC8xqNiGFAuL9Sg==}
+  /@tailwindcss/typography/0.5.7_tailwindcss@3.1.8:
+    resolution: {integrity: sha512-JTTSTrgZfp6Ki4svhPA4mkd9nmQ/j9EfE7SbHJ1cLtthKkpW2OxsFXzSmxbhYbEkfNIyAyhle5p4SYyKRbz/jg==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
     dependencies:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
+      postcss-selector-parser: 6.0.10
       tailwindcss: 3.1.8_postcss@8.4.16
     dev: true
 
@@ -718,8 +715,8 @@ packages:
       tslib: 2.4.0
     dev: false
 
-  /astro/1.1.2:
-    resolution: {integrity: sha512-btawnJ+MwkJbjLO0uSMrlYl71jsa6ljyXEXeeFitp9aqRo0sqH7JdTE0nh7MWsVMePXEvcJ88WOkEhW/FpRu/Q==}
+  /astro/1.1.5:
+    resolution: {integrity: sha512-V3uDGTHYDbrqDbCpziEgCv8uElow/Ae1LjGC7guTQTU3IXzcVbJPkIfx8uNDThQ6nZpSb38z9GsFtsNJ9A3OmQ==}
     engines: {node: ^14.18.0 || >=16.12.0, npm: '>=6.14.0'}
     hasBin: true
     dependencies:
@@ -736,7 +733,6 @@ packages:
       '@babel/types': 7.18.13
       '@proload/core': 0.3.2
       '@proload/plugin-tsm': 0.2.1_@proload+core@0.3.2
-      ast-types: 0.14.2
       boxen: 6.2.1
       ci-info: 3.3.2
       common-ancestor-path: 1.0.1
@@ -1403,11 +1399,6 @@ packages:
       '@types/unist': 2.0.6
     dev: false
 
-  /etag/1.8.1:
-    resolution: {integrity: sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==}
-    engines: {node: '>= 0.6'}
-    dev: true
-
   /execa/6.1.0:
     resolution: {integrity: sha512-QVWlX2e50heYJcCPG0iWtf8r0xjEYfz/OYLGDYH+IyjWezzPNxz63qNFOu0l4YftGWuizFVZHHs8PrLU5p2IDA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
@@ -1940,7 +1931,6 @@ packages:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}
     dependencies:
       sourcemap-codec: 1.4.8
-    dev: false
 
   /markdown-table/3.0.2:
     resolution: {integrity: sha512-y8j3a5/DkJCmS5x4dMCQL+OR0+2EAq3DOtio1COSHsmW2BGXnNCK3v12hJt1LrUz5iZH5g0LmuYOjDdI+czghA==}
@@ -2408,7 +2398,6 @@ packages:
     resolution: {integrity: sha512-jSCU7/VB1loIWBZe14aEYHU/+1UMEHoaO7qxCOVJOw9GgH72VAWppxNcjU+x9a2k3GSIBXNKxXQFqRvvZ7vr3A==}
     engines: {node: '>=10.0.0'}
     hasBin: true
-    dev: false
 
   /mimic-fn/2.1.0:
     resolution: {integrity: sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==}
@@ -2441,6 +2430,7 @@ packages:
   /mrmime/1.0.1:
     resolution: {integrity: sha512-hzzEagAgDyoU1Q6yg5uI+AorQgdvMCur3FcKf7NhMKWsaYg+RnbTyHRa/9IlLF9rf455MOCtcqqrQQ83pPP7Uw==}
     engines: {node: '>=10'}
+    dev: false
 
   /ms/2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
@@ -3133,6 +3123,7 @@ packages:
   /slash/4.0.0:
     resolution: {integrity: sha512-3dOsAHXXUkQTpOYcoAxLIorMTp4gIQr5IW3iVb7A7lFIp0VHhnynm9izx6TssdrIcVIESAlVjtnO2K8bg+Coew==}
     engines: {node: '>=12'}
+    dev: false
 
   /source-map-js/1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
@@ -3150,7 +3141,6 @@ packages:
 
   /sourcemap-codec/1.4.8:
     resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==}
-    dev: false
 
   /space-separated-tokens/2.0.1:
     resolution: {integrity: sha512-ekwEbFp5aqSPKaqeY1PGrlGQxPNaq+Cnx4+bE2D8sciBQrHpbwoBbawqTN2+6jPs9IdWxxiUcN0K2pkczD3zmw==}
@@ -3263,11 +3253,6 @@ packages:
   /supports-preserve-symlinks-flag/1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
-
-  /svelte/3.49.0:
-    resolution: {integrity: sha512-+lmjic1pApJWDfPCpUUTc1m8azDqYCG1JN9YEngrx/hUyIcFJo6VZhj0A1Ai0wqoHcEIuQy+e9tk+4uDgdtsFA==}
-    engines: {node: '>= 8'}
-    dev: true
 
   /synckit/0.7.3:
     resolution: {integrity: sha512-jNroMv7Juy+mJ/CHW5H6TzsLWpa1qck6sCHbkv8YTur+irSq2PjbvmGnm2gy14BUQ6jF33vyR4DPssHqmqsDQw==}
