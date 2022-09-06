@@ -11,7 +11,7 @@ interface MarkdownContentProps {
 
 const { content } = Astro.props as MarkdownContentProps;
 const { src } = await getImage({
-	src: content.image_name,
+	src: `../assets/${content.image_name}.jpeg`,
 	width: 1920,
 	height: 1080,
 	format: "jpeg",
@@ -24,14 +24,14 @@ const { src } = await getImage({
 		<meta name="description" content={content.description} />
 		<meta property="og:title" content={content.title} />
 		<meta property="og:url" content={Astro.url} />
-		<meta property="og:image" content={src} />
+		<meta property="og:image" content={`${src}`} />
 
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta property="twitter:domain" content="jaycedotbin.github.io" />
 		<meta property="twitter:url" content={Astro.url} />
 		<meta name="twitter:title" content={content.title} />
 		<meta name="twitter:description" content={content.description} />
-		<meta name="twitter:image" content={src} />
+		<meta name="twitter:image" content={`${src}`} />
 	</Head>
 	<article
 		class="mx-8 lg:mx-auto prose md:prose-xl lg:prose-2xl dark:prose-invert dark:prose-a:text-blue-300 prose-a:text-blue-800"
