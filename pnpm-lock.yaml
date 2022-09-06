@@ -1,13 +1,13 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@astrojs/image': ^0.5.0
+  '@astrojs/image': ^0.5.1
   '@astrojs/sitemap': ^1.0.0
   '@astrojs/tailwind': ^1.0.0
   '@fontsource/inter': ^4.5.12
   '@tailwindcss/line-clamp': ^0.4.2
   '@tailwindcss/typography': ^0.5.7
-  astro: ^1.1.5
+  astro: ^1.1.6
   prettier: ^2.7.1
   prettier-plugin-astro: ^0.5.4
   prettier-plugin-tailwindcss: ^0.1.13
@@ -17,10 +17,10 @@ specifiers:
 
 dependencies:
   '@fontsource/inter': 4.5.12
-  astro: 1.1.5
+  astro: 1.1.6
 
 devDependencies:
-  '@astrojs/image': 0.5.0
+  '@astrojs/image': 0.5.1
   '@astrojs/sitemap': 1.0.0
   '@astrojs/tailwind': 1.0.0
   '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.1.8
@@ -34,6 +34,10 @@ devDependencies:
 
 packages:
 
+  /@altano/tiny-async-pool/1.0.2:
+    resolution: {integrity: sha512-qQzaI0TBUPdpjZ3qo5b2ziQY9MSNpbziH2ZrE5lvtUZL+kn9GwVuVJwoOubaoNkeDB+rqEefnpu1k+oMpOCYiw==}
+    dev: true
+
   /@ampproject/remapping/2.2.0:
     resolution: {integrity: sha512-qRmjj8nj9qmLTQXXmaR1cck3UXSRMPrbsLJAasZpF+t3riI71BXed5ebIOYwQntykeZuhjsdweEc9BxH5Jc26w==}
     engines: {node: '>=6.0.0'}
@@ -45,9 +49,10 @@ packages:
   /@astrojs/compiler/0.23.4:
     resolution: {integrity: sha512-vNZIa5Tf5nOqBEGJvM6xyYBnGcz4MAp+bBPnyVI0UYRjsIWlP7RgMdCpRV0OOh5kgh00BoAypGv27kcoJCMVfA==}
 
-  /@astrojs/image/0.5.0:
-    resolution: {integrity: sha512-sXY6jO0BtXSI8vyFmO6nw8QWropA1ur0rY/ZL0Tx3+u83vR3YYKJAEn05CJ4qXeu6yO0am0xbVA3vmf5fU+ImQ==}
+  /@astrojs/image/0.5.1:
+    resolution: {integrity: sha512-xYslpD5l7B61ZcleY8lw55YsuWS1/Sq+sVjsfKbygh+INdDkUIe9JxU0qpr4io5m2WHvavnQDa4EtVC+TFpbdg==}
     dependencies:
+      '@altano/tiny-async-pool': 1.0.2
       image-size: 1.0.2
       magic-string: 0.25.9
       mime: 3.0.0
@@ -723,8 +728,8 @@ packages:
       tslib: 2.4.0
     dev: false
 
-  /astro/1.1.5:
-    resolution: {integrity: sha512-V3uDGTHYDbrqDbCpziEgCv8uElow/Ae1LjGC7guTQTU3IXzcVbJPkIfx8uNDThQ6nZpSb38z9GsFtsNJ9A3OmQ==}
+  /astro/1.1.6:
+    resolution: {integrity: sha512-rNV1VjO5tlqu5nSrvOJdAIxwUVaFOYtG/siopederG6xK2EjCvmFjFUGOBW+xVkQCeA7j3OfE+5CZ8Wa+ZrcOw==}
     engines: {node: ^14.18.0 || >=16.12.0, npm: '>=6.14.0'}
     hasBin: true
     dependencies:
