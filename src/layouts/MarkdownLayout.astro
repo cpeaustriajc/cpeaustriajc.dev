@@ -11,48 +11,52 @@ interface MarkdownContentProps {
 
 const { content } = Astro.props as MarkdownContentProps;
 const { src } = await getImage({
-	src: `../assets/${content.image_name}.jpeg`,
-	width: 1920,
-	height: 1080,
-	format: "avif",
+	src: `/assets/${content.image_name}.jpeg`,
+	width: 1200,
+	height: 630,
+	format: "jpeg",
 });
 ---
 
 <DefaultLayout>
 	<Head slot="head">
 		<title>{content.title}</title>
+		<link rel="preload" as="image" href={`${Astro.url.origin}${src}`} />
 		<meta name="description" content={content.description} />
 		<meta property="og:title" content={content.title} />
-		<meta property="og:url" content={Astro.url} />
+		<meta property="og:url" content={Astro.url.href} />
 		<meta property="og:image" content={`${Astro.url.origin}${src}`} />
 
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta property="twitter:domain" content="jaycedotbin.github.io" />
-		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:url" content={Astro.url.href} />
 		<meta name="twitter:title" content={content.title} />
 		<meta name="twitter:description" content={content.description} />
 		<meta name="twitter:image" content={`${Astro.url.origin}${src}`} />
 	</Head>
-	<article
+
+	<main
 		class="mx-8 lg:mx-auto prose md:prose-xl lg:prose-2xl dark:prose-invert dark:prose-a:text-blue-300 prose-a:text-blue-800"
 		slot="content"
 	>
 		<header>
 			<h1>{content.title}</h1>
+			<figure class="text-center my-2 md:my-4 lg:my-8">
+				<Picture
+					src={import(`../assets/${content.image_name}.jpeg`)}
+					sizes="(min-width: 50em) 360w, (min-width: 100em) 720w,"
+					widths={[360, 720, 1280]}
+					alt={content.image_alt}
+					aspectRatio="16:9"
+					class="[&>img]:rounded-lg"
+				/>
+				<figcaption class="text-center text-xs font-bold">
+					{content.image_alt}
+				</figcaption>
+			</figure>
 		</header>
-		<figure class="text-center my-2 md:my-4 lg:my-8">
-			<Picture
-				src={import(`../assets/${content.image_name}.jpeg`)}
-				sizes="(min-width: 50em) 360w, (min-width: 100em) 720w,"
-				widths={[360, 720, 1280]}
-				alt={content.image_alt}
-				aspectRatio="16:9"
-				class="[&>img]:rounded-lg"
-			/>
-			<figcaption class="text-center text-xs font-bold">
-				{content.image_alt}
-			</figcaption>
-		</figure>
-		<slot />
-	</article>
+		<article class="[&>p>img]:rounded-lg [&>p>img]:mx-auto">
+			<slot />
+		</article>
+	</main>
 </DefaultLayout>
