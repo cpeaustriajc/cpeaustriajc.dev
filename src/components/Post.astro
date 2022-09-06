@@ -10,7 +10,7 @@ const { post } = Astro.props as { post: MarkdownInstance<Frontmatter> };
 	class="rounded-md border-2 border-transparent transition ease-out hover:border-sky-800 dark:hover:border-blue-400"
 >
 	<a href={post.url}>
-		<figure class="rounded bg-slate-100 dark:bg-neutral-800">
+		<figure class="rounded bg-slate-100 dark:bg-neutral-800 h-full">
 			<Image
 				src={import(`../assets/${post.frontmatter.image_name}.jpeg`)}
 				format="webp"

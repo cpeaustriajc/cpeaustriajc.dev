@@ -2,6 +2,7 @@
 import Head from "@/components/Head.astro";
 import DefaultLayout from "@/layouts/DefaultLayout.astro";
 import type { Frontmatter as MarkdownContent } from "@/types/frontmatter";
+import { getImage } from "@astrojs/image";
 import { Picture } from "@astrojs/image/components";
 
 interface MarkdownContentProps {
@@ -9,6 +10,7 @@ interface MarkdownContentProps {
 }
 
 const { content } = Astro.props as MarkdownContentProps;
+const { src } = await getImage({ src: content.image_name, width: 1920, height: 1080 });
 ---
 
 <DefaultLayout>
@@ -17,6 +19,7 @@ const { content } = Astro.props as MarkdownContentProps;
 		<meta name="description" content={content.description} />
 		<meta property="og:title" content={content.title} />
 		<meta property="og:url" content={Astro.url} />
+		<meta property="og:image" content={src} />
 	</Head>
 	<article
 		class="mx-8 lg:mx-auto prose md:prose-xl lg:prose-2xl dark:prose-invert dark:prose-a:text-blue-300 prose-a:text-blue-800"
