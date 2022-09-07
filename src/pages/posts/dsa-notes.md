@@ -10,6 +10,7 @@ date:
 topics:
     - devlog
     - education
+    - c++
 image_name: dsa-notes
 image_alt:
     A person about to be assassinated by a woman but the woman is also about to be assassinated by
