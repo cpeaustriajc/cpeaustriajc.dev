@@ -124,12 +124,11 @@ another instance then free the memory.
 ```cpp
 class Node {
 public:
-    int data;
-    Node* next;
-}
+  int data;
+  Node *next;
+};
 
-int main(void)
-{
+int main(void) {
     Node* head = nullptr;
     Node* second = nullptr;
     Node* third = nullptr;
@@ -154,6 +153,14 @@ int main(void)
     return 0;
 }
 ```
+
+## What are Algorithms?
+
+Algorithms are a finite sequence of instructions, each of which have clear meaning and can be
+performed with a finite amount of effort in a finite length of time.
+
+Another definition of Algorithms is that it is a step-by-step procedure which defines a set of
+instruction to be executed in a certain order to get the desired output.
 
 ## References
 
