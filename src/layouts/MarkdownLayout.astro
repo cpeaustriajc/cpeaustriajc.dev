@@ -10,6 +10,8 @@ interface MarkdownContentProps {
 }
 
 const { content } = Astro.props as MarkdownContentProps;
+const { minutesRead } = Astro.props.frontmatter;
+
 const { src } = await getImage({
 	src: `/assets/${content.image_name}.jpeg`,
 	width: 1200,
@@ -41,12 +43,11 @@ const { src } = await getImage({
 		<header>
 			<h1>{content.title}</h1>
 			<p>
-				Written:
 				<time
 					class="font-bold dark:text-neutral-50 text-neutral-900"
 					datetime={content.date.format}
 					>{content.date.content}
-				</time>
+				</time> &mdash; {minutesRead}
 			</p>
 			<ul class="not-prose flex flex-row list-none gap-2" aria-label="Topics">
 				{
