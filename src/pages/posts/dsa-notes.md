@@ -33,6 +33,22 @@ The programming language used in this post is C++ but you should be able to tran
 preferred programming language, do it as an exercise to assess how much you know about your
 programming language!
 
+## Introduction to Algorithms
+
+Algorithms are the building blocks of a program, they are a set of rules that need to be followed by
+a program in calculations or other problem-solving operations.
+
+Algorithms can also be defined as a procedure for solving a mathematical problem in a finite numbers
+of steps frequently by recursive operations.
+
+## The Different Types of Algorithms
+
+There are several type of algorithms that are available. Some important algorithms are:
+
+1. [Brute Force Algorithms](#brute-force-algorithms): Solve a problem through exhaustion.
+
+### Brute Force Algorithms
+
 ## Introduction to Data Structures
 
 Before we talk about data structures, we need to know about data first; we need to know what it is,
@@ -165,6 +181,10 @@ instruction to be executed in a certain order to get the desired output.
 
 ## References
 
-[Introduction to Data Structures][intro-to-dsa]
+A list of references that I use to gather information about Data Structures and Algorithms.
+
+-   [Introduction to Data Structures][intro-to-dsa]
+-   [Introduction to Algorithms][intro-to-algorithms]
 
 [intro-to-dsa]: https://www.youtube.com/watch?v=xLetJpcjHS0&list=PLBlnK6fEyqRj9lld8sWIUNwlKfdUoPd1Y
+[intro-to-algorithms]: https://www.geeksforgeeks.org/fundamentals-of-algorithms/
