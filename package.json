@@ -10,12 +10,7 @@
 		"format": "prettier --write --plugin-search-dir=. ."
 	},
 	"license": "CC-BY-4.0",
-	"engines": {
-		"node": "^16.15.0",
-		"vscode": "^1.22.0",
-		"pnpm": "^7.9.0"
-	},
-	"packageManager": "pnpm@7.9.5",
+	"packageManager": "pnpm@7.12.1",
 	"devDependencies": {
 		"@astrojs/image": "^0.5.1",
 		"@astrojs/sitemap": "^1.0.0",
