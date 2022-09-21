@@ -41,13 +41,31 @@ a program in calculations or other problem-solving operations.
 Algorithms can also be defined as a procedure for solving a mathematical problem in a finite numbers
 of steps frequently by recursive operations.
 
-## The Different Types of Algorithms
+### What are Algorithms?
+
+Algorithms are a finite sequence of instructions, each of which have clear meaning and can be
+performed with a finite amount of effort in a finite length of time.
+
+Another definition of Algorithms is that it is a step-by-step procedure which defines a set of
+instruction to be executed in a certain order to get the desired output.
+
+### The Different Types of Algorithms
 
 There are several type of algorithms that are available. Some important algorithms are:
 
-1. [Brute Force Algorithms](#brute-force-algorithms): Solve a problem through exhaustion.
+1. [Brute Force Approach](#brute-force-approach): Solve a problem through exhaustion.
 
-### Brute Force Algorithms
+#### Brute Force Approach
+
+Brute Force algorithms are:
+
+-   Intuitive, direct, and straightforward technique of problem-solving in which all the possible
+    ways or all the possbile solutions to a given problem are enumerated.
+-   Many problems solved in day-to-day life using the brute force strategy, for example, exploring
+    all the paths to a nearby market to find the minimum shortest path
+-   Arranging the books in a rack using all the possibilities to optimize the rack spaces, etc.
+-   Daily life activities use a brute force nature, even though optimal algorithms are also
+    possbile.
 
 ## Introduction to Data Structures
 
@@ -123,7 +141,13 @@ in data structures.
 ![Spiderman doesn't know how to reverse a linked list, so he is sad, so you should know how to so that you won't be sad!](/spiderman-linked-list.jpeg)
 
 A linked list is a linear data structure, in which the elements are not stored at contiguous memory
-locations. The elements in a linked list are linked using pointers.
+locations. The elements in a linked list are linked using pointers. This is better used in some
+cases where data must be stored dynamically in which an array data structure is weak.
+
+Linked lists include a series of connected nodes and each node stores the data and the address of
+the next node.
+
+![Linked List Graphical Representation](/assets/linked-list-graphical.webp)
 
 ```cpp
 // A very basic example of a linked list.
@@ -138,6 +162,8 @@ To operate with a linked list we have to store it in a `nullptr` then dynamicall
 node in the heap. Then assign a data in the linked list data structure, point the next node to
 another instance then free the memory.
 
+### Why Linked List?
+
 ```cpp
 class Node {
 public:
@@ -147,22 +173,28 @@ public:
 
 int main(void) {
     Node* head = nullptr;
-    Node* second = nullptr;
-    Node* third = nullptr;
+    Node* first = nullptr;
+    Node* tail = nullptr;
 
+    // allocate 3 nodes in the heap.
     head = new Node();
-    second = new Node();
+    first = new Node();
     third = new Node();
 
-    head->data = 1;
-    head->next = second;
+    head->data = 1;         // Assign data to the first node
 
-    second->data = 2;
-    second->next = third;
+    head->next = second;    // Link first node
+                            // to second node.
 
-    third->data = 3;
-    third->next = nullptr;
+    first->data = 2;       // Assign data to the second node
+    first->next = third;
 
+    tail->data = 3;         // Assign data to the third node
+    tail->next = nullptr;   // The tail is assigned as nullptr
+                            // because it is the end of the list.
+
+    // Always best practice to clear the memory
+    // after it has been allocated to avoid memory leaks!
     delete head;
     delete second;
     delete third;
@@ -171,13 +203,8 @@ int main(void) {
 }
 ```
 
-## What are Algorithms?
-
-Algorithms are a finite sequence of instructions, each of which have clear meaning and can be
-performed with a finite amount of effort in a finite length of time.
-
-Another definition of Algorithms is that it is a step-by-step procedure which defines a set of
-instruction to be executed in a certain order to get the desired output.
+Looks great! We learned here that we can create simple nodes in a list, by assigning a pointer to a
+variable with a type of `Node` then allocate three nodes in the heap.
 
 ## References
 
