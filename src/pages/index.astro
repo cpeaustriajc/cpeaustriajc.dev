@@ -1,8 +1,11 @@
 ---
 import Head from "@/components/Head.astro";
-import Post from "@/components/Post.astro";
-import Video from "@/components/Video.astro";
 import DefaultLayout from "@/layouts/DefaultLayout.astro";
+import About from "@/layouts/sections/index/About.astro";
+import Blog from "@/layouts/sections/index/Blog.astro";
+import Hero from "@/layouts/sections/index/Hero.astro";
+import History from "@/layouts/sections/index/History.astro";
+import Philosophy from "@/layouts/sections/index/Philosophy.astro";
 import type { Frontmatter } from "@/types/frontmatter";
 
 const posts = await Astro.glob<Frontmatter>("../pages/posts/*.md");
@@ -17,121 +20,11 @@ const nonDraftPosts = posts.filter((post) => !post.frontmatter.draft);
 			content="John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines; Homepage section"
 		/>
 	</Head>
-	<Fragment slot="content">
-		<main class="lg:space-y-64">
-			<header
-				class="min-h-screen bg-[url('/graph-paper.svg')] bg-opacity-5 border border-neutral-400 dark:border-neutral-800"
-			>
-				<h1 class="text-5xl pt-16 font-normal text-center leading-10">
-					<span class="text-xl">My name is</span>
-					<br />
-					<strong>John Carlo B. Austria</strong><br />
-					<span class="text-xl">and I am a</span>
-					<br />
-					<strong>Programmer</strong>
-				</h1>
-			</header>
-
-			<section
-				class="flex flex-col gap-8 lg:flex-row-reverse my-1 py-8 px-4 lg:w-9/12 lg:mx-auto"
-			>
-				<figure>
-					<Video
-						mpfour="/videos/delorean-time-travel.webm"
-						webm="/videos/delorean-time-travel.mp4"
-					/>
-				</figure>
-				<article class="max-w-prose prose dark:prose-invert">
-					<h2 class="text-4xl my-8">My Programming History 🕐</h2>
-					<p class="text-2xl">
-						I started programming back in 2017 when messing around with game's overall
-						graphics by modding as much as I can and implementing shaders to make it
-						look good and add fancy effects.
-					</p>
-				</article>
-			</section>
-			<section class="flex flex-col lg:flex-row gap-8 py-8 px-4 lg:w-9/12 lg:mx-auto">
-				<figure>
-					<Video
-						mpfour="/videos/knowledge-tai-lopez.mp4"
-						webm="/videos/knowledge-tai-lopez.mp4"
-					/>
-				</figure>
-				<article class="max-w-prose prose dark:prose-invert">
-					<h2 class="text-4xl my-8">Programming Philosophy 🗿</h2>
-					<p class="text-2xl">
-						My main philosophy about programming is to make <strong
-							>programming as simple as possible
-						</strong>, The computer can only understand Ones and Zeros, there shouldn't
-						be any kind of complex system or design that is working under the hood of a
-						program that will make it harder than it is for the computer to understand.
-					</p>
-				</article>
-			</section>
-
-			<section class="flex flex-col-reverse lg:flex-row gap-8 py-8 px-4 lg:w-9/12 lg:mx-auto">
-				<article class="max-w-prose prose dark:prose-invert">
-					<h2 class="text-4xl my-8 font-bold">About</h2>
-					<p>
-						I am a student in Pamantasan ng Lungsod ng San Pablo that is passionate
-						about programming.
-					</p>
-
-					<p>
-						I am currently studying and taking a Bachelor's of Science in Computer
-						Engineering (BSCpE). I am really fascinated about computers, the amount of
-						things that you can do are almost limitless and I am always fascinated by
-						the fact that these are only just a bunch of switches that turn on and off!
-					</p>
-					<p>
-						Even though we only understand the basic components of them, we still need
-						people to understand the underlying parts of it. This is where my college
-						specialization shines.
-					</p>
-					<p>
-						I love trying out different kinds of technologies and what are their limits
-						and what can I do with them.
-					</p>
-				</article>
-				<figure>
-					<Video
-						mpfour="/videos/miles-morales-spider-man.webm"
-						webm="/videos/miles-morales-spider-man.mp4"
-					/>
-				</figure>
-			</section>
-
-			<section class="grid grid-cols-1 lg:grid-cols-2 lg:w-9/12 lg:mx-auto px-4 py-8">
-				<section class="flex flex-col-reverse col-span-2 lg:flex-row gap-8 py-8">
-					<article class="max-w-prose prose dark:prose-invert">
-						<h2 class="text-4xl font-bold">Blog</h2>
-
-						<p>
-							This is where I share my thoughts, devlogs, opinions, philosophy, etc.
-						</p>
-						<p>
-							I learn a lot of things everyday, to retain my knowledge, I need to keep
-							it somewhere where I can read it sometime.
-						</p>
-						<p>
-							So what better place to store all of my personal learnings? Here in my
-							personal site! I use Astro in it's full potential in this blog page!
-						</p>
-					</article>
-
-					<figure>
-						<Video
-							mpfour="/videos/konosuba-s2-the-magic-lie-detector.mp4"
-							webm="/videos/konosuba-s2-the-magic-lie-detector.webm"
-						/>
-					</figure>
-				</section>
-				<section class="col-span-2">
-					<ul class="grid grid-cols-1 md:grid-cols-2 py-4 gap-4 list-none">
-						{nonDraftPosts.map((post) => <Post post={post} />)}
-					</ul>
-				</section>
-			</section>
-		</main>
-	</Fragment>
+	<main class="lg:space-y-64" slot="content">
+		<Hero />
+		<History />
+		<Philosophy />
+		<About />
+		<Blog posts={nonDraftPosts} />
+	</main>
 </DefaultLayout>
