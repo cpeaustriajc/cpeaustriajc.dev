@@ -36,44 +36,118 @@ const { src } = await getImage({
 		<meta name="twitter:image" content={`${Astro.url.origin}${src}`} />
 	</Head>
 
-	<main
-		class="mx-8 lg:mx-auto prose md:prose-xl lg:prose-2xl dark:prose-invert dark:prose-a:text-blue-300 prose-a:text-blue-800"
-		slot="content"
-	>
+	<main slot="content">
 		<header>
 			<h1>{content.title}</h1>
 			<p>
-				<time
-					class="font-bold dark:text-neutral-50 text-neutral-900"
-					datetime={content.date.format}
-					>{content.date.content}
-				</time> &mdash; {minutesRead}
+				<time datetime={content.date.format}>
+					{content.date.content}
+				</time>
+
+				&mdash;
+
+				{minutesRead}
 			</p>
-			<ul class="not-prose flex flex-row list-none gap-2" aria-label="Topics">
-				{
-					content.topics.map((topic) => (
-						<li class="place-self-start rounded-full bg-neutral-200 dark:bg-neutral-800 px-2 py-1 text-xs before:content-['•']">
-							{topic}
-						</li>
-					))
-				}
+			<ul aria-label="Topics">
+				{content.topics.map((topic) => <li>{topic}</li>)}
 			</ul>
-			<figure class="text-center my-2 md:my-4 lg:my-8">
+			<figure>
 				<Picture
 					src={import(`../assets/${content.image_name}.jpeg`)}
 					sizes="(min-width: 50em) 360w, (min-width: 100em) 720w,"
 					widths={[360, 720, 1280]}
 					alt={content.image_alt}
 					aspectRatio="16:9"
-					class="[&>img]:rounded-lg"
 				/>
-				<figcaption class="text-center text-xs font-bold">
+				<figcaption>
 					{content.image_alt}
 				</figcaption>
 			</figure>
 		</header>
-		<article class="[&>p>img]:rounded-lg [&>p>img]:mx-auto">
+		<article>
 			<slot />
 		</article>
 	</main>
 </DefaultLayout>
+
+<style>
+	main {
+		margin: 0 2rem;
+	}
+
+	time {
+		font-weight: 700;
+		color: hsl(0, 0%, 9%);
+	}
+
+	ul {
+		display: flex;
+		flex-direction: row;
+		list-style: none;
+		gap: 0.5rem;
+	}
+
+	ul li {
+		font-size: 0.75rem;
+		line-height: 1rem;
+		place-self: start;
+		border-radius: 9999px;
+		background-color: rgba(229, 229, 229, 1);
+		padding: 0.25rem 0.5rem;
+	}
+
+	ul li::before {
+		content: "•";
+	}
+
+	article {
+		max-width: 65ch;
+	}
+
+	article > p > img {
+		border-radius: 0.5rem;
+		margin: 0 auto;
+	}
+
+	figure {
+		margin: 0.5rem;
+		text-align: center;
+	}
+
+	figcaption {
+		font-size: 0.75rem;
+		font-weight: bold;
+		line-height: 1rem;
+		text-align: center;
+	}
+
+	picture > img {
+		border-radius: 0.5rem;
+	}
+
+	@media (min-width: 768px) {
+		figure {
+			margin: 1rem 0;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		main {
+			margin: 0 auto;
+		}
+
+		figure {
+			margin: 2rem 0;
+		}
+	}
+
+	@media (prefers-color-scheme: dark) {
+		time {
+			color: hsl(0, 0%, 98%);
+		}
+
+		ul li {
+			background-color: hsl(0, 0%, 15%);
+		}
+	}
+</style>

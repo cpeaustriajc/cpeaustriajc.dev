@@ -2,16 +2,49 @@
 import Video from "@/components/Video.astro";
 ---
 
-<section class="flex flex-col gap-8 lg:flex-row-reverse my-1 py-8 px-4 lg:w-9/12 lg:mx-auto">
+<section>
 	<figure>
 		<Video mpfour="/videos/delorean-time-travel.webm" webm="/videos/delorean-time-travel.mp4" />
 	</figure>
-	<article class="max-w-prose prose dark:prose-invert">
-		<h2 class="text-4xl my-8">My Programming History 🕐</h2>
-		<p class="text-2xl">
+	<article>
+		<h2>My Programming History 🕐</h2>
+		<p>
 			I started programming back in 2017 when messing around with game's overall graphics by
 			modding as much as I can and implementing shaders to make it look good and add fancy
 			effects.
 		</p>
 	</article>
 </section>
+
+<style>
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		margin: 0.25rem;
+		padding: 2rem 1rem;
+	}
+
+	article {
+		max-width: 65ch;
+	}
+
+	h2 {
+		font-size: 2.25rem;
+		line-height: 2.5rem;
+		margin: 2rem 0;
+	}
+
+	p {
+		font-size: 1.5rem;
+		line-height: 2rem;
+	}
+
+	@media (min-width: 1024px) {
+		section {
+			width: 75%;
+			margin: 0 auto;
+			flex-direction: row-reverse;
+		}
+	}
+</style>

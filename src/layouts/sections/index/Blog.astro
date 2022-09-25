@@ -9,10 +9,10 @@ interface Props {
 const { posts } = Astro.props as Props;
 ---
 
-<section class="grid grid-cols-1 lg:grid-cols-2 lg:w-9/12 lg:mx-auto px-4 py-8">
-	<section class="flex flex-col-reverse col-span-2 lg:flex-row gap-8 py-8">
-		<article class="max-w-prose prose dark:prose-invert">
-			<h2 class="text-4xl font-bold">Blog</h2>
+<section class="blog-container">
+	<section class="blog">
+		<article>
+			<h2>Blog</h2>
 
 			<p>This is where I share my thoughts, devlogs, opinions, philosophy, etc.</p>
 			<p>
@@ -32,9 +32,65 @@ const { posts } = Astro.props as Props;
 			/>
 		</figure>
 	</section>
-	<section class="col-span-2">
-		<ul class="grid grid-cols-1 md:grid-cols-2 py-4 gap-4 list-none">
+	<section class="blog-posts">
+		<ul class="posts">
 			{posts.map((post) => <Post post={post} />)}
 		</ul>
 	</section>
 </section>
+
+<style>
+	.blog-container {
+		display: grid;
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+		padding: 2rem 1rem;
+	}
+
+	.blog {
+		display: flex;
+		flex-direction: column-reverse;
+		grid-column: span 2 / span 2;
+		gap: 2rem;
+		padding: 2rem 0;
+	}
+
+	h2 {
+		font-size: 2.25rem;
+		font-weight: bold;
+		line-height: 2.5rem;
+	}
+
+	article {
+		max-width: 65ch;
+	}
+
+	.blog-posts {
+		grid-column: span 2 / span 2;
+	}
+
+	.posts {
+		display: grid;
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+		list-style-type: none;
+		gap: 1rem;
+		padding: 1rem 0;
+	}
+
+	@media (min-width: 768px) {
+		.posts {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.blog-container {
+			width: 75%;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			margin: 0 auto;
+		}
+
+		.blog {
+			flex-direction: row;
+		}
+	}
+</style>

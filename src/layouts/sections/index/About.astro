@@ -2,9 +2,9 @@
 import Video from "@/components/Video.astro";
 ---
 
-<section class="flex flex-col-reverse lg:flex-row gap-8 py-8 px-4 lg:w-9/12 lg:mx-auto">
-	<article class="max-w-prose prose dark:prose-invert">
-		<h2 class="text-4xl my-8 font-bold">About</h2>
+<section>
+	<article>
+		<h2>About</h2>
 		<p>
 			I am a student in Pamantasan ng Lungsod ng San Pablo that is passionate about
 			programming.
@@ -32,3 +32,31 @@ import Video from "@/components/Video.astro";
 		/>
 	</figure>
 </section>
+
+<style>
+	section {
+		display: flex;
+		flex-direction: column-reverse;
+		gap: 2rem;
+		padding: 2rem 1rem;
+	}
+
+	article {
+		max-width: 65ch;
+	}
+
+	h2 {
+		font-size: 2.25rem;
+		font-weight: bold;
+		line-height: 2.5rem;
+		margin: 2rem 0;
+	}
+
+	@media (min-width: 1024px) {
+		section {
+			flex-direction: row;
+			width: 75%;
+			margin: 0 auto;
+		}
+	}
+</style>

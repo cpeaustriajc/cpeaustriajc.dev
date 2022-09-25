@@ -20,7 +20,7 @@ const nonDraftPosts = posts.filter((post) => !post.frontmatter.draft);
 			content="John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines; Homepage section"
 		/>
 	</Head>
-	<main class="lg:space-y-64" slot="content">
+	<main slot="content">
 		<Hero />
 		<History />
 		<Philosophy />
@@ -28,3 +28,12 @@ const nonDraftPosts = posts.filter((post) => !post.frontmatter.draft);
 		<Blog posts={nonDraftPosts} />
 	</main>
 </DefaultLayout>
+
+<style>
+	@media (min-width: 1024px) {
+		main > :not([hidden]) ~ :not([hidden]) {
+			margin-top: calc(16rem * calc(1 - 0));
+			margin-bottom: calc(16rem * 0);
+		}
+	}
+</style>

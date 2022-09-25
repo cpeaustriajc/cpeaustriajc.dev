@@ -2,13 +2,13 @@
 import Video from "@/components/Video.astro";
 ---
 
-<section class="flex flex-col lg:flex-row gap-8 py-8 px-4 lg:w-9/12 lg:mx-auto">
+<section>
 	<figure>
 		<Video mpfour="/videos/knowledge-tai-lopez.mp4" webm="/videos/knowledge-tai-lopez.mp4" />
 	</figure>
-	<article class="max-w-prose prose dark:prose-invert">
-		<h2 class="text-4xl my-8">Programming Philosophy 🗿</h2>
-		<p class="text-2xl">
+	<article>
+		<h2>Programming Philosophy 🗿</h2>
+		<p>
 			My main philosophy about programming is to make <strong
 				>programming as simple as possible
 			</strong>, The computer can only understand Ones and Zeros, there shouldn't be any kind
@@ -17,3 +17,34 @@ import Video from "@/components/Video.astro";
 		</p>
 	</article>
 </section>
+
+<style>
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		padding: 2rem 1rem;
+	}
+	article {
+		max-width: 65ch;
+	}
+
+	h2 {
+		font-size: 2.25rem;
+		line-height: 2.5rem;
+		margin: 2rem 0;
+	}
+
+	p`` {
+		font-size: 1.5rem;
+		line-height: 2rem;
+	}
+
+	@media (min-width: 1024px) {
+		section {
+			width: 75%;
+			margin: 0 auto;
+			flex-direction: row;
+		}
+	}
+</style>

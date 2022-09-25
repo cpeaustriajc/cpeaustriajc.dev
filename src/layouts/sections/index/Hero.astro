@@ -1,12 +1,38 @@
-<header
-	class="min-h-screen border border-neutral-400 dark:border-neutral-800 bg-[url('/graph-paper.svg')]"
->
-	<h1 class="text-5xl pt-16 font-normal text-center leading-10">
-		<span class="text-xl">My name is</span>
+<header>
+	<h1>
+		<span>My name is</span>
 		<br />
 		<strong>John Carlo B. Austria</strong><br />
-		<span class="text-xl">and I am a</span>
+		<span>and I am a</span>
 		<br />
 		<strong>Programmer</strong>
 	</h1>
 </header>
+
+<style>
+	header {
+		min-height: 100vh;
+		border-width: 1px;
+		border-color: hsl(0, 0%, 64%);
+		background: url("/graph-paper.svg");
+	}
+
+	h1 {
+		font-size: 3rem;
+		font-weight: normal;
+		text-align: center;
+		line-height: 2.5rem;
+		padding-top: 4rem;
+	}
+
+	span {
+		font-size: 1.25rem;
+		line-height: 1.75rem;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		header {
+			border-color: hsl(0, 0%, 15%);
+		}
+	}
+</style>
