@@ -1,32 +1,86 @@
 ---
-import type { Frontmatter } from "@/types/frontmatter";
-import { Image } from "@astrojs/image/components";
-import type { MarkdownInstance } from "astro";
+import type { Frontmatter } from '@/types/frontmatter';
+import { Image } from '@astrojs/image/components';
+import type { MarkdownInstance } from 'astro';
 
 const { post } = Astro.props as { post: MarkdownInstance<Frontmatter> };
 ---
 
-<li
-	class="rounded-md border-2 border-transparent transition ease-out hover:border-sky-800 dark:hover:border-blue-400"
->
+<li>
 	<a href={post.url}>
-		<figure class="rounded bg-slate-100 dark:bg-neutral-800 h-full">
+		<figure>
 			<Image
 				src={import(`../assets/${post.frontmatter.image_name}.jpeg`)}
 				format="webp"
 				alt={post.frontmatter.image_alt}
 				width={1280}
 				aspectRatio="16:9"
-				class="rounded object-cover"
 			/>
-			<header class="p-4">
-				<h3 class="text-2xl font-bold">{post.frontmatter.title}</h3>
+			<header>
+				<h3>{post.frontmatter.title}</h3>
 			</header>
-			<figcaption class="p-4">
-				<p class="line-clamp-3 max-w-prose overflow-hidden">
-					{post.frontmatter.description}
-				</p>
+			<figcaption>
+				<p>{post.frontmatter.description}</p>
 			</figcaption>
 		</figure>
 	</a>
 </li>
+
+<style>
+	li {
+		border-radius: 0.375rem;
+		border: 2px;
+		border-color: transparent;
+		transition-property: color, background-color, border-color,
+			text-decoration-color, fill, stroke, opacity, box-shadow, transform,
+			filter, backdrop-filter;
+		transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+		transition-duration: 150ms;
+	}
+
+	li:hover {
+		border-color: hsl(201, 90%, 27%);
+	}
+
+	h3 {
+		font-size: 1.5rem;
+		font-weight: 700;
+		line-height: 2rem;
+	}
+
+	figure {
+		border-radius: 0.25rem;
+		background-color: hsl(210, 40%, 96%);
+		height: 100%;
+	}
+
+	figcaption {
+		padding: 1rem;
+	}
+
+	figcaption p {
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 3;
+		overflow: hidden;
+		max-width: 65ch;
+	}
+
+	img {
+		border-radius: 0.25rem;
+		object-fit: cover;
+	}
+
+	header {
+		padding: 1rem;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		figure {
+			background-color: #27272a;
+		}
+		li:hover {
+			border-color: hsl(212, 96%, 78%);
+		}
+	}
+</style>

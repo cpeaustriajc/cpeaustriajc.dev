@@ -1,8 +1,6 @@
-<header
-	class="sticky top-0 bg-transparent border-b boder-neutral-400 dark:border-b-neutral-800 backdrop-blur flex flex-row justify-evenly items-center h-16 z-50"
->
+<header>
 	<figure role="banner" title="Click to go back to the homepage">
-		<a href="/" class="inline">
+		<a href="/">
 			<img
 				src="/android-chrome-512x512.png"
 				width={32}
@@ -12,30 +10,75 @@
 		</a>
 	</figure>
 	<nav dir="ltr">
-		<ul class="flex flex-row justify-self-end gap-4">
+		<ul>
 			<li>
-				<a
-					href="/"
-					class="dark:text-neutral-300 dark:hover:text-blue-300 hover:text-blue-800 font-bold capitalize transition-colors ease-out duration-500"
-					>home
-				</a>
+				<a href="/">home</a>
 			</li>
 
 			<li>
-				<a
-					href="/about"
-					class="dark:text-neutral-300 dark:hover:text-blue-300 hover:text-blue-800 font-bold capitalize transition-colors ease-out duration-500"
-					>about
-				</a>
+				<a href="/about">about</a>
 			</li>
 
 			<li>
-				<a
-					href="/blog"
-					class="dark:text-neutral-300 dark:hover:text-blue-300 hover:text-blue-800 font-bold capitalize transition-colors ease-out duration-500"
-					>blog
-				</a>
+				<a href="/blog">blog</a>
 			</li>
 		</ul>
 	</nav>
 </header>
+
+<style>
+	header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		align-items: center;
+		height: 72px;
+		z-index: 50;
+		position: sticky;
+		top: 0;
+		background: transparent;
+		backdrop-filter: blur(8px);
+		border-bottom-width: 1px;
+		border-bottom-style: solid;
+		border-bottom-color: hsla(0, 0%, 64%, 100%);
+	}
+
+	.logo {
+		display: inline;
+	}
+
+	ul {
+		display: flex;
+		flex-direction: row;
+		justify-self: self-end;
+		gap: 1rem;
+	}
+
+	a {
+		text-decoration: none;
+		font-weight: bold;
+		text-transform: capitalize;
+		transition-property: color, background-color, border-color,
+			text-decoration-color, fill, stroke;
+		transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+		transition-duration: 500ms;
+	}
+
+	a:hover {
+		color: hsl(212, 96%, 78%);
+	}
+
+	@media (prefers-color-scheme: dark) {
+		header {
+			border-bottom-color: hsl(240, 4%, 16%);
+		}
+
+		a {
+			color: hsl(0, 0%, 83%);
+		}
+
+		a:hover {
+			color: hsl(212, 96%, 78%);
+		}
+	}
+</style>

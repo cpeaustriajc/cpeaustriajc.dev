@@ -1,9 +1,9 @@
 ---
-import Head from "@/components/Head.astro";
-import DefaultLayout from "@/layouts/DefaultLayout.astro";
-import Links from "@/layouts/sections/about/Links.astro";
-import LoveForTech from "@/layouts/sections/about/LoveForTech.astro";
-import TechStacks from "@/layouts/sections/about/TechStacks.astro";
+import Head from '@/components/Head.astro';
+import DefaultLayout from '@/layouts/DefaultLayout.astro';
+import Links from '@/layouts/sections/about/Links.astro';
+import LoveForTech from '@/layouts/sections/about/LoveForTech.astro';
+import TechStacks from '@/layouts/sections/about/TechStacks.astro';
 ---
 
 <DefaultLayout>
@@ -15,11 +15,12 @@ import TechStacks from "@/layouts/sections/about/TechStacks.astro";
 		/>
 	</Head>
 	<main slot="content">
-		<article
-			class="mx-auto prose md:prose-lg lg:prose-xl dark:prose-invert dark:prose-a:text-blue-300"
-		>
+		<article>
 			<h1>About</h1>
-			<p>A little bit about me! Here you can find my biography and why I love tech.</p>
+			<p>
+				A little bit about me! Here you can find my biography and why I
+				love tech.
+			</p>
 
 			<Links />
 			<LoveForTech />
@@ -27,3 +28,9 @@ import TechStacks from "@/layouts/sections/about/TechStacks.astro";
 		</article>
 	</main>
 </DefaultLayout>
+
+<style>
+	article {
+		margin: unset auto;
+	}
+</style>

@@ -6,8 +6,17 @@ export interface Props {
 const { mpfour, webm } = Astro.props;
 ---
 
-<video width="1280" class="rounded border-2 border-gray-600" autoplay playsinline muted loop>
+<video width="1280" autoplay playsinline muted loop>
 	<source src={webm} type="video/webm" />
 	<source src={mpfour} type="video/mp4" />
 	Sorry, your browser doesn't support embedded videos.
 </video>
+
+<style>
+	video {
+		border-radius: 0.25rem;
+		border-width: 2px;
+		border-style: solid;
+		border-color: #4b5563;
+	}
+</style>

@@ -1,56 +1,80 @@
 ---
-const sitemap = new URL("sitemap-index.xml", Astro.url.origin);
+const sitemap = new URL('sitemap-index.xml', Astro.url.origin);
 ---
 
-<footer class="grid grid-cols-3 px-4 my-8 lg:w-1/2 lg:mx-auto">
-	<ul class="space-y-4 justify-center">
+<footer>
+	<ul>
 		<li>
-			<a href="/" class="dark:hover:text-blue-400 hover:text-sky-800 transition-colors"
-				>Home</a
-			>
-		</li>
-		<li class="space-y-4">
-			<a href="/about" class="dark:hover:text-blue-400 hover:text-sky-800 transition-colors"
-				>About</a
-			>
+			<a href="/">Home</a>
 		</li>
 		<li>
-			<a href="/blog" class="dark:hover:text-blue-400 hover:text-sky-800 transition-colors"
-				>Blog</a
-			>
+			<a href="/about">About</a>
+		</li>
+		<li>
+			<a href="/blog">Blog</a>
 		</li>
 	</ul>
-	<ul class="space-y-4">
+	<ul>
 		<li>
-			<a
-				href="https://github.com/jaycedotbin"
-				class="dark:hover:text-blue-400 hover:text-sky-800 transition-colors">Github</a
-			>
+			<a href="https://github.com/jaycedotbin">Github</a>
 		</li>
 		<li>
-			<a
-				href="https://www.linkedin.com/in/jaycedotbin/"
-				class="dark:hover:text-blue-400 hover:text-sky-800 transition-colors">LinkedIn</a
-			>
+			<a href="https://www.linkedin.com/in/jaycedotbin/">LinkedIn</a>
 		</li>
 		<li>
-			<a
-				href="https://twitter.com/jaycedotbin"
-				class="dark:hover:text-blue-400 hover:text-sky-800 transition-colors">Twitter</a
-			>
+			<a href="https://twitter.com/jaycedotbin">Twitter</a>
 		</li>
 	</ul>
-	<ul class="space-y-4">
+	<ul>
 		<li>
-			<a
-				href="mailto:johncarloaustria@proton.me"
-				class="dark:hover:text-blue-400 hover:text-sky-800 transition-colors">Email</a
-			>
+			<a href="mailto:johncarloaustria@proton.me">Email</a>
 		</li>
 		<li>
-			<a href={sitemap} class="dark:hover:text-blue-400 hover:text-sky-800 transition-colors"
-				>Sitemap.xml</a
-			>
+			<a href={sitemap}>Sitemap.xml</a>
 		</li>
 	</ul>
 </footer>
+
+<style>
+	footer {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		padding: unset 1rem;
+		margin: 2rem unset;
+	}
+
+	ul {
+		list-style: none;
+	}
+
+	ul > * + * {
+		justify-content: center;
+		margin-top: 1rem;
+	}
+
+	a {
+		color: white;
+		text-decoration: none;
+	}
+
+	a:hover {
+		color: #075985;
+		transition-property: color, background-color, border-color,
+			text-decoration-color, fill, stroke;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-duration: 150ms;
+	}
+
+	@media (prefers-color-scheme: 1024px) {
+		footer {
+			width: 50%;
+			margin: unset auto;
+		}
+	}
+
+	@media (prefers-color-scheme: dark) {
+		a:hover {
+			color: #60a5fa;
+		}
+	}
+</style>

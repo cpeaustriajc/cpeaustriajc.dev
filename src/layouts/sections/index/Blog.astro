@@ -1,6 +1,6 @@
 ---
-import Post from "@/components/Post.astro";
-import Video from "@/components/Video.astro";
+import Post from '@/components/Post.astro';
+import Video from '@/components/Video.astro';
 
 interface Props {
 	posts: Array<unknown>;
@@ -14,14 +14,18 @@ const { posts } = Astro.props as Props;
 		<article>
 			<h2>Blog</h2>
 
-			<p>This is where I share my thoughts, devlogs, opinions, philosophy, etc.</p>
 			<p>
-				I learn a lot of things everyday, to retain my knowledge, I need to keep it
-				somewhere where I can read it sometime.
+				This is where I share my thoughts, devlogs, opinions,
+				philosophy, etc.
 			</p>
 			<p>
-				So what better place to store all of my personal learnings? Here in my personal
-				site! I use Astro in it's full potential in this blog page!
+				I learn a lot of things everyday, to retain my knowledge, I need
+				to keep it somewhere where I can read it sometime.
+			</p>
+			<p>
+				So what better place to store all of my personal learnings? Here
+				in my personal site! I use Astro in it's full potential in this
+				blog page!
 			</p>
 		</article>
 
