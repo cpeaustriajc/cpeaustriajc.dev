@@ -1,9 +1,8 @@
-import image from "@astrojs/image";
-import sitemap from "@astrojs/sitemap";
-import { defineConfig } from "astro/config";
-import { toString } from "mdast-util-to-string";
-import getReadingTime from "reading-time";
-import remarkToc from "remark-toc";
+import sitemap from '@astrojs/sitemap';
+import { defineConfig } from 'astro/config';
+import { toString } from 'mdast-util-to-string';
+import getReadingTime from 'reading-time';
+import remarkToc from 'remark-toc';
 
 const remarkReadingTime = () => {
 	// @ts-ignore
@@ -21,6 +20,6 @@ export default defineConfig({
 		remarkPlugins: [remarkToc, remarkReadingTime],
 		extendDefaultPlugins: true,
 	},
-	site: "https://jaycedotbin.github.io",
-	integrations: [sitemap(), image()],
+	site: 'https://jaycedotbin.github.io',
+	integrations: [sitemap()],
 });

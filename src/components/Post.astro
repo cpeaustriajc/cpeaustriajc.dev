@@ -1,6 +1,5 @@
 ---
 import type { Frontmatter } from '@/types/frontmatter';
-import { Image } from '@astrojs/image/components';
 import type { MarkdownInstance } from 'astro';
 
 const { post } = Astro.props as { post: MarkdownInstance<Frontmatter> };
@@ -9,12 +8,11 @@ const { post } = Astro.props as { post: MarkdownInstance<Frontmatter> };
 <li>
 	<a href={post.url}>
 		<figure>
-			<Image
-				src={import(`../assets/${post.frontmatter.image_name}.jpeg`)}
-				format="webp"
+			<img
+				src={`/assets/${post.frontmatter.image_name}.webp`}
+				width="1280"
+				height="720"
 				alt={post.frontmatter.image_alt}
-				width={1280}
-				aspectRatio="16:9"
 			/>
 			<header>
 				<h3>{post.frontmatter.title}</h3>

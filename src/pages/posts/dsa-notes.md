@@ -150,7 +150,7 @@ This is how you would use it in JavaScript (React).
 Linked lists are the fundamental data structure, it is one of the very first
 topics that is taught in data structures.
 
-![Spiderman doesn't know how to reverse a linked list, so he is sad, so you should know how to so that you won't be sad!](/spiderman-linked-list.jpeg)
+![Spiderman doesn't know how to reverse a linked list, so he is sad, so you should know how to so that you won't be sad!](/assets/spiderman-linked-list.webp)
 
 A linked list is a linear data structure, in which the elements are not stored
 at contiguous memory locations. The elements in a linked list are linked using
