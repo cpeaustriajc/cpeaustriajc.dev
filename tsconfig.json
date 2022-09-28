@@ -4,7 +4,7 @@
 		"paths": {
 			"@/*": ["src/*"]
 		},
-		"types": ["@astrojs/client"]
+		"types": ["astro/client"]
 	},
 	"extends": "astro/tsconfigs/strict"
 }
