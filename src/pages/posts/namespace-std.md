@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/MarkdownLayout.astro
+layout: ../../layouts/Markdown.astro
 title: Why are you still using `using namespace x` in the global context?
 description:
     If you are still using `using namespace x` in the global context, then maybe

@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/MarkdownLayout.astro
+layout: ../../layouts/Markdown.astro
 title: Astro Is Amazing!
 description:
     Building my personal site with Astro is so good! I would recommend Astro if

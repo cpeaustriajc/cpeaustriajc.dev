@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/MarkdownLayout.astro
+layout: ../../layouts/Markdown.astro
 title: Data Structures and Algorithms Notes
 description:
     This is an ongoing series for me learning about data structures and

@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/MarkdownLayout.astro
+layout: ../../layouts/Markdown.astro
 title: Devlog No. 1 — Node.js
 description:
     This is the first entry of my devlog series, this is for me to retain my
