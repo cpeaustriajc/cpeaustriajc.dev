@@ -1,32 +1,35 @@
 ---
-import type { Frontmatter } from "@/types/frontmatter";
-import { Image } from "@astrojs/image/components";
-import type { MarkdownInstance } from "astro";
+import type { Frontmatter } from '@/types/frontmatter';
+import type { MarkdownInstance } from 'astro';
 
 const { post } = Astro.props as { post: MarkdownInstance<Frontmatter> };
 ---
 
-<li
-	class="rounded-md border-2 border-transparent transition ease-out hover:border-sky-800 dark:hover:border-blue-400"
->
+<li>
 	<a href={post.url}>
-		<figure class="rounded bg-slate-100 dark:bg-neutral-800 h-full">
-			<Image
-				src={import(`../assets/${post.frontmatter.image_name}.jpeg`)}
-				format="webp"
-				alt={post.frontmatter.image_alt}
-				width={1280}
-				aspectRatio="16:9"
-				class="rounded object-cover"
-			/>
-			<header class="p-4">
-				<h3 class="text-2xl font-bold">{post.frontmatter.title}</h3>
+		<article>
+			<header>
+				<h3>{post.frontmatter.title}</h3>
 			</header>
-			<figcaption class="p-4">
-				<p class="line-clamp-3 max-w-prose overflow-hidden">
-					{post.frontmatter.description}
-				</p>
-			</figcaption>
-		</figure>
+			<p>{post.frontmatter.description}</p>
+		</article>
 	</a>
 </li>
+
+<style>
+	li {
+		border-bottom: 1px solid hsl(203, 6%, 24.3%);
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	a h3 {
+		text-decoration: underline;
+	}
+
+	a p {
+		color: hsl(210, 6%, 93%);
+	}
+</style>
