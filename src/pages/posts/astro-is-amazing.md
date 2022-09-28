@@ -161,6 +161,11 @@ even more popular as time goes on!
 -   [Next.js Documentation][nextjs-docs]
 -   [Next.js Homepage][nextjs-homepage]
 
+### Svelte Links
+
+-   [Svelte Hompage][svelte-homepage]
+-   [Svelte CSS Scoping][svelte-css-scoping]
+
 ### TailWind CSS Links
 
 -   [TailWind Homepage][tailwind-homepage]
@@ -170,6 +175,11 @@ even more popular as time goes on!
 
 -   [Vite][vite-homepage]
 -   [Vite SSR][vite-ssr]
+
+### Vue Links
+
+-   [Vue.js Homepage][vue-homepage]
+-   [Vue.js Scoped CSS][vue-css-scoping]
 
 [astro-1.0-post]: https://astro.build/blog/astro-1/
 [astro-compiler]: https://github.com/withastro/compiler/
@@ -188,9 +198,11 @@ even more popular as time goes on!
 [react-jsx]: https://reactjs.org/docs/introducing-jsx.html
 [react-homepage]: https://reactjs.org
 [svelte-homepage]: https://svelte.dev
+[svelte-css-scoping]: https://svelte.dev/docs#component-format-style
 [vite-homepage]: https://vitejs.dev
 [vite-ssr]: https://github.com/frandiox/vite-ssr
 [vue-homepage]: https://vuejs.org
+[vue-css-scoping]: https://vuejs.org/api/sfc-css-features.html#scoped-css
 [vue-sfc]: https://vuejs.org/guide/scaling-up/sfc.html
 [tailwind-docs]: https://tailwindcss.com/docs/installation
 [tailwind-homepage]: https://tailwindcss.com
