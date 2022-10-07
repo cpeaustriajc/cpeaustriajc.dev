@@ -1,0 +1,126 @@
+---
+import Header from '@/components/Header.astro';
+import type { IGithubRepos } from '@/types/github_api';
+import '@fontsource/inter';
+import '@fontsource/oswald';
+
+const seo = {
+	description: "HTML format of John Carlo Austria's Resume",
+	title: 'Resume | John Carlo Austria',
+};
+
+const data = await fetch(
+	'https://api.github.com/users/jaycedotbin/repos?visibility=public',
+);
+const githubRepos = (await data.json()) as IGithubRepos[];
+
+
+const colorData = await fetch(
+	'https://raw.githubusercontent.com/ozh/github-colors/master/colors.json',
+);
+const colors = await colorData.json();
+
+const getLanguageColor = (language: string) => {
+	return colors[language].color;
+};
+---
+
+<html>
+	<head>
+		<title>{seo.title}</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content={seo.description} />
+		<meta name="color-scheme" content="light dark" />
+		<meta property="og:title" content={seo.title} />
+		<meta property="og:url" content={Astro.url.href} />
+		<script
+			src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"
+		></script>
+	</head>
+	<body class="font-sans">
+		<header class="max-w-prose mx-auto">
+			<section class="flex flex-col md:flex-row gap-8">
+				<figure>
+					<img
+						src="/assets/portrait-square.webp"
+						alt="Profile picture of John Carlo Austria"
+						class="rounded-full"
+						width="128"
+						height="128"
+					/>
+				</figure>
+				<figcaption>
+					<h1 class="text-4xl font-display font-black">
+						John Carlo Austria
+					</h1>
+					<p class="text-slate-400">
+						I'm a programmer that creates apps in the web and create
+						bare metal devices.
+					</p>
+
+					<ul>
+						<li>San Pablo City, Laguna, Philippines</li>
+					</ul>
+				</figcaption>
+			</section>
+		</header>
+
+		<main class="max-w-prose mx-auto">
+			<article>
+				<h2 class="text-xl font-bold dark:text-slate-500">Contact</h2>
+			</article>
+			<article>
+				<h2 class="text-xl font-bold dark:text-slate-500">About</h2>
+			</article>
+			<article>
+				<h2 class="text-xl font-bold dark:text-slate-500">
+					Tech Stack
+				</h2>
+			</article>
+			<article>
+				<h2 class="text-xl font-bold dark:text-slate-500">
+					Career Objectives
+				</h2>
+				<p class="dark:text-slate-300">
+					To be able to work with companies where the main focus is
+					innovation
+				</p>
+			</article>
+			<article>
+				<h2 class="text-xl font-bold dark:text-slate-500">Projects</h2>
+				<ul class="grid md:grid-cols-2 gap-4">
+					{
+						githubRepos.map((repo) => (
+							<li class="border rounded dark:border-neutral-800 p-4">
+								<h3 class="text-md my-2 dark:text-blue-400 font-bold font-sans">
+									<iconify-icon
+										inline
+										class="dark:text-gray-400"
+										icon="octicon:repo-16"
+									/>
+									<a href={repo.html_url}>{repo.name}</a>
+								</h3>
+								<p class="text-sm dark:text-gray-500">
+									{repo.description}
+								</p>
+								{repo.language && (
+									<p>
+										<iconify-icon
+											style={`color: ${getLanguageColor(repo.language)}`}
+											inline
+											icon="akar-icons:circle-fill"
+										/>
+										<span class="text-sm dark:text-gray-500">
+											{repo.language}
+										</span>
+									</p>
+								)}
+							</li>
+						))
+					}
+				</ul>
+			</article>
+		</main>
+	</body>
+</html>
