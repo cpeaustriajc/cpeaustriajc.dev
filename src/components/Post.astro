@@ -7,31 +7,11 @@ const { post } = Astro.props as { post: MarkdownInstance<Frontmatter> };
 
 <li>
 	<a href={post.url}>
-		<article>
+		<article class="border-b border-b-slate-600 pb-4 my-4">
 			<header>
-				<h2>{post.frontmatter.title}</h2>
+				<h2 class="text-xl text-blue-700 dark:text-sky-500 underline">{post.frontmatter.title}</h2>
 			</header>
 			<p>{post.frontmatter.description}</p>
 		</article>
 	</a>
 </li>
-
-<style>
-	a {
-		text-decoration: none;
-	}
-
-	a h2 {
-		text-decoration: underline;
-	}
-
-	a p {
-		color: black;
-	}
-
-	@media (prefers-color-scheme: dark) {
-		a p {
-			color: white;
-		}
-	}
-</style>

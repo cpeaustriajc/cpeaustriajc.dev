@@ -32,22 +32,9 @@ const content = {
 		<meta name="twitter:title" content={content.title} />
 		<meta name="twitter:description" content={content.description} />
 	</Head>
-	<main slot="content">
-		<ul>
+	<main slot="content" class="max-w-prose mx-auto">
+		<ul class="list-style-none p-0 m-0">
 			{nonDraftPosts.map((post) => <Post post={post} />)}
 		</ul>
 	</main>
 </Base>
-
-<style>
-	ul {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
-
-	main {
-		max-width: 65ch;
-		margin: 0 auto;
-	}
-</style>

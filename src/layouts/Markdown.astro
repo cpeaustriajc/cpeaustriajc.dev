@@ -30,9 +30,9 @@ const { minutesRead } = Astro.props.frontmatter;
 		<meta name="twitter:image" content={`/assets/${content.image_name}`} />
 	</Head>
 
-	<main slot="content">
+	<main slot="content" class="font-sans mx-auto prose prose-headings:font-display dark:prose-invert">
 		<header>
-			<h1>{content.title}</h1>
+			<h1 class="font-display">{content.title}</h1>
 			<p>
 				<time datetime={content.date.format}>
 					{content.date.content}
@@ -48,14 +48,3 @@ const { minutesRead } = Astro.props.frontmatter;
 		</article>
 	</main>
 </Base>
-
-<style>
-	main {
-		max-width: 65ch;
-		margin: 0 auto;
-	}
-
-	:global(article > p > img) {
-		width: 100%;
-	}
-</style>

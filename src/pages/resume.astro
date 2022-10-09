@@ -8,12 +8,11 @@ const seo = {
 	description: "HTML format of John Carlo Austria's Resume",
 	title: 'Resume | John Carlo Austria',
 };
-
+/*
 const data = await fetch(
 	'https://api.github.com/users/jaycedotbin/repos?visibility=public',
 );
 const githubRepos = (await data.json()) as IGithubRepos[];
-
 
 const colorData = await fetch(
 	'https://raw.githubusercontent.com/ozh/github-colors/master/colors.json',
@@ -23,6 +22,7 @@ const colors = await colorData.json();
 const getLanguageColor = (language: string) => {
 	return colors[language].color;
 };
+*/
 ---
 
 <html>
@@ -69,6 +69,31 @@ const getLanguageColor = (language: string) => {
 		<main class="max-w-prose mx-auto">
 			<article>
 				<h2 class="text-xl font-bold dark:text-slate-500">Contact</h2>
+				<section class="space-x-2 my-2">
+					<span
+						class="inline-flex gap-1 items-center rounded text-xs dark:bg-neutral-800 px-1 py-2"
+					>
+						<iconify-icon
+							inline
+							icon="ant-design:twitter-circle-filled"
+							width="20"
+						/>
+						<span> Twitter</span>
+					</span>
+					<span
+						class="inline-flex gap-1 items-center rounded text-xs dark:bg-neutral-800 px-1 py-2"
+					>
+						<iconify-icon
+							inline
+							icon="entypo-social:linkedin-with-circle"
+							width="20"
+						/>
+						LinkedIn</span
+					>
+					<span class="rounded text-xs dark:bg-neutral-800 px-1 py-2"
+						>GitHub</span
+					>
+				</section>
 			</article>
 			<article>
 				<h2 class="text-xl font-bold dark:text-slate-500">About</h2>
@@ -87,40 +112,70 @@ const getLanguageColor = (language: string) => {
 					innovation
 				</p>
 			</article>
+			<!--
 			<article>
 				<h2 class="text-xl font-bold dark:text-slate-500">Projects</h2>
 				<ul class="grid md:grid-cols-2 gap-4">
 					{
 						githubRepos.map((repo) => (
 							<li class="border rounded dark:border-neutral-800 p-4">
-								<h3 class="text-md my-2 dark:text-blue-400 font-bold font-sans">
-									<iconify-icon
-										inline
-										class="dark:text-gray-400"
-										icon="octicon:repo-16"
-									/>
-									<a href={repo.html_url}>{repo.name}</a>
-								</h3>
-								<p class="text-sm dark:text-gray-500">
-									{repo.description}
-								</p>
-								{repo.language && (
-									<p>
+								<section class="my-2">
+									<h3 class="text-md my-2 dark:text-blue-400 font-bold font-sans">
 										<iconify-icon
-											style={`color: ${getLanguageColor(repo.language)}`}
 											inline
-											icon="akar-icons:circle-fill"
+											class="dark:text-gray-400"
+											icon="octicon:repo-16"
 										/>
-										<span class="text-sm dark:text-gray-500">
-											{repo.language}
-										</span>
+										<a href={repo.html_url}>{repo.name}</a>
+									</h3>
+									<p class="text-sm dark:text-gray-500">
+										{repo.description}
 									</p>
-								)}
+								</section>
+								<section class="flex justify-between my-2">
+									<div>
+										{repo.language && (
+											<p>
+												<iconify-icon
+													style={`color: ${getLanguageColor(
+														repo.language,
+													)}`}
+													inline
+													icon="akar-icons:circle-fill"
+												/>
+												<span class="text-sm dark:text-gray-500">
+													{repo.language}
+												</span>
+											</p>
+										)}
+									</div>
+									<div class="space-x-2">
+										<span class="align-middle">
+											<iconify-icon
+												class="dark:text-gray-400"
+												icon="octicon:star-fill-16"
+											/>
+											<span class="dark:text-gray-400">
+												{repo.stargazers_count}
+											</span>
+										</span>
+										<span class="align-middle">
+											<iconify-icon
+												class="dark:text-gray-400"
+												icon="octicon:repo-forked-16"
+											/>
+											<span class="dark:text-gray-400">
+												{repo.forks}
+											</span>
+										</span>
+									</div>
+								</section>
 							</li>
 						))
 					}
 				</ul>
 			</article>
+		-->
 		</main>
 	</body>
 </html>
