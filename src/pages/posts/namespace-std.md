@@ -4,6 +4,7 @@ title: Why are you still using `using namespace x` in the global context?
 description:
     If you are still using `using namespace x` in the global context, then maybe
     you should think about what the consequences that it can cause.
+pubDate: 2022-09-07
 date:
     format: 2022-09-07
     content: September 07, 2022

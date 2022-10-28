@@ -5,6 +5,7 @@ description:
     This is an ongoing series for me learning about data structures and
     algorithms using C++, I am writing about it so that I can retain my
     knowledge about it.
+pubDate: 2022-06-16
 date:
     format: 2022-06-16
     content: August 16, 2022
