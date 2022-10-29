@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/Markdown.astro
-title: Devlog No. 1 — Node.js
+title: Devlog.One — Modern, Blazingly fast!
 description:
     This is the first entry of my devlog series, this is for me to retain my
     knowledge about what I learned about programming, I wanna do a weekly series
@@ -15,7 +15,7 @@ image_name: devlog-1
 image_alt:
     Sometimes, you know what you are doing as a developer, sometimes you feel
     like the stupidest person in the planet
-draft: true
+draft: false
 ---
 
 Being able to start a project and finish it when you are a beginner is tough,
@@ -40,11 +40,23 @@ people to track their progress on the shows that they are watching but I wanted
 to expand it to be more than just animes, I wanted it to cover different genres
 of media like reality shows, etc.
 
-But instead of, finishing the project like a normal programmer, I decided to
+But instead of finishing the project like a normal programmer, I decided to
 play with other technologies, and using the project as a way to test these
-tech.\
+tech.
 
-This is one of the few
+This is one of the few normal moments of a programmer, the itch to be able to
+try out something new, which is normal to any kind of person who has been working
+on something with that same "thing" in a long time.
+
+But that is okay, a software engineer shouldn't stop learning as there is always and will always be something new to learn and that is the fun part of programming! I personally do not get bored with the new technologies, programming languages, frameworks, libraries to try.
+
+My way of being able to moderate this urge is to realize to myself that:
+
+1. These are not widely adapted yet
+2. Not mature enough to be able to say it is ready to be deployed to production.
+3. Potentially has bugs that could be annoying to deal with!
+
+So, this is why sometimes, we have to lay back, think about these three; and start working at our project again!
 
 ## References:
 
