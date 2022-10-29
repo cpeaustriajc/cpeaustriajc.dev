@@ -1,0 +1,13 @@
+---
+const { logo, name, link, size } = Astro.props;
+---
+
+<span
+	class="inline-flex gap-1 items-center rounded text-xs bg-neutral-800 px-1 py-2"
+>
+	<iconify-icon inline icon={logo} width="16" />
+
+	<a href={link} rel="noreferrer" target="_blank">
+		{name}
+	</a>
+</span>

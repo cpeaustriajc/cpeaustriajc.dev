@@ -2,6 +2,10 @@
 import '@fontsource/inter';
 import '@fontsource/oswald';
 
+import Badge from '@/components/Badge.astro';
+import Social from '@/components/Social.astro';
+import Contact from '@/components/Contact.astro';
+
 const seo = {
 	description: "HTML format of John Carlo Austria's Resume",
 	title: 'Resume | John Carlo Austria',
@@ -46,32 +50,19 @@ const seo = {
 					</p>
 
 					<ul class="text-slate-400">
-						<li class="space-x-2">
-							<iconify-icon
-								inline
+						<li>
+							<Contact
+								name="San Pablo City, Laguna, Philippines"
+								link="http://maps.google.com/?q=San+Pablo+City,+Laguna,+Philippines"
 								icon="carbon:location"
-								width="16"
 							/>
-							<a
-								href="http://maps.google.com/?q=San+Pablo+City,+Laguna,+Philippines"
-								target="_blank"
-								rel="noreferrer"
-								class="underline"
-								>San Pablo City, Laguna, Philippines</a
-							>
 						</li>
-						<li class="space-x-2">
-							<iconify-icon
-								inline
+						<li>
+							<Contact
+								name="cpe.austria.johncarlo@gmail.com"
+								link="mailto:cpe.austria.johncarlo@gmail.com"
 								icon="carbon:email"
-								width="16"
 							/>
-							<a
-								href="mailto:cpe.austria.johncarlo@gmail.com"
-								target="_blank"
-								class="underline"
-								>cpe.austria.johncarlo@gmail.com</a
-							>
 						</li>
 					</ul>
 				</figcaption>
@@ -86,55 +77,21 @@ const seo = {
 					Contact
 				</h2>
 				<section class="space-x-2 my-2">
-					<span
-						class="inline-flex gap-1 items-center rounded text-xs dark:bg-neutral-800 px-1 py-2"
-					>
-						<iconify-icon
-							inline
-							icon="ant-design:twitter-circle-filled"
-							width="20"
-						/>
-						<a
-							href="https://twitter.com/jaycedotbin"
-							rel="noreferrer"
-							target="_blank"
-						>
-							Twitter
-						</a>
-					</span>
-					<span
-						class="inline-flex gap-1 items-center rounded text-xs bg-neutral-800 px-1 py-2"
-					>
-						<iconify-icon
-							inline
-							icon="entypo-social:linkedin-with-circle"
-							width="20"
-						/>
-						<a
-							href="https://www.linkedin.com/in/jaycedotbin"
-							rel="noreferrer"
-							target="_blank"
-						>
-							LinkedIn
-						</a>
-					</span>
-					<span
-						class="inline-flex gap-1 items-center rounded text-xs bg-neutral-800 px-1 py-2"
-					>
-						<iconify-icon
-							inline
-							icon="ant-design:github-filled"
-							width="20"
-						/>
-
-						<a
-							href="https://github.com/jaycedotbin"
-							rel="noreferrer"
-							target="_blank"
-						>
-							GitHub
-						</a>
-					</span>
+					<Social
+						logo="ant-design:twitter-circle-filled"
+						link="https://twitter.com/jaycedotbin"
+						name="Twitter"
+					/>
+					<Social
+						logo="entypo-social:linkedin-with-circle"
+						link="https://linkedin.com/in/jaycedotbin"
+						name="LinkedIn"
+					/>
+					<Social
+						logo="ant-design:github"
+						link="https://github.com/jaycedotbin"
+						name="GitHub"
+					/>
 				</section>
 			</article>
 			<article>
@@ -158,97 +115,19 @@ const seo = {
 				</h2>
 
 				<div class="flex flex-wrap gap-4">
-					<span
-						class="inline-flex gap-1 items-center rounded text-xs dark:bg-neutral-800 bg-neutral-200 px-1 py-2"
-					>
-						<iconify-icon
-							inline
-							icon="logos:react"
-							class="text-[#61dbfb]"
-							width="16"
-						/> React
-					</span>
-
-					<span
-						class="inline-flex gap-1 items-center rounded text-xs dark:bg-neutral-800 bg-neutral-200 px-1 py-2"
-					>
-						<iconify-icon inline icon="logos:rust" width="16" /> Rust
-					</span>
-					<span
-						class="inline-flex gap-1 items-center rounded text-xs dark:bg-neutral-800 bg-neutral-200 px-1 py-2"
-					>
-						<iconify-icon inline icon="logos:html-5" width="16" /> HTML
-					</span>
-					<span
-						class="inline-flex gap-1 items-center rounded text-xs dark:bg-neutral-800 bg-neutral-200 px-1 py-2"
-					>
-						<iconify-icon inline icon="logos:css-3" width="16" /> CSS
-					</span>
-					<span
-						class="inline-flex gap-1 items-center rounded text-xs dark:bg-neutral-800 bg-neutral-200 px-1 py-2"
-					>
-						<iconify-icon
-							inline
-							icon="logos:github-icon"
-							width="16"
-						/>
-						GitHub
-					</span>
-
-					<span
-						class="inline-flex gap-1 items-center rounded text-xs dark:bg-neutral-800 bg-neutral-100 px-1 py-2"
-					>
-						<iconify-icon
-							inline
-							icon="logos:javascript"
-							width="16"
-						/>
-						JavaScript
-					</span>
-
-					<span
-						class="inline-flex gap-1 items-center rounded text-xs dark:bg-neutral-800 bg-neutral-100 px-1 py-2"
-					>
-						<iconify-icon
-							inline
-							icon="logos:typescript-icon"
-							width="16"
-						/>
-						TypeScript
-					</span>
-					<span
-						class="inline-flex gap-1 items-center rounded text-xs dark:bg-neutral-800 bg-neutral-100 px-1 py-2"
-					>
-						<iconify-icon
-							inline
-							icon="logos:c-plusplus"
-							width="16"
-						/> C++
-					</span>
-					<span
-						class="inline-flex gap-1 items-center rounded text-xs dark:bg-neutral-800 bg-neutral-100 px-1 py-2"
-					>
-						<iconify-icon
-							inline
-							icon="logos:postgresql"
-							width="16"
-						/> Postgresql
-					</span>
-					<span
-						class="inline-flex gap-1 items-center rounded text-xs dark:bg-neutral-800 bg-neutral-100 px-1 py-2"
-					>
-						<iconify-icon
-							inline
-							icon="logos:nextjs-icon"
-							width="16"
-						/> Next.js
-					</span>
-
-					<span
-						class="inline-flex gap-1 items-center rounded text-xs dark:bg-neutral-800 bg-neutral-100 px-1 py-2"
-					>
-						<iconify-icon inline icon="logos:astro" width="16" /> Astro
-					</span>
+					<Badge logo="logos:react" name="React" />
+					<Badge logo="logos:rust" name="Rust" />
+					<Badge logo="logos:html-5" name="HTML" />
+					<Badge logo="logos:css-3" name="CSS" />
+					<Badge logo="logos:javascript" name="JavaScript" />
+					<Badge logo="logos:github-icon" name="GitHub" />
+					<Badge logo="logos:git-icon" name="Git" />
+					<Badge logo="logos:typescript-icon" name="TypeScript" />
+					<Badge logo="logos:tailwindcss-icon" name="TailwindCSS" />
+					<Badge logo="logos:nextjs" name="NextJS" />
+					<Badge logo="logos:c-plusplus" name="C++" />
+					<Badge logo="logos:postgresql" name="PostgreSQL" />
+					<Badge logo="logos:astro" name="Astro" />
 				</div>
 			</article>
 			<article>
