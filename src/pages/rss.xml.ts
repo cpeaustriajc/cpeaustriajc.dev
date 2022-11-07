@@ -7,5 +7,6 @@ export const get = () =>
 			"John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines.",
 		site: 'https://jaycedotbin.github.io',
 		items: import.meta.glob('./**/*.md'),
+		stylesheet: '/rss/stylesheet.xsl',
 		customData: `<language>en-us</language>`,
 	});

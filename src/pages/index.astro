@@ -32,10 +32,26 @@ const content = {
 		<meta name="twitter:title" content={content.title} />
 		<meta name="twitter:description" content={content.description} />
 		<meta name="generator" content={Astro.generator} />
+		<script
+			src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"
+		></script>
 	</Head>
 	<main slot="content" class="max-w-prose mx-auto">
-		<ul class="list-style-none p-0 m-0">
-			{nonDraftPosts.map((post) => <Post post={post} />)}
-		</ul>
+		<section class="flex flex-row justify-between items-center">
+			<div>
+				<h1 class="text-4xl font-black uppercase">All posts</h1>
+			</div>
+			<div>
+				<a href="/rss.xml">
+					<iconify-icon inline icon="carbon:rss" width="24" />
+				</a>
+			</div>
+		</section>
+		<hr />
+		<section>
+			<ul class="list-style-none p-0 m-0">
+				{nonDraftPosts.map((post) => <Post post={post} />)}
+			</ul>
+		</section>
 	</main>
 </Base>
