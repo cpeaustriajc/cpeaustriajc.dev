@@ -52,7 +52,7 @@ Marathon will use the new `app` directory to be able to build a more complex pag
 
 tRPC also introduces a major version bump where there is nothing notably new, just some changes in the api like making it more elegant and more simpler.
 
-But there is a change that tRPC might not be used in the future especially with the heavy use of React Server Components in the `app` directory, as of now, tRPC only lives because of the valuable features it provides.
+But there is a change that tRPC might not be used in the future especially with the heavy use of React Server Components in the `app` directory, as of now, tRPC only lives because of the valuable features it provides that the older `pages` directory cannot (specifically type safety when data fetching).
 
 
 # Summary
