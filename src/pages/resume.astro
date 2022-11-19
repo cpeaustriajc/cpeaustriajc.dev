@@ -5,6 +5,7 @@ import '@fontsource/oswald';
 import Badge from '@/components/Badge.astro';
 import Social from '@/components/Social.astro';
 import Contact from '@/components/Contact.astro';
+import Head from '@/components/Head.astro';
 
 const seo = {
 	description: "HTML format of John Carlo Austria's Resume",
@@ -13,10 +14,8 @@ const seo = {
 ---
 
 <html lang="en">
-	<head>
+	<Head>
 		<title>{seo.title}</title>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content={seo.description} />
 		<meta name="color-scheme" content="dark" />
 		<meta property="og:title" content={seo.title} />
@@ -25,7 +24,7 @@ const seo = {
 		<script
 			src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"
 		></script>
-	</head>
+	</Head>
 	<body class="font-sans bg-neutral-900 text-neutral-50">
 		<header class="max-w-prose mt-8 mx-auto bg-neutral-900 text-neutral-50">
 			<section class="flex flex-row gap-8">
