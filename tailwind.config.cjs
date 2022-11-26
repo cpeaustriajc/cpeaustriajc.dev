@@ -6,8 +6,8 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				display: ['Oswald', ...defaultTheme.fontFamily.sans],
-				sans: ['Inter', ...defaultTheme.fontFamily.sans],
+				display: ['OswaldVariable', ...defaultTheme.fontFamily.sans],
+				sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
 			},
 		},
 	},
