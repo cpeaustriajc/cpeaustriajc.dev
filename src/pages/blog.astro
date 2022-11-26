@@ -1,17 +1,22 @@
 ---
 import Head from '@/components/Head.astro';
+import Post from '@/components/Post.astro';
 import Base from '@/layouts/Base.astro';
+import type { Frontmatter } from '@/types/frontmatter';
+
+const posts = await Astro.glob<Frontmatter>('../pages/posts/*.md');
+const nonDraftPosts = posts.filter((post) => !post.frontmatter.draft);
 
 const content = {
 	description:
 		"John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines.",
-	title: 'About | John Carlo Austria',
+	title: 'Blog| John Carlo Austria',
 };
 ---
 
 <Base>
 	<Head slot="head">
-		<title>{content.title}</title>
+		<title>Blog | John Carlo Austria</title>
 		<meta name="description" content={content.description} />
 
 		<meta name="color-scheme" content="light dark" />
@@ -27,28 +32,32 @@ const content = {
 		<meta name="twitter:title" content={content.title} />
 		<meta name="twitter:description" content={content.description} />
 		<meta name="generator" content={Astro.generator} />
+		<script
+			src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"
+		></script>
 	</Head>
-	<main slot="content" class="max-w-prose mx-auto px-4 lg:px-0 space-y-4">
-		<h1
-			class="text-xl text-zinc-800 dark:text-zinc-300 capitalize font-bold"
+	<main slot="content" class="max-w-prose mx-auto px-4 lg:px-0">
+		<section
+			class="flex flex-row justify-between items-center text-zinc-800 dark:text-zinc-200"
 		>
-			About
-		</h1>
-		<p>
-			I am a programmer based in the Laguna, PH, currently studying at
-			Pamantasan ng Lungsod ng San Pablo.
-		</p>
-		<p>
-			I started programming in 2016 by playing around with computer
-			graphics and creating shader configurations in various games. Since
-			then, I learned multiple programming languages, libraries,
-			frameworks, and tools. I am currently focusing on web development
-			because I believe that the web is the future and investing in it is
-			a good idea.
-		</p>
-		<p>
-			I wanted to be a part of a community where there is something always
-			new in the corner and something that hypes me up everytime.
-		</p>
+			<div>
+				<h1
+					class="text-xl text-zinc-900 dark:text-zinc-50 capitalize font-bold"
+				>
+					All posts
+				</h1>
+			</div>
+			<div>
+				<a href="/rss.xml">
+					<iconify-icon inline icon="carbon:rss" width="24"
+					></iconify-icon>
+				</a>
+			</div>
+		</section>
+		<section>
+			<ul class="list-style-none p-0 m-0">
+				{nonDraftPosts.map((post) => <Post post={post} />)}
+			</ul>
+		</section>
 	</main>
 </Base>
