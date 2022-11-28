@@ -14,8 +14,6 @@ const remarkReadingTime = () => {
   };
 };
 
-
-
 // https://astro.build/config
 export default defineConfig({
   markdown: {
