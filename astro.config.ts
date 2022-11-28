@@ -20,6 +20,6 @@ export default defineConfig({
     remarkPlugins: [remarkToc, remarkReadingTime],
     extendDefaultPlugins: true
   },
-  site: 'https://jaycedotbin.github.io',
+  site: 'https://jaycedotbin.me',
   integrations: [sitemap(), tailwind()]
 });
