@@ -19,3 +19,7 @@ node_modules/
 
 # Obsidian
 .obsidian
+
+# Astro production build
+dev-dist
+dist

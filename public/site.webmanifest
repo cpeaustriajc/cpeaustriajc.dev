@@ -2,7 +2,7 @@
 	"name": "John Carlo Austria | Portfolio",
 	"short_name": "Portfolio",
 	"description": "John Carlo Austria's Personal Site",
-	"theme_color": "#9CFBF5",
+	"theme_color": "#000000",
 	"background_color": "#FFFFFF",
 	"start_url": "/",
 	"orientation": "any",
@@ -15,7 +15,9 @@
 		{
 			"src": "/favicon/light/android-chrome-512x512.png",
 			"sizes": "512x512",
-			"type": "image/png"
+			"type": "image/png",
+			"purpose": "any maskable"
+
 		}
 	],
 	"display": "standalone"
