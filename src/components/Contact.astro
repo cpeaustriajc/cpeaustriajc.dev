@@ -1,17 +1,8 @@
 ---
-const {name, link, icon } = Astro.props;
+const { name, link, icon } = Astro.props;
 ---
+
 <span class="space-x-2">
-    <iconify-icon
-        inline
-        icon={icon}
-        width="16"
-    />
-    <a
-        href={link}
-        target="_blank"
-        rel="noreferrer"
-        class="underline"
-        >{name}</a
-    >
+	<iconify-icon inline icon={icon} width="16"></iconify-icon>
+	<a href={link} target="_blank" rel="noreferrer" class="underline">{name}</a>
 </span>
