@@ -7,7 +7,7 @@ import Social from '@/components/Social.astro';
 import Contact from '@/components/Contact.astro';
 import Head from '@/components/Head.astro';
 
-const seo = {
+const content = {
 	description: "HTML format of John Carlo Austria's Resume",
 	title: 'Resume | John Carlo Austria',
 };
@@ -15,10 +15,10 @@ const seo = {
 
 <html lang="en">
 	<Head>
-		<title>{seo.title}</title>
-		<meta name="description" content={seo.description} />
+		<title>{content.title}</title>
+		<meta name="description" content={content.description} />
 		<meta name="color-scheme" content="dark" />
-		<meta property="og:title" content={seo.title} />
+		<meta property="og:title" content={content.title} />
 		<meta property="og:url" content={Astro.url.href} />
 		<meta name="generator" content={Astro.generator} />
 		<script

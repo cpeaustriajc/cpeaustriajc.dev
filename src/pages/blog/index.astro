@@ -4,7 +4,7 @@ import Post from '@/components/Post.astro';
 import Base from '@/layouts/Base.astro';
 import { getCollection } from 'astro:content';
 
-const posts = await getCollection('posts', ({ data }) => {
+const blog = await getCollection('blog', ({ data }) => {
 	return data.draft !== true;
 });
 
@@ -32,7 +32,7 @@ const content = {
 		<meta property="twitter:url" content={Astro.url.href} />
 		<meta name="twitter:title" content={content.title} />
 		<meta name="twitter:description" content={content.description} />
-		<meta name="generator" content={Astro.generator} />
+		<meta name="generator" content={Astro.generator} />blog
 		<script
 			src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"
 		></script>
@@ -57,7 +57,7 @@ const content = {
 		</section>
 		<section>
 			<ul class="list-style-none p-0 m-0">
-				{posts.map((post) => <Post post={post} />)}
+				{blog.map((instance) => <Post blog={instance} />)}
 			</ul>
 		</section>
 	</main>
