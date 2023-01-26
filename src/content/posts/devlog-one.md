@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/Markdown.astro
 title: Devlog.One — Modern, Blazingly fast!
 description:
     This is the first entry of my devlog series, this is for me to retain my

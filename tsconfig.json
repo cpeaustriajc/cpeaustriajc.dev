@@ -4,7 +4,6 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "types": ["astro/client", "vite-plugin-pwa/info"]
   },
   "extends": "astro/tsconfigs/strict"
 }

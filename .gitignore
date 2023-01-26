@@ -23,3 +23,4 @@ node_modules/
 # Astro production build
 dev-dist
 dist
+.astro
