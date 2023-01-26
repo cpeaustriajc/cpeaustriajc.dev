@@ -16,8 +16,6 @@ image_alt: The Banner for Astro, a Static Site Generator
 draft: false
 ---
 
-## Table of Contents
-
 ~~As of this writing, Astro has finally reached it's release candidate stage and
 will probably have a stable release on the end of this year.~~
 

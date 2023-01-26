@@ -20,8 +20,6 @@ image_alt:
 draft: false
 ---
 
-## Table of Contents
-
 ## Foreword
 
 These are some notes that I take while I study about Data Structures and
