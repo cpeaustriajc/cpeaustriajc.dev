@@ -16,6 +16,9 @@ devDependencies:
   '@fontsource/oswald':
     specifier: ^4.5.12
     version: 4.5.12
+  '@fontsource/roboto-mono':
+    specifier: ^4.5.10
+    version: 4.5.10
   '@tailwindcss/typography':
     specifier: ^0.5.9
     version: 0.5.9(tailwindcss@3.2.4)
@@ -597,6 +600,10 @@ packages:
 
   /@fontsource/oswald@4.5.12:
     resolution: {integrity: sha512-UAduJgOpCQzf+SnuatQ7ANWRIGPD2GXh3CfvJ4YTlbhGM0bQYCwHL/5u+YFjZzidBMXspzV/k33PPxwOrmuaew==}
+    dev: true
+
+  /@fontsource/roboto-mono@4.5.10:
+    resolution: {integrity: sha512-KrJdmkqz6DszT2wV/bbhXef4r0hV3B0vw2mAqei8A2kRnvq+gcJLmmIeQ94vu9VEXrUQzos5M9lH1TAAXpRphw==}
     dev: true
 
   /@jridgewell/gen-mapping@0.1.1:
