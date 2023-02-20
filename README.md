@@ -1,12 +1,13 @@
-# jaycedotbin.github.io
+# Portfolio
 
 ![GitHub][license]
 
-Built with astro and the power of static site generation, with speed in mind.
+Built with astro with speed and simplicity in mind.
 
-I think astro is a great static site generator, it only brings in the important
-for you to get started with.
-
+Astro has proven to be a great tool for building a simple static site. This is
+why I use it as my main method to be able to build simple websites that do not
+need that much interaction.
 
 [license]:
 	https://img.shields.io/github/license/jaycedotbin/jaycedotbin.github.io
+ 
