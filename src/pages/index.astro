@@ -1,54 +1,39 @@
 ---
-import Head from '@/components/Head.astro';
-import Base from '@/layouts/Base.astro';
+import Head from "@/components/Head.astro";
+import Base from "@/layouts/Base.astro";
+import { getEntryBySlug } from "astro:content";
+
+const entry = await getEntryBySlug("info", "about");
+
+const { Content } = await entry.render();
 
 const content = {
-	description:
-		"John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines.",
-	title: 'About | John Carlo Austria',
+  description:
+    "John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines.",
+  title: "About | John Carlo Austria",
 };
 ---
 
 <Base>
-	<Head slot="head">
-		<title>{content.title}</title>
-		<meta name="description" content={content.description} />
+  <Head slot="head">
+    <title>{content.title}</title>
+    <meta name="description" content={content.description} />
 
-		<meta name="color-scheme" content="light dark" />
+    <meta name="color-scheme" content="light dark" />
 
-		<meta name="description" content={content.description} />
-		<meta property="og:title" content={content.title} />
-		<meta property="og:url" content={Astro.url.href} />
+    <meta name="description" content={content.description} />
+    <meta property="og:title" content={content.title} />
+    <meta property="og:url" content={Astro.url.href} />
 
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta property="twitter:domain" content="jaycedotbin.me" />
-		<meta property="twitter:creator" content="@jaycedotbin" />
-		<meta property="twitter:url" content={Astro.url.href} />
-		<meta name="twitter:title" content={content.title} />
-		<meta name="twitter:description" content={content.description} />
-		<meta name="generator" content={Astro.generator} />
-	</Head>
-	<main slot="content" class="max-w-prose mx-auto px-4 lg:px-0 space-y-4">
-		<h1
-			class="text-xl text-zinc-800 dark:text-zinc-300 capitalize font-bold"
-		>
-			About
-		</h1>
-		<p>
-			I am a programmer based in Laguna, PH, currently studying at
-			Pamantasan ng Lungsod ng San Pablo.
-		</p>
-		<p>
-			I started programming in 2016 by playing around with computer
-			graphics and creating shader configurations in various games. Since
-			then, I learned multiple programming languages, libraries,
-			frameworks, and tools. I am currently focusing on web development
-			because I believe that the web is the future and investing in it is
-			a good idea.
-		</p>
-		<p>
-			I wanted to be a part of a community where there is something always
-			new in the corner and something that hypes me up everytime.
-		</p>
-	</main>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="jaycedotbin.me" />
+    <meta property="twitter:creator" content="@jaycedotbin" />
+    <meta property="twitter:url" content={Astro.url.href} />
+    <meta name="twitter:title" content={content.title} />
+    <meta name="twitter:description" content={content.description} />
+    <meta name="generator" content={Astro.generator} />
+  </Head>
+  <main slot="content" class="prose dark:prose-invert max-w-prose mx-auto px-4 lg:px-0 space-y-4">
+    <Content />
+  </main>
 </Base>
