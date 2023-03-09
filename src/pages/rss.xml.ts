@@ -10,7 +10,7 @@ export async function get() {
 		site: 'https://jaycedotbin.me',
 		items: blog.map((post) => ({
 			title: post.data.title,
-			pubDate: post.data.pubDate,
+			pubDate: post.data.publishedDate,
 			description: post.data.description,
 			link: `/blog/${post.slug}`,
 		})),
