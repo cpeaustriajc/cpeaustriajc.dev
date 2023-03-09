@@ -2,10 +2,7 @@
 title: Marathon Updates (November 7, 2022)
 description:
     After a few months of it not being maintaned I would be happy to say that marathon is still going being developed! This blog post will tackle on how it will handle the migration from pages to the new app directory.
-pubDate: 2022-11-07
-date:
-    format: 2022-11-07
-    content: November 07, 2022
+publishedDate: 2022-11-07
 topics:
     - devlog
     - education

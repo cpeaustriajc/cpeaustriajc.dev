@@ -16,8 +16,8 @@ const { blog } = Astro.props;
 			<h2>
 				{blog.data.title}
 			</h2>
-			<time datetime={blog.data.date.format.toString()}
-				>{blog.data.date.content}</time
+			<time datetime={blog.data.publishedDate.toISOString()}
+				>{blog.data.publishedDate.toLocaleDateString()}</time
 			>
 		</article>
 	</a>

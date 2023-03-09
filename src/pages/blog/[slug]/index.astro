@@ -54,8 +54,8 @@ const { Content } = await entry.render();
 		<header>
 			<h1>{entry.data.title}</h1>
 			<p>
-				<time datetime={entry.data.date.format.toString()}>
-					{entry.data.date.content}
+				<time datetime={entry.data.publishedDate.toISOString()}>
+					{entry.data.publishedDate.toLocaleDateString()}
 				</time>
 			</p>
 		</header>

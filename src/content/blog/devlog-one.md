@@ -4,10 +4,7 @@ description:
     This is the first entry of my devlog series, this is for me to retain my
     knowledge about what I learned about programming, I wanna do a weekly series
     of this if possible.
-pubDate: 2022-06-16
-date:
-    format: 2022-06-16
-    content: Aug 16, 2022
+publishedDate: 2022-06-16
 topics:
     - devlog
 cover: ../assets/devlog-1.webp
