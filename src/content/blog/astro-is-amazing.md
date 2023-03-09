@@ -11,8 +11,7 @@ topics:
     - astro
     - webdev
     - technology
-image_name: astro
-image_alt: The Banner for Astro, a Static Site Generator
+cover: ../assets/astro.webp
 draft: false
 ---
 
@@ -46,7 +45,7 @@ website. It is also not designed to be simple but flexible, it can do server
 side, static site, and client side plus it also has a feature called incremental
 static regeneration which means in the [Next.js documentation][nextjs-docs].
 
-> Next.js allows you to create or update static pages after you’ve built your
+> Next.js allows you to create or update static pages after you`ve built your
 > site. Incremental Static Regeneration (ISR) enables you to use
 > static-generation on a per-page basis, **without needing to rebuild the entire
 > site**. With ISR, you can retain the benefits of static while scaling to

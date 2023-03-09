@@ -10,10 +10,7 @@ date:
     content: Aug 16, 2022
 topics:
     - devlog
-image_name: devlog-1
-image_alt:
-    Sometimes, you know what you are doing as a developer, sometimes you feel
-    like the stupidest person in the planet
+cover: ../assets/devlog-1.webp
 draft: false
 ---
 

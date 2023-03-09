@@ -13,9 +13,7 @@ topics:
     - typescript
     - react
     - nextjs
-image_name: marathon-engineering-2
-image_alt:
-    Latest updates about the next major version of marathon and how it will be migrated to the new nextjs app directory.
+cover: ../assets/marathon-engineering-2.webp
 draft: false
 ---
 
