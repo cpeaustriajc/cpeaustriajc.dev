@@ -1,15 +1,14 @@
 ---
 title: Marathon Updates (November 7, 2022)
-description:
-    After a few months of it not being maintaned I would be happy to say that marathon is still going being developed! This blog post will tackle on how it will handle the migration from pages to the new app directory.
+description: After a few months of it not being maintaned I would be happy to say that marathon is still going being developed! This blog post will tackle on how it will handle the migration from pages to the new app directory.
 publishedDate: 2022-11-07
 topics:
-    - devlog
-    - education
-    - javascript
-    - typescript
-    - react
-    - nextjs
+  - devlog
+  - education
+  - javascript
+  - typescript
+  - react
+  - nextjs
 cover: ../assets/marathon-engineering-2.webp
 draft: false
 ---
@@ -47,7 +46,6 @@ Marathon will use the new `app` directory to be able to build a more complex pag
 tRPC also introduces a major version bump where there is nothing notably new, just some changes in the api like making it more elegant and more simpler.
 
 But there is a change that tRPC might not be used in the future especially with the heavy use of React Server Components in the `app` directory, as of now, tRPC only lives because of the valuable features it provides that the older `pages` directory cannot (specifically type safety when data fetching).
-
 
 # Summary
 

@@ -1,14 +1,13 @@
 ---
 title: Data Structures and Algorithms Notes
-description:
-    This is an ongoing series for me learning about data structures and
-    algorithms using C++, I am writing about it so that I can retain my
-    knowledge about it.
+description: This is an ongoing series for me learning about data structures and
+  algorithms using C++, I am writing about it so that I can retain my
+  knowledge about it.
 publishedDate: 2022-06-16
 topics:
-    - devlog
-    - education
-    - c++
+  - devlog
+  - education
+  - c++
 cover: ../assets/dsa-notes.webp
 draft: false
 ---
@@ -58,16 +57,16 @@ algorithms are:
 
 Brute Force algorithms are:
 
--   Intuitive, direct, and straightforward technique of problem-solving in which
-    all the possible ways or all the possbile solutions to a given problem are
-    enumerated.
--   Many problems solved in day-to-day life using the brute force strategy, for
-    example, exploring all the paths to a nearby market to find the minimum
-    shortest path
--   Arranging the books in a rack using all the possibilities to optimize the
-    rack spaces, etc.
--   Daily life activities use a brute force nature, even though optimal
-    algorithms are also possbile.
+- Intuitive, direct, and straightforward technique of problem-solving in which
+  all the possible ways or all the possbile solutions to a given problem are
+  enumerated.
+- Many problems solved in day-to-day life using the brute force strategy, for
+  example, exploring all the paths to a nearby market to find the minimum
+  shortest path
+- Arranging the books in a rack using all the possibilities to optimize the
+  rack spaces, etc.
+- Daily life activities use a brute force nature, even though optimal
+  algorithms are also possbile.
 
 ## Introduction to Data Structures
 
@@ -107,10 +106,10 @@ output of the data that was fetched somewhere.
 
 ```json
 {
-	"title": "Post One",
-	"description": "This is my first post!",
-	"date": "2022-09-06",
-	"image": "https://media.giphy.com/media/Ju7l5y9osyymQ/giphy.gif"
+  "title": "Post One",
+  "description": "This is my first post!",
+  "date": "2022-09-06",
+  "image": "https://media.giphy.com/media/Ju7l5y9osyymQ/giphy.gif"
 }
 ```
 
@@ -123,14 +122,14 @@ let's use JavaScript as an example (specifically React):
 
 ```jsx
 const Post = ({ post }) => {
-	return (
-		<article>
-			<h1>{post.title}</h1>
-			<img src={post.image} alt={post.description} />
-			<time datetime={post.date}>{post.date}</time>
-			<p>{post.description}</p>
-		</article>
-	);
+  return (
+    <article>
+      <h1>{post.title}</h1>
+      <img src={post.image} alt={post.description} />
+      <time datetime={post.date}>{post.date}</time>
+      <p>{post.description}</p>
+    </article>
+  );
 };
 ```
 
@@ -218,9 +217,8 @@ nodes in the heap.
 A list of references that I use to gather information about Data Structures and
 Algorithms.
 
--   [Introduction to Data Structures][intro-to-dsa]
--   [Introduction to Algorithms][intro-to-algorithms]
+- [Introduction to Data Structures][intro-to-dsa]
+- [Introduction to Algorithms][intro-to-algorithms]
 
-[intro-to-dsa]:
-	https://www.youtube.com/watch?v=xLetJpcjHS0&list=PLBlnK6fEyqRj9lld8sWIUNwlKfdUoPd1Y
+[intro-to-dsa]: https://www.youtube.com/watch?v=xLetJpcjHS0&list=PLBlnK6fEyqRj9lld8sWIUNwlKfdUoPd1Y
 [intro-to-algorithms]: https://www.geeksforgeeks.org/fundamentals-of-algorithms/

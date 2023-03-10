@@ -1,12 +1,12 @@
 ---
 title: Devlog.One — Modern, Blazingly fast!
 description:
-    This is the first entry of my devlog series, this is for me to retain my
-    knowledge about what I learned about programming, I wanna do a weekly series
-    of this if possible.
+  This is the first entry of my devlog series, this is for me to retain my
+  knowledge about what I learned about programming, I wanna do a weekly series
+  of this if possible.
 publishedDate: 2022-06-16
 topics:
-    - devlog
+  - devlog
 cover: ../assets/devlog-1.webp
 draft: false
 ---
@@ -53,9 +53,9 @@ So, this is why sometimes, we have to lay back, think about these three; and sta
 
 ## References:
 
--   [Marathon]
+- [Marathon]
 
--   [MyAnimeList]
+- [MyAnimeList]
 
 [marathon]: https://marathon-preview.vercel.app
 [myanimelist]: https://myanimelist.net/

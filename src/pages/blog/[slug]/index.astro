@@ -1,19 +1,19 @@
 ---
-import Head from '@/components/Head.astro';
-import Base from '@/layouts/base.layout.astro';
-import { getCollection,CollectionEntry } from 'astro:content';
+import Head from "@/components/Head.astro";
+import Base from "@/layouts/base.layout.astro";
+import { getCollection, CollectionEntry } from "astro:content";
 
 interface Props {
-    entry: CollectionEntry<'blog'>;
+  entry: CollectionEntry<"blog">;
 }
 
 export async function getStaticPaths() {
-	const postEntries = await getCollection('blog');
+  const postEntries = await getCollection("blog");
 
-	return postEntries.map((entry) => ({
-		params: { slug: entry.slug },
-		props: { entry },
-	}));
+  return postEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
 }
 
 const { entry } = Astro.props;
@@ -22,45 +22,40 @@ const { Content } = await entry.render();
 ---
 
 <Base>
-	<Head slot="head">
-		<title>{entry.data.title}</title>
-		<meta name="description" content={entry.data.description} />
+  <Head slot="head">
+    <title>{entry.data.title}</title>
+    <meta name="description" content={entry.data.description} />
 
-		<meta name="color-scheme" content="light dark" />
+    <meta name="color-scheme" content="light dark" />
 
-		<meta property="og:title" content={entry.data.title} />
-		<meta property="og:url" content={Astro.url.href} />
-		<meta
-			property="og:image"
-			content={entry.data.cover.src}
-		/>
-		<meta property="og:image:alt" content={`${entry.data.title}`} />
+    <meta property="og:title" content={entry.data.title} />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:description" content={entry.data.description} />
+    <meta property="og:image:alt" content={entry.data.title} />
 
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta property="twitter:domain" content="jaycedotbin.me" />
-		<meta property="twitter:url" content={Astro.url.href} />
-		<meta name="twitter:title" content={entry.data.title} />
-		<meta name="twitter:description" content={entry.data.description} />
-		<meta
-			name="twitter:image"
-			content={entry.data.cover.src}
-		/>
-		<meta name="twitter:image:alt" content={entry.data.title} />
-	</Head>
-	<main
-	slot="content"
-	class="font-sans mx-auto prose prose-pre:font-mono prose-code:font-mono dark:prose-invert px-4 lg:px-0"
-	>
-		<header>
-			<h1>{entry.data.title}</h1>
-			<p>
-				<time datetime={entry.data.publishedDate.toISOString()}>
-					{entry.data.publishedDate.toLocaleDateString()}
-				</time>
-			</p>
-		</header>
-		<article>
-            <Content />
-		</article>
-	</main>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="jaycedotbin.me" />
+    <meta property="twitter:url" content={Astro.url.href} />
+    <meta name="twitter:title" content={entry.data.title} />
+    <meta name="twitter:description" content={entry.data.description} />
+    <meta name="twitter:image:alt" content={entry.data.title} />
+  </Head>
+  <main
+    slot="content"
+    class="font-sans mx-auto prose prose-pre:font-mono prose-code:font-mono dark:prose-invert px-4 lg:px-0"
+  >
+    <header>
+      <h1>
+        {entry.data.title}
+      </h1>
+      <p>
+        <time datetime={entry.data.publishedDate.toISOString()}>
+          {entry.data.publishedDate.toLocaleDateString()}
+        </time>
+      </p>
+    </header>
+    <article>
+      <Content />
+    </article>
+  </main>
 </Base>

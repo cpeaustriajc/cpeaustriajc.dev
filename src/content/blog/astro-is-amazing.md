@@ -1,13 +1,13 @@
 ---
 title: Astro Is Amazing!
 description:
-    Building my personal site with Astro is so good! I would recommend Astro if
-    you want to rebuild your personal site!
+  Building my personal site with Astro is so good! I would recommend Astro if
+  you want to rebuild your personal site!
 publishedDate: 2022-04-06
 topics:
-    - astro
-    - webdev
-    - technology
+  - astro
+  - webdev
+  - technology
 cover: ../assets/astro.webp
 draft: false
 ---
@@ -146,53 +146,52 @@ more popular as time goes on!
 
 ### Astro Links
 
--   [Astro 1.0 Post][astro-1.0-post]
--   [Astro Compiler][astro-compiler]
--   [Astro Documentation][astro-documentation]
--   [Astro is fast by default][astro-fast-by-default]
--   [Astro Homepage][astro-homepage]
+- [Astro 1.0 Post][astro-1.0-post]
+- [Astro Compiler][astro-compiler]
+- [Astro Documentation][astro-documentation]
+- [Astro is fast by default][astro-fast-by-default]
+- [Astro Homepage][astro-homepage]
 
 ### ESBuild Links
 
--   [ESBuild Homepage][esbuild-homepage]
+- [ESBuild Homepage][esbuild-homepage]
 
 ### Go Links
 
--   [Go Homepage][go-homepage]
--   [Go for Cloud and Network Services Development][go-solutions-cloud]
--   [Go for Command-line Interfaces][go-solutions-clis]
--   [Go for Web Development][go-solutions-webdev]
+- [Go Homepage][go-homepage]
+- [Go for Cloud and Network Services Development][go-solutions-cloud]
+- [Go for Command-line Interfaces][go-solutions-clis]
+- [Go for Web Development][go-solutions-webdev]
 
 ### Next.js Links
 
--   [Next.js Documentation][nextjs-docs]
--   [Next.js Homepage][nextjs-homepage]
+- [Next.js Documentation][nextjs-docs]
+- [Next.js Homepage][nextjs-homepage]
 
 ### Svelte Links
 
--   [Svelte Hompage][svelte-homepage]
--   [Svelte CSS Scoping][svelte-css-scoping]
+- [Svelte Hompage][svelte-homepage]
+- [Svelte CSS Scoping][svelte-css-scoping]
 
 ### TailWind CSS Links
 
--   [TailWind Homepage][tailwind-homepage]
--   [TailWind Documentation][tailwind-docs]
+- [TailWind Homepage][tailwind-homepage]
+- [TailWind Documentation][tailwind-docs]
 
 ### Vite Links
 
--   [Vite][vite-homepage]
--   [Vite SSR][vite-ssr]
+- [Vite][vite-homepage]
+- [Vite SSR][vite-ssr]
 
 ### Vue Links
 
--   [Vue.js Homepage][vue-homepage]
--   [Vue.js Scoped CSS][vue-css-scoping]
+- [Vue.js Homepage][vue-homepage]
+- [Vue.js Scoped CSS][vue-css-scoping]
 
 [astro-1.0-post]: https://astro.build/blog/astro-1/
 [astro-compiler]: https://github.com/withastro/compiler/
 [astro-documentation]: https://docs.astro.build/en/getting-started/
-[astro-fast-by-default]:
-	https://docs.astro.build/en/concepts/why-astro/#fast-by-default
+[astro-fast-by-default]: https://docs.astro.build/en/concepts/why-astro/#fast-by-default
 [astro-homepage]: https://astro.build
 [esbuild-homepage]: https://esbuild.github.io/
 [go-homepage]: https://go.dev/
