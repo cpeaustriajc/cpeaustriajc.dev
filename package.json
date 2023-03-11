@@ -22,6 +22,7 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
-    "@astrojs/markdoc": "^0.0.1"
+    "@astrojs/markdoc": "^0.0.1",
+    "sharp": "^0.31.3"
   }
 }
