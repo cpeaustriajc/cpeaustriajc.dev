@@ -9,7 +9,7 @@ topics:
   - typescript
   - react
   - nextjs
-cover: ../assets/marathon-engineering-2.webp
+cover: /images/marathon-engineering-2.webp
 draft: false
 ---
 

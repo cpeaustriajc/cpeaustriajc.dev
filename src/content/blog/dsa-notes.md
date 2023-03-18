@@ -8,7 +8,7 @@ topics:
   - devlog
   - education
   - c++
-cover: ../assets/dsa-notes.webp
+cover: /images/dsa-notes.webp
 draft: false
 ---
 

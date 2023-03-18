@@ -9,8 +9,10 @@ topics:
   - life
   - mental health
   - education
-cover: ../../assets/moving-on.jpg
+cover: /images/moving-on.jpg
 draft: true
 ---
 
-![Sometimes, you have to move on, it's for the best.](../../assets/moving-on.jpg)
+![Sometimes, letting go is better than holding on.](/images/moving-on.jpg)
+
+Why do we keep holding on to things that are not worth it?
