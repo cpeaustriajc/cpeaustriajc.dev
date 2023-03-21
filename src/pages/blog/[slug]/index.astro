@@ -39,7 +39,10 @@ const { Content } = await entry.render();
     <meta property="twitter:url" content={Astro.url.href} />
     <meta name="twitter:title" content={entry.data.title} />
     <meta name="twitter:description" content={entry.data.description} />
-    <meta property="twitter:image" content={Astro.url.origin + entry.data.cover} />
+    <meta
+      property="twitter:image"
+      content={Astro.url.origin + entry.data.cover}
+    />
     <meta name="twitter:image:alt" content={entry.data.title} />
   </Head>
   <main
@@ -51,10 +54,17 @@ const { Content } = await entry.render();
         {entry.data.title}
       </h1>
       <p>
-        <time datetime={entry.data.publishedDate.toISOString()}>
+        Published: <time datetime={entry.data.publishedDate.toISOString()}>
           {entry.data.publishedDate.toLocaleDateString()}
         </time>
       </p>
+      <figure>
+        <img
+          src={entry.data.cover}
+          alt={entry.data.description}
+          class="rounded"
+        />
+      </figure>
     </header>
     <article>
       <Content />
