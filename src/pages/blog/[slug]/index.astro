@@ -1,6 +1,6 @@
 ---
 import Head from "~/components/Head.astro";
-import Base from "~/layouts/base.layout.astro";
+import BaseLayout from "~/layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 import { getCollection, CollectionEntry } from "astro:content";
 
@@ -22,7 +22,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Base>
+<BaseLayout>
   <Head slot="head">
     <title>{entry.data.title}</title>
     <meta name="description" content={entry.data.description} />
@@ -76,4 +76,4 @@ const { Content } = await entry.render();
       <Content />
     </article>
   </main>
-</Base>
+</BaseLayout>

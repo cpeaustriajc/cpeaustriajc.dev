@@ -1,7 +1,7 @@
 ---
 import Head from "~/components/Head.astro";
 import Post from "~/components/Post.astro";
-import Base from "~/layouts/base.layout.astro";
+import Base from "~/layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
 const blog = await getCollection("blog", ({ data }) => {
@@ -33,9 +33,6 @@ const content = {
     <meta name="twitter:title" content={content.title} />
     <meta name="twitter:description" content={content.description} />
     <meta name="generator" content={Astro.generator} />
-    <script
-      src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"
-    ></script>
   </Head>
   <main slot="content" class="max-w-prose mx-auto px-4 lg:px-0">
     <section
@@ -50,7 +47,24 @@ const content = {
       </div>
       <div>
         <a href="/rss.xml">
-          <iconify-icon inline icon="carbon:rss" width="24"></iconify-icon>
+          <picture>
+            <source
+              srcset="https://cdn.simpleicons.org/rss/ffffff"
+              media="(prefers-color-scheme: dark)"
+            />
+            <source
+              srcset="https://cdn.simpleicons.org/rss/000000"
+              media="(prefers-color-scheme: light )"
+            />
+
+            <img
+              src="https://cdn.simpleicons.org/rss"
+              width="16"
+              height="16"
+              alt="RSS Icon provided by Simple Icons"
+            />
+          </picture>
+          <span class="sr-only">RSS</span>
         </a>
       </div>
     </section>

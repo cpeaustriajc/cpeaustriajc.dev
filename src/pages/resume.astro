@@ -1,10 +1,9 @@
 ---
 import "@fontsource/inter";
 
-import Badge from "~/components/Badge.astro";
-import Social from "~/components/Social.astro";
-import Contact from "~/components/Contact.astro";
 import Head from "~/components/Head.astro";
+import { Image } from "astro:assets";
+import Portrait from "../assets/images/portrait-square.webp";
 
 const content = {
   description: "HTML format of John Carlo Austria's Resume",
@@ -28,8 +27,8 @@ const content = {
     <header class="max-w-prose mt-8 mx-auto bg-neutral-900 text-neutral-50">
       <section class="flex flex-row gap-8">
         <figure>
-          <img
-            src="/assets/portrait-square.webp"
+          <Image
+            src={Portrait}
             alt="Profile picture of John Carlo Austria"
             class="rounded-full"
             width="128"
@@ -47,18 +46,16 @@ const content = {
 
           <ul class="text-slate-400">
             <li>
-              <Contact
-                name="San Pablo City, Laguna, Philippines"
-                link="http://maps.google.com/?q=San+Pablo+City,+Laguna,+Philippines"
-                icon="carbon:location"
-              />
-            </li>
-            <li>
-              <Contact
-                name="cpe.austria.johncarlo@gmail.com"
-                link="mailto:cpe.austria.johncarlo@gmail.com"
-                icon="carbon:email"
-              />
+              <span class="space-x-2 flex flex-row items-center">
+                <img height="16" width="16" src="https://cdn.simpleicons.org/googlemaps/94A3B8" />
+                <a
+                  href="http://maps.google.com/?q=San+Pablo+City,+Laguna,+Philippines"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  San Pablo City, Laguna, Philippines
+                </a>
+              </span>
             </li>
           </ul>
         </figcaption>
@@ -67,23 +64,56 @@ const content = {
 
     <main class="max-w-prose mx-auto bg-neutral-900 text-neutral-50">
       <article>
-        <h2 class="text-xl font-bold my-2 dark:text-slate-400">Contact</h2>
+        <h2 class="text-xl font-bold my-2 text-slate-400">Contact</h2>
         <section class="space-x-2 my-2">
-          <Social
-            logo="ant-design:twitter-circle-filled"
-            link="https://twitter.com/jaycedotbin"
-            name="Twitter"
-          />
-          <Social
-            logo="entypo-social:linkedin-with-circle"
-            link="https://linkedin.com/in/jaycedotbin"
-            name="LinkedIn"
-          />
-          <Social
-            logo="ant-design:github"
-            link="https://github.com/jaycedotbin"
-            name="GitHub"
-          />
+          <span
+            class="inline-flex gap-1 items-center rounded text-xs bg-neutral-800 px-1 py-2"
+          >
+            <img
+              height="16"
+              width="16"
+              src="https://cdn.simpleicons.org/twitter/ffffff"
+              alt="Twitter Logo provided by Simple Icons"
+            />
+            <a
+              href="https://twitter.com/jayzersdotyo"
+              rel="noopener noreferrer"
+              target="_blank">Twitter</a
+            >
+          </span>
+
+          <span
+            class="inline-flex gap-1 items-center rounded text-xs bg-neutral-800 px-1 py-2"
+          >
+            <img
+              height="16"
+              width="16"
+              src="https://cdn.simpleicons.org/linkedin/ffffff"
+              alt="Linkedin Logo provided by Simple Icons"
+            />
+            <a
+              href="https://linkedin.com/in/jaycedotbin"
+              rel="noopener noreferrer"
+              target="_blank">LinkedIn</a
+            >
+          </span>
+          <span
+            class="inline-flex gap-1 items-center rounded text-xs bg-neutral-800 px-1 py-2"
+          >
+            <img
+              height="16"
+              width="16"
+              src="https://cdn.simpleicons.org/github/ffffff"
+              alt="GitHub logo provided by Simple Icons"
+            />
+            <a
+              href="https://github.com/jaycedotbin"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Github
+            </a>
+          </span>
         </section>
       </article>
       <article>
@@ -91,7 +121,7 @@ const content = {
 
         <p>
           A Computer Engineering Student (Undergraduate) in <a
-            class="underline dark:text-blue-500 text-blue-800"
+            class="underline text-blue-500"
             href="https://www.facebook.com/PLSPOfficialFBPage"
             >Pamantasan Lungsod ng San Pablo</a
           >, I have a passion in programming and especially in web and embedded
@@ -102,19 +132,149 @@ const content = {
         <h2 class="text-xl font-bold my-2 text-slate-400">Tech Stack</h2>
 
         <div class="flex flex-wrap gap-4">
-          <Badge logo="logos:react" name="React" />
-          <Badge logo="logos:rust" name="Rust" />
-          <Badge logo="logos:html-5" name="HTML" />
-          <Badge logo="logos:css-3" name="CSS" />
-          <Badge logo="logos:javascript" name="JavaScript" />
-          <Badge logo="logos:github-icon" name="GitHub" />
-          <Badge logo="logos:git-icon" name="Git" />
-          <Badge logo="logos:typescript-icon" name="TypeScript" />
-          <Badge logo="logos:tailwindcss-icon" name="TailwindCSS" />
-          <Badge logo="logos:nextjs" name="NextJS" />
-          <Badge logo="logos:c-plusplus" name="C++" />
-          <Badge logo="logos:postgresql" name="PostgreSQL" />
-          <Badge logo="logos:astro" name="Astro" />
+          <span
+            class="inline-flex gap-1 items-center rounded text-xs bg-neutral-800 px-1 py-2"
+          >
+            <img
+              height="20"
+              width="20"
+              src="https://cdn.simpleicons.org/react/ffffff"
+              alt="React logo provided by Simple Icons"
+            />
+            <span>React</span>
+          </span>
+          <span
+            class="inline-flex gap-1 items-center rounded text-xs bg-neutral-800 px-1 py-2"
+          >
+            <img
+              height="20"
+              width="20"
+              src="https://cdn.simpleicons.org/rust/ffffff"
+              alt="Rust logo provided by Simple Icons"
+            />
+            <span>Rust</span>
+          </span>
+          <span
+            class="inline-flex gap-1 items-center rounded text-xs bg-neutral-800 px-1 py-2"
+          >
+            <img
+              height="20"
+              width="20"
+              src="https://cdn.simpleicons.org/html5/ffffff"
+              alt="HTML5 logo provided by Simple Icons"
+            />
+            <span>HTML5</span>
+          </span>
+          <span
+            class="inline-flex gap-1 items-center rounded text-xs bg-neutral-800 px-1 py-2"
+          >
+            <img
+              height="20"
+              width="20"
+              src="https://cdn.simpleicons.org/css3/ffffff"
+              alt="CSS3 logo provided by Simple Icons"
+            />
+            <span>CSS</span>
+          </span>
+          <span
+            class="inline-flex gap-1 items-center rounded text-xs bg-neutral-800 px-1 py-2"
+          >
+            <img
+              height="20"
+              width="20"
+              src="https://cdn.simpleicons.org/javascript/ffffff"
+              alt="JavaScript logo provided by Simple Icons"
+            />
+            <span>JavaScript</span>
+          </span>
+          <span
+            class="inline-flex gap-1 items-center rounded text-xs bg-neutral-800 px-1 py-2"
+          >
+            <img
+              height="20"
+              width="20"
+              src="https://cdn.simpleicons.org/github/ffffff"
+              alt="GitHub logo provided by Simple Icons"
+            />
+            <span>GitHub</span>
+          </span>
+          <span
+            class="inline-flex gap-1 items-center rounded text-xs bg-neutral-800 px-1 py-2"
+          >
+            <img
+              height="20"
+              width="20"
+              src="https://cdn.simpleicons.org/git/ffffff"
+              alt="Git logo provided by Simple Icons"
+            />
+            <span>Git</span>
+          </span>
+          <span
+            class="inline-flex gap-1 items-center rounded text-xs bg-neutral-800 px-1 py-2"
+          >
+            <img
+              height="20"
+              width="20"
+              src="https://cdn.simpleicons.org/typescript/ffffff"
+              alt="TypeScript logo provided by Simple Icons"
+            />
+            <span>TypeScript</span>
+          </span>
+          <span
+            class="inline-flex gap-1 items-center rounded text-xs bg-neutral-800 px-1 py-2"
+          >
+            <img
+              height="20"
+              width="20"
+              src="https://cdn.simpleicons.org/tailwindcss/ffffff"
+              alt="TailwindCSS logo provided by Simple Icons"
+            />
+            <span>TailwindCSS</span>
+          </span>
+          <span
+            class="inline-flex gap-1 items-center rounded text-xs bg-neutral-800 px-1 py-2"
+          >
+            <img
+              height="20"
+              width="20"
+              src="https://cdn.simpleicons.org/next.js/ffffff"
+              alt="Next.js logo provided by Simple Icons"
+            />
+            <span>Next.js</span>
+          </span>
+          <span
+            class="inline-flex gap-1 items-center rounded text-xs bg-neutral-800 px-1 py-2"
+          >
+            <img
+              height="20"
+              width="20"
+              src="https://cdn.simpleicons.org/c++/ffffff"
+              alt="C++ logo provided by Simple Icons"
+            />
+            <span>C++</span>
+          </span>
+          <span
+            class="inline-flex gap-1 items-center rounded text-xs bg-neutral-800 px-1 py-2"
+          >
+            <img
+              height="20"
+              width="20"
+              src="https://cdn.simpleicons.org/postgresql/ffffff"
+              alt="PostgreSQL logo provided by Simple Icons"
+            />
+            <span>PostgreSQL</span>
+          </span>
+          <span
+            class="inline-flex gap-1 items-center rounded text-xs bg-neutral-800 px-1 py-2"
+          >
+            <img
+              height="20"
+              width="20"
+              src="https://cdn.simpleicons.org/astro/ffffff"
+              alt="Astro logo provided by Simple Icons"
+            />
+            <span>Astro</span>
+          </span>
         </div>
       </article>
       <article>
