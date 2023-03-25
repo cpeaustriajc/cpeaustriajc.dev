@@ -1,5 +1,5 @@
 ---
-import "@fontsource/inter";
+import "@fontsource/inter/variable.css";
 
 import Head from "~/components/Head.astro";
 import { Image } from "astro:assets";
@@ -12,14 +12,16 @@ const content = {
 ---
 
 <html lang="en">
-  <Head>
-    <title>{content.title}</title>
-    <meta name="description" content={content.description} />
-    <meta name="color-scheme" content="dark" />
-    <meta property="og:title" content={content.title} />
-    <meta property="og:url" content={Astro.url.href} />
-    <meta name="generator" content={Astro.generator} />
-  </Head>
+  <head>
+    <Head>
+      <title>{content.title}</title>
+      <meta name="description" content={content.description} />
+      <meta name="color-scheme" content="dark" />
+      <meta property="og:title" content={content.title} />
+      <meta property="og:url" content={Astro.url.href} />
+      <meta name="generator" content={Astro.generator} />
+    </Head>
+  </head>
   <body class="font-sans bg-neutral-900 text-neutral-50">
     <header class="max-w-prose mt-8 mx-auto bg-neutral-900 text-neutral-50">
       <section class="flex flex-row gap-8">
@@ -44,7 +46,11 @@ const content = {
           <ul class="text-slate-400">
             <li>
               <span class="space-x-2 flex flex-row items-center">
-                <img height="16" width="16" src="https://cdn.simpleicons.org/googlemaps/94A3B8" />
+                <img
+                  height="16"
+                  width="16"
+                  src="https://cdn.simpleicons.org/googlemaps/94A3B8"
+                />
                 <a
                   href="http://maps.google.com/?q=San+Pablo+City,+Laguna,+Philippines"
                   target="_blank"
