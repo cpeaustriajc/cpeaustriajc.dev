@@ -7,7 +7,7 @@ description:
 publishedDate: 2022-06-16
 topics:
   - devlog
-cover: /images/devlog-1.webp
+cover: ~/assets/images/devlog-1.webp
 draft: false
 ---
 

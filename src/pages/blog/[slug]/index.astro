@@ -1,6 +1,7 @@
 ---
-import Head from "@/components/Head.astro";
-import Base from "@/layouts/base.layout.astro";
+import Head from "~/components/Head.astro";
+import Base from "~/layouts/base.layout.astro";
+import { Image } from "astro:assets";
 import { getCollection, CollectionEntry } from "astro:content";
 
 interface Props {
@@ -31,7 +32,7 @@ const { Content } = await entry.render();
     <meta property="og:title" content={entry.data.title} />
     <meta property="og:url" content={Astro.url.href} />
     <meta property="og:description" content={entry.data.description} />
-    <meta property="og:image" content={Astro.url.origin + entry.data.cover} />
+    <meta property="og:image" content={Astro.url.origin + entry.data.cover.src} />
     <meta property="og:image:alt" content={entry.data.title} />
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -41,7 +42,7 @@ const { Content } = await entry.render();
     <meta name="twitter:description" content={entry.data.description} />
     <meta
       property="twitter:image"
-      content={Astro.url.origin + entry.data.cover}
+      content={Astro.url.origin + entry.data.cover.src}
     />
     <meta name="twitter:image:alt" content={entry.data.title} />
   </Head>
@@ -59,9 +60,11 @@ const { Content } = await entry.render();
         </time>
       </p>
       <figure>
-        <img
-          src={entry.data.cover}
+        <Image
+          src={entry.data.cover.src}
           alt={entry.data.description}
+          width={entry.data.cover.width}
+          height={entry.data.cover.height}
           class="rounded"
         />
       </figure>

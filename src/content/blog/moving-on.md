@@ -9,7 +9,7 @@ topics:
   - life
   - mental health
   - education
-cover: /images/moving-on.jpg
+cover: ~/assets/images/moving-on.jpg
 draft: false
 ---
 

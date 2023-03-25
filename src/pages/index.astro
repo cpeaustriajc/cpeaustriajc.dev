@@ -1,6 +1,6 @@
 ---
-import Head from "@/components/Head.astro";
-import Base from "@/layouts/base.layout.astro";
+import Head from "~/components/Head.astro";
+import Base from "~/layouts/base.layout.astro";
 import { getEntryBySlug } from "astro:content";
 
 const entry = await getEntryBySlug("info", "about");

@@ -8,7 +8,7 @@ topics:
   - devlog
   - education
   - c++
-cover: /images/dsa-notes.webp
+cover: ~/assets/images/dsa-notes.webp
 draft: false
 ---
 
@@ -140,8 +140,7 @@ This is how you would use it in JavaScript (React).
 Linked lists are the fundamental data structure, it is one of the very first
 topics that is taught in data structures.
 
-<!-- Waiting for the patch... -->
-<!-- ![Spiderman doesn't know how to reverse a linked list, so he is sad, so you should know how to so that you won't be sad!](assets/spiderman-linked-list.webp) -->
+![Spiderman doesn't know how to reverse a linked list, so he is sad, so you should know how to so that you won't be sad!](~/assets/images/spiderman-linked-list.webp)
 
 A linked list is a linear data structure, in which the elements are not stored
 at contiguous memory locations. The elements in a linked list are linked using
@@ -151,7 +150,7 @@ dynamically in which an array data structure is weak.
 Linked lists include a series of connected nodes and each node stores the data
 and the address of the next node.
 
-<!-- ![Linked List Graphical Representation](../../assets/linked-list-graphical.webp) -->
+![Linked List Graphical Representation](~/assets/images/linked-list-graphical.webp)
 
 ```cpp
 // A very basic example of a linked list.

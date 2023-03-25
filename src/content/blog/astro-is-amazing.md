@@ -8,7 +8,7 @@ topics:
   - astro
   - webdev
   - technology
-cover: /images/astro.webp
+cover: ~/assets/images/astro.webp
 draft: false
 ---
 
