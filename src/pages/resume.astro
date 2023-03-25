@@ -1,147 +1,133 @@
 ---
-import '@fontsource/inter';
+import "@fontsource/inter";
 
-import Badge from '~/components/Badge.astro';
-import Social from '~/components/Social.astro';
-import Contact from '~/components/Contact.astro';
-import Head from '~/components/Head.astro';
+import Badge from "~/components/Badge.astro";
+import Social from "~/components/Social.astro";
+import Contact from "~/components/Contact.astro";
+import Head from "~/components/Head.astro";
 
 const content = {
-	description: "HTML format of John Carlo Austria's Resume",
-	title: 'Resume | John Carlo Austria',
+  description: "HTML format of John Carlo Austria's Resume",
+  title: "Resume | John Carlo Austria",
 };
 ---
 
 <html lang="en">
-	<Head>
-		<title>{content.title}</title>
-		<meta name="description" content={content.description} />
-		<meta name="color-scheme" content="dark" />
-		<meta property="og:title" content={content.title} />
-		<meta property="og:url" content={Astro.url.href} />
-		<meta name="generator" content={Astro.generator} />
-		<script
-			src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"
-		></script>
-	</Head>
-	<body class="font-sans bg-neutral-900 text-neutral-50">
-		<header class="max-w-prose mt-8 mx-auto bg-neutral-900 text-neutral-50">
-			<section class="flex flex-row gap-8">
-				<figure>
-					<img
-						src="/assets/portrait-square.webp"
-						alt="Profile picture of John Carlo Austria"
-						class="rounded-full"
-						width="128"
-						height="128"
-					/>
-				</figure>
-				<figcaption>
-					<h1
-						class="text-5xl font-black text-neutral-100"
-					>
-						John Carlo Austria
-					</h1>
-					<p class="text-slate-100">
-						I'm a programmer that creates apps in the web and create
-						bare metal devices.
-					</p>
+  <Head>
+    <title>{content.title}</title>
+    <meta name="description" content={content.description} />
+    <meta name="color-scheme" content="dark" />
+    <meta property="og:title" content={content.title} />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta name="generator" content={Astro.generator} />
+    <script
+      src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"
+    ></script>
+  </Head>
+  <body class="font-sans bg-neutral-900 text-neutral-50">
+    <header class="max-w-prose mt-8 mx-auto bg-neutral-900 text-neutral-50">
+      <section class="flex flex-row gap-8">
+        <figure>
+          <img
+            src="/assets/portrait-square.webp"
+            alt="Profile picture of John Carlo Austria"
+            class="rounded-full"
+            width="128"
+            height="128"
+          />
+        </figure>
+        <figcaption>
+          <h1 class="text-5xl font-black text-neutral-100">
+            John Carlo Austria
+          </h1>
+          <p class="text-slate-100">
+            I'm a programmer that creates apps in the web and create bare metal
+            devices.
+          </p>
 
-					<ul class="text-slate-400">
-						<li>
-							<Contact
-								name="San Pablo City, Laguna, Philippines"
-								link="http://maps.google.com/?q=San+Pablo+City,+Laguna,+Philippines"
-								icon="carbon:location"
-							/>
-						</li>
-						<li>
-							<Contact
-								name="cpe.austria.johncarlo@gmail.com"
-								link="mailto:cpe.austria.johncarlo@gmail.com"
-								icon="carbon:email"
-							/>
-						</li>
-					</ul>
-				</figcaption>
-			</section>
-		</header>
+          <ul class="text-slate-400">
+            <li>
+              <Contact
+                name="San Pablo City, Laguna, Philippines"
+                link="http://maps.google.com/?q=San+Pablo+City,+Laguna,+Philippines"
+                icon="carbon:location"
+              />
+            </li>
+            <li>
+              <Contact
+                name="cpe.austria.johncarlo@gmail.com"
+                link="mailto:cpe.austria.johncarlo@gmail.com"
+                icon="carbon:email"
+              />
+            </li>
+          </ul>
+        </figcaption>
+      </section>
+    </header>
 
-		<main class="max-w-prose mx-auto bg-neutral-900 text-neutral-50">
-			<article>
-				<h2
-					class="text-xl font-bold my-2 dark:text-slate-400"
-				>
-					Contact
-				</h2>
-				<section class="space-x-2 my-2">
-					<Social
-						logo="ant-design:twitter-circle-filled"
-						link="https://twitter.com/jaycedotbin"
-						name="Twitter"
-					/>
-					<Social
-						logo="entypo-social:linkedin-with-circle"
-						link="https://linkedin.com/in/jaycedotbin"
-						name="LinkedIn"
-					/>
-					<Social
-						logo="ant-design:github"
-						link="https://github.com/jaycedotbin"
-						name="GitHub"
-					/>
-				</section>
-			</article>
-			<article>
-				<h2 class="text-xl font-bold my-2 text-slate-400">
-					About
-				</h2>
+    <main class="max-w-prose mx-auto bg-neutral-900 text-neutral-50">
+      <article>
+        <h2 class="text-xl font-bold my-2 dark:text-slate-400">Contact</h2>
+        <section class="space-x-2 my-2">
+          <Social
+            logo="ant-design:twitter-circle-filled"
+            link="https://twitter.com/jaycedotbin"
+            name="Twitter"
+          />
+          <Social
+            logo="entypo-social:linkedin-with-circle"
+            link="https://linkedin.com/in/jaycedotbin"
+            name="LinkedIn"
+          />
+          <Social
+            logo="ant-design:github"
+            link="https://github.com/jaycedotbin"
+            name="GitHub"
+          />
+        </section>
+      </article>
+      <article>
+        <h2 class="text-xl font-bold my-2 text-slate-400">About</h2>
 
-				<p>
-					A Computer Engineering Student (Undergraduate) in <a
-						class="underline dark:text-blue-500 text-blue-800"
-						href="https://www.facebook.com/PLSPOfficialFBPage"
-						>Pamantasan Lungsod ng San Pablo</a
-					>, I have a passion in programming and especially in web and
-					embedded systems. I also have a passion in creating and
-					designing stuff.
-				</p>
-			</article>
-			<article>
-				<h2 class="text-xl font-bold my-2 text-slate-400">
-					Tech Stack
-				</h2>
+        <p>
+          A Computer Engineering Student (Undergraduate) in <a
+            class="underline dark:text-blue-500 text-blue-800"
+            href="https://www.facebook.com/PLSPOfficialFBPage"
+            >Pamantasan Lungsod ng San Pablo</a
+          >, I have a passion in programming and especially in web and embedded
+          systems. I also have a passion in creating and designing stuff.
+        </p>
+      </article>
+      <article>
+        <h2 class="text-xl font-bold my-2 text-slate-400">Tech Stack</h2>
 
-				<div class="flex flex-wrap gap-4">
-					<Badge logo="logos:react" name="React" />
-					<Badge logo="logos:rust" name="Rust" />
-					<Badge logo="logos:html-5" name="HTML" />
-					<Badge logo="logos:css-3" name="CSS" />
-					<Badge logo="logos:javascript" name="JavaScript" />
-					<Badge logo="logos:github-icon" name="GitHub" />
-					<Badge logo="logos:git-icon" name="Git" />
-					<Badge logo="logos:typescript-icon" name="TypeScript" />
-					<Badge logo="logos:tailwindcss-icon" name="TailwindCSS" />
-					<Badge logo="logos:nextjs" name="NextJS" />
-					<Badge logo="logos:c-plusplus" name="C++" />
-					<Badge logo="logos:postgresql" name="PostgreSQL" />
-					<Badge logo="logos:astro" name="Astro" />
-				</div>
-			</article>
-			<article>
-				<h2 class="text-xl font-bold text-slate-400">
-					Career Objectives
-				</h2>
-				<p>
-					To be able to work with companies where the main focus is
-					innovation
-				</p>
-			</article>
-		</main>
-		<style>
-			@page {
-				margin: 0;
-			}
-		</style>
-	</body>
+        <div class="flex flex-wrap gap-4">
+          <Badge logo="logos:react" name="React" />
+          <Badge logo="logos:rust" name="Rust" />
+          <Badge logo="logos:html-5" name="HTML" />
+          <Badge logo="logos:css-3" name="CSS" />
+          <Badge logo="logos:javascript" name="JavaScript" />
+          <Badge logo="logos:github-icon" name="GitHub" />
+          <Badge logo="logos:git-icon" name="Git" />
+          <Badge logo="logos:typescript-icon" name="TypeScript" />
+          <Badge logo="logos:tailwindcss-icon" name="TailwindCSS" />
+          <Badge logo="logos:nextjs" name="NextJS" />
+          <Badge logo="logos:c-plusplus" name="C++" />
+          <Badge logo="logos:postgresql" name="PostgreSQL" />
+          <Badge logo="logos:astro" name="Astro" />
+        </div>
+      </article>
+      <article>
+        <h2 class="text-xl font-bold text-slate-400">Career Objectives</h2>
+        <p>
+          To be able to work with companies where the main focus is innovation
+        </p>
+      </article>
+    </main>
+    <style>
+      @page {
+        margin: 0;
+      }
+    </style>
+  </body>
 </html>

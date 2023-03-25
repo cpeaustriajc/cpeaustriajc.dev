@@ -3,71 +3,71 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<slot />
-	<link rel="canonical" href={canonicalURL} />
-	<link
-		rel="apple-touch-icon"
-		sizes="180x180"
-		media="(prefers-color-scheme: light)"
-		href="/favicon/light/apple-touch-icon.png"
-	/>
-	<link
-		rel="icon"
-		type="image/png"
-		sizes="32x32"
-		media="(prefers-color-scheme: light)"
-		href="/favicon/light/favicon-32x32.png"
-	/>
-	<link
-		rel="icon"
-		type="image/png"
-		sizes="16x16"
-		media="(prefers-color-scheme: light)"
-		href="/favicon/light/favicon-16x16.png"
-	/>
-	<link
-		rel="shortcut icon"
-		media="(prefers-color-scheme: light)"
-		href="/favicon/light/favicon.ico"
-		type="image/x-icon"
-	/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <slot />
+  <link rel="canonical" href={canonicalURL} />
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    media="(prefers-color-scheme: light)"
+    href="/favicon/light/apple-touch-icon.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    media="(prefers-color-scheme: light)"
+    href="/favicon/light/favicon-32x32.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    media="(prefers-color-scheme: light)"
+    href="/favicon/light/favicon-16x16.png"
+  />
+  <link
+    rel="shortcut icon"
+    media="(prefers-color-scheme: light)"
+    href="/favicon/light/favicon.ico"
+    type="image/x-icon"
+  />
 
-	<link
-		rel="apple-touch-icon"
-		sizes="180x180"
-		media="(prefers-color-scheme: dark)"
-		href="/favicon/dark/apple-touch-icon.png"
-	/>
-	<link
-		rel="icon"
-		type="image/png"
-		sizes="32x32"
-		media="(prefers-color-scheme: dark)"
-		href="/favicon/dark/favicon-32x32.png"
-	/>
-	<link
-		rel="icon"
-		type="image/png"
-		sizes="16x16"
-		media="(prefers-color-scheme: dark)"
-		href="/favicon/dark/favicon-16x16.png"
-	/>
-	<link
-		rel="shortcut icon"
-		media="(prefers-color-scheme: dark)"
-		href="/favicon/dark/favicon.ico"
-		type="image/x-icon"
-	/>
-	<meta
-		name="theme-color"
-		media="(prefers-color-scheme: dark)"
-		content="#000000"
-	/>
-	<meta
-		name="theme-color"
-		media="(prefers-color-scheme: light)"
-		content="#ffffff"
-	/>
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    media="(prefers-color-scheme: dark)"
+    href="/favicon/dark/apple-touch-icon.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    media="(prefers-color-scheme: dark)"
+    href="/favicon/dark/favicon-32x32.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    media="(prefers-color-scheme: dark)"
+    href="/favicon/dark/favicon-16x16.png"
+  />
+  <link
+    rel="shortcut icon"
+    media="(prefers-color-scheme: dark)"
+    href="/favicon/dark/favicon.ico"
+    type="image/x-icon"
+  />
+  <meta
+    name="theme-color"
+    media="(prefers-color-scheme: dark)"
+    content="#000000"
+  />
+  <meta
+    name="theme-color"
+    media="(prefers-color-scheme: light)"
+    content="#ffffff"
+  />
 </head>

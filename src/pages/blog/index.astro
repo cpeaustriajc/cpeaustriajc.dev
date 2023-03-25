@@ -1,64 +1,63 @@
 ---
-import Head from '~/components/Head.astro';
-import Post from '~/components/Post.astro';
-import Base from '~/layouts/base.layout.astro';
-import { getCollection } from 'astro:content';
+import Head from "~/components/Head.astro";
+import Post from "~/components/Post.astro";
+import Base from "~/layouts/base.layout.astro";
+import { getCollection } from "astro:content";
 
-const blog = await getCollection('blog', ({ data }) => {
-	return data.draft !== true;
+const blog = await getCollection("blog", ({ data }) => {
+  return data.draft !== true;
 });
 
 const content = {
-	description:
-		"John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines.",
-	title: 'Blog| John Carlo Austria',
+  description:
+    "John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines.",
+  title: "Blog| John Carlo Austria",
 };
 ---
 
 <Base>
-	<Head slot="head">
-		<title>Blog | John Carlo Austria</title>
-		<meta name="description" content={content.description} />
+  <Head slot="head">
+    <title>Blog | John Carlo Austria</title>
+    <meta name="description" content={content.description} />
 
-		<meta name="color-scheme" content="light dark" />
+    <meta name="color-scheme" content="light dark" />
 
-		<meta name="description" content={content.description} />
-		<meta property="og:title" content={content.title} />
-		<meta property="og:url" content={Astro.url.href} />
-		<meta property="og:description" content={content.description} />
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta property="twitter:domain" content="jaycedotbin.me" />
-		<meta property="twitter:creator" content="@jaycedotbin" />
-		<meta property="twitter:url" content={Astro.url.href} />
-		<meta name="twitter:title" content={content.title} />
-		<meta name="twitter:description" content={content.description} />
-		<meta name="generator" content={Astro.generator} />
-		<script
-			src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"
-		></script>
-	</Head>
-	<main slot="content" class="max-w-prose mx-auto px-4 lg:px-0">
-		<section
-			class="flex flex-row justify-between items-center text-zinc-800 dark:text-zinc-200"
-		>
-			<div>
-				<h1
-					class="text-xl text-zinc-900 dark:text-zinc-50 capitalize font-bold"
-				>
-					All posts
-				</h1>
-			</div>
-			<div>
-				<a href="/rss.xml">
-					<iconify-icon inline icon="carbon:rss" width="24"
-					></iconify-icon>
-				</a>
-			</div>
-		</section>
-		<section>
-			<ul class="list-style-none p-0 m-0">
-				{blog.map((instance) => <Post blog={instance} />)}
-			</ul>
-		</section>
-	</main>
+    <meta name="description" content={content.description} />
+    <meta property="og:title" content={content.title} />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:description" content={content.description} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="jaycedotbin.me" />
+    <meta property="twitter:creator" content="@jaycedotbin" />
+    <meta property="twitter:url" content={Astro.url.href} />
+    <meta name="twitter:title" content={content.title} />
+    <meta name="twitter:description" content={content.description} />
+    <meta name="generator" content={Astro.generator} />
+    <script
+      src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"
+    ></script>
+  </Head>
+  <main slot="content" class="max-w-prose mx-auto px-4 lg:px-0">
+    <section
+      class="flex flex-row justify-between items-center text-zinc-800 dark:text-zinc-200"
+    >
+      <div>
+        <h1
+          class="text-xl text-zinc-900 dark:text-zinc-50 capitalize font-bold"
+        >
+          All posts
+        </h1>
+      </div>
+      <div>
+        <a href="/rss.xml">
+          <iconify-icon inline icon="carbon:rss" width="24"></iconify-icon>
+        </a>
+      </div>
+    </section>
+    <section>
+      <ul class="list-style-none p-0 m-0">
+        {blog.map((instance) => <Post blog={instance} />)}
+      </ul>
+    </section>
+  </main>
 </Base>

@@ -1,8 +1,8 @@
 ---
 title: Data Structures and Algorithms Notes
-description: This is an ongoing series for me learning about data structures and
-  algorithms using C++, I am writing about it so that I can retain my
-  knowledge about it.
+description:
+  This is an ongoing series for me learning about data structures and algorithms
+  using C++, I am writing about it so that I can retain my knowledge about it.
 publishedDate: 2022-06-16
 topics:
   - devlog
@@ -63,10 +63,10 @@ Brute Force algorithms are:
 - Many problems solved in day-to-day life using the brute force strategy, for
   example, exploring all the paths to a nearby market to find the minimum
   shortest path
-- Arranging the books in a rack using all the possibilities to optimize the
-  rack spaces, etc.
-- Daily life activities use a brute force nature, even though optimal
-  algorithms are also possbile.
+- Arranging the books in a rack using all the possibilities to optimize the rack
+  spaces, etc.
+- Daily life activities use a brute force nature, even though optimal algorithms
+  are also possbile.
 
 ## Introduction to Data Structures
 
@@ -219,5 +219,6 @@ Algorithms.
 - [Introduction to Data Structures][intro-to-dsa]
 - [Introduction to Algorithms][intro-to-algorithms]
 
-[intro-to-dsa]: https://www.youtube.com/watch?v=xLetJpcjHS0&list=PLBlnK6fEyqRj9lld8sWIUNwlKfdUoPd1Y
+[intro-to-dsa]:
+  https://www.youtube.com/watch?v=xLetJpcjHS0&list=PLBlnK6fEyqRj9lld8sWIUNwlKfdUoPd1Y
 [intro-to-algorithms]: https://www.geeksforgeeks.org/fundamentals-of-algorithms/

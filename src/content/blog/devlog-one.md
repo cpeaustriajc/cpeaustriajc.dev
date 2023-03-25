@@ -33,15 +33,17 @@ people to track their progress on the shows that they are watching but I wanted
 to expand it to be more than just animes, I wanted it to cover different genres
 of media like reality shows, etc.
 
-But instead of finishing the project like a normal programmer, I decided to
-play with other technologies, and using the project as a way to test these
-tech.
+But instead of finishing the project like a normal programmer, I decided to play
+with other technologies, and using the project as a way to test these tech.
 
 This is one of the few normal moments of a programmer, the itch to be able to
-try out something new, which is normal to any kind of person who has been working
-on something with that same "thing" in a long time.
+try out something new, which is normal to any kind of person who has been
+working on something with that same "thing" in a long time.
 
-But that is okay, a software engineer shouldn't stop learning as there is always and will always be something new to learn and that is the fun part of programming! I personally do not get bored with the new technologies, programming languages, frameworks, libraries to try.
+But that is okay, a software engineer shouldn't stop learning as there is always
+and will always be something new to learn and that is the fun part of
+programming! I personally do not get bored with the new technologies,
+programming languages, frameworks, libraries to try.
 
 My way of being able to moderate this urge is to realize to myself that:
 
@@ -49,7 +51,8 @@ My way of being able to moderate this urge is to realize to myself that:
 2. Not mature enough to be able to say it is ready to be deployed to production.
 3. Potentially has bugs that could be annoying to deal with!
 
-So, this is why sometimes, we have to lay back, think about these three; and start working at our project again!
+So, this is why sometimes, we have to lay back, think about these three; and
+start working at our project again!
 
 ## References:
 

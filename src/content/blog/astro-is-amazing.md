@@ -191,7 +191,8 @@ more popular as time goes on!
 [astro-1.0-post]: https://astro.build/blog/astro-1/
 [astro-compiler]: https://github.com/withastro/compiler/
 [astro-documentation]: https://docs.astro.build/en/getting-started/
-[astro-fast-by-default]: https://docs.astro.build/en/concepts/why-astro/#fast-by-default
+[astro-fast-by-default]:
+  https://docs.astro.build/en/concepts/why-astro/#fast-by-default
 [astro-homepage]: https://astro.build
 [esbuild-homepage]: https://esbuild.github.io/
 [go-homepage]: https://go.dev/

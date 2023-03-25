@@ -1,15 +1,15 @@
 ---
-import '@fontsource/inter/variable.css';
-import '@fontsource/roboto-mono';
+import "@fontsource/inter/variable.css";
+import "@fontsource/roboto-mono";
 
-import Header from '~/components/Header.astro';
+import Header from "~/components/Header.astro";
 ---
 
 <html dir="ltr" lang="en">
-	<slot name="head" />
+  <slot name="head" />
 
-	<body class="bg-white text-zinc-700 dark:bg-zinc-900 dark:text-zinc-400">
-		<Header />
-		<slot name="content" />
-	</body>
+  <body class="bg-white text-zinc-700 dark:bg-zinc-900 dark:text-zinc-400">
+    <Header />
+    <slot name="content" />
+  </body>
 </html>

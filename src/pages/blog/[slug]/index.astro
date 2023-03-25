@@ -32,7 +32,10 @@ const { Content } = await entry.render();
     <meta property="og:title" content={entry.data.title} />
     <meta property="og:url" content={Astro.url.href} />
     <meta property="og:description" content={entry.data.description} />
-    <meta property="og:image" content={Astro.url.origin + entry.data.cover.src} />
+    <meta
+      property="og:image"
+      content={Astro.url.origin + entry.data.cover.src}
+    />
     <meta property="og:image:alt" content={entry.data.title} />
 
     <meta name="twitter:card" content="summary_large_image" />
