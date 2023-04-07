@@ -8,6 +8,10 @@ const blog = await getCollection("blog", ({ data }) => {
   return data.draft !== true;
 });
 
+const sortedBlog = blog.sort(
+  (a, b) => Number(b.data.publishedDate) - Number(a.data.publishedDate)
+);
+
 const content = {
   description:
     "John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines.",
@@ -70,7 +74,7 @@ const content = {
     </section>
     <section>
       <ul class="list-style-none p-0 m-0">
-        {blog.map((instance) => <Post blog={instance} />)}
+        {sortedBlog.map((instance) => <Post blog={instance} />)}
       </ul>
     </section>
   </main>
