@@ -1,7 +1,6 @@
-import defaultTheme from "tailwindcss/defaultTheme";
-import type { Config } from "tailwindcss";
+const defaultTheme = require("tailwindcss/defaultTheme");
 
-export default {
+module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
@@ -12,4 +11,4 @@ export default {
     },
   },
   plugins: [require("@tailwindcss/typography")],
-} satisfies Config;
+};
