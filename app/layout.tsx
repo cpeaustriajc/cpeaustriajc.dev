@@ -1,4 +1,3 @@
-import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 export default function RootLayout({
@@ -10,7 +9,6 @@ export default function RootLayout({
     <html lang="en">
       <body className="dark:bg-slate-950 dark:text-slate-50">
         <main className="max-w-prose">{children}</main>
-        <Analytics />
       </body>
     </html>
   );
