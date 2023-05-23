@@ -1,6 +1,6 @@
 export default function BlogPage() {
   return (
-    <main>
+    <main className="max-w-prose mx-auto">
       <h1>Blog</h1>
     </main>
   );

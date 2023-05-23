@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main className="max-w-prose">
+    <main className="max-w-prose mx-auto">
       <About />
     </main>
   );
