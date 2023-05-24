@@ -2,6 +2,8 @@ import { getPosts } from '@/sanity/utils';
 import { format, parse } from 'fecha';
 import Link from 'next/link';
 
+export const revalidate = 60;
+
 export default async function BlogPage() {
   const posts = await getPosts();
 
