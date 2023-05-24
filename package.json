@@ -20,8 +20,10 @@
   },
   "license": "CC-BY-4.0",
   "dependencies": {
+    "@codemirror/lang-cpp": "^6.0.2",
     "@portabletext/react": "^3.0.0",
     "@radix-ui/react-navigation-menu": "^1.1.2",
+    "@sanity/code-input": "^4.1.1",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.11.1",
     "@types/react": "^18.2.6",

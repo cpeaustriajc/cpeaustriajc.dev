@@ -39,19 +39,21 @@ const postSchema = defineType({
       type: 'string',
     }),
     defineField({
-      name: 'draft',
-      title: 'Draft',
-      type: 'boolean',
-    }),
-    defineField({
       name: 'content',
       title: 'Content',
       type: 'array',
-      of: [defineArrayMember({ type: 'block' })],
+      of: [
+        defineArrayMember({ type: 'block' }),
+        defineArrayMember({ type: 'image', options: { hotspot: true } }),
+        defineArrayMember({
+          type: 'code',
+          title: 'Code Block',
+          options: { languageAlternatives: [{title: 'C++', value:'cpp'}] },
+        }),
+      ],
     }),
   ],
   initialValue: {
-    draft: true,
     publishedAt: new Date().toISOString(),
   },
 });

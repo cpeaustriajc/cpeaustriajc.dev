@@ -1,6 +1,7 @@
 import { defineConfig } from 'sanity';
 import { deskTool } from 'sanity/desk';
 import { visionTool } from '@sanity/vision';
+import { codeInput } from '@sanity/code-input';
 import schemas from './sanity/schemas';
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
@@ -13,7 +14,18 @@ const config = defineConfig({
   basePath: '/studio',
   useCdn: true,
   schema: { types: schemas },
-  plugins: [deskTool(), visionTool()],
+  plugins: [
+    codeInput({
+      codeModes: [
+        {
+          name: 'cpp',
+          loader: () => import('@codemirror/lang-cpp').then(({ cpp }) => cpp()),
+        },
+      ],
+    }),
+    deskTool(),
+    visionTool(),
+  ],
 });
 
 export default config;
