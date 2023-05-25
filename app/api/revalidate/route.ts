@@ -13,11 +13,12 @@ export async function GET(request: NextRequest) {
   );
 
   if (!isValid) {
-    return NextResponse.json({
+    NextResponse.json({
       status: 401,
       success: false,
       message: 'Invalid Signature',
     });
+    return;
   }
 
   try {
