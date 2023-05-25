@@ -1,11 +1,13 @@
 import { isValidSignature, SIGNATURE_HEADER_NAME } from '@sanity/webhook';
 import { NextRequest, NextResponse } from 'next/server';
+import { headers } from 'next/headers';
 import { revalidatePath } from 'next/cache';
 
 const SANITY_WEBHOOK_SECRET = process.env.SANITY_WEBHOOK_SECRET;
 
 export async function GET(request: NextRequest) {
-  const signature = request.headers.get(SIGNATURE_HEADER_NAME);
+  const headersList = headers();
+  const signature = headersList.get(SIGNATURE_HEADER_NAME);
   const isValid = isValidSignature(
     JSON.stringify(request.body),
     signature!,
