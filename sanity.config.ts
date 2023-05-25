@@ -12,7 +12,7 @@ const config = defineConfig({
   dataset,
   title: 'Portfolio',
   basePath: '/studio',
-  useCdn: true,
+  useCdn: false,
   schema: { types: schemas },
   plugins: [
     codeInput({
