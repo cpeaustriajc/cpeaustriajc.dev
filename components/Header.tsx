@@ -47,7 +47,7 @@ export default function Header() {
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
-          {process.env.VERCEL_ENV !== 'production' && !isSSR && (
+          {process.env.NODE_ENV !== 'production' && !isSSR && (
             <NavigationMenuItem>
               <Link href="/studio" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
