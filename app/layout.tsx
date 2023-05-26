@@ -1,5 +1,5 @@
 import '@/styles/globals.css';
-import { Inter } from 'next/font/google';
+import { Inter, Roboto_Mono } from 'next/font/google';
 import { Providers } from './providers';
 import { cn } from '@/lib/utils';
 import Header from '@/components/Header';
@@ -9,6 +9,12 @@ const inter = Inter({
   weight: ['400', '500', '600', '700', '800'],
   variable: '--font-inter',
 });
+
+const roboto_mono = Roboto_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-roboto-mono',
+})
 
 export const metadata = {
   themeColor: [
@@ -25,7 +31,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn('h-full', inter.variable)}
+      className={cn('h-full', inter.variable, roboto_mono.variable)}
       suppressHydrationWarning
     >
       <body

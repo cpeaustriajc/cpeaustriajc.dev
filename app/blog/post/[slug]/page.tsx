@@ -3,12 +3,17 @@ import { Metadata } from 'next';
 import { PortableText, PortableTextComponents } from '@portabletext/react';
 import Refractor from 'react-refractor';
 import cpp from 'refractor/lang/cpp';
-import json from 'refractor/lang/json'
+import json from 'refractor/lang/json';
+import javascript from 'refractor/lang/javascript';
+import typescript from 'refractor/lang/typescript';
 import jsx from 'refractor/lang/jsx';
 import tsx from 'refractor/lang/tsx';
+import Code from '@/components/Code';
 
 Refractor.registerLanguage(cpp);
 Refractor.registerLanguage(json);
+Refractor.registerLanguage(javascript);
+Refractor.registerLanguage(typescript);
 Refractor.registerLanguage(jsx);
 Refractor.registerLanguage(tsx);
 
@@ -70,16 +75,12 @@ const components: PortableTextComponents = {
     },
   },
   types: {
-    code: ({ value }) => {
-      console.log(value)
-      return (
-        <Refractor
-          language={value.language || 'javascript'}
-          value={value.code}
-          markers={value.highlightedLines}
-        />
-      );
-    },
+    code: ({ value }) => (
+      <Code
+        language={value.language || 'javascript'}
+        code={value.code}
+      />
+    ),
   },
   list: {
     bullet: ({ children }) => (
