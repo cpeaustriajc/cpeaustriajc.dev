@@ -34,8 +34,8 @@ export default async function BlogPage() {
             .format('webp');
 
           return (
-            <Link href={`/blog/post/${post.slug.current}`} key={post._id}>
-              <Card className="w-[380px]">
+            <Card className="w-[380px]" key={post._id}>
+              <Link href={`/blog/post/${post.slug.current}`}>
                 <CardHeader className="pt-0 px-0">
                   <Image
                     src={builtImage.url()}
@@ -60,8 +60,8 @@ export default async function BlogPage() {
                     )}
                   </time>
                 </CardFooter>
-              </Card>
-            </Link>
+              </Link>
+            </Card>
           );
         })}
       </div>

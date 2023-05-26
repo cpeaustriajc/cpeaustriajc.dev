@@ -14,13 +14,35 @@ const roboto_mono = Roboto_Mono({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-roboto-mono',
-})
+});
 
 export const metadata = {
+  metadataBase: new URL(
+    process.env.NODE_ENV === 'production'
+      ? 'https://jaycedotbin.me/manifest.json'
+      : 'http://localhost:3000/manifest.json'
+  ),
+  manifest:
+    process.env.NODE_ENV === 'production'
+      ? 'https://jaycedotbin.me/manifest.json'
+      : 'http://localhost:3000/manifest.json',
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: 'white' },
     { media: '(prefers-color-scheme: dark)', color: 'black' },
   ],
+  colorScheme: 'light dark',
+  title: {
+    absolute: 'John Carlo Austria | Portfolio',
+    default: 'John Carlo Austria | Portfolio',
+  },
+  description: "John Carlo Austria's Personal Site",
+  alternates: {
+    canonical: `https://jaycedotbin.me/`,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    creator: '@jaycedotbin',
+  },
 };
 
 export default function RootLayout({
