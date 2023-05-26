@@ -28,8 +28,6 @@
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.11.3",
     "@sanity/webhook": "^2.0.0",
-    "@types/react": "^18.2.7",
-    "@types/react-syntax-highlighter": "^15.5.7",
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
     "fecha": "^4.2.3",
@@ -46,6 +44,8 @@
   },
   "devDependencies": {
     "@types/node": "20.2.4",
+    "@types/react": "^18.2.7",
+    "@types/react-syntax-highlighter": "^15.5.7",
     "autoprefixer": "^10.4.14",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
