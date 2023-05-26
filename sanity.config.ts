@@ -16,6 +16,8 @@ const config = defineConfig({
   useCdn: false,
   schema: { types: schemas },
   plugins: [
+    deskTool(),
+    visionTool(),
     media(),
     codeInput({
       codeModes: [
@@ -25,8 +27,6 @@ const config = defineConfig({
         },
       ],
     }),
-    deskTool(),
-    visionTool(),
   ],
 });
 
