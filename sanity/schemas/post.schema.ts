@@ -48,7 +48,16 @@ const postSchema = defineType({
         defineArrayMember({
           type: 'code',
           title: 'Code Block',
-          options: { languageAlternatives: [{title: 'C++', value:'cpp'}] },
+          options: {
+            language: 'javascript',
+            languageAlternatives: [
+              { title: 'JavaScript', value: 'javascript' },
+              { title: 'JSX', value: 'jsx' },
+              { title: 'JSON', value: 'json' },
+              { title: 'C++', value: 'cpp' },
+            ],
+            withFilename: true,
+          },
         }),
       ],
     }),
