@@ -1,7 +1,8 @@
-import { getPost } from '@/sanity/utils';
+import { getPost, urlFor } from '@/sanity/utils';
 import { Metadata } from 'next';
 import { PortableText, PortableTextComponents } from '@portabletext/react';
 import Code from '@/components/Code';
+import Link from 'next/link';
 
 type Props = {
   params: { slug: string };
@@ -49,23 +50,18 @@ const components: PortableTextComponents = {
     em: ({ children }) => <em className="italic">{children}</em>,
     link: ({ value, children }) => {
       return (
-        <a
-          className="font-medium text-primary underline underline-offset-4"
+        <Link
+          className="ont-medium text-primary underline underline-offset-4"
           href={value?.href}
-          target="_blank"
-          rel="noopener noreferrer"
         >
           {children}
-        </a>
+        </Link>
       );
     },
   },
   types: {
     code: ({ value }) => (
-      <Code
-        language={value.language || 'javascript'}
-        code={value.code}
-      />
+      <Code language={value.language || 'javascript'} code={value.code} />
     ),
   },
   list: {
@@ -81,6 +77,8 @@ const components: PortableTextComponents = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = await getPost(params.slug);
 
+  const coverImage = urlFor(post.coverImage).format('jpg').width(1200).height(630).url();
+
   return {
     metadataBase: new URL(
       process.env.NODE_ENV === 'production'
@@ -89,13 +87,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ),
     title: post.title,
     description: post.exerpt,
+    keywords: post.keywords,
     alternates: {
-      canonical: '/',
+      canonical: `https://jaycedotbin.me/blog/post/${post.slug.current}`,
     },
     openGraph: {
       title: post.title,
       description: post.exerpt,
-      images: [post.coverImage],
+      images: [coverImage],
     },
   };
 }

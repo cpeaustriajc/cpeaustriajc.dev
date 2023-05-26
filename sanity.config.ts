@@ -3,6 +3,7 @@ import { deskTool } from 'sanity/desk';
 import { visionTool } from '@sanity/vision';
 import { codeInput } from '@sanity/code-input';
 import schemas from './sanity/schemas';
+import { media } from 'sanity-plugin-media';
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
@@ -15,6 +16,7 @@ const config = defineConfig({
   useCdn: false,
   schema: { types: schemas },
   plugins: [
+    media(),
     codeInput({
       codeModes: [
         {
