@@ -5,6 +5,6 @@ export function middleware(request: NextRequest) {
     process.env.VERCEL_ENV === 'production' &&
     request.nextUrl.pathname.startsWith('/studio')
   ) {
-    return NextResponse.rewrite('/');
+    return NextResponse.redirect(new URL('/', request.url));
   }
 }
