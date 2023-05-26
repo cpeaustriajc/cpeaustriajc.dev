@@ -9,8 +9,15 @@ import {
 } from '@/components/ui/navigation-menu';
 
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 export default function Header() {
+  const [isSSR, setIsSSR] = useState(true);
+
+  useEffect(() => {
+    setIsSSR(false);
+  }, []);
+
   return (
     <header className="my-2">
       <NavigationMenu>
@@ -40,7 +47,7 @@ export default function Header() {
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
-          {process.env.VERCEL_ENV !== 'production' && (
+          {process.env.VERCEL_ENV !== 'production' && !isSSR && (
             <NavigationMenuItem>
               <Link href="/studio" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
