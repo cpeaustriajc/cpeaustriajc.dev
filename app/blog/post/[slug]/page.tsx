@@ -1,16 +1,7 @@
 import { getPost } from '@/sanity/utils';
 import { Metadata } from 'next';
 import { PortableText, PortableTextComponents } from '@portabletext/react';
-import Refractor from 'react-refractor';
-import cpp from 'refractor/lang/cpp';
-import json from 'refractor/lang/json'
-import jsx from 'refractor/lang/jsx';
-import tsx from 'refractor/lang/tsx';
-
-Refractor.registerLanguage(cpp);
-Refractor.registerLanguage(json);
-Refractor.registerLanguage(jsx);
-Refractor.registerLanguage(tsx);
+import Code from '@/components/Code';
 
 type Props = {
   params: { slug: string };
@@ -70,16 +61,12 @@ const components: PortableTextComponents = {
     },
   },
   types: {
-    code: ({ value }) => {
-      console.log(value)
-      return (
-        <Refractor
-          language={value.language || 'javascript'}
-          value={value.code}
-          markers={value.highlightedLines}
-        />
-      );
-    },
+    code: ({ value }) => (
+      <Code
+        language={value.language || 'javascript'}
+        code={value.code}
+      />
+    ),
   },
   list: {
     bullet: ({ children }) => (
