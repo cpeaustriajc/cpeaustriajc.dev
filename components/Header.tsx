@@ -40,15 +40,15 @@ export default function Header() {
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
-          <NavigationMenuItem>
-            {process.env.VERCEL_ENV !== 'production' && (
+          {process.env.VERCEL_ENV !== 'production' && (
+            <NavigationMenuItem>
               <Link href="/studio" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   Studio
                 </NavigationMenuLink>
               </Link>
-            )}
-          </NavigationMenuItem>
+            </NavigationMenuItem>
+          )}
         </NavigationMenuList>
       </NavigationMenu>
     </header>
