@@ -1,4 +1,3 @@
-import { buttonVariants } from '@/components/ui/button';
 import {
   Card,
   CardContent,
@@ -28,20 +27,20 @@ export default async function BlogPage() {
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
         {posts.map((post) => {
-          const builtImage = urlFor(post.coverImage)
-            .width(640)
-            .height(360)
-            .format('webp');
+          const builtImage = urlFor(post.coverImage).width(640).height(360);
 
           return (
             <Card className="w-[380px]" key={post._id}>
-              <Link href={`/blog/post/${post.slug.current}`}>
+              <Link href={`/blog/post/${post.slug}`}>
                 <CardHeader className="pt-0 px-0">
                   <Image
                     src={builtImage.url()}
                     width={builtImage.options.width}
                     height={builtImage.options.height}
-                    alt={post.title}
+                    alt={
+                      /* @ts-ignore bad type */
+                      builtImage.options.source.asset.altText
+                    }
                     priority
                     className="rounded-t-md aspect-video"
                   />

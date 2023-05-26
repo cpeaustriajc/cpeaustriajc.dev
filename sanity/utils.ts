@@ -18,9 +18,18 @@ export async function getPosts(): Promise<Post[]> {
             title,
             publishedAt,
             exerpt,
-            coverImage,
+            coverImage {
+              asset->{
+                _type,
+                _id,
+                altText,
+                description,
+                "tags": opt.media.tags[]->name.current,
+                title
+              }
+            },
             keywords,
-            slug,
+            "slug": slug.current,
             content,
     }
     `
@@ -37,7 +46,7 @@ export async function getPost(slug: string): Promise<Post> {
             exerpt,
             coverImage,
             keywords,
-            slug,
+            "slug": slug.current,
             content,
   }
   `,
