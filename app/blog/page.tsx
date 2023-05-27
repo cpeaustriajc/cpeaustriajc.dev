@@ -37,10 +37,7 @@ export default async function BlogPage() {
                     src={builtImage.url()}
                     width={builtImage.options.width}
                     height={builtImage.options.height}
-                    alt={
-                      /* @ts-ignore bad type */
-                      builtImage.options.source.asset.altText
-                    }
+                    alt={post.coverImage.altText}
                     priority
                     className="rounded-t-md aspect-video"
                   />
