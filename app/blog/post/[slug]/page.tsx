@@ -2,6 +2,7 @@ import { getPost, urlFor } from '@/sanity/utils';
 import { Metadata } from 'next';
 import { PortableText } from '@portabletext/react';
 import { components } from '@/components/ui/portable-text-components';
+import { CANONICAL_URL } from '@/lib/utils';
 
 type Props = {
   params: { slug: string };
@@ -18,11 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     .url();
 
   return {
-    metadataBase: new URL(
-      process.env.NODE_ENV === 'production'
-        ? 'https://jaycedotbin.me/'
-        : 'http://localhost:3000'
-    ),
+    metadataBase: new URL(CANONICAL_URL),
     title: post.title,
     description: post.exerpt,
     keywords: post.keywords,
@@ -30,17 +27,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: post.title,
       description: post.exerpt,
       images: [coverImage],
-      url:
-        process.env.NODE_ENV === 'production'
-          ? 'https://jaycedotbin.me/'
-          : 'http://localhost:3000',
+      url: CANONICAL_URL,
     },
-    twitter:{
+    twitter: {
       images: coverImage,
       card: 'summary_large_image',
       title: post.title,
       description: post.exerpt,
-    }
+      creator: '@jaycedotbin',
+      creatorId: '1653679343472877573',
+    },
   };
 }
 

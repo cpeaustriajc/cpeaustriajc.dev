@@ -1,7 +1,36 @@
-export const metadata = {
-  title: 'About',
-  description: 'About me',
-};
+import { CANONICAL_URL } from "@/lib/utils";
+import { getAbout, urlFor } from "@/sanity/utils";
+
+export async function generateMetadata() {
+  const about = await getAbout();
+
+  const coverImage = urlFor(about.coverImage)
+    .format('jpg')
+    .width(1200)
+    .height(630)
+    .url();
+
+  return {
+    metadataBase: new URL(CANONICAL_URL),
+    title: about.title,
+    description: about.description,
+    keywords: about.keywords,
+    openGraph: {
+      title: about.title,
+      description: about.description,
+      images: [coverImage],
+      url: CANONICAL_URL,
+    },
+    twitter: {
+      images: coverImage,
+      card: 'summary_large_image',
+      title: about.title,
+      description: about.description,
+      creator: '@jaycedotbin',
+      creatorId: '1653679343472877573',
+    },
+  }
+}
 
 export default function Home() {
   return (

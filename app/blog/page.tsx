@@ -6,16 +6,44 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { getPosts, urlFor } from '@/sanity/utils';
+import { CANONICAL_URL } from '@/lib/utils';
+import { getBlog, getPosts, urlFor } from '@/sanity/utils';
 import { format, parse } from 'fecha';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export const revalidate = 60;
 
-export const metadata = {
-  title: 'Blog - John Carlo Austria',
-};
+export async function generateMetadata() {
+  const blog = await getBlog();
+
+  const coverImage = urlFor(blog.coverImage)
+    .format('jpg')
+    .width(1200)
+    .height(630)
+    .url();
+
+  return {
+    metadataBase: new URL(CANONICAL_URL),
+    title: blog.title,
+    description: blog.description,
+    keywords: blog.keywords,
+    openGraph: {
+      title: blog.title,
+      description: blog.description,
+      images: [coverImage],
+      url: CANONICAL_URL,
+    },
+    twitter: {
+      images: coverImage,
+      card: 'summary_large_image',
+      title: blog.title,
+      description: blog.description,
+      creator: '@jaycedotbin',
+      creatorId: '1653679343472877573',
+    },
+  }
+}
 
 export default async function BlogPage() {
   const posts = await getPosts();

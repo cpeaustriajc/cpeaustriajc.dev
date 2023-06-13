@@ -10,6 +10,28 @@ export function urlFor(source: SanityImageSource) {
   return builder.image(source);
 }
 
+export async function getAbout(): Promise<any> {
+  return sanityClient.fetch(
+    groq`*[_type == "about"][0]{
+            title,
+            description,
+            keywords,
+            coverImage
+    }`
+  );
+}
+
+export async function getBlog(): Promise<any> {
+  return sanityClient.fetch(
+    groq`*[_type == "blog"][0]{
+            title,
+            description,
+            keywords,
+            coverImage
+    }`
+  );
+}
+
 export async function getPosts(): Promise<Post[]> {
   return sanityClient.fetch(
     groq`*[_type == "post"]{
