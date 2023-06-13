@@ -19,8 +19,8 @@ const roboto_mono = Roboto_Mono({
 export const metadata = {
   metadataBase: new URL(
     process.env.NODE_ENV === 'production'
-      ? 'https://jaycedotbin.me/manifest.json'
-      : 'http://localhost:3000/manifest.json'
+      ? 'https://jaycedotbin.me/'
+      : 'http://localhost:3000/'
   ),
   manifest:
     process.env.NODE_ENV === 'production'
