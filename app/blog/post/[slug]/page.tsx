@@ -11,7 +11,11 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = await getPost(params.slug);
 
-  const coverImage = urlFor(post.coverImage).format('jpg').width(1200).height(630).url();
+  const coverImage = urlFor(post.coverImage)
+    .format('jpg')
+    .width(1200)
+    .height(630)
+    .url();
 
   return {
     metadataBase: new URL(
@@ -26,7 +30,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: post.title,
       description: post.exerpt,
       images: [coverImage],
+      url:
+        process.env.NODE_ENV === 'production'
+          ? 'https://jaycedotbin.me/'
+          : 'http://localhost:3000',
     },
+    twitter:{
+      images: coverImage,
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.exerpt,
+    }
   };
 }
 
