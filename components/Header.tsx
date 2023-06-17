@@ -31,7 +31,7 @@ export default function Header() {
                 className={navigationMenuTriggerStyle()}
               >
                 Resume
-                <ExternalLinkIcon />
+                <ExternalLinkIcon className="pb-1 w-4 h-4" />
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
