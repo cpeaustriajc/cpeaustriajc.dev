@@ -10,6 +10,7 @@ import {
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { ExternalLink as ExternalLinkIcon } from 'lucide-react';
 
 export default function Header() {
   const [isSSR, setIsSSR] = useState(true);
@@ -30,6 +31,7 @@ export default function Header() {
                 className={navigationMenuTriggerStyle()}
               >
                 Resume
+                <ExternalLinkIcon />
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
