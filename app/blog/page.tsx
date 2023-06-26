@@ -42,7 +42,7 @@ export async function generateMetadata() {
       creator: '@jaycedotbin',
       creatorId: '1653679343472877573',
     },
-  }
+  };
 }
 
 export default async function BlogPage() {

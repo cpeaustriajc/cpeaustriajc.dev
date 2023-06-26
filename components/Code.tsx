@@ -17,8 +17,7 @@ export default function Code(props: Props) {
       CodeTag={(props) => (
         <code
           {...props}
-
-          style={{ fontFamily: "var(--font-roboto-mono)", fontSize: '0.8rem'}}
+          style={{ fontFamily: 'var(--font-roboto-mono)', fontSize: '0.8rem' }}
         />
       )}
     >

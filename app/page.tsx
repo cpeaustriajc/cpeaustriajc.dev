@@ -1,5 +1,5 @@
-import { CANONICAL_URL } from "@/lib/utils";
-import { getAbout, urlFor } from "@/sanity/utils";
+import { CANONICAL_URL } from '@/lib/utils';
+import { getAbout, urlFor } from '@/sanity/utils';
 
 export async function generateMetadata() {
   const about = await getAbout();
@@ -29,7 +29,7 @@ export async function generateMetadata() {
       creator: '@jaycedotbin',
       creatorId: '1653679343472877573',
     },
-  }
+  };
 }
 
 export default function Home() {
