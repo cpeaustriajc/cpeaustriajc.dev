@@ -1,4 +1,3 @@
-import { CANONICAL_URL } from '@/lib/utils'
 import { getAbout, urlFor } from '@/sanity/utils'
 
 export async function generateMetadata() {
@@ -11,7 +10,6 @@ export async function generateMetadata() {
     .url()
 
   return {
-    metadataBase: new URL(CANONICAL_URL),
     title: about.title,
     description: about.description,
     keywords: about.keywords,
@@ -19,7 +17,6 @@ export async function generateMetadata() {
       title: about.title,
       description: about.description,
       images: [coverImage],
-      url: CANONICAL_URL,
     },
     twitter: {
       images: coverImage,

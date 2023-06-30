@@ -6,15 +6,15 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
-import { CANONICAL_URL } from '@/lib/utils'
 import { getBlog, getPosts, urlFor } from '@/sanity/utils'
 import { format, parse } from 'fecha'
+import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
 export const revalidate = 60
 
-export async function generateMetadata() {
+export async function generateMetadata(): Promise<Metadata> {
   const blog = await getBlog()
 
   const coverImage = urlFor(blog.coverImage)
@@ -24,15 +24,17 @@ export async function generateMetadata() {
     .url()
 
   return {
-    metadataBase: new URL(CANONICAL_URL),
     title: blog.title,
     description: blog.description,
     keywords: blog.keywords,
+    alternates: {
+      canonical: 'https://jaycedotbin.me/blog',
+    },
     openGraph: {
       title: blog.title,
       description: blog.description,
       images: [coverImage],
-      url: CANONICAL_URL,
+      url: 'https://jaycedotbin.me/blog',
     },
     twitter: {
       images: coverImage,
@@ -65,7 +67,7 @@ export default async function BlogPage() {
                     src={builtImage.url()}
                     width={builtImage.options.width}
                     height={builtImage.options.height}
-                    alt={post.coverImage.altText}
+                    alt={post.coverImage.asset.altText}
                     priority
                     className="rounded-t-md aspect-video"
                   />
