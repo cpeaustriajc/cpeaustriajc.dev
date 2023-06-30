@@ -1,6 +1,6 @@
-import { PortableTextComponents } from '@portabletext/react';
-import Code from '@/components/Code';
-import Link from 'next/link';
+import { PortableTextComponents } from '@portabletext/react'
+import Code from '@/components/Code'
+import Link from 'next/link'
 
 export const components: PortableTextComponents = {
   block: {
@@ -49,7 +49,7 @@ export const components: PortableTextComponents = {
         >
           {children}
         </Link>
-      );
+      )
     },
   },
   types: {
@@ -65,4 +65,4 @@ export const components: PortableTextComponents = {
       <ol className="my-6 ml-6 list-disc [&>li]:mt-2">{children}</ol>
     ),
   },
-};
+}

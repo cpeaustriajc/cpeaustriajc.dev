@@ -1,5 +1,5 @@
 // Sanity schema for the blog page
-import { defineArrayMember, defineField, defineType } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity'
 
 const blogSchema = defineType({
   name: 'blog',
@@ -29,6 +29,6 @@ const blogSchema = defineType({
       options: { hotspot: true },
     }),
   ],
-});
+})
 
-export default blogSchema;
+export default blogSchema

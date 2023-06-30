@@ -13,7 +13,7 @@
   "prettier": {
     "tabWidth": 2,
     "useTabs": false,
-    "semi": true,
+    "semi": false,
     "singleQuote": true,
     "proseWrap": "always",
     "printWidth": 80

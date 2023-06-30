@@ -1,22 +1,22 @@
-import { getPost, urlFor } from '@/sanity/utils';
-import { Metadata } from 'next';
-import { PortableText } from '@portabletext/react';
-import { components } from '@/components/ui/portable-text-components';
-import { CANONICAL_URL } from '@/lib/utils';
+import { getPost, urlFor } from '@/sanity/utils'
+import { Metadata } from 'next'
+import { PortableText } from '@portabletext/react'
+import { components } from '@/components/ui/portable-text-components'
+import { CANONICAL_URL } from '@/lib/utils'
 
 type Props = {
-  params: { slug: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
+  params: { slug: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = await getPost(params.slug);
+  const post = await getPost(params.slug)
 
   const coverImage = urlFor(post.coverImage)
     .format('jpg')
     .width(1200)
     .height(630)
-    .url();
+    .url()
 
   return {
     metadataBase: new URL(CANONICAL_URL),
@@ -37,11 +37,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       creator: '@jaycedotbin',
       creatorId: '1653679343472877573',
     },
-  };
+  }
 }
 
 export default async function Post({ params }: Props) {
-  const post = await getPost(params.slug);
+  const post = await getPost(params.slug)
 
   return (
     <main className="max-w-prose mx-auto my-4">
@@ -54,5 +54,5 @@ export default async function Post({ params }: Props) {
         <PortableText components={components} value={post.content} />
       </article>
     </main>
-  );
+  )
 }

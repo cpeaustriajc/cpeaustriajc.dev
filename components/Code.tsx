@@ -1,12 +1,12 @@
-'use client';
+'use client'
 
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 type Props = {
-  code?: string;
-  language?: string;
-};
+  code?: string
+  language?: string
+}
 
 export default function Code(props: Props) {
   return (
@@ -23,5 +23,5 @@ export default function Code(props: Props) {
     >
       {props.code || ''}
     </SyntaxHighlighter>
-  );
+  )
 }

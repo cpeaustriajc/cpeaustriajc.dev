@@ -1,4 +1,4 @@
-import { createClient } from 'next-sanity';
-import clientConfig from './config/client';
+import { createClient } from 'next-sanity'
+import clientConfig from './config/client'
 
-export const sanityClient = createClient(clientConfig);
+export const sanityClient = createClient(clientConfig)

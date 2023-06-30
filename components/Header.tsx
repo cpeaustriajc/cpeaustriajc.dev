@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import {
   NavigationMenu,
@@ -6,18 +6,18 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   navigationMenuTriggerStyle,
-} from '@/components/ui/navigation-menu';
+} from '@/components/ui/navigation-menu'
 
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import { ExternalLink as ExternalLinkIcon } from 'lucide-react';
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
+import { ExternalLink as ExternalLinkIcon } from 'lucide-react'
 
 export default function Header() {
-  const [isSSR, setIsSSR] = useState(true);
+  const [isSSR, setIsSSR] = useState(true)
 
   useEffect(() => {
-    setIsSSR(false);
-  }, []);
+    setIsSSR(false)
+  }, [])
 
   return (
     <header className="mb-2">
@@ -61,5 +61,5 @@ export default function Header() {
         </NavigationMenuList>
       </NavigationMenu>
     </header>
-  );
+  )
 }

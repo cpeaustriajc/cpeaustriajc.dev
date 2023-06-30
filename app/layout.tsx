@@ -1,20 +1,20 @@
-import '@/styles/globals.css';
-import { Inter, Roboto_Mono } from 'next/font/google';
-import { Providers } from './providers';
-import { cn } from '@/lib/utils';
-import Header from '@/components/Header';
+import '@/styles/globals.css'
+import { Inter, Roboto_Mono } from 'next/font/google'
+import { Providers } from './providers'
+import { cn } from '@/lib/utils'
+import Header from '@/components/Header'
 
 const inter = Inter({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800'],
   variable: '--font-inter',
-});
+})
 
 const roboto_mono = Roboto_Mono({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-roboto-mono',
-});
+})
 
 export const metadata = {
   metadataBase: new URL(
@@ -43,12 +43,12 @@ export const metadata = {
     card: 'summary_large_image',
     creator: '@jaycedotbin',
   },
-};
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html
@@ -65,5 +65,5 @@ export default function RootLayout({
         <Providers>{children}</Providers>
       </body>
     </html>
-  );
+  )
 }

@@ -1,7 +1,7 @@
 export default function StudioLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html>
@@ -9,5 +9,5 @@ export default function StudioLayout({
         {children}
       </body>
     </html>
-  );
+  )
 }

@@ -1,13 +1,13 @@
-import { groq } from 'next-sanity';
-import { Post } from '@/types/Post';
-import imageUrlBuilder from '@sanity/image-url';
-import { sanityClient } from './client';
-import { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import { groq } from 'next-sanity'
+import { Post } from '@/types/Post'
+import imageUrlBuilder from '@sanity/image-url'
+import { sanityClient } from './client'
+import { SanityImageSource } from '@sanity/image-url/lib/types/types'
 
-const builder = imageUrlBuilder(sanityClient);
+const builder = imageUrlBuilder(sanityClient)
 
 export function urlFor(source: SanityImageSource) {
-  return builder.image(source);
+  return builder.image(source)
 }
 
 export async function getAbout(): Promise<any> {
@@ -18,7 +18,7 @@ export async function getAbout(): Promise<any> {
             keywords,
             coverImage
     }`
-  );
+  )
 }
 
 export async function getBlog(): Promise<any> {
@@ -29,7 +29,7 @@ export async function getBlog(): Promise<any> {
             keywords,
             coverImage
     }`
-  );
+  )
 }
 
 export async function getPosts(): Promise<Post[]> {
@@ -55,7 +55,7 @@ export async function getPosts(): Promise<Post[]> {
             content,
     }
     `
-  );
+  )
 }
 
 export async function getPost(slug: string): Promise<Post> {
@@ -73,5 +73,5 @@ export async function getPost(slug: string): Promise<Post> {
   }
   `,
     { slug }
-  );
+  )
 }

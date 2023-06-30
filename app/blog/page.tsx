@@ -5,23 +5,23 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
-import { CANONICAL_URL } from '@/lib/utils';
-import { getBlog, getPosts, urlFor } from '@/sanity/utils';
-import { format, parse } from 'fecha';
-import Image from 'next/image';
-import Link from 'next/link';
+} from '@/components/ui/card'
+import { CANONICAL_URL } from '@/lib/utils'
+import { getBlog, getPosts, urlFor } from '@/sanity/utils'
+import { format, parse } from 'fecha'
+import Image from 'next/image'
+import Link from 'next/link'
 
-export const revalidate = 60;
+export const revalidate = 60
 
 export async function generateMetadata() {
-  const blog = await getBlog();
+  const blog = await getBlog()
 
   const coverImage = urlFor(blog.coverImage)
     .format('jpg')
     .width(1200)
     .height(630)
-    .url();
+    .url()
 
   return {
     metadataBase: new URL(CANONICAL_URL),
@@ -42,11 +42,11 @@ export async function generateMetadata() {
       creator: '@jaycedotbin',
       creatorId: '1653679343472877573',
     },
-  };
+  }
 }
 
 export default async function BlogPage() {
-  const posts = await getPosts();
+  const posts = await getPosts()
 
   return (
     <main className="px-1 md:px-2 my-8">
@@ -55,7 +55,7 @@ export default async function BlogPage() {
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
         {posts.map((post) => {
-          const builtImage = urlFor(post.coverImage).width(640).height(360);
+          const builtImage = urlFor(post.coverImage).width(640).height(360)
 
           return (
             <Card className="w-[380px]" key={post._id}>
@@ -86,9 +86,9 @@ export default async function BlogPage() {
                 </CardFooter>
               </Link>
             </Card>
-          );
+          )
         })}
       </div>
     </main>
-  );
+  )
 }

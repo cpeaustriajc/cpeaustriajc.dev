@@ -1,4 +1,4 @@
-import { defineArrayMember, defineField, defineType } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity'
 
 const postSchema = defineType({
   name: 'post',
@@ -65,6 +65,6 @@ const postSchema = defineType({
   initialValue: {
     publishedAt: new Date().toISOString(),
   },
-});
+})
 
-export default postSchema;
+export default postSchema
