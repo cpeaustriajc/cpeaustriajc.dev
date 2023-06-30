@@ -10,7 +10,7 @@ import {
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { ExternalLink as ExternalLinkIcon } from 'lucide-react'
+import { ExternalLinkIcon } from '@radix-ui/react-icons'
 
 export default function Header() {
   const [isSSR, setIsSSR] = useState(true)
