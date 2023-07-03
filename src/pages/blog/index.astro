@@ -39,43 +39,37 @@ const content = {
     <meta name="generator" content={Astro.generator} />
   </Head>
   <main slot="content" class="max-w-prose mx-auto px-4 lg:px-0">
-    <section
+    <header
       class="flex flex-row justify-between items-center text-zinc-800 dark:text-zinc-200"
     >
-      <div>
-        <h1
-          class="text-xl text-zinc-900 dark:text-zinc-50 capitalize font-bold"
-        >
-          All posts
-        </h1>
-      </div>
-      <div>
-        <a href="/rss.xml">
-          <picture>
-            <source
-              srcset="https://cdn.simpleicons.org/rss/ffffff"
-              media="(prefers-color-scheme: dark)"
-            />
-            <source
-              srcset="https://cdn.simpleicons.org/rss/000000"
-              media="(prefers-color-scheme: light )"
-            />
+      <h1 class="text-xl text-zinc-900 dark:text-zinc-50 capitalize font-bold">
+        All posts
+      </h1>
+      <a href="/rss.xml">
+        <picture>
+          <source
+            srcset="https://cdn.simpleicons.org/rss/ffffff"
+            media="(prefers-color-scheme: dark)"
+          />
+          <source
+            srcset="https://cdn.simpleicons.org/rss/000000"
+            media="(prefers-color-scheme: light )"
+          />
 
-            <img
-              src="https://cdn.simpleicons.org/rss"
-              width="16"
-              height="16"
-              alt="RSS Icon provided by Simple Icons"
-            />
-          </picture>
-          <span class="sr-only">RSS</span>
-        </a>
-      </div>
-    </section>
-    <section>
+          <img
+            src="https://cdn.simpleicons.org/rss"
+            width="16"
+            height="16"
+            alt="RSS Icon provided by Simple Icons"
+          />
+        </picture>
+        <span class="sr-only">RSS</span>
+      </a>
+    </header>
+    <article>
       <ul class="list-style-none p-0 m-0">
         {sortedBlog.map((instance) => <Post blog={instance} />)}
       </ul>
-    </section>
+    </article>
   </main>
 </Base>

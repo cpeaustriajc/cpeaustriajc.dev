@@ -1,20 +1,27 @@
-<header
-  class="flex justify-between max-w-prose mx-auto h-8 items-center my-4 px-4 lg:px-0"
-  aria-label="Main Navigation"
->
-  <a href="/">
-    <picture>
-      <source srcset="/logo-dark.svg" media="(prefers-color-scheme: dark)" />
-      <source srcset="/logo-light.svg" media="(prefers-color-scheme: light)" />
-      <img
-        src="/logo-dark.svg"
-        width="32"
-        height="32"
-        alt="John Carlo Austria's Logo"
-      />
-    </picture>
-  </a>
-  <nav>
+<header class="max-w-prose mx-auto h-8 items-center my-4 px-4 lg:px-0">
+  <nav class="flex flex-row gap-2 justify-between items-center">
+    <ul>
+      <li>
+        <a href="/">
+          <picture>
+            <source
+              srcset="/logo-dark.svg"
+              media="(prefers-color-scheme: dark)"
+            />
+            <source
+              srcset="/logo-light.svg"
+              media="(prefers-color-scheme: light)"
+            />
+            <img
+              src="/logo-dark.svg"
+              width="32"
+              height="32"
+              alt="John Carlo Austria's Logo"
+            />
+          </picture>
+        </a>
+      </li>
+    </ul>
     <ul class="flex flex-row gap-2">
       <li>
         <a
