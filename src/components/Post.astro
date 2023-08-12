@@ -6,6 +6,16 @@ interface Props {
 }
 
 const { posts } = Astro.props;
+
+const formattedDate = posts.data.publishDate.toLocaleDateString("en-PH", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+  hour: "numeric",
+  minute: "numeric",
+  second: "numeric",
+  timeZoneName: "shortOffset",
+});
 ---
 
 <li>
@@ -16,8 +26,8 @@ const { posts } = Astro.props;
       <h2 class="truncate overflow-hidden max-w-[32ch]">
         {posts.data.title}
       </h2>
-      <time datetime={posts.data.publishedDate.toISOString()}
-        >{posts.data.publishedDate.toLocaleDateString()}</time
+      <time datetime={posts.data.publishDate.toISOString()}
+        >{formattedDate}</time
       >
     </article>
   </a>

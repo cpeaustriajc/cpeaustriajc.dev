@@ -19,6 +19,16 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 
+const date = entry.data.publishDate.toLocaleDateString("en-PH", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+  hour: "numeric",
+  minute: "numeric",
+  second: "numeric",
+  timeZoneName: "shortOffset",
+});
+
 const { Content } = await entry.render();
 ---
 
@@ -58,16 +68,17 @@ const { Content } = await entry.render();
         {entry.data.title}
       </h1>
       <p>
-        Published: <time datetime={entry.data.publishedDate.toISOString()}>
-          {entry.data.publishedDate.toLocaleDateString()}
+        <time datetime={entry.data.publishDate.toISOString()}>
+          {date}
         </time>
       </p>
       <figure>
         <Image
-          src={entry.data.cover}
-          alt={entry.data.description}
-          width={entry.data.cover.width}
-          height={entry.data.cover.height}
+          src={entry.data.coverImage}
+          alt={entry.data.coverImageAlt}
+          width={entry.data.coverImage.width}
+          height={entry.data.coverImage.height}
+          format="webp"
           class="rounded"
         />
       </figure>
