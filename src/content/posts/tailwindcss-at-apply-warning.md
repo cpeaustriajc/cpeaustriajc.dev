@@ -37,7 +37,9 @@ Add this to your `.vscode/settings.json`:
 }
 ```
 
-````json
+Paste this in `.vscode/tailwind.json`:
+
+```json
 {
   "version": 1.1,
   "atDirectives": [
@@ -93,4 +95,6 @@ Add this to your `.vscode/settings.json`:
     }
   ]
 }
-````
+```
+
+Thats it! Those were the two ways to fix the unknown rule when using TailwindCSS, hope it helped!
