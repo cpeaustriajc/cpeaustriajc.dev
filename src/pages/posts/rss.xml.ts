@@ -2,17 +2,17 @@ import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
 
 export async function get() {
-  const blog = await getCollection("blog");
+  const posts = await getCollection("posts");
   return rss({
-    title: "Blog | John Carlo Austria",
+    title: "Posts | John Carlo Austria",
     description:
       "John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines.",
     site: "https://jaycedotbin.me",
-    items: blog.map((post) => ({
+    items: posts.map((post) => ({
       title: post.data.title,
       pubDate: post.data.publishedDate,
       description: post.data.description,
-      link: `/blog/${post.slug}`,
+      link: `/posts/${post.slug}`,
     })),
     customData: `<language>en-us</language>`,
   });
