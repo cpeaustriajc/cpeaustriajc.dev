@@ -5,11 +5,11 @@ import { Image } from "astro:assets";
 import { getCollection, CollectionEntry } from "astro:content";
 
 interface Props {
-  entry: CollectionEntry<"blog">;
+  entry: CollectionEntry<"posts">;
 }
 
 export async function getStaticPaths() {
-  const postEntries = await getCollection("blog");
+  const postEntries = await getCollection("posts");
 
   return postEntries.map((entry) => ({
     params: { slug: entry.slug },

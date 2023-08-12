@@ -2,22 +2,22 @@
 import type { CollectionEntry } from "astro:content";
 
 interface Props {
-  blog: CollectionEntry<"blog">;
+  posts: CollectionEntry<"posts">;
 }
 
-const { blog } = Astro.props;
+const { posts } = Astro.props;
 ---
 
 <li>
-  <a href={`/blog/${blog.slug}`}>
+  <a href={`/posts/${posts.slug}`}>
     <article
       class="flex flex-row justify-between pb-4 my-4 text-sm text-zinc-500 dark:text-zinc-200 font-bold hover:dark:text-zinc-400 hover:text-zinc-600 duration-300 transition-colors motion-reduce:transition-none"
     >
       <h2 class="truncate overflow-hidden max-w-[32ch]">
-        {blog.data.title}
+        {posts.data.title}
       </h2>
-      <time datetime={blog.data.publishedDate.toISOString()}
-        >{blog.data.publishedDate.toLocaleDateString()}</time
+      <time datetime={posts.data.publishedDate.toISOString()}
+        >{posts.data.publishedDate.toLocaleDateString()}</time
       >
     </article>
   </a>

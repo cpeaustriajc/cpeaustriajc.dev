@@ -4,24 +4,24 @@ import Post from "~/components/Post.astro";
 import Base from "~/layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
-const blog = await getCollection("blog", ({ data }) => {
+const posts = await getCollection("posts", ({ data }) => {
   return data.draft !== true;
 });
 
-const sortedBlog = blog.sort(
+const sortedPosts = posts.sort(
   (a, b) => Number(b.data.publishedDate) - Number(a.data.publishedDate)
 );
 
 const content = {
   description:
     "John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines.",
-  title: "Blog| John Carlo Austria",
+  title: "Posts | John Carlo Austria",
 };
 ---
 
 <Base>
   <Head slot="head">
-    <title>Blog | John Carlo Austria</title>
+    <title>Posts | John Carlo Austria</title>
     <meta name="description" content={content.description} />
 
     <meta name="color-scheme" content="light dark" />
@@ -68,7 +68,7 @@ const content = {
     </header>
     <article>
       <ul class="list-style-none p-0 m-0">
-        {sortedBlog.map((instance) => <Post blog={instance} />)}
+        {sortedPosts.map((instance) => <Post posts={instance} />)}
       </ul>
     </article>
   </main>
