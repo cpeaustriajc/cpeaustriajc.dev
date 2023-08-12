@@ -9,7 +9,7 @@ const posts = await getCollection("posts", ({ data }) => {
 });
 
 const sortedPosts = posts.sort(
-  (a, b) => Number(b.data.publishDate) - Number(a.data.publishDate)
+  (a, b) => Number(b.data.publishDate) - Number(a.data.publishDate),
 );
 
 const content = {
