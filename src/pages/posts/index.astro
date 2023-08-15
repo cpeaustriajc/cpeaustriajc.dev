@@ -1,7 +1,6 @@
 ---
-import Head from "~/components/Head.astro";
 import Post from "~/components/Post.astro";
-import Base from "~/layouts/BaseLayout.astro";
+import BaseLayout from "~/layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
 const posts = await getCollection("posts", ({ data }) => {
@@ -9,36 +8,18 @@ const posts = await getCollection("posts", ({ data }) => {
 });
 
 const sortedPosts = posts.sort(
-  (a, b) => Number(b.data.publishDate) - Number(a.data.publishDate),
+  (a, b) => Number(b.data.publishDate) - Number(a.data.publishDate)
 );
 
-const content = {
+const meta = {
   description:
     "John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines.",
   title: "Posts | John Carlo Austria",
 };
 ---
 
-<Base>
-  <Head slot="head">
-    <title>Posts | John Carlo Austria</title>
-    <meta name="description" content={content.description} />
-
-    <meta name="color-scheme" content="dark" />
-
-    <meta name="description" content={content.description} />
-    <meta property="og:title" content={content.title} />
-    <meta property="og:url" content={Astro.url.href} />
-    <meta property="og:description" content={content.description} />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content="jaycedotbin.me" />
-    <meta property="twitter:creator" content="@jaycedotbin" />
-    <meta property="twitter:url" content={Astro.url.href} />
-    <meta name="twitter:title" content={content.title} />
-    <meta name="twitter:description" content={content.description} />
-    <meta name="generator" content={Astro.generator} />
-  </Head>
-  <main slot="content" class="max-w-prose mx-auto px-4 lg:px-0">
+<BaseLayout {meta}>
+  <main class="max-w-prose mx-auto px-4 lg:px-0">
     <header
       class="flex flex-row justify-between items-center text-zinc-800 dark:text-zinc-200"
     >
@@ -72,4 +53,4 @@ const content = {
       </ul>
     </article>
   </main>
-</Base>
+</BaseLayout>

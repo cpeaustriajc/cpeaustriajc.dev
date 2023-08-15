@@ -1,34 +1,15 @@
 ---
-import Head from "~/components/Head.astro";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 
-const content = {
+const meta = {
   description:
     "John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines.",
   title: "About | John Carlo Austria",
 };
 ---
 
-<BaseLayout>
-  <Head slot="head">
-    <title>{content.title}</title>
-    <meta name="description" content={content.description} />
-
-    <meta name="color-scheme" content="light dark" />
-
-    <meta name="description" content={content.description} />
-    <meta property="og:title" content={content.title} />
-    <meta property="og:url" content={Astro.url.href} />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content="jaycedotbin.me" />
-    <meta property="twitter:creator" content="@jaycedotbin" />
-    <meta property="twitter:url" content={Astro.url.href} />
-    <meta name="twitter:title" content={content.title} />
-    <meta name="twitter:description" content={content.description} />
-    <meta name="generator" content={Astro.generator} />
-  </Head>
-  <main slot="content" class="">
+<BaseLayout {meta}>
+  <main>
     <section class="px-4 xl:pt-16 xl:px-40">
       <h1 class="text-center">
         <span class="text-2xl">

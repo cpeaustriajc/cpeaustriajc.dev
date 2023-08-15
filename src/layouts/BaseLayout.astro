@@ -3,17 +3,38 @@ import "@fontsource/inter/latin-400.css";
 import "@fontsource/inter/latin-500.css";
 import "@fontsource/inter/latin-700.css";
 import "@fontsource/roboto-mono/latin-400.css";
-
+import BaseHead from "~/components/BaseSEO.astro";
 import Header from "~/components/Header.astro";
+
+interface Props {
+  meta: { title: string; description: string };
+}
+
+const { meta } = Astro.props as Props;
 ---
 
 <html dir="ltr" lang="en">
   <head>
-    <slot name="head" />
-  </head>
+    <BaseHead />
+    <title>Posts | John Carlo Austria</title>
+    <meta name="description" content={meta.description} />
 
+    <meta name="color-scheme" content="dark" />
+
+    <meta name="description" content={meta.description} />
+    <meta property="og:title" content={meta.title} />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:description" content={meta.description} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="jaycedotbin.me" />
+    <meta property="twitter:creator" content="@jaycedotbin" />
+    <meta property="twitter:url" content={Astro.url.href} />
+    <meta name="twitter:title" content={meta.title} />
+    <meta name="twitter:description" content={meta.description} />
+    <meta name="generator" content={Astro.generator} />
+  </head>
   <body class="bg-neutral-950 text-neutral-400">
     <Header />
-    <slot name="content" />
+    <slot />
   </body>
 </html>

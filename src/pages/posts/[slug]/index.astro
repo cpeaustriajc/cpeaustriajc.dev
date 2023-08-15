@@ -1,5 +1,4 @@
 ---
-import Head from "~/components/Head.astro";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 import { getCollection, CollectionEntry } from "astro:content";
@@ -30,31 +29,15 @@ const date = entry.data.publishDate.toLocaleDateString("en-PH", {
 });
 
 const { Content } = await entry.render();
+
+const meta = {
+  title: entry.data.title,
+  description: entry.data.description,
+};
 ---
 
-<BaseLayout>
-  <Head slot="head">
-    <title>{entry.data.title}</title>
-    <meta name="description" content={entry.data.description} />
-
-    <meta name="color-scheme" content="light dark" />
-
-    <meta property="og:title" content={entry.data.title} />
-    <meta property="og:url" content={Astro.url.href} />
-    <meta property="og:description" content={entry.data.description} />
-    <!-- <meta property="og:image" content={optimizedImage.src} /> -->
-    <!-- <meta property="og:image:alt" content={entry.data.title} /> -->
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content="jaycedotbin.me" />
-    <meta property="twitter:url" content={Astro.url.href} />
-    <meta name="twitter:title" content={entry.data.title} />
-    <meta name="twitter:description" content={entry.data.description} />
-    <!-- <meta property="twitter:image" content={optimizedImage.src} /> -->
-    <!-- <meta name="twitter:image:alt" content={entry.data.title} /> -->
-  </Head>
+<BaseLayout {meta}>
   <main
-    slot="content"
     class="font-sans mx-auto prose prose-pre:font-mono prose-code:font-mono dark:prose-invert px-4 lg:px-0"
   >
     <header>
