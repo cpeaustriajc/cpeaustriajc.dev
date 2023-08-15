@@ -11,21 +11,32 @@ export default {
         mono: ["Roboto Mono", ...defaultTheme.fontFamily.mono],
       },
       animation: {
-        'gradient-x': 'gradient-x 4s ease infinite',
+        "gradient-x": "gradient-x 4s ease infinite",
+        "fade-in": "fade-in 0.5s ease-out forwards",
       },
     },
     keyframes: {
-      'gradient-x': {
-        '0%, 100%': {
-          'background-size': '200% 200%',
-          'background-position': 'left center',
+      "gradient-x": {
+        "0%, 100%": {
+          "background-size": "200% 200%",
+          "background-position": "left center",
         },
-        '50%': {
-          'background-size': '200% 200%',
-          'background-position': 'right center',
-        }
-      }
-    }
+        "50%": {
+          "background-size": "200% 200%",
+          "background-position": "right center",
+        },
+      },
+      "fade-in": {
+        "0%": {
+          opacity: "0",
+          transform: "translateY(4rem)",
+        },
+        "100%": {
+          opacity: "1",
+          transform: "translateY(0)",
+        },
+      },
+    },
   },
   plugins: [typography()],
 } satisfies Config;
