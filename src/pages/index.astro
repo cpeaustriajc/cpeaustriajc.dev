@@ -1,7 +1,6 @@
 ---
-import Engineer from "~/components/Engineer.astro";
 import Head from "~/components/Head.astro";
-import Base from "~/layouts/BaseLayout.astro";
+import BaseLayout from "~/layouts/BaseLayout.astro";
 
 const content = {
   description:
@@ -10,7 +9,7 @@ const content = {
 };
 ---
 
-<Base>
+<BaseLayout>
   <Head slot="head">
     <title>{content.title}</title>
     <meta name="description" content={content.description} />
@@ -31,20 +30,22 @@ const content = {
   </Head>
   <main slot="content" class="">
     <section class="px-4 xl:pt-16 xl:px-40">
-
       <h1 class="text-center">
         <span class="text-2xl">
-        <span class="text-neutral-50">Meet your next</span>
+          <span class="text-neutral-50">Meet your next</span>
+          <br />
+          <span class="text-rose-500">Web</span>
+          <span class="text-neutral-700">/</span>
+          <span class="text-emerald-500">Computer</span>
+          <span class="text-neutral-700">/</span>
+          <span class="text-sky-500">Product</span>
+        </span>
         <br />
-        <span class="text-rose-500">Web</span>
-        <span class="text-neutral-700">/</span>
-        <span class="text-emerald-500">Computer</span>
-        <span class="text-neutral-700">/</span>
-        <span class="text-sky-500">Product</span>
-      </span>
-      <br />
-      <Engineer />
-    </h1>
-  </section>
+        <span
+          class="text-4xl font-bold animate-gradient-x bg-gradient-to-r from-violet-600 via-yellow-600 to-violet-600 bg-clip-text text-transparent"
+          >{"<"}Engineer{"/>"}</span
+        >
+      </h1>
+    </section>
   </main>
-</Base>
+</BaseLayout>
