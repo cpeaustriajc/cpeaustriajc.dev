@@ -1,22 +1,28 @@
-<script lang="ts">
-  import { clsx } from "clsx";
+---
+import { clsx } from "clsx";
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
 
-  export let coverImage: string;
-  export let coverImageAlt: string;
-  export let title: string;
-  export let link: string;
-  export let orientation: "portrait" | "landscape";
+interface Props {
+  coverImage: ImageMetadata;
+  coverImageAlt: string;
+  title: string;
+  link: string;
+  orientation: "portrait" | "landscape";
+}
 
-  const aspectRatio = clsx(
-    orientation === "portrait" ? "aspect-[3/4]" : "aspect-[4/3]"
-  );
-</script>
+const { orientation, link, title, coverImage, coverImageAlt } = Astro.props;
+
+const aspectRatio = clsx(
+  orientation === "portrait" ? "aspect-[3/4]" : "aspect-[4/3]"
+);
+---
 
 <a href={link} target="_blank">
   <article
     class={`relative w-full h-full shadow-2xl shadow-neutral-900 ${aspectRatio}`}
   >
-    <img
+    <Image
       class={`-z-10 absolute h-full w-full ${aspectRatio}`}
       src={coverImage}
       alt={coverImageAlt}

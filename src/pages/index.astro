@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "~/layouts/BaseLayout.astro";
-import Card from "~/components/Card.svelte";
+import Card from "~/components/Card.astro";
 import ReactImage from "~/assets/react.png";
 import NextJSImage from "~/assets/nextjs.png";
 import FigmaImage from "~/assets/figma.png";
@@ -11,6 +11,7 @@ import TypescriptImage from "~/assets/typescript.png";
 import VercelImage from "~/assets/vercel.png";
 import MarkdoneImage from "~/assets/markdone.png";
 import TenkiImage from "~/assets/tenki.png";
+import type { ImageMetadata } from "astro";
 
 const meta = {
   description:
@@ -20,7 +21,7 @@ const meta = {
 
 interface CardProps {
   title: string;
-  coverImage: string;
+  coverImage: ImageMetadata;
   coverImageAlt: string;
   link: string;
 }
@@ -28,49 +29,49 @@ interface CardProps {
 const skills: CardProps[] = [
   {
     title: "React",
-    coverImage: ReactImage.src,
+    coverImage: ReactImage,
     coverImageAlt: "React",
     link: "https://react.dev",
   },
   {
     title: "Next.js",
-    coverImage: NextJSImage.src,
+    coverImage: NextJSImage,
     coverImageAlt: "Next.js",
     link: "https://nextjs.org",
   },
   {
     title: "Figma",
-    coverImage: FigmaImage.src,
+    coverImage: FigmaImage,
     coverImageAlt: "Figma",
     link: "https://figma.com",
   },
   {
     title: "Framer",
-    coverImage: FramerImage.src,
+    coverImage: FramerImage,
     coverImageAlt: "Framer",
     link: "https://framer.com",
   },
   {
     title: "Supabase",
-    coverImage: SupabaseImage.src,
+    coverImage: SupabaseImage,
     coverImageAlt: "Supabase",
     link: "https://supabase.com",
   },
   {
     title: "TailwindCSS",
-    coverImage: TailwindCSSImage.src,
+    coverImage: TailwindCSSImage,
     coverImageAlt: "TailwindCSS",
     link: "https://tailwindcss.com",
   },
   {
     title: "TypeScript",
-    coverImage: TypescriptImage.src,
+    coverImage: TypescriptImage,
     coverImageAlt: "TypeScript",
     link: "https://typescriptlang.org",
   },
   {
     title: "Vercel",
-    coverImage: VercelImage.src,
+    coverImage: VercelImage,
     coverImageAlt: "Vercel",
     link: "https://vercel.com",
   },
@@ -79,13 +80,13 @@ const skills: CardProps[] = [
 const projects: CardProps[] = [
   {
     title: "Markdone",
-    coverImage: MarkdoneImage.src,
+    coverImage: MarkdoneImage,
     coverImageAlt: "Markdone",
     link: "https://markdone.jaycedotbin.me",
   },
   {
     title: "Tenki",
-    coverImage: TenkiImage.src,
+    coverImage: TenkiImage,
     coverImageAlt: "Tenki",
     link: "https://tenki.jaycedotbin.me",
   },
