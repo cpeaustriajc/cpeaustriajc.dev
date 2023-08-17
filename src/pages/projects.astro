@@ -1,0 +1,63 @@
+---
+import Card from "~/components/Card.svelte";
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import MarkdoneImage from "~/assets/markdone.png";
+import TenkiImage from "~/assets/tenki.png";
+
+interface CardProps {
+  title: string;
+  coverImage: string;
+  coverImageAlt: string;
+  link: string;
+}
+
+const projects: CardProps[] = [
+  {
+    title: "Markdone",
+    coverImage: MarkdoneImage.src,
+    coverImageAlt: "Markdone",
+    link: "https://markdone.jaycedotbin.me",
+  },
+  {
+    title: "Tenki",
+    coverImage: TenkiImage.src,
+    coverImageAlt: "Tenki",
+    link: "https://tenki.jaycedotbin.me",
+  },
+];
+
+export const meta = {
+  title: "Projects | John Carlo Austria",
+  description: "A curated list of all the projects that I have built",
+};
+---
+
+<BaseLayout {meta}>
+  <main class="px-4 lg:px-40">
+    <section>
+      <h2
+        class="md:text-5xl lg:text-8xl font-bold text-neutral-50 leading-loose"
+      >
+        Projects
+      </h2>
+      <p class="text-xl lg:text-3xl font-semibold text-neutral-50">
+        A curated list of all the things that I have built
+      </p>
+      <ul class="grid md:grid-cols-2 xl:grid-cols-4 py-8 gap-12">
+        {
+          projects.map((project) => (
+            <li>
+              <Card
+                title={project.title}
+                coverImage={project.coverImage}
+                coverImageAlt={project.coverImageAlt}
+                link={project.link}
+                orientation="landscape"
+              />
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </main>
+</BaseLayout>

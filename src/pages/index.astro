@@ -1,18 +1,102 @@
 ---
 import BaseLayout from "~/layouts/BaseLayout.astro";
+import Card from "~/components/Card.svelte";
+import ReactImage from "~/assets/react.png";
+import NextJSImage from "~/assets/nextjs.png";
+import FigmaImage from "~/assets/figma.png";
+import FramerImage from "~/assets/framer.png";
+import SupabaseImage from "~/assets/supabase.png";
+import TailwindCSSImage from "~/assets/tailwindcss.png";
+import TypescriptImage from "~/assets/typescript.png";
+import VercelImage from "~/assets/vercel.png";
+import MarkdoneImage from "~/assets/markdone.png";
+import TenkiImage from "~/assets/tenki.png";
 
 const meta = {
   description:
     "John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines.",
   title: "About | John Carlo Austria",
 };
+
+interface CardProps {
+  title: string;
+  coverImage: string;
+  coverImageAlt: string;
+  link: string;
+}
+
+const skills: CardProps[] = [
+  {
+    title: "React",
+    coverImage: ReactImage.src,
+    coverImageAlt: "React",
+    link: "https://react.dev",
+  },
+  {
+    title: "Next.js",
+    coverImage: NextJSImage.src,
+    coverImageAlt: "Next.js",
+    link: "https://nextjs.org",
+  },
+  {
+    title: "Figma",
+    coverImage: FigmaImage.src,
+    coverImageAlt: "Figma",
+    link: "https://figma.com",
+  },
+  {
+    title: "Framer",
+    coverImage: FramerImage.src,
+    coverImageAlt: "Framer",
+    link: "https://framer.com",
+  },
+  {
+    title: "Supabase",
+    coverImage: SupabaseImage.src,
+    coverImageAlt: "Supabase",
+    link: "https://supabase.com",
+  },
+  {
+    title: "TailwindCSS",
+    coverImage: TailwindCSSImage.src,
+    coverImageAlt: "TailwindCSS",
+    link: "https://tailwindcss.com",
+  },
+  {
+    title: "TypeScript",
+    coverImage: TypescriptImage.src,
+    coverImageAlt: "TypeScript",
+    link: "https://typescriptlang.org",
+  },
+  {
+    title: "Vercel",
+    coverImage: VercelImage.src,
+    coverImageAlt: "Vercel",
+    link: "https://vercel.com",
+  },
+];
+
+const projects: CardProps[] = [
+  {
+    title: "Markdone",
+    coverImage: MarkdoneImage.src,
+    coverImageAlt: "Markdone",
+    link: "https://markdone.jaycedotbin.me",
+  },
+  {
+    title: "Tenki",
+    coverImage: TenkiImage.src,
+    coverImageAlt: "Tenki",
+    link: "https://tenki.jaycedotbin.me",
+  },
+];
 ---
 
 <BaseLayout {meta}>
-  <main>
-    <section class="px-4 lg:pt-16 xl:px-40">
+  <main class="px-4 lg:pt-16 xl:px-40 scroll-smooth">
+    <section class="pb-96">
       <h1 class="text-center">
-        <span class="text-2xl lg:text-6xl xl:text-8xl font-bold">
+        <span class="text-xl lg:text-6xl xl:text-8xl font-bold">
           <div
             class="motion-safe:translate-y-8 motion-safe:opacity-0 motion-safe:animate-fade-in motion-safe:[animation-delay:100ms]"
           >
@@ -48,5 +132,115 @@ const meta = {
         </div>
       </h1>
     </section>
+    <section class="lg:py-96 space-y-40">
+      <div class="space-y-96 md:py-96">
+        <h2
+          class="text-neutral-50 text-5xl lg:text-8xl font-bold tracking-tight in-view"
+        >
+          Who Am I?
+        </h2>
+        <p class="text-neutral-200 font-semibold text-2xl lg:text-6xl in-view">
+          My name is <a
+            class="text-blue-600 max-lg:underline hover:underline"
+            href="https://linkedin.com/in/jaycedotbin"
+            target="_blank">John Carlo B. Austria</a
+          >, I am a computer engineering student based in San Pablo, Laguna,
+          Philippines.
+        </p>
+      </div>
+      <div class="space-y-96 max-md:py-52 md:py-96">
+        <h2
+          class="text-neutral-50 text-5xl lg:text-8xl font-bold tracking-tight in-view"
+        >
+          What am I currently doing?
+        </h2>
+        <p class="text-neutral-200 font-semibold text-2xl lg:text-6xl in-view">
+          I am currently taking a Bachelors of Science in Computer Engineering
+          program in Pamantasan ng Lungsod ng San Pablo
+        </p>
+        <p class="text-neutral-200 font-semibold text-2xl lg:text-6xl in-view">
+          Over time, on my coding journey, I have slowly learned that design is
+          an integral part of what makes a high quality experience when a person
+          uses a piece of software.
+        </p>
+
+        <p class="text-neutral-200 font-semibold text-2xl lg:text-6xl in-view">
+          My specialty is building high quality, accessible products
+        </p>
+      </div>
+    </section>
+    <section class="py-48 md:py-96">
+      <h2
+        class="text-6xl md:text-8xl font-bold text-neutral-50 leading-loose"
+      >
+        Skills
+      </h2>
+      <p class="text-xl md:text-6xl font-semibold text-neutral-50">
+        The tech stack that I use to help me go from development to production
+      </p>
+      <ul
+        class="grid max-sm:overflow-x-scroll max-sm:auto-cols-max max-sm:grid-flow-col md:grid-cols-2 xl:grid-cols-4 py-8 gap-12"
+      >
+        {
+          skills.map((skill) => (
+            <li>
+              <Card
+                title={skill.title}
+                coverImage={skill.coverImage}
+                coverImageAlt={skill.coverImageAlt}
+                link={skill.link}
+                orientation="portrait"
+              />
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+    <section>
+      <h2
+        class="text-6xl md:text-8xl font-bold text-neutral-50 leading-loose"
+      >
+        Projects
+      </h2>
+      <p class="text-xl md:text-6xl font-semibold text-neutral-50">
+        The list of projects that I made or was part of throughout the years.
+      </p>
+      <ul class="grid md:grid-cols-2 xl:grid-cols-4 py-8 gap-12">
+        {
+          projects.map((project) => (
+            <li>
+              <Card
+                title={project.title}
+                coverImage={project.coverImage}
+                coverImageAlt={project.coverImageAlt}
+                link={project.link}
+                orientation="landscape"
+              />
+            </li>
+          ))
+        }
+      </ul>
+    </section>
   </main>
 </BaseLayout>
+
+<style>
+  .in-view {
+    animation-timeline: view(block 25% 25%);
+    animation-name: scroll-fade;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    transform-origin: top;
+    animation-duration: 500ms;
+  }
+
+  @keyframes scroll-fade {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+</style>

@@ -19,38 +19,16 @@ const meta = {
 ---
 
 <BaseLayout {meta}>
-  <main class="max-w-prose mx-auto px-4 lg:px-0">
-    <header
-      class="flex flex-row justify-between items-center text-zinc-800 dark:text-zinc-200"
-    >
-      <h1 class="text-xl text-zinc-900 dark:text-zinc-50 capitalize font-bold">
-        All posts
+  <main class="px-4 lg:px-40">
+    <header>
+      <h1
+        class="text-5xl leading-loose text-zinc-900 dark:text-zinc-50 capitalize font-bold"
+      >
+        Posts
       </h1>
-      <a href="/rss.xml">
-        <picture>
-          <source
-            srcset="https://cdn.simpleicons.org/rss/ffffff"
-            media="(prefers-color-scheme: dark)"
-          />
-          <source
-            srcset="https://cdn.simpleicons.org/rss/000000"
-            media="(prefers-color-scheme: light )"
-          />
-
-          <img
-            src="https://cdn.simpleicons.org/rss"
-            width="16"
-            height="16"
-            alt="RSS Icon provided by Simple Icons"
-          />
-        </picture>
-        <span class="sr-only">RSS</span>
-      </a>
     </header>
-    <article>
-      <ul class="list-style-none p-0 m-0">
-        {sortedPosts.map((instance) => <Post posts={instance} />)}
-      </ul>
-    </article>
+    <ul class="grid lg:grid-cols-2 xl:grid-cols-3">
+      {sortedPosts.map((instance) => <Post posts={instance} />)}
+    </ul>
   </main>
 </BaseLayout>

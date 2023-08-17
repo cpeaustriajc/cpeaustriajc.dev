@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
 interface Props {
@@ -16,19 +17,20 @@ const formattedDate = posts.data.publishDate.toLocaleDateString("en-PH", {
   second: "numeric",
   timeZoneName: "shortOffset",
 });
+const isoDate = posts.data.publishDate.toISOString();
 ---
 
 <li>
-  <a href={`/posts/${posts.slug}`}>
-    <article
-      class="flex flex-row justify-between pb-4 my-4 text-sm text-zinc-500 dark:text-zinc-200 font-bold hover:dark:text-zinc-400 hover:text-zinc-600 duration-300 transition-colors motion-reduce:transition-none"
-    >
-      <h2 class="truncate overflow-hidden max-w-[32ch]">
+  <a href={`/posts/${posts.slug}`} class="hover:ring ring-offset-4 hover:ring-neutral-50">
+    <article>
+      <Image src={posts.data.coverImage} alt={posts.data.coverImageAlt} class="rounded aspect-[2/3] shadow-inner" />
+      <h2 class="text-3xl font-bold text-neutral-50">
         {posts.data.title}
       </h2>
-      <time datetime={posts.data.publishDate.toISOString()}
-        >{formattedDate}</time
-      >
+      <p class="text-sm leading-6">
+        {posts.data.description}
+      </p>
+      <time datetime={isoDate}>{formattedDate}</time>
     </article>
   </a>
 </li>
