@@ -5,9 +5,9 @@ coverImage: ~/assets/tailwindcss-at-apply-warning.jpg
 coverImageAlt: CSS Code in a computer screen
 publishDate: 8/9/2023, 8:30:24 PM UTC+8
 keywords:
-    - Tutorial
-    - TailwindCSS
-    - VS Code
+  - Tutorial
+  - TailwindCSS
+  - VS Code
 draft: false
 ---
 
@@ -19,11 +19,11 @@ You can associate the global stylesheet that contains the `@apply` and `@tailwin
 
 ```json
 {
-    // ... Rest of your config
-    "files.associations": {
-		"*.css": "tailwindcss"
-    }
-    // ... Rest of your config
+  // ... Rest of your config
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
+  // ... Rest of your config
 }
 ```
 
@@ -39,7 +39,7 @@ Add this to your `.vscode/settings.json`:
 
 Paste this in `.vscode/tailwind.json`:
 
-```json
+````json
 {
   "version": 1.1,
   "atDirectives": [
@@ -95,6 +95,6 @@ Paste this in `.vscode/tailwind.json`:
     }
   ]
 }
-```
+````
 
 Thats it! Those were the two ways to fix the unknown rule when using TailwindCSS, hope it helped!

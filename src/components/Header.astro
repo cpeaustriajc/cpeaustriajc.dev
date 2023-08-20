@@ -3,7 +3,7 @@ import DropdownMenu from "./DropdownMenu.astro";
 ---
 
 <header
-  class="lg:px-40 p-4 lg:py-10 inline-flex justify-between items-center w-full"
+  class="inline-flex w-full items-center justify-between p-4 lg:px-40 lg:py-10"
 >
   <a href="/">
     <img
@@ -14,28 +14,31 @@ import DropdownMenu from "./DropdownMenu.astro";
     />
   </a>
   <nav
-    class="bg-neutral-950 border rounded-full py-2 px-4 border-neutral-800 hidden md:block"
+    class="hidden rounded-full border border-neutral-800 bg-neutral-950 px-4 py-2 md:block"
   >
-    <ul class="flex flex-row gap-4 items-center">
+    <ul class="flex flex-row items-center gap-4">
       <li>
         <a
           href="https://read.cv/jaycedotbin"
           rel="noopener noreferrer"
           target="_blank"
-          class="font-medium text-sm leading-6 text-neutral-400 hover:text-neutral-50 transition-colors duration-500 rounded-full h-9"
+          class="h-9 rounded-full text-sm font-medium leading-6 text-neutral-400 transition-colors duration-500 hover:text-neutral-50"
         >
           Resume
         </a>
       </li>
       <li>
-        <a href="/posts" class="font-medium text-sm leading-6 text-neutral-400 hover:text-neutral-50 transition-colors duration-500 rounded-full h-9">
+        <a
+          href="/posts"
+          class="h-9 rounded-full text-sm font-medium leading-6 text-neutral-400 transition-colors duration-500 hover:text-neutral-50"
+        >
           Posts
         </a>
       </li>
       <li>
         <a
           href="/projects"
-          class="font-medium text-sm leading-6 text-neutral-400 hover:text-neutral-50 transition-colors duration-500 rounded-full h-9"
+          class="h-9 rounded-full text-sm font-medium leading-6 text-neutral-400 transition-colors duration-500 hover:text-neutral-50"
         >
           Projects
         </a>
@@ -44,7 +47,7 @@ import DropdownMenu from "./DropdownMenu.astro";
   </nav>
   <a
     href="mailto:cpe.austria.johncarlo@gmail.com"
-    class="text-neutral-50 rounded-full min-w-[4rem] min-h-[2rem] justify-center items-center md:inline-flex gap-2 bg-violet-600 hover:bg-transparent hover:ring-1 hover:ring-violet-600 transition-all duration-500 px-4 py-1 font-medium text-sm leading-6 hidden"
+    class="hidden min-h-[2rem] min-w-[4rem] items-center justify-center gap-2 rounded-full bg-violet-600 px-4 py-1 text-sm font-medium leading-6 text-neutral-50 transition-all duration-500 hover:bg-transparent hover:ring-1 hover:ring-violet-600 md:inline-flex"
     >Contact</a
   >
   <DropdownMenu />

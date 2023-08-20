@@ -14,7 +14,7 @@ interface Props {
 const { orientation, link, title, coverImage, coverImageAlt } = Astro.props;
 
 const aspectRatio = clsx(
-  orientation === "portrait" ? "aspect-[3/4]" : "aspect-[4/3]"
+  orientation === "portrait" ? "aspect-[3/4]" : "aspect-[4/3]",
 );
 ---
 
@@ -30,7 +30,7 @@ const aspectRatio = clsx(
     <div
       class={`flex flex-col h-full justify-center items-center motion-safe:xl:opacity-0 motion-safe:xl:hover:opacity-100 motion-safe:xl:hover:backdrop-blur-lg motion-reduce:opacity-100 motion-reduce:shadow-inner backdrop-brightness-[.25] motion-reduce:transition-none transition-all motion-safe:ease-in-out motion-safe:duration-500 shadow-2xl min-w-[320px]`}
     >
-      <h3 class="text-neutral-50 text-5xl font-bold">{title}</h3>
+      <h3 class="text-5xl font-bold text-neutral-50">{title}</h3>
     </div>
   </article>
 </a>

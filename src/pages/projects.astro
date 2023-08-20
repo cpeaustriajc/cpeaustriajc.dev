@@ -37,14 +37,14 @@ export const meta = {
   <main class="px-4 lg:px-40">
     <section>
       <h2
-        class="md:text-5xl lg:text-8xl font-bold text-neutral-50 leading-loose"
+        class="font-bold leading-loose text-neutral-50 md:text-5xl lg:text-8xl"
       >
         Projects
       </h2>
-      <p class="text-xl lg:text-3xl font-semibold text-neutral-50">
+      <p class="text-xl font-semibold text-neutral-50 lg:text-3xl">
         A curated list of all the things that I have built
       </p>
-      <ul class="grid md:grid-cols-2 xl:grid-cols-4 py-8 gap-12">
+      <ul class="grid gap-12 py-8 md:grid-cols-2 xl:grid-cols-4">
         {
           projects.map((project) => (
             <li>

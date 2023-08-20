@@ -94,29 +94,29 @@ const projects: CardProps[] = [
 ---
 
 <BaseLayout {meta}>
-  <main class="px-4 lg:pt-16 xl:px-40 scroll-smooth">
+  <main class="scroll-smooth px-4 lg:pt-16 xl:px-40">
     <section class="pb-96">
       <h1 class="text-center">
-        <span class="text-xl lg:text-6xl xl:text-8xl font-bold">
+        <span class="text-xl font-bold lg:text-6xl xl:text-8xl">
           <div
-            class="motion-safe:translate-y-8 motion-safe:opacity-0 motion-safe:animate-fade-in motion-safe:[animation-delay:100ms]"
+            class="motion-safe:translate-y-8 motion-safe:animate-fade-in motion-safe:opacity-0 motion-safe:[animation-delay:100ms]"
           >
             <span class="text-neutral-50">Meet your next</span>
           </div>
           <div class="inline-flex flex-wrap">
             <div
-              class="motion-safe:translate-y-8 motion-safe:opacity-0 motion-safe:animate-fade-in motion-safe:[animation-delay:125ms]"
+              class="motion-safe:translate-y-8 motion-safe:animate-fade-in motion-safe:opacity-0 motion-safe:[animation-delay:125ms]"
             >
               <span class="text-rose-500">Web</span>
               <span class="text-neutral-700">/</span>
             </div>
             <div
-              class="motion-safe:translate-y-8 motion-safe:opacity-0 motion-safe:animate-fade-in motion-safe:[animation-delay:250ms]"
+              class="motion-safe:translate-y-8 motion-safe:animate-fade-in motion-safe:opacity-0 motion-safe:[animation-delay:250ms]"
             >
               <span class="text-emerald-500">Computer</span>
             </div>
             <div
-              class="motion-safe:translate-y-8 motion-safe:opacity-0 motion-safe:animate-fade-in motion-safe:[animation-delay:500ms]"
+              class="motion-safe:translate-y-8 motion-safe:animate-fade-in motion-safe:opacity-0 motion-safe:[animation-delay:500ms]"
             >
               <span class="text-neutral-700">/</span>
               <span class="text-sky-500"> Product</span>
@@ -124,25 +124,25 @@ const projects: CardProps[] = [
           </div>
         </span>
         <div
-          class="motion-safe:translate-y-8 motion-safe:opacity-0 motion-safe:animate-fade-in motion-safe:[animation-delay:1000ms]"
+          class="motion-safe:translate-y-8 motion-safe:animate-fade-in motion-safe:opacity-0 motion-safe:[animation-delay:1000ms]"
         >
           <span
-            class="text-4xl lg:text-8xl font-bold motion-safe:animate-gradient-x bg-gradient-to-r from-violet-600 via-yellow-600 to-violet-600 bg-clip-text text-transparent"
+            class="bg-gradient-to-r from-violet-600 via-yellow-600 to-violet-600 bg-clip-text text-4xl font-bold text-transparent motion-safe:animate-gradient-x lg:text-8xl"
             >{"<"}Engineer{"/>"}</span
           >
         </div>
       </h1>
     </section>
-    <section class="lg:py-96 space-y-40">
+    <section class="space-y-40 lg:py-96">
       <div class="space-y-96 md:py-96">
         <h2
-          class="text-neutral-50 text-5xl lg:text-8xl font-bold tracking-tight in-view"
+          class="in-view text-5xl font-bold tracking-tight text-neutral-50 lg:text-8xl"
         >
           Who Am I?
         </h2>
-        <p class="text-neutral-200 font-semibold text-2xl lg:text-6xl in-view">
+        <p class="in-view text-2xl font-semibold text-neutral-200 lg:text-6xl">
           My name is <a
-            class="text-blue-600 max-lg:underline hover:underline"
+            class="text-blue-600 hover:underline max-lg:underline"
             href="https://linkedin.com/in/jaycedotbin"
             target="_blank">John Carlo B. Austria</a
           >, I am a computer engineering student based in San Pablo, Laguna,
@@ -151,36 +151,34 @@ const projects: CardProps[] = [
       </div>
       <div class="space-y-96 max-md:py-52 md:py-96">
         <h2
-          class="text-neutral-50 text-5xl lg:text-8xl font-bold tracking-tight in-view"
+          class="in-view text-5xl font-bold tracking-tight text-neutral-50 lg:text-8xl"
         >
           What am I currently doing?
         </h2>
-        <p class="text-neutral-200 font-semibold text-2xl lg:text-6xl in-view">
+        <p class="in-view text-2xl font-semibold text-neutral-200 lg:text-6xl">
           I am currently taking a Bachelors of Science in Computer Engineering
           program in Pamantasan ng Lungsod ng San Pablo
         </p>
-        <p class="text-neutral-200 font-semibold text-2xl lg:text-6xl in-view">
+        <p class="in-view text-2xl font-semibold text-neutral-200 lg:text-6xl">
           Over time, on my coding journey, I have slowly learned that design is
           an integral part of what makes a high quality experience when a person
           uses a piece of software.
         </p>
 
-        <p class="text-neutral-200 font-semibold text-2xl lg:text-6xl in-view">
+        <p class="in-view text-2xl font-semibold text-neutral-200 lg:text-6xl">
           My specialty is building high quality, accessible products
         </p>
       </div>
     </section>
     <section class="py-48 md:py-96">
-      <h2
-        class="text-6xl md:text-8xl font-bold text-neutral-50 leading-loose"
-      >
+      <h2 class="text-6xl font-bold leading-loose text-neutral-50 md:text-8xl">
         Skills
       </h2>
-      <p class="text-xl md:text-6xl font-semibold text-neutral-50">
+      <p class="text-xl font-semibold text-neutral-50 md:text-6xl">
         The tech stack that I use to help me go from development to production
       </p>
       <ul
-        class="grid max-sm:overflow-x-scroll max-sm:auto-cols-max max-sm:grid-flow-col md:grid-cols-2 xl:grid-cols-4 py-8 gap-12"
+        class="grid gap-12 py-8 max-sm:auto-cols-max max-sm:grid-flow-col max-sm:overflow-x-scroll md:grid-cols-2 xl:grid-cols-4"
       >
         {
           skills.map((skill) => (
@@ -198,15 +196,13 @@ const projects: CardProps[] = [
       </ul>
     </section>
     <section>
-      <h2
-        class="text-6xl md:text-8xl font-bold text-neutral-50 leading-loose"
-      >
+      <h2 class="text-6xl font-bold leading-loose text-neutral-50 md:text-8xl">
         Projects
       </h2>
-      <p class="text-xl md:text-6xl font-semibold text-neutral-50">
+      <p class="text-xl font-semibold text-neutral-50 md:text-6xl">
         The list of projects that I made or was part of throughout the years.
       </p>
-      <ul class="grid md:grid-cols-2 xl:grid-cols-4 py-8 gap-12">
+      <ul class="grid gap-12 py-8 md:grid-cols-2 xl:grid-cols-4">
         {
           projects.map((project) => (
             <li>
