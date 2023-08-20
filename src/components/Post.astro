@@ -12,25 +12,26 @@ const formattedDate = posts.data.publishDate.toLocaleDateString("en-PH", {
   year: "numeric",
   month: "long",
   day: "numeric",
-  hour: "numeric",
-  minute: "numeric",
-  second: "numeric",
-  timeZoneName: "shortOffset",
 });
 const isoDate = posts.data.publishDate.toISOString();
 ---
 
 <li>
-  <a href={`/posts/${posts.slug}`} class="hover:ring ring-offset-4 hover:ring-neutral-50">
-    <article>
-      <Image src={posts.data.coverImage} alt={posts.data.coverImageAlt} class="rounded aspect-[2/3] shadow-inner" />
-      <h2 class="text-3xl font-bold text-neutral-50">
-        {posts.data.title}
-      </h2>
-      <p class="text-sm leading-6">
-        {posts.data.description}
-      </p>
-      <time datetime={isoDate}>{formattedDate}</time>
-    </article>
+  <a
+    href={`/posts/${posts.slug}`}
+    class="inline-flex flex-col hover:ring-2 hover:ring-offset-4 hover:ring-offset-neutral-950 transition-all duration-300 rounded"
+  >
+    <Image
+      src={posts.data.coverImage}
+      alt={posts.data.coverImageAlt}
+      class="rounded aspect-[2/3] shadow-inner"
+    />
+    <time class="text-sm font-mono font-bold" datetime={isoDate}>{formattedDate}</time>
+    <h2 class="text-xl font-bold line-clamp-2 text-neutral-50">
+      {posts.data.title}
+    </h2>
+    <p class="text-sm line-clamp-3 leading-6">
+      {posts.data.description}
+    </p>
   </a>
 </li>

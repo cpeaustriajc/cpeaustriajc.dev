@@ -24,8 +24,6 @@ const date = entry.data.publishDate.toLocaleDateString("en-PH", {
   day: "numeric",
   hour: "numeric",
   minute: "numeric",
-  second: "numeric",
-  timeZoneName: "shortOffset",
 });
 
 const { Content } = await entry.render();
@@ -41,14 +39,14 @@ const meta = {
     class="font-sans mx-auto prose prose-pre:font-mono prose-code:font-mono dark:prose-invert px-4 lg:px-0"
   >
     <header>
-      <h1>
-        {entry.data.title}
-      </h1>
       <p>
         <time datetime={entry.data.publishDate.toISOString()}>
           {date}
         </time>
       </p>
+      <h1>
+        {entry.data.title}
+      </h1>
       <figure>
         <Image
           src={entry.data.coverImage}
