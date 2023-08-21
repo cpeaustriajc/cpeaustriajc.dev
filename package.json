@@ -7,15 +7,19 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "format": "prettier --write ."
+    "preview": "astro preview",
+    "format": "prettier --write .",
+    "test:e2e": "playwright test"
   },
   "license": "CC-BY-4.0",
   "devDependencies": {
     "@astrojs/rss": "^2.4.4",
     "@astrojs/sitemap": "^2.0.2",
     "@astrojs/tailwind": "^4.0.0",
+    "@axe-core/playwright": "^4.7.3",
     "@fontsource-variable/inter": "^5.0.8",
     "@fontsource-variable/roboto-mono": "^5.0.9",
+    "@playwright/test": "^1.37.1",
     "@tailwindcss/typography": "^0.5.9",
     "astro": "^2.10.12",
     "prettier": "^3.0.2",

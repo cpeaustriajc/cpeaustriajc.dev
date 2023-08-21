@@ -19,12 +19,18 @@ devDependencies:
   '@astrojs/tailwind':
     specifier: ^4.0.0
     version: 4.0.0(astro@2.10.12)(tailwindcss@3.3.3)
+  '@axe-core/playwright':
+    specifier: ^4.7.3
+    version: 4.7.3(playwright-core@1.37.1)
   '@fontsource-variable/inter':
     specifier: ^5.0.8
     version: 5.0.8
   '@fontsource-variable/roboto-mono':
     specifier: ^5.0.9
     version: 5.0.9
+  '@playwright/test':
+    specifier: ^1.37.1
+    version: 1.37.1
   '@tailwindcss/typography':
     specifier: ^0.5.9
     version: 0.5.9(tailwindcss@3.3.3)
@@ -168,6 +174,15 @@ packages:
     resolution: {integrity: sha512-mHAOApWyjqSe5AQMOUD9rsZJqbMQqe3Wosb1a40JV6Okvyxj1G6GTlthwYadWCymq/lbgwh0PLiY8Fr4eFxtuQ==}
     dependencies:
       undici: 5.23.0
+    dev: true
+
+  /@axe-core/playwright@4.7.3(playwright-core@1.37.1):
+    resolution: {integrity: sha512-v2PRgAyGvop7bamrTpNJtc5b1R7giAPnMzZXrS/VDZBCY5+uwVYtCNgDvBsqp5P1QMZxUMoBN+CERJUTMjFN0A==}
+    peerDependencies:
+      playwright-core: '>= 1.0.0'
+    dependencies:
+      axe-core: 4.7.2
+      playwright-core: 1.37.1
     dev: true
 
   /@babel/code-frame@7.22.10:
@@ -880,6 +895,17 @@ packages:
       tslib: 2.6.2
     dev: true
 
+  /@playwright/test@1.37.1:
+    resolution: {integrity: sha512-bq9zTli3vWJo8S3LwB91U0qDNQDpEXnw7knhxLM0nwDvexQAwx9tO8iKDZSqqneVq+URd/WIoz+BALMqUTgdSg==}
+    engines: {node: '>=16'}
+    hasBin: true
+    dependencies:
+      '@types/node': 17.0.45
+      playwright-core: 1.37.1
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: true
+
   /@tailwindcss/typography@0.5.9(tailwindcss@3.3.3):
     resolution: {integrity: sha512-t8Sg3DyynFysV9f4JDOVISGsjazNb48AeIYQwcL+Bsq5uf4RYL75C1giZ43KISjeDGBaTN3Kxh7Xj/vRSMJUUg==}
     peerDependencies:
@@ -1165,6 +1191,11 @@ packages:
       picocolors: 1.0.0
       postcss: 8.4.28
       postcss-value-parser: 4.2.0
+    dev: true
+
+  /axe-core@4.7.2:
+    resolution: {integrity: sha512-zIURGIS1E1Q4pcrMjp+nnEh+16G56eG/MUllJH8yEvw7asDo7Ac9uhC9KIH5jzpITueEZolfYglnCGIuSBz39g==}
+    engines: {node: '>=4'}
     dev: true
 
   /bail@2.0.2:
@@ -2833,6 +2864,12 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       find-up: 4.1.0
+    dev: true
+
+  /playwright-core@1.37.1:
+    resolution: {integrity: sha512-17EuQxlSIYCmEMwzMqusJ2ztDgJePjrbttaefgdsiqeLWidjYz9BxXaTaZWxH1J95SHGk6tjE+dwgWILJoUZfA==}
+    engines: {node: '>=16'}
+    hasBin: true
     dev: true
 
   /postcss-import@15.1.0(postcss@8.4.28):
