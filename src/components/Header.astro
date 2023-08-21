@@ -5,7 +5,10 @@ import DropdownMenu from "./DropdownMenu.astro";
 <header
   class="inline-flex w-full items-center justify-between p-4 lg:px-40 lg:py-10"
 >
-  <a href="/">
+  <a
+    href="/"
+    class="focus:outline-violet-400 hover:ring-2 hover:ring-violet-400 transition-shadow duration-500 rounded-full focus:outline focus:outline-2"
+  >
     <img
       src="/logo.svg"
       width="48"
@@ -14,7 +17,7 @@ import DropdownMenu from "./DropdownMenu.astro";
     />
   </a>
   <nav
-    class="hidden rounded-full border border-neutral-800 bg-neutral-950 px-4 py-2 md:block"
+    class="border-neutral-800 bg-neutral-950 hidden rounded-full border px-4 py-2 md:block"
   >
     <ul class="flex flex-row items-center gap-4">
       <li>
@@ -22,7 +25,7 @@ import DropdownMenu from "./DropdownMenu.astro";
           href="https://read.cv/jaycedotbin"
           rel="noopener noreferrer"
           target="_blank"
-          class="h-9 rounded-full text-sm font-medium leading-6 text-neutral-400 transition-colors duration-500 hover:text-neutral-50"
+          class="text-neutral-400 hover:text-neutral-50 focus:outline-violet-400 h-9 rounded-full text-sm font-medium leading-6 outline-offset-8 transition-colors duration-500 focus:outline focus:outline-2"
         >
           Resume
         </a>
@@ -30,7 +33,7 @@ import DropdownMenu from "./DropdownMenu.astro";
       <li>
         <a
           href="/posts"
-          class="h-9 rounded-full text-sm font-medium leading-6 text-neutral-400 transition-colors duration-500 hover:text-neutral-50"
+          class="text-neutral-400 hover:text-neutral-50 focus:outline-violet-400 h-9 rounded-full text-sm font-medium leading-6 outline-offset-8 transition-colors duration-500 focus:outline focus:outline-2"
         >
           Posts
         </a>
@@ -38,7 +41,7 @@ import DropdownMenu from "./DropdownMenu.astro";
       <li>
         <a
           href="/projects"
-          class="h-9 rounded-full text-sm font-medium leading-6 text-neutral-400 transition-colors duration-500 hover:text-neutral-50"
+          class="text-neutral-400 hover:text-neutral-50 focus:outline-violet-400 h-9 rounded-full text-sm font-medium leading-6 outline-offset-8 transition-colors duration-500 focus:outline focus:outline-2"
         >
           Projects
         </a>
@@ -47,7 +50,7 @@ import DropdownMenu from "./DropdownMenu.astro";
   </nav>
   <a
     href="mailto:cpe.austria.johncarlo@gmail.com"
-    class="hidden min-h-[2rem] min-w-[4rem] items-center justify-center gap-2 rounded-full bg-violet-600 px-4 py-1 text-sm font-medium leading-6 text-neutral-50 transition-all duration-500 hover:bg-transparent hover:ring-1 hover:ring-violet-600 md:inline-flex"
+    class="bg-violet-600 text-neutral-50 hover:bg-transparent hover:ring-violet-600 focus-visible:ring-offset-transparent focus-visible:ring-violet-400 hidden min-h-[2rem] min-w-[4rem] items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-medium leading-6 transition-all duration-500 hover:ring-1 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-offset-2 md:inline-flex"
     >Contact</a
   >
   <DropdownMenu />

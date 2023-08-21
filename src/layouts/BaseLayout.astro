@@ -31,7 +31,7 @@ const { meta } = Astro.props as Props;
     <meta name="twitter:description" content={meta.description} />
     <meta name="generator" content={Astro.generator} />
   </head>
-  <body class="bg-neutral-950 text-neutral-400">
+  <body class="bg-background text-foreground antialiased transform-gpu">
     <Header />
     <slot />
   </body>

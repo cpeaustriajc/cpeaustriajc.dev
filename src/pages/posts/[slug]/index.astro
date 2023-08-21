@@ -2,6 +2,7 @@
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 import { getCollection, CollectionEntry } from "astro:content";
+import ArrowLeft from "~/components/ArrowLeft.astro";
 
 interface Props {
   entry: CollectionEntry<"posts">;
@@ -35,30 +36,52 @@ const meta = {
 ---
 
 <BaseLayout {meta}>
-  <main
-    class="prose mx-auto px-4 font-sans dark:prose-invert prose-code:font-mono prose-pre:font-mono lg:px-0"
-  >
+  <main class="px-4 font-sans lg:px-40">
     <header>
-      <p>
-        <time datetime={entry.data.publishDate.toISOString()}>
-          {date}
-        </time>
-      </p>
-      <h1>
-        {entry.data.title}
-      </h1>
-      <figure>
+      <section class="flex flex-row">
+        <div class="absolute flex gap-2">
+          <a
+            href="/posts"
+            class="text-neutral-400 hover:text-neutral-50 focus:outline-violet-400 rounded-md p-1 text-sm font-medium leading-6 transition-colors duration-500 focus:outline focus:outline-2"
+            ><ArrowLeft />Back</a
+          >
+        </div>
+        <div class="mx-auto max-w-prose">
+          <div>
+            <span class="text-neutral-500 text-sm">Post</span>
+            <span
+              role="separator"
+              aria-orientation="vertical"
+              class="text-neutral-500 mx-1 text-sm"
+            >
+              |
+            </span>
+            <time
+              datetime={entry.data.publishDate.toISOString()}
+              class="text-neutral-500 text-sm"
+            >
+              {date}
+            </time>
+          </div>
+          <h1 class="text-neutral-50 text-4xl font-bold">
+            {entry.data.title}
+          </h1>
+        </div>
+      </section>
+      <figure class="py-4">
         <Image
           src={entry.data.coverImage}
           alt={entry.data.coverImageAlt}
           width={entry.data.coverImage.width}
           height={entry.data.coverImage.height}
           format="webp"
-          class="rounded"
+          class="not-prose aspect-[16/9] rounded"
         />
       </figure>
     </header>
-    <article>
+    <article
+      class="focus:outline-violet-400 prose mx-auto dark:prose-invert focus:outline focus:outline-2 prose-code:font-mono prose-pre:font-mono"
+    >
       <Content />
     </article>
   </main>
