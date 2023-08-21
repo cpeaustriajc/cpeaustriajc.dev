@@ -1,11 +1,18 @@
 import defaultTheme from "tailwindcss/defaultTheme";
 import typography from "@tailwindcss/typography";
+import colors from "tailwindcss/colors";
 import type { Config } from "tailwindcss";
 
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      colors: {
+        background: colors.neutral["950"],
+        foreground: colors.neutral["400"],
+        border: colors.neutral["800"],
+        primary: colors.violet["600"],
+      },
       fontFamily: {
         sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
         mono: ["Roboto Mono Variable", ...defaultTheme.fontFamily.mono],
