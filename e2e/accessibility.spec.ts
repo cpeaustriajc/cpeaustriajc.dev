@@ -43,7 +43,7 @@ test.describe("projects page", () => {
   }) => {
     await page.goto("/projects");
 
-    const accessibilityScanResults = await new AxeBuilder({ page }).analyze(); 
+    const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
 
     expect(accessibilityScanResults.violations).toEqual([]);
   });
