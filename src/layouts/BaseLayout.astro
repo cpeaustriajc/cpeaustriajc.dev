@@ -13,7 +13,8 @@ interface Props {
 
 const { meta } = Astro.props as Props;
 
-const optimizedOGImage = await getImage({src: meta.image ?? PortfolioV2, width: 1200, height: 630, format: "jpeg" })
+const optimizedOGImage = await getImage({ src: meta.image ?? PortfolioV2, width: 1200, height: 630, format: "jpeg" })
+const OGImageURL = new URL(optimizedOGImage.src, Astro.url.href);
 ---
 
 <html dir="ltr" lang="en">
@@ -27,13 +28,13 @@ const optimizedOGImage = await getImage({src: meta.image ?? PortfolioV2, width: 
     <meta property="og:url" content={Astro.url.href} />
     <meta property="og:description" content={meta.description} />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content={optimizedOGImage.src} />
+    <meta property="og:image" content={OGImageURL} />
     <meta property="og:image:alt" content={meta.imageAlt ?? meta.title} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="twitter:creator" content="@jaycedotbin" />
     <meta name="twitter:description" content={meta.description} />
     <meta property="twitter:domain" content="jaycedotbin.me" />
-    <meta property="twitter:image" content={optimizedOGImage.src} />
+    <meta property="twitter:image" content={OGImageURL} />
     <meta property="twitter:image:alt" content={meta.imageAlt ?? meta.title} />
     <meta name="twitter:title" content={meta.title} />
     <meta property="twitter:url" content={Astro.url.href} />
