@@ -2,7 +2,7 @@
 title: What's new in Astro 3.0
 description: A look into the newest version of Astro featuring image optimization and the support for the View Transitions API
 coverImage: ~/assets/astro-v3.jpg
-coverImageAlt: Spaceship launching from the ground
+coverImageAlt: Space Shuttle Challenger launches from Kennedy Space Center
 publishDate: 8/31/2023, 10:03:13 PM UTC+8
 keywords:
   - Web Development
