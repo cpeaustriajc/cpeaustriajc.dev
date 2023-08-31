@@ -8,12 +8,22 @@ import { getImage } from "astro:assets";
 import type { ImageMetadata } from "astro";
 
 interface Props {
-  meta: { title: string; description: string, image?: ImageMetadata, imageAlt?: string };
+  meta: {
+    title: string;
+    description: string;
+    image?: ImageMetadata;
+    imageAlt?: string;
+  };
 }
 
 const { meta } = Astro.props as Props;
 
-const optimizedOGImage = await getImage({ src: meta.image ?? PortfolioV2, width: 1200, height: 630, format: "jpeg" })
+const optimizedOGImage = await getImage({
+  src: meta.image ?? PortfolioV2,
+  width: 1200,
+  height: 630,
+  format: "jpeg",
+});
 const OGImageURL = new URL(optimizedOGImage.src, Astro.url.href);
 ---
 
@@ -39,7 +49,7 @@ const OGImageURL = new URL(optimizedOGImage.src, Astro.url.href);
     <meta name="twitter:title" content={meta.title} />
     <meta property="twitter:url" content={Astro.url.href} />
   </head>
-  <body class="bg-background text-foreground antialiased transform-gpu">
+  <body class="transform-gpu bg-background text-foreground antialiased">
     <Header />
     <slot />
   </body>
