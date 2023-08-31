@@ -25,6 +25,7 @@ const isoDate = posts.data.publishDate.toISOString();
       src={posts.data.coverImage}
       alt={posts.data.coverImageAlt}
       class="aspect-[2/3] rounded shadow-inner"
+      loading="eager"
     />
     <time class="font-mono text-sm font-bold" datetime={isoDate}
       >{formattedDate}</time
