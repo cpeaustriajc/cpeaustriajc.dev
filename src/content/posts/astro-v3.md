@@ -1,0 +1,227 @@
+---
+title: What's new in Astro 3.0
+description: A look into the newest version of Astro featuring image optimization and the support for the View Transitions API
+coverImage: ~/assets/astro-v3.jpg
+coverImageAlt: Spaceship launching from the ground
+publishDate: 8/31/2023, 10:03:13 PM UTC+8
+keywords:
+  - Web Development
+  - View Transitions
+  - Image Optimizations
+  - Astro
+  - Vercel
+draft: false
+---
+
+Astro just released another major version supporting the most
+anticipated feature called the `View Transitions API` and the
+Image Optimization API previously introduced as the `assets`
+directory back in its experimental stage.
+
+Let's take a look at what these new API can offer.
+
+## View Transitions
+
+View Transitions are not specifically created for Astro but
+they are a web standard feature that Astro just so happens
+to be the first major web framework to support it.
+
+The concept is that it unlocks native browser transition
+effects between pages.
+
+Here's an example that is taken on how I implemented it
+on my personal portfolio.
+
+On `src/components/BaseSEO.astro`:
+
+```astro
+---
+// src/components/BaseSEO.astro
+// Added it to the common head tags so that it
+// can be reused throughout the layouts
+import {ViewTransitions} from 'astro:transitions';
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<ViewTransitions />
+```
+
+Then, I added it to the `src/layouts/BaseLayout.astro`
+
+```astro
+---
+// src/layouts/BaseLayout.astro
+// Add the BaseSEO components to the top level <head> tag
+import BaseSEO from '~/components/BaseSEO.astro'
+---
+
+<html dir="ltr" lang="en">
+  <head>
+    <BaseHead />
+    <!-- Rest of the head tags... -->
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+```
+
+This resulted in smooth transition between pages, and the best part
+is that the HTML is still rendered on the server.
+
+Oh, and if you are wondering if it will support other browsers, the
+team also added a small ~3kb fallback script that is added to your
+page automatically.
+
+## Faster Rendering Performance
+
+This is an internal change where the team removed as much unnecessary
+code as much as possible from hot paths in the build pipeline and
+optimized what remained. The team said that:
+
+> Unnecessary generators and async code were two of the biggest culprits.
+
+It resulted to 30% faster component renders. In [complex benchmarks][benchmarks]
+the speed improvement can become as high as **75%**!
+
+Which is amazing because the team did it really quickly because the optimization
+started in Astro 2.10 which they shipped all of it in Astro 3.0.
+
+## Image Optimization
+
+As a user who has been using Astro since 1.0, this feature has been
+the most worked on and the longest API to hit stable. But it is now
+stable in 3.0.
+
+It now uses `sharp` as the default optimization library because
+`@squoosh/lib` is no longer maintained.
+
+It adds the `Image` component and the `getImage` function which can
+be imported in `astro:assets`
+
+Example for the `Image` component:
+
+```astro
+---
+import { Image } from 'astro:assets';
+import myImage from '../assets/image.png';
+---
+
+<Image src={myImage} alt="A really cool looking image!" />
+```
+
+For the `getImage` function, I use it to optimize OpenGraph images:
+
+```astro
+---
+import { getImage } from "astro:assets";
+import myBackground from "../background.png"
+
+const optimizedOGImage = await getImage({
+  src: myBackground,
+  width: 1200,
+  height: 630,
+  format: "jpeg",
+});
+const OGImageURL = new URL(optimizedOGImage.src, Astro.url.href);
+---
+
+<html>
+  <head>
+    <meta property="og:image" content={OGImageURL} />
+  </head>
+  <body>
+    <!-- content... -->
+  </body>
+</html>
+```
+
+The images that were imported will automatically detect and
+get optimized in the Astro build pipeline. The final rendered
+image tag will be a native `img` tag with an inferred width
+height added to prevent layout shift with automatic
+[Cumulative Layout Shift (CLS)](https://web.dev/cls/) protection.
+
+It can also optimize remote images if needed.
+
+## Astro 🤝 Vercel
+
+Astro just partnered with Vercel as their hosting partner!
+Honestly, I am not surprised, Vercel has always had keen eyes
+for spotting good technology (buying Svelte, Turbo, SWC, etc.).
+
+Although they didn't buy Astro, they did help out with enhancing
+the SSR experience for the framework.
+
+If you host your Astro site on Vercel today,
+you will enjoy these benefits:
+
+- Serverless Code Splitting
+- Vercel's Image Optimization Service
+- Edge Middleware
+
+Make sure to add the `@astrojs/vercel` adapter to you
+`astro.config.ts` to be able to use it.
+
+```typescript
+import { defineConfig } from 'astro/config';
+import vercel from '@astrojs/vercel/serverless';
+// Import `@astrojs/vercel/static` if SSG is only used.
+// import vercel from '@astrojs/vercel/static';
+
+// Remember to use output: 'static'
+// if you are not using SSR
+export default defineConfig({
+  // output: 'static',
+  output: 'server',
+  adapter: vercel({
+    edgeMiddleware: true,
+    imagesConfig: {
+      sizes: [320, 640, 1280]
+      // rest of image config...
+    }
+    imageService: true
+  }),
+})
+```
+
+## HMR Enhancements for JSX
+
+React Fast Refresh now works in Astro 3.0 because of an
+internal refactoring of the JSX build support. This means
+that framework integrations like React, Preact, Solid.js
+users will see a significant improvement to Hot Module Reloading (HMR)
+and overall dev server stability in Astro 3.0.
+
+## Optimized Build Output
+
+Small but very good improvements when your site is built are added
+in this version:
+
+- HTML Minification: Automatic HTML minification for smaller payload
+  and faster response time.
+- Component IDs: astro-XXXXXX class names have been replaced with a
+  new, dedicated data-astro-cid-hash HTML attribute. Leaving the
+  class="" attribute having a more readable, organized HTML output.
+- CSS Inlining: Astro will now automatically inline small chunks of
+  CSS into the HTML. This will improve page load performance compared
+  to older versions where a page might load many smaller CSS files as
+  separate requests from the browser.
+
+What do you think? Have you upgraded to the latest version of Astro yet?
+Let me know in the comment section below on your experience with Astro 3.0!
+
+Follow me on [twitter/x](https://x.com/jaycedotbin) for more content about web development
+
+### References
+
+- [Astro 3.0 Blog Post](https://astro.build/blog/astro-3/)
+- [Astro and Vercel Partnership](https://astro.build/blog/vercel-official-hosting-partner/)
+- [Astro Images](https://astro.build/blog/images/)
+
+[benchmarks]: https://gist.github.com/bluwy/0cf63b46915244477cea91c7b34e90ec
