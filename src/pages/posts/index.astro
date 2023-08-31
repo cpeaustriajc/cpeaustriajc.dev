@@ -27,7 +27,7 @@ const meta = {
         Posts
       </h1>
     </header>
-    <ul class="grid md:grid-cols-4 xl:grid-cols-6">
+    <ul class="grid md:grid-cols-4 xl:grid-cols-6 gap-4">
       {sortedPosts.map((instance) => <Post posts={instance} />)}
     </ul>
   </main>
