@@ -2,8 +2,8 @@
   "name": "John Carlo Austria | Portfolio",
   "short_name": "Portfolio",
   "description": "John Carlo Austria's Personal Site",
-  "theme_color": "#000000",
-  "background_color": "#FFFFFF",
+  "theme_color": "#FAFAFA",
+  "background_color": "#0A0A0A",
   "start_url": "/",
   "orientation": "any",
   "icons": [
