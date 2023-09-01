@@ -4,9 +4,9 @@ import { Image } from "astro:assets";
 import { getCollection, type CollectionEntry } from "astro:content";
 import ArrowLeft from "~/components/ArrowLeft.astro";
 
-interface Props {
+type Props = {
   entry: CollectionEntry<"posts">;
-}
+};
 
 export async function getStaticPaths() {
   const postEntries = await getCollection("posts");

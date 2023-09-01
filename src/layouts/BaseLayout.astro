@@ -7,16 +7,16 @@ import PortfolioV2 from "~/assets/portfolio-v2.png";
 import { getImage } from "astro:assets";
 import type { ImageMetadata } from "astro";
 
-interface Props {
+type Props = {
   meta: {
     title: string;
     description: string;
     image?: ImageMetadata;
     imageAlt?: string;
   };
-}
+};
 
-const { meta } = Astro.props as Props;
+const { meta } = Astro.props;
 
 const optimizedOGImage = await getImage({
   src: meta.image ?? PortfolioV2,
