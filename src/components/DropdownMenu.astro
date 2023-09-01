@@ -59,13 +59,13 @@
       this.addEventListener("click", () => {
         if (this.dataset.state === "open") {
           this.dataset.state = "closed";
-          this.querySelector("ul").classList.remove("opacity-100");
-          this.querySelector("ul").classList.add("opacity-0");
+          this.querySelector("ul")?.classList.remove("opacity-100");
+          this.querySelector("ul")?.classList.add("opacity-0");
         } else {
           this.dataset.state = "open";
-          this.querySelector("ul").focus();
-          this.querySelector("ul").classList.remove("opacity-0");
-          this.querySelector("ul").classList.add("opacity-100");
+          this.querySelector("ul")?.focus();
+          this.querySelector("ul")?.classList.remove("opacity-0");
+          this.querySelector("ul")?.classList.add("opacity-100");
         }
       });
     }
