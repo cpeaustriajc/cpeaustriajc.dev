@@ -9,7 +9,9 @@ type Props = {
 };
 
 export async function getStaticPaths() {
-  const postEntries = await getCollection("posts");
+  const postEntries = await getCollection("posts", ({ data }) => {
+    return import.meta.env.PROD ? data.draft !== true : true;
+  });
 
   return postEntries.map((entry) => ({
     params: { slug: entry.slug },

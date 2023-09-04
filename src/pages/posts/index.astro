@@ -4,7 +4,7 @@ import BaseLayout from "~/layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
 const posts = await getCollection("posts", ({ data }) => {
-  return data.draft !== true;
+  return import.meta.env.PROD ? data.draft !== true : true;
 });
 
 const sortedPosts = posts.sort(
@@ -27,7 +27,7 @@ const meta = {
         Posts
       </h1>
     </header>
-    <ul class="grid md:grid-cols-4 xl:grid-cols-6 gap-4">
+    <ul class="grid gap-4 md:grid-cols-4 xl:grid-cols-6">
       {sortedPosts.map((instance) => <Post posts={instance} />)}
     </ul>
   </main>
