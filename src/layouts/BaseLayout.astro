@@ -25,7 +25,7 @@ const optimizedOGImage = await getImage({
   height: 630,
   format: "jpeg",
 });
-const OGImageURL = new URL(optimizedOGImage.src, Astro.url.href);
+const OGImageURL = new URL(optimizedOGImage.src, Astro.url);
 ---
 
 <html dir="ltr" lang="en">
