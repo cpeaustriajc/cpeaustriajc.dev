@@ -31,7 +31,6 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^1.0.0",
-    "@astrojs/vercel": "^4.0.3",
-    "clsx": "^2.0.0"
+    "@astrojs/vercel": "^4.0.3"
   }
 }
