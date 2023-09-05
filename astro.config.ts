@@ -10,7 +10,8 @@ export default defineConfig({
   output: "hybrid",
   adapter: vercel({
     analytics: true,
-    imageService: true
+    imageService: true,
+    functionPerRoute: false
   }),
   integrations: [sitemap(), tailwind(), mdx()],
   site: "https://jaycedotbin.me",
