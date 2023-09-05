@@ -1,5 +1,7 @@
 ---
 import DropdownMenu from "./DropdownMenu.astro";
+import { Image } from "astro:assets";
+import Logo from "~/assets/logo.png";
 
 const currentPath = Astro.url.pathname.slice(1);
 ---
@@ -11,10 +13,12 @@ const currentPath = Astro.url.pathname.slice(1);
     href="/"
     class="rounded-full transition-shadow duration-500 hover:ring-2 hover:ring-violet-400 focus:outline focus:outline-2 focus:outline-violet-400"
   >
-    <img
-      src="/logo.svg"
-      width="48"
-      height="48"
+    <Image
+      src={Logo}
+      width={48}
+      height={48}
+      format="svg"
+      loading="eager"
       alt="John Carlo Austria's Logo"
     />
   </a>

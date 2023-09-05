@@ -72,15 +72,18 @@ const meta = {
           </h1>
         </div>
       </section>
-      <figure class="py-4">
+      <figure class="py-4 flex flex-col justify-center items-center">
         <Image
           src={entry.data.coverImage}
           alt={entry.data.coverImageAlt}
-          width={entry.data.coverImage.width}
-          height={entry.data.coverImage.height}
+          width={960}
+          height={540}
+          quality={75}
+          format="webp"
           loading="eager"
           class="not-prose aspect-[16/9] rounded"
         />
+        <figcaption>{entry.data.coverImageAlt}</figcaption>
       </figure>
     </header>
     <article
