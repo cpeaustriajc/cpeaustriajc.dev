@@ -10,7 +10,7 @@ keywords:
   - App Router
   - Astro
   - Vercel
-draft: true
+draft: false
 ---
 
 With the new release of Next.js 13 came with new paradigms and concepts. One prevalent concept that react and next.js introduced
@@ -192,8 +192,8 @@ It looks much cleaner and doesn't actually need to use optional chaining operato
 
 **IMPORTANT NOTE**
 
-> React Suspense is still in experimental when it comes to data 
-> fetching but the react team is working on how to properly 
+> React Suspense is still in experimental when it comes to data
+> fetching but the react team is working on how to properly
 > handle suspense when it comes to data fetching.
 
 > React Suspense **does not** detect when data is fetched inside > an Effect or event handler.
@@ -208,10 +208,10 @@ Here are some good tips and tricks when it comes to data fetching in react.
 3. In my opinion it is considered bad practice to add `'use client'` in page.tsx or layout.tsx because ideally these should be rendered on the server.
 4. When dealing with search fields or input data, it is good to consider using debounce or throttling techniques to reduce the amount of requests and to avoid api abuse.
 
-## Conclusion 
+## Conclusion
 
-In this article, we learned how we can fetch data in the new 
-Next.js App Router in the server and the client. We also had 
+In this article, we learned how we can fetch data in the new
+Next.js App Router in the server and the client. We also had
 some quick discussion react suspense and how we can use it to
 display loading data.
 
