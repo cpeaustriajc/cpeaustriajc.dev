@@ -1,8 +1,7 @@
 ---
 import DropdownMenu from "./DropdownMenu.astro";
 
-const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.slice(1);
+const currentPath = Astro.url.pathname.slice(1);
 ---
 
 <header
