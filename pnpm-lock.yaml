@@ -11,9 +11,6 @@ dependencies:
   '@astrojs/vercel':
     specifier: ^4.0.3
     version: 4.0.3(astro@3.0.7)
-  clsx:
-    specifier: ^2.0.0
-    version: 2.0.0
 
 devDependencies:
   '@astrojs/rss':
