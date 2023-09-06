@@ -3,14 +3,8 @@ import Card from "~/components/Card.astro";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import MarkdoneImage from "~/assets/markdone.png";
 import TenkiImage from "~/assets/tenki.png";
-import type { ImageMetadata } from "astro";
+import type { CardProps } from "~/types/common.ts";
 
-interface CardProps {
-  title: string;
-  coverImage: ImageMetadata;
-  coverImageAlt: string;
-  link: string;
-}
 
 const projects: CardProps[] = [
   {
