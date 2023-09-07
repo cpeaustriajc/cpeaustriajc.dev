@@ -21,16 +21,14 @@ const { orientation, link, title, coverImage, coverImageAlt } = Astro.props;
     ]}
   >
     <Image
-      class="absolute -z-10 h-full w-full"
+      class="absolute -z-10 h-full w-full object-cover"
       src={coverImage}
       alt={coverImageAlt}
-      width={orientation === "portrait" ? 360 : 640}
-      height={orientation === "portrait" ? 640: 360}
       loading="lazy"
       format="webp"
     />
     <div
-      class={`flex flex-col h-full justify-center items-center motion-safe:xl:opacity-0 motion-safe:xl:hover:opacity-100 motion-safe:xl:hover:backdrop-blur-lg motion-reduce:opacity-100 motion-reduce:shadow-inner backdrop-brightness-[.25] motion-reduce:transition-none transition-all motion-safe:ease-in-out motion-safe:duration-500 shadow-2xl`}
+      class={`flex flex-col h-full justify-center items-center motion-safe:backdrop-blur-md motion-safe:xl:opacity-0 motion-safe:xl:hover:opacity-100 motion-safe:xl:hover:backdrop-blur-lg motion-reduce:opacity-100 motion-reduce:shadow-inner backdrop-brightness-[.25] motion-reduce:transition-none transition-all motion-safe:ease-in-out motion-safe:duration-500 shadow-2xl`}
     >
       <h3 class="text-5xl font-bold text-neutral-50">{title}</h3>
     </div>

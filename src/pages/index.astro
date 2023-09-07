@@ -90,7 +90,7 @@ const projects: CardProps[] = [
   <main class="scroll-smooth px-4 lg:pt-16 xl:px-40">
     <section class="pb-96">
       <h1 class="text-center">
-        <span class="text-xl font-bold lg:text-6xl xl:text-8xl">
+        <span class="text-xl font-bold md:text-6xl xl:text-8xl">
           <div
             class="motion-safe:translate-y-8 motion-safe:animate-fade-in motion-safe:opacity-0 motion-safe:[animation-delay:100ms]"
           >
@@ -120,7 +120,7 @@ const projects: CardProps[] = [
           class="motion-safe:translate-y-8 motion-safe:animate-fade-in motion-safe:opacity-0 motion-safe:[animation-delay:1000ms]"
         >
           <span
-            class="bg-gradient-to-r from-violet-600 via-yellow-600 to-violet-600 bg-clip-text text-4xl font-bold text-transparent motion-safe:animate-gradient-x lg:text-8xl"
+            class="bg-gradient-to-r from-violet-600 via-yellow-600 to-violet-600 bg-clip-text text-5xl font-bold text-transparent motion-safe:animate-gradient-x md:text-8xl"
             >{"<"}Engineer{"/>"}</span
           >
         </div>
@@ -171,7 +171,7 @@ const projects: CardProps[] = [
         The tech stack that I use to help me go from development to production
       </p>
       <ul
-        class="grid gap-12 py-8 max-sm:auto-cols-max max-sm:grid-flow-col max-sm:overflow-x-scroll md:grid-cols-2 xl:grid-cols-4"
+        class="grid gap-12 py-8 max-sm:auto-cols-[360px] max-sm:grid-flow-col max-sm:overflow-x-scroll md:grid-cols-2 xl:grid-cols-4"
       >
         {
           skills.map((skill) => (
@@ -195,7 +195,9 @@ const projects: CardProps[] = [
       <p class="text-xl font-semibold text-neutral-50 md:text-6xl">
         The list of projects that I made or was part of throughout the years.
       </p>
-      <ul class="grid gap-12 py-8 md:grid-cols-2 xl:grid-cols-4">
+      <ul
+        class="grid gap-12 py-8 max-sm:auto-cols-max max-sm:grid-flow-col max-sm:overflow-x-scroll md:grid-cols-2 xl:grid-cols-4"
+      >
         {
           projects.map((project) => (
             <li>
