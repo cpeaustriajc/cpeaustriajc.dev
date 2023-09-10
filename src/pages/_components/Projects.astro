@@ -1,23 +1,8 @@
 ---
-import type { CardProps } from "~/types/common";
 import Card from "~/components/Card.astro";
-import MarkdoneImage from "~/assets/markdone.png";
-import TenkiImage from "~/assets/atcloud.png";
+import { getCollection } from "astro:content";
 
-const projects: CardProps[] = [
-  {
-    title: "Markdone",
-    coverImage: MarkdoneImage,
-    coverImageAlt: "Markdone",
-    link: "https://markdone.jaycedotbin.me",
-  },
-  {
-    title: "Atcloud",
-    coverImage: TenkiImage,
-    coverImageAlt: "Atcloud",
-    link: "https://atcloud.vercel.app",
-  },
-];
+const projects = await getCollection("projects")
 ---
 
 <section>
@@ -34,10 +19,10 @@ const projects: CardProps[] = [
       projects.map((project) => (
         <li>
           <Card
-            title={project.title}
-            coverImage={project.coverImage}
-            coverImageAlt={project.coverImageAlt}
-            link={project.link}
+            title={project.data.title}
+            coverImage={project.data.coverImage}
+            coverImageAlt={project.data.coverImageAlt}
+            link={project.data.link}
             orientation="landscape"
           />
         </li>

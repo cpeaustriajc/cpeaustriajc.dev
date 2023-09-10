@@ -3,7 +3,7 @@ import "@fontsource-variable/inter";
 import "@fontsource-variable/roboto-mono";
 import BaseHead from "~/components/BaseSEO.astro";
 import Header from "~/components/Header.astro";
-import PortfolioV2 from "~/assets/portfolio-v2.png";
+import DefaultOGImage from "~/assets/images/opengraph/home.jpg";
 import { getImage } from "astro:assets";
 import type { SEOProps } from "~/types/common";
 
@@ -14,7 +14,7 @@ type Props = {
 const { meta } = Astro.props;
 
 const optimizedOGImage = await getImage({
-  src: meta.image ?? PortfolioV2,
+  src: meta.image ?? DefaultOGImage,
   width: 1200,
   height: 630,
   format: "jpeg",

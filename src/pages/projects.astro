@@ -1,24 +1,10 @@
 ---
 import Card from "~/components/Card.astro";
 import BaseLayout from "~/layouts/BaseLayout.astro";
-import MarkdoneImage from "~/assets/markdone.png";
-import Atcloud from "~/assets/atcloud.png";
-import type { CardProps, SEOProps } from "~/types/common.ts";
+import type { SEOProps } from "~/types/common.ts";
+import { getCollection } from "astro:content";
 
-const projects: CardProps[] = [
-  {
-    title: "Markdone",
-    coverImage: MarkdoneImage,
-    coverImageAlt: "Markdone",
-    link: "https://markdone.jaycedotbin.me",
-  },
-  {
-    title: "Atcloud",
-    coverImage: Atcloud,
-    coverImageAlt: "Atcloud",
-    link: "https://atcloud.vercel.app",
-  },
-];
+const projects = await getCollection("projects")
 
 export const meta: SEOProps = {
   title: "Projects | John Carlo Austria",
@@ -43,10 +29,10 @@ export const meta: SEOProps = {
           projects.map((project) => (
             <li>
               <Card
-                title={project.title}
-                coverImage={project.coverImage}
-                coverImageAlt={project.coverImageAlt}
-                link={project.link}
+                title={project.data.title}
+                coverImage={project.data.coverImage}
+                coverImageAlt={project.data.coverImageAlt}
+                link={project.data.link}
                 orientation="landscape"
               />
             </li>
