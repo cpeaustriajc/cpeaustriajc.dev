@@ -6,3 +6,11 @@ export type CardProps = {
   coverImageAlt: string;
   link: string;
 };
+
+export type SEOProps = {
+  title: string;
+  description: string;
+  image?: ImageMetadata;
+  imageAlt?: string;
+  keywords?: string[];
+};

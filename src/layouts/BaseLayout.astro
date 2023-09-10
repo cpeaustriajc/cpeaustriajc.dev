@@ -5,16 +5,10 @@ import BaseHead from "~/components/BaseSEO.astro";
 import Header from "~/components/Header.astro";
 import PortfolioV2 from "~/assets/portfolio-v2.png";
 import { getImage } from "astro:assets";
-import type { ImageMetadata } from "astro";
+import type { SEOProps } from "~/types/common";
 
 type Props = {
-  meta: {
-    title: string;
-    description: string;
-    image?: ImageMetadata;
-    imageAlt?: string;
-    keywords?: string[];
-  };
+  meta: SEOProps;
 };
 
 const { meta } = Astro.props;
