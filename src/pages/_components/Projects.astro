@@ -1,0 +1,47 @@
+---
+import type { CardProps } from "~/types/common";
+import Card from "~/components/Card.astro";
+import MarkdoneImage from "~/assets/markdone.png";
+import TenkiImage from "~/assets/atcloud.png";
+
+const projects: CardProps[] = [
+  {
+    title: "Markdone",
+    coverImage: MarkdoneImage,
+    coverImageAlt: "Markdone",
+    link: "https://markdone.jaycedotbin.me",
+  },
+  {
+    title: "Atcloud",
+    coverImage: TenkiImage,
+    coverImageAlt: "Atcloud",
+    link: "https://atcloud.vercel.app",
+  },
+];
+---
+
+<section>
+  <h2 class="text-6xl font-bold leading-loose text-neutral-50 md:text-8xl">
+    Projects
+  </h2>
+  <p class="text-xl font-semibold text-neutral-50 md:text-6xl">
+    The list of projects that I made or was part of throughout the years.
+  </p>
+  <ul
+    class="grid gap-12 py-8 max-sm:auto-cols-max max-sm:grid-flow-col max-sm:overflow-x-scroll md:grid-cols-2 xl:grid-cols-4"
+  >
+    {
+      projects.map((project) => (
+        <li>
+          <Card
+            title={project.title}
+            coverImage={project.coverImage}
+            coverImageAlt={project.coverImageAlt}
+            link={project.link}
+            orientation="landscape"
+          />
+        </li>
+      ))
+    }
+  </ul>
+</section>

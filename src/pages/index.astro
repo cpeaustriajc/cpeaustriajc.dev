@@ -1,18 +1,11 @@
 ---
 import BaseLayout from "~/layouts/BaseLayout.astro";
-import Card from "~/components/Card.astro";
-import ReactImage from "~/assets/react.png";
-import NextJSImage from "~/assets/nextjs.png";
-import FigmaImage from "~/assets/figma.png";
-import FramerImage from "~/assets/framer.png";
-import SupabaseImage from "~/assets/supabase.png";
-import TailwindCSSImage from "~/assets/tailwindcss.png";
-import TypescriptImage from "~/assets/typescript.png";
-import VercelImage from "~/assets/vercel.png";
-import MarkdoneImage from "~/assets/markdone.png";
-import TenkiImage from "~/assets/atcloud.png";
-import type { CardProps, SEOProps } from "~/types/common";
+import type { SEOProps } from "~/types/common";
 import OGImage from "~/assets/opengraph/home.jpg";
+import Hero from "~/pages/_components/Hero.astro";
+import About from "~/pages/_components/About.astro";
+import Skills from "~/pages/_components/Skills.astro";
+import Projects from "~/pages/_components/Projects.astro";
 
 const meta: SEOProps = {
   description:
@@ -23,201 +16,14 @@ const meta: SEOProps = {
   keywords: ["Web Developer", "Software Engineer", "Fullstack Developer"],
   image: OGImage,
 };
-
-const skills: CardProps[] = [
-  {
-    title: "React",
-    coverImage: ReactImage,
-    coverImageAlt: "React",
-    link: "https://react.dev",
-  },
-  {
-    title: "Next.js",
-    coverImage: NextJSImage,
-    coverImageAlt: "Next.js",
-    link: "https://nextjs.org",
-  },
-  {
-    title: "Figma",
-    coverImage: FigmaImage,
-    coverImageAlt: "Figma",
-    link: "https://figma.com",
-  },
-  {
-    title: "Framer",
-    coverImage: FramerImage,
-    coverImageAlt: "Framer",
-    link: "https://framer.com",
-  },
-  {
-    title: "Supabase",
-    coverImage: SupabaseImage,
-    coverImageAlt: "Supabase",
-    link: "https://supabase.com",
-  },
-  {
-    title: "TailwindCSS",
-    coverImage: TailwindCSSImage,
-    coverImageAlt: "TailwindCSS",
-    link: "https://tailwindcss.com",
-  },
-  {
-    title: "TypeScript",
-    coverImage: TypescriptImage,
-    coverImageAlt: "TypeScript",
-    link: "https://typescriptlang.org",
-  },
-  {
-    title: "Vercel",
-    coverImage: VercelImage,
-    coverImageAlt: "Vercel",
-    link: "https://vercel.com",
-  },
-];
-
-const projects: CardProps[] = [
-  {
-    title: "Markdone",
-    coverImage: MarkdoneImage,
-    coverImageAlt: "Markdone",
-    link: "https://markdone.jaycedotbin.me",
-  },
-  {
-    title: "Atcloud",
-    coverImage: TenkiImage,
-    coverImageAlt: "Atcloud",
-    link: "https://atcloud.vercel.app",
-  },
-];
 ---
 
 <BaseLayout {meta}>
   <main class="scroll-smooth px-4 lg:pt-16 xl:px-40">
-    <section class="pb-96">
-      <h1 class="text-center">
-        <span class="text-xl font-bold md:text-6xl xl:text-8xl">
-          <div
-            class="motion-safe:translate-y-8 motion-safe:animate-fade-in motion-safe:opacity-0 motion-safe:[animation-delay:100ms]"
-          >
-            <span class="text-neutral-50">Meet your next</span>
-          </div>
-          <div class="inline-flex flex-wrap">
-            <div
-              class="motion-safe:translate-y-8 motion-safe:animate-fade-in motion-safe:opacity-0 motion-safe:[animation-delay:125ms]"
-            >
-              <span class="text-rose-500">Web</span>
-              <span class="text-neutral-700">/</span>
-            </div>
-            <div
-              class="motion-safe:translate-y-8 motion-safe:animate-fade-in motion-safe:opacity-0 motion-safe:[animation-delay:250ms]"
-            >
-              <span class="text-emerald-500">Computer</span>
-            </div>
-            <div
-              class="motion-safe:translate-y-8 motion-safe:animate-fade-in motion-safe:opacity-0 motion-safe:[animation-delay:500ms]"
-            >
-              <span class="text-neutral-700">/</span>
-              <span class="text-sky-500"> Product</span>
-            </div>
-          </div>
-        </span>
-        <div
-          class="motion-safe:translate-y-8 motion-safe:animate-fade-in motion-safe:opacity-0 motion-safe:[animation-delay:1000ms]"
-        >
-          <span
-            class="bg-gradient-to-r from-violet-600 via-yellow-600 to-violet-600 bg-clip-text text-5xl font-bold text-transparent motion-safe:animate-gradient-x md:text-8xl"
-            >{"<"}Engineer{"/>"}</span
-          >
-        </div>
-      </h1>
-    </section>
-    <section class="space-y-40 lg:py-96">
-      <div class="space-y-96 md:py-96">
-        <h2
-          class="in-view text-5xl font-bold tracking-tight text-neutral-50 lg:text-8xl"
-        >
-          Who Am I?
-        </h2>
-        <p class="in-view text-2xl font-semibold text-neutral-200 lg:text-6xl">
-          My name is <a
-            class="rounded text-blue-600 hover:underline focus:outline focus:outline-2 focus:outline-violet-400 max-lg:underline"
-            href="https://linkedin.com/in/jaycedotbin"
-            target="_blank">John Carlo B. Austria</a
-          >, I am a computer engineering student based in San Pablo, Laguna,
-          Philippines.
-        </p>
-      </div>
-      <div class="space-y-96 max-md:py-52 md:py-96">
-        <h2
-          class="in-view text-5xl font-bold tracking-tight text-neutral-50 lg:text-8xl"
-        >
-          What am I currently doing?
-        </h2>
-        <p class="in-view text-2xl font-semibold text-neutral-200 lg:text-6xl">
-          I am currently taking a Bachelors of Science in Computer Engineering
-          program in Pamantasan ng Lungsod ng San Pablo
-        </p>
-        <p class="in-view text-2xl font-semibold text-neutral-200 lg:text-6xl">
-          Over time, on my coding journey, I have slowly learned that design is
-          an integral part of what makes a high quality experience when a person
-          uses a piece of software.
-        </p>
-
-        <p class="in-view text-2xl font-semibold text-neutral-200 lg:text-6xl">
-          My specialty is building high quality, accessible products
-        </p>
-      </div>
-    </section>
-    <section class="py-48 md:py-96">
-      <h2 class="text-6xl font-bold leading-loose text-neutral-50 md:text-8xl">
-        Skills
-      </h2>
-      <p class="text-xl font-semibold text-neutral-50 md:text-6xl">
-        The tech stack that I use to help me go from development to production
-      </p>
-      <ul
-        class="grid gap-12 py-8 max-sm:auto-cols-[360px] max-sm:grid-flow-col max-sm:overflow-x-scroll md:grid-cols-2 xl:grid-cols-4"
-      >
-        {
-          skills.map((skill) => (
-            <li>
-              <Card
-                title={skill.title}
-                coverImage={skill.coverImage}
-                coverImageAlt={skill.coverImageAlt}
-                link={skill.link}
-                orientation="portrait"
-              />
-            </li>
-          ))
-        }
-      </ul>
-    </section>
-    <section>
-      <h2 class="text-6xl font-bold leading-loose text-neutral-50 md:text-8xl">
-        Projects
-      </h2>
-      <p class="text-xl font-semibold text-neutral-50 md:text-6xl">
-        The list of projects that I made or was part of throughout the years.
-      </p>
-      <ul
-        class="grid gap-12 py-8 max-sm:auto-cols-max max-sm:grid-flow-col max-sm:overflow-x-scroll md:grid-cols-2 xl:grid-cols-4"
-      >
-        {
-          projects.map((project) => (
-            <li>
-              <Card
-                title={project.title}
-                coverImage={project.coverImage}
-                coverImageAlt={project.coverImageAlt}
-                link={project.link}
-                orientation="landscape"
-              />
-            </li>
-          ))
-        }
-      </ul>
-    </section>
+    <Hero />
+    <About />
+    <Skills />
+    <Projects />
   </main>
 </BaseLayout>
 

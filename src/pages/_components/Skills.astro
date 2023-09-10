@@ -1,0 +1,89 @@
+---
+import type { CardProps } from "~/types/common";
+import Card from "~/components/Card.astro";
+import ReactImage from "~/assets/react.png";
+import NextJSImage from "~/assets/nextjs.png";
+import FigmaImage from "~/assets/figma.png";
+import FramerImage from "~/assets/framer.png";
+import SupabaseImage from "~/assets/supabase.png";
+import TailwindCSSImage from "~/assets/tailwindcss.png";
+import TypescriptImage from "~/assets/typescript.png";
+import VercelImage from "~/assets/vercel.png";
+
+const skills: CardProps[] = [
+  {
+    title: "React",
+    coverImage: ReactImage,
+    coverImageAlt: "React",
+    link: "https://react.dev",
+  },
+  {
+    title: "Next.js",
+    coverImage: NextJSImage,
+    coverImageAlt: "Next.js",
+    link: "https://nextjs.org",
+  },
+  {
+    title: "Figma",
+    coverImage: FigmaImage,
+    coverImageAlt: "Figma",
+    link: "https://figma.com",
+  },
+  {
+    title: "Framer",
+    coverImage: FramerImage,
+    coverImageAlt: "Framer",
+    link: "https://framer.com",
+  },
+  {
+    title: "Supabase",
+    coverImage: SupabaseImage,
+    coverImageAlt: "Supabase",
+    link: "https://supabase.com",
+  },
+  {
+    title: "TailwindCSS",
+    coverImage: TailwindCSSImage,
+    coverImageAlt: "TailwindCSS",
+    link: "https://tailwindcss.com",
+  },
+  {
+    title: "TypeScript",
+    coverImage: TypescriptImage,
+    coverImageAlt: "TypeScript",
+    link: "https://typescriptlang.org",
+  },
+  {
+    title: "Vercel",
+    coverImage: VercelImage,
+    coverImageAlt: "Vercel",
+    link: "https://vercel.com",
+  },
+];
+---
+
+<section class="py-48 md:py-96">
+  <h2 class="text-6xl font-bold leading-loose text-neutral-50 md:text-8xl">
+    Skills
+  </h2>
+  <p class="text-xl font-semibold text-neutral-50 md:text-6xl">
+    The tech stack that I use to help me go from development to production
+  </p>
+  <ul
+    class="grid gap-12 py-8 max-sm:auto-cols-[360px] max-sm:grid-flow-col max-sm:overflow-x-scroll md:grid-cols-2 xl:grid-cols-4"
+  >
+    {
+      skills.map((skill) => (
+        <li>
+          <Card
+            title={skill.title}
+            coverImage={skill.coverImage}
+            coverImageAlt={skill.coverImageAlt}
+            link={skill.link}
+            orientation="portrait"
+          />
+        </li>
+      ))
+    }
+  </ul>
+</section>
