@@ -1,17 +1,16 @@
 import sitemap from "@astrojs/sitemap";
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
-import vercel from "@astrojs/vercel/serverless";
+import vercel from "@astrojs/vercel/static";
 
 import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "hybrid",
+  output: "static",
   adapter: vercel({
     analytics: true,
     imageService: true,
-    functionPerRoute: false
   }),
   integrations: [sitemap(), tailwind(), mdx()],
   site: "https://jaycedotbin.me",
