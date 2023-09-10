@@ -3,8 +3,7 @@ import Card from "~/components/Card.astro";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import MarkdoneImage from "~/assets/markdone.png";
 import Atcloud from "~/assets/atcloud.png";
-import type { CardProps } from "~/types/common.ts";
-
+import type { CardProps, SEOProps } from "~/types/common.ts";
 
 const projects: CardProps[] = [
   {
@@ -21,9 +20,10 @@ const projects: CardProps[] = [
   },
 ];
 
-export const meta = {
+export const meta: SEOProps = {
   title: "Projects | John Carlo Austria",
   description: "A curated list of all the projects that I have built",
+  keywords: ["Projects", "Works", "Portfolio"],
 };
 ---
 

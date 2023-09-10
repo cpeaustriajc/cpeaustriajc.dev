@@ -12,13 +12,16 @@ import VercelImage from "~/assets/vercel.png";
 import MarkdoneImage from "~/assets/markdone.png";
 import TenkiImage from "~/assets/atcloud.png";
 import type { CardProps, SEOProps } from "~/types/common";
-import OGImage from "~/assets/opengraph/home.jpg"
+import OGImage from "~/assets/opengraph/home.jpg";
 
 const meta: SEOProps = {
   description:
-    "John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines.",
+    "John Carlo Austria's is a computer engineering student based in " +
+    "San Pablo, Laguna, Philippines. He is a fullstack developer who " +
+    "specializes in building high quality, accessible products.",
   title: "About | John Carlo Austria",
-  image: OGImage
+  keywords: ["Web Developer", "Software Engineer", "Fullstack Developer"],
+  image: OGImage,
 };
 
 const skills: CardProps[] = [
