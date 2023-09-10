@@ -12,5 +12,5 @@ export type SEOProps = {
   description: string;
   image?: ImageMetadata;
   imageAlt?: string;
-  keywords?: string[];
+  keywords: string[];
 };
