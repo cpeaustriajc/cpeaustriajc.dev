@@ -19,26 +19,28 @@ const isoDate = posts.data.publishDate.toISOString();
 <li>
   <a
     href={`/posts/${posts.slug}`}
-    class="inline-flex flex-col rounded transition-all duration-300 hover:ring-2 hover:ring-offset-4 hover:ring-offset-neutral-950"
+    class="relative inline-flex flex-col rounded transition-all duration-300 hover:ring-2 hover:ring-offset-4 hover:ring-offset-neutral-950"
   >
     <Image
       src={posts.data.coverImage}
       alt={posts.data.coverImageAlt}
-      class="aspect-[2/3] rounded shadow-inner"
-      width={360}
-      height={640}
+      class="aspect-[16/9] rounded"
+      width={640}
+      height={360}
       quality={75}
       format="webp"
       loading="eager"
     />
-    <time class="font-mono text-sm font-bold" datetime={isoDate}
-      >{formattedDate}</time
-    >
-    <h2 class="line-clamp-2 text-xl font-bold text-neutral-50">
-      {posts.data.title}
-    </h2>
-    <p class="line-clamp-3 text-sm leading-6">
-      {posts.data.description}
-    </p>
+    <div class="absolute bottom-0 flex flex-col justify-end h-[75%] w-full px-4 pb-8 bg-gradient-to-t from-neutral-950 to-transparent rounded">
+      <h2 class="line-clamp-1 font-bold text-foreground">
+        {posts.data.title}
+      </h2>
+      <time datetime={isoDate} class="text-xs text-neutral-500">
+        {formattedDate}
+      </time>
+      <p class="line-clamp-2 text-sm leading-6 text-foreground">
+        {posts.data.description}
+      </p>
+    </div>
   </a>
 </li>

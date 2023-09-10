@@ -45,7 +45,7 @@ const OGImageURL = new URL(optimizedOGImage.src, Astro.url);
     <meta name="twitter:title" content={meta.title} />
     <meta property="twitter:url" content={Astro.url.href} />
   </head>
-  <body class="transform-gpu bg-background text-foreground antialiased">
+  <body class="transform-gpu bg-container text-foreground antialiased">
     <Header />
     <slot />
   </body>

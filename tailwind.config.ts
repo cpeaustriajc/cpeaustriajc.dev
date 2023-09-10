@@ -8,10 +8,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: colors.neutral["950"],
-        foreground: colors.neutral["400"],
+        container: colors.neutral["950"],
+        foreground: colors.neutral["50"],
+        elevated: colors.neutral["700"],
         border: colors.neutral["800"],
-        primary: colors.violet["600"],
+        primary: colors.blue["600"],
       },
       fontFamily: {
         sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
