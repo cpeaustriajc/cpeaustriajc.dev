@@ -1,6 +1,5 @@
 {
   "title": "Figma",
-  "coverImage": "~/assets/images/skills/figma.png",
-  "coverImageAlt": "The logo of Figma, a collaborative interface design tool",
-  "link": "https://figma.com"
+  "icon": "logos:figma",
+  "description": "Beginner"
 }

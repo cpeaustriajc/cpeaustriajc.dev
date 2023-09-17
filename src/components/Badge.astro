@@ -1,0 +1,25 @@
+---
+type Props = {
+  icon: string;
+  title: string;
+  description: string;
+};
+
+const { icon, title, description } = Astro.props;
+---
+
+<div class="inline-flex w-fit max-w-2xl items-center gap-4">
+  <iconify-icon
+    icon={icon}
+    width="1.5em"
+    height="1.5em"
+    inline
+    class="rounded bg-elevated px-2 py-2"
+    alt={`Icon for ${title}`}></iconify-icon>
+  <div>
+    <p class="text-sm">{title}</p>
+    <p class="text-xs text-neutral-600">{description}</p>
+  </div>
+</div>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"
+></script>

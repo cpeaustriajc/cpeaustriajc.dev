@@ -1,6 +1,5 @@
 {
   "title": "TypeScript",
-  "coverImage": "~/assets/images/skills/typescript.png",
-  "coverImageAlt": "The logo of TypeScript, a superset of JavaScript",
-  "link": "https://typescriptlang.org"
+  "icon": "logos:typescript-icon",
+  "description": "Beginner"
 }

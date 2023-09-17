@@ -1,6 +1,5 @@
 {
-    "title": "Atcloud",
-    "coverImage": "~/assets/images/projects/atcloud.png",
-    "coverImageAlt": "Atcloud",
-    "link": "https://atcloud.vercel.app"
-  }
+  "title": "Atcloud",
+  "link": "https://github.com/jaycedotbin/atcloud",
+  "description": "A simple weather app, something that I made just for fun, and to learn how to use third party APIs."
+}

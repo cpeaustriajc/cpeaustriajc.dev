@@ -1,6 +1,5 @@
 {
   "title": "Framer",
-  "coverImage": "~/assets/images/skills/framer.png",
-  "coverImageAlt": "The logo of Framer, transform any idea into an actual site in an afternoon",
-  "link": "https://framer.com"
+  "icon": "logos:framer",
+  "description": "Beginner"
 }

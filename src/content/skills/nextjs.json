@@ -1,6 +1,5 @@
 {
   "title": "Next.js",
-  "coverImage": "~/assets/images/skills/nextjs.png",
-  "coverImageAlt": "The logo of Next.js, The React Framework",
-  "link": "https://nextjs.org"
+  "icon": "logos:nextjs-icon",
+  "description": "Beginner"
 }

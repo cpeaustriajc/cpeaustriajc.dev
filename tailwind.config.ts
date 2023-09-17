@@ -1,5 +1,6 @@
 import defaultTheme from "tailwindcss/defaultTheme";
 import typography from "@tailwindcss/typography";
+import containerQueries from "@tailwindcss/container-queries";
 import colors from "tailwindcss/colors";
 import plugin from "tailwindcss/plugin";
 import type { Config } from "tailwindcss";
@@ -74,5 +75,6 @@ export default {
         },
       });
     }),
+    containerQueries,
   ],
 } satisfies Config;

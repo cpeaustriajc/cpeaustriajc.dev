@@ -6,10 +6,10 @@ const projects = await getCollection("projects")
 ---
 
 <section>
-  <h2 class="text-6xl font-bold leading-loose text-neutral-50 md:text-8xl">
+  <h2 id="projects" class="text-6xl font-bold leading-loose text-neutral-50 md:text-8xl">
     Projects
   </h2>
-  <p class="text-xl font-semibold text-neutral-50 md:text-6xl">
+  <p class="text-xl font-semibold text-neutral-400 py-4">
     The list of projects that I made or was part of throughout the years.
   </p>
   <ul
@@ -20,10 +20,8 @@ const projects = await getCollection("projects")
         <li>
           <Card
             title={project.data.title}
-            coverImage={project.data.coverImage}
-            coverImageAlt={project.data.coverImageAlt}
             link={project.data.link}
-            orientation="landscape"
+            description={project.data.description}
           />
         </li>
       ))

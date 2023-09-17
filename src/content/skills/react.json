@@ -1,6 +1,5 @@
 {
   "title": "React",
-  "coverImage": "~/assets/images/skills/react.png",
-  "coverImageAlt": "The logo of React, a JavaScript library for building user interfaces",
-  "link": "https://react.dev"
+  "icon": "logos:react",
+  "description": "Beginner"
 }

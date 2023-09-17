@@ -1,6 +1,5 @@
 {
   "title": "Supabase",
-  "coverImage": "~/assets/images/skills/supabase.png",
-  "coverImageAlt": "The logo of Supabase, the open source Firebase alternative logo",
-  "link": "https://supabase.com"
+  "icon": "logos:supabase-icon",
+  "description": "Beginner"
 }

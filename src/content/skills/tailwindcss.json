@@ -1,6 +1,5 @@
 {
-  "title": "TailwindCSS",
-  "coverImage": "~/assets/images/skills/tailwindcss.png",
-  "coverImageAlt": "The logo of TailwindCSS, a utility-first CSS framework for rapidly building custom designs",
-  "link": "https://tailwindcss.com"
+  "title": "Tailwind CSS",
+  "icon": "logos:tailwindcss-icon",
+  "description": "Beginner"
 }

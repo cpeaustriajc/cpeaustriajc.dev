@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^1.0.2",
-    "@astrojs/vercel": "^4.0.4"
+    "@astrojs/vercel": "^4.0.4",
+    "@tailwindcss/container-queries": "^0.1.1"
   }
 }

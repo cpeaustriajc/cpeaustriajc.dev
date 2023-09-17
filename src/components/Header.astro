@@ -1,72 +1,113 @@
 ---
+/**
+ * Header was inspired by https://reflect.app
+ */
+
 import DropdownMenu from "./DropdownMenu.astro";
 import { Image } from "astro:assets";
-import Logo from "~/assets/logo.png";
-
-const currentPath = Astro.url.pathname.slice(1);
+import Logo from "~/assets/images/home/logo.png";
 ---
 
-<header
-  class="inline-flex w-full items-center justify-between p-4 lg:px-40 lg:py-10"
->
-  <a
-    href="/"
-    class="rounded-full transition-shadow duration-500 hover:ring-2 hover:ring-primary focus:outline focus:outline-2 focus:outline-primary"
-  >
-    <Image
-      src={Logo}
-      width={48}
-      height={48}
-      format="svg"
-      loading="eager"
-      alt="The brand logo for John Carlo Austria, a computer engineer."
-    />
-  </a>
-  <nav
-    class="hidden rounded-full border border-neutral-800 bg-neutral-950 px-4 py-2 md:block"
-  >
-    <ul class="flex flex-row items-center gap-4">
-      <li>
-        <a
-          href="https://read.cv/jaycedotbin"
-          rel="noopener noreferrer"
-          target="_blank"
-          class:list={[
-            "h-9 rounded-full text-sm font-medium leading-6 text-foreground outline-offset-8 transition-colors duration-500 hover:text-primary focus:outline focus:outline-2 focus:outline-primary",
-            { "text-primary": currentPath === "resume" },
-          ]}
-        >
-          Resume
-        </a>
-      </li>
-      <li>
-        <a
-          href="/posts"
-          class:list={[
-            "h-9 rounded-full text-sm font-medium leading-6 text-foreground outline-offset-8 transition-colors duration-500 hover:text-primary focus:outline focus:outline-2 focus:outline-primary",
-            { "text-primary": currentPath === "posts" },
-          ]}
-        >
-          Posts
-        </a>
-      </li>
-      <li>
-        <a
-          href="/projects"
-          class:list={[
-            "h-9 rounded-full text-sm font-medium leading-6 text-foreground outline-offset-8 transition-colors duration-500 hover:text-primary focus:outline focus:outline-2 focus:outline-primary",
-            { "text-primary": currentPath === "projects" },
-          ]}
-        >
-          Projects
-        </a>
-      </li>
-    </ul>
-  </nav>
-  <a
-    href="mailto:cpe.austria.johncarlo@gmail.com"
-    class="hidden min-h-[2rem] min-w-[4rem] items-center justify-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium leading-6 text-foreground transition-all duration-500 hover:bg-transparent hover:ring-1 hover:ring-violet-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-violet-400 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent md:inline-flex"
-    >Contact</a
-  >
-  <DropdownMenu />
+<header>
+  <div class="header-container">
+    <a
+      href="/"
+      class="rounded-full transition-shadow duration-500 hover:ring-2 hover:ring-primary focus:outline focus:outline-2 focus:outline-primary"
+    >
+      <Image
+        src={Logo}
+        width={48}
+        height={48}
+        format="svg"
+        loading="eager"
+        alt="The brand logo for John Carlo Austria, a computer engineer."
+      />
+    </a>
+    <nav
+      class="hidden rounded-full border border-neutral-50/5 bg-neutral-50/5 px-3 py-2 md:block"
+    >
+      <ul class="flex flex-row items-center gap-4">
+        <li>
+          <a
+            href="https://read.cv/jaycedotbin"
+            rel="noopener noreferrer"
+            target="_blank"
+            class="rounded-full text-sm font-medium text-foreground outline-offset-8 transition-colors duration-500 hover:text-primary focus:outline focus:outline-2 focus:outline-primary"
+          >
+            Resume
+          </a>
+        </li>
+        <li>
+          <a
+            href="/posts"
+            class="rounded-full text-sm font-medium text-foreground outline-offset-8 transition-colors duration-500 hover:text-primary focus:outline focus:outline-2 focus:outline-primary"
+          >
+            Posts
+          </a>
+        </li>
+        <li>
+          <a
+            href="/#projects"
+            class="rounded-full text-sm font-medium text-foreground outline-offset-8 transition-colors duration-500 hover:text-primary focus:outline focus:outline-2 focus:outline-primary"
+          >
+            Projects
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <a
+      href="mailto:cpe.austria.johncarlo@gmail.com"
+      class="items-center justify-center gap-2 rounded-full px-3 py-2 text-sm font-medium leading-6 text-foreground shadow-[0_0_16px_4px] shadow-primary ring-1 ring-primary transition-all duration-500 hover:bg-primary hover:ring-primary focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent md:inline-flex"
+      >Contact</a
+    >
+    <DropdownMenu />
+  </div>
 </header>
+<style>
+  header {
+    position: sticky;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding-inline: 2rem;
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    background: rgba(0, 0, 4, 0.05);
+    z-index: 10;
+  }
+
+  .header-container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    padding-block: 1rem;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .header-container::before {
+    background: radial-gradient(
+      62.87% 100% at 50% 100%,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    bottom: 0;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .header-container {
+      padding-inline: 2rem;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .header-container {
+      padding-inline: 20rem;
+    }
+  }
+</style>

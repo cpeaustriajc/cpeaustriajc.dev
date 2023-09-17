@@ -1,6 +1,5 @@
 {
   "title": "Vercel",
-  "coverImage": "~/assets/images/skills/vercel.png",
-  "coverImageAlt": "The logo of Vercel, a frontend cloud that gives frontend developers the frameworks, workflows, and infrastructure to build a faster, more personalized web",
-  "link": "https://vercel.com"
+  "icon": "logos:vercel-icon",
+  "description": "Beginner"
 }

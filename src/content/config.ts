@@ -8,10 +8,9 @@ const postCollection = defineCollection({
       description: z.string(),
       publishDate: z.string().transform((str) => new Date(str)),
       keywords: z.array(z.string()),
-      coverImage: image()
-        .refine((img) => img.width >= 360, {
-          message: "Cover Image must be at least 1200 pixels wide!",
-        }),
+      coverImage: image().refine((img) => img.width >= 360, {
+        message: "Cover Image must be at least 1200 pixels wide!",
+      }),
       coverImageAlt: z.string(),
       draft: z.boolean(),
     }),
@@ -19,26 +18,21 @@ const postCollection = defineCollection({
 
 const projectsCollection = defineCollection({
   type: "data",
-  schema: ({ image }) =>
+  schema: () =>
     z.object({
       title: z.string(),
       link: z.string().url(),
-      coverImage: image(),
-      coverImageAlt: z.string(),
+      description: z.string()
     }),
 });
 
 const skillsCollection = defineCollection({
   type: "data",
-  schema: ({ image }) =>
+  schema: () =>
     z.object({
       title: z.string(),
-      link: z.string().url(),
-      coverImage: image()
-        .refine((img) => img.width >= 360, {
-          message: "Cover Image must be at least 360 pixels wide!",
-        }),
-      coverImageAlt: z.string(),
+      icon: z.string(),
+      description: z.string(),
     }),
 });
 

@@ -1,36 +1,25 @@
 ---
-import { Image } from "astro:assets";
-import type { ImageMetadata } from "astro";
-
 type Props = {
-  coverImage: ImageMetadata;
-  coverImageAlt: string;
   title: string;
   link: string;
-  orientation: "portrait" | "landscape";
+  description: string;
 };
 
-const { orientation, link, title, coverImage, coverImageAlt } = Astro.props;
+const { link, title, description } = Astro.props;
 ---
 
-<a href={link} target="_blank">
-  <article
-    class:list={[
-      "relative h-full w-full shadow-2xl shadow-neutral-900",
-      orientation === "portrait" ? "aspect-[3/4]" : "aspect-[4/3]",
-    ]}
-  >
-    <Image
-      class="absolute -z-10 h-full w-full object-cover"
-      src={coverImage}
-      alt={coverImageAlt}
-      loading="lazy"
-      format="webp"
-    />
-    <div
-      class={`flex flex-col h-full justify-center items-center motion-safe:backdrop-blur-md motion-safe:xl:opacity-0 motion-safe:xl:hover:opacity-100 motion-safe:xl:hover:backdrop-blur-lg motion-reduce:opacity-100 motion-reduce:shadow-inner backdrop-brightness-[.25] motion-reduce:transition-none transition-all motion-safe:ease-in-out motion-safe:duration-500 shadow-2xl`}
-    >
-      <h3 class="text-5xl font-bold text-neutral-50">{title}</h3>
+<article class="rounded-lg border h-full border-border p-8">
+  <div class="flex flex-col justify-between h-full">
+    <h3 class="text-5xl font-bold text-neutral-50 py-4">{title}</h3>
+    <div class="flex flex-col gap-8">
+      <p>{description}</p>
+      <a
+        href={link}
+        target="_blank"
+        class="items-center justify-center gap-2 rounded-full px-3 py-2 text-sm font-medium leading-6 text-foreground shadow-[0_0_16px_4px] shadow-primary ring-1 ring-primary transition-all duration-500 hover:bg-primary hover:ring-primary focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent md:inline-flex"
+      >
+        View on GitHub</a
+      >
     </div>
-  </article>
-</a>
+  </div>
+</article>
