@@ -1,11 +1,12 @@
 ---
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
-import { getCollection, type CollectionEntry } from "astro:content";
+import { getCollection, type CollectionEntry, getEntry } from "astro:content";
 import ArrowLeft from "~/components/ArrowLeft.astro";
 
 type Props = {
   entry: CollectionEntry<"posts">;
+  author: CollectionEntry<"authors">;
 };
 
 export async function getStaticPaths() {
@@ -31,6 +32,7 @@ const date = entry.data.publishDate.toLocaleDateString("en-PH", {
 
 const { Content } = await entry.render();
 
+const author = await getEntry("authors", entry.data.author.id);
 const meta = {
   title: entry.data.title,
   description: entry.data.description,
@@ -70,9 +72,22 @@ const meta = {
           <h1 class="text-4xl font-bold text-neutral-50">
             {entry.data.title}
           </h1>
+          <span class="inline-flex gap-2 text-neutral-500">
+            <Image
+              src={author.data.picture}
+              class="rounded-full"
+              width={24}
+              height={24}
+              quality={75}
+              format="webp"
+              loading="eager"
+              alt={`The GitHub profile photo of ${author.data.name}`}
+            />
+            {author.data.name}
+          </span>
         </div>
       </section>
-      <figure class="py-4 flex flex-col justify-center items-center">
+      <figure class="flex flex-col items-center justify-center py-4">
         <Image
           src={entry.data.coverImage}
           alt={entry.data.coverImageAlt}

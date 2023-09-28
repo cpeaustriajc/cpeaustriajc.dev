@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import type { CollectionEntry } from "astro:content";
+import { getEntry, type CollectionEntry } from "astro:content";
 
 type Props = {
   posts: CollectionEntry<"posts">;
@@ -13,13 +13,15 @@ const formattedDate = posts.data.publishDate.toLocaleDateString("en-PH", {
   month: "long",
   day: "numeric",
 });
+const author = await getEntry(posts.data.author);
+
 const isoDate = posts.data.publishDate.toISOString();
 ---
 
 <li>
   <a
     href={`/posts/${posts.slug}`}
-    class="relative inline-flex flex-col rounded transition-all duration-300 hover:ring-primary hover:ring-2 hover:ring-offset-4 hover:ring-offset-neutral-950"
+    class="relative inline-flex flex-col rounded transition-all duration-300 hover:ring-2 hover:ring-primary hover:ring-offset-4 hover:ring-offset-neutral-950"
   >
     <Image
       src={posts.data.coverImage}
@@ -31,13 +33,27 @@ const isoDate = posts.data.publishDate.toISOString();
       format="webp"
       loading="eager"
     />
-    <div class="absolute bottom-0 flex flex-col justify-end h-[75%] w-full px-4 pb-8 bg-gradient-to-t from-neutral-950 to-transparent rounded">
-      <h2 class="line-clamp-1 font-bold text-foreground">
-        {posts.data.title}
-      </h2>
-      <time datetime={isoDate} class="text-xs text-neutral-500">
-        {formattedDate}
-      </time>
+    <div
+      class="absolute bottom-0 flex h-[75%] w-full flex-col justify-end gap-2 rounded bg-gradient-to-t from-neutral-950 to-transparent px-4 pb-2"
+    >
+      <div>
+        <h2 class="line-clamp-1 font-bold text-foreground">
+          {posts.data.title}
+        </h2>
+        <time datetime={isoDate} class="text-xs text-neutral-500">
+          {formattedDate}
+        </time>
+      </div>
+      <span class="inline-flex items-center gap-2 text-xs">
+        <Image
+          src={author.data.picture}
+          width={24}
+          height={24}
+          class="rounded-full"
+          alt={`The GitHub profile photo for ${author.data.name}`}
+        />
+        {author.data.name}
+      </span>
       <p class="line-clamp-2 text-sm leading-6 text-foreground">
         {posts.data.description}
       </p>

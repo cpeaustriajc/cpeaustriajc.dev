@@ -12,6 +12,9 @@ export default defineConfig({
     analytics: true,
     imageService: true,
   }),
+  image: {
+    domains: ["avatars.githubusercontent.com"],
+  },
   integrations: [sitemap(), tailwind(), mdx()],
   site: "https://jaycedotbin.me",
 });

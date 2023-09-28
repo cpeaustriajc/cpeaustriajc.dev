@@ -1,4 +1,4 @@
-import { z, defineCollection } from "astro:content";
+import { z, defineCollection, reference } from "astro:content";
 
 const postCollection = defineCollection({
   type: "content",
@@ -8,6 +8,7 @@ const postCollection = defineCollection({
       description: z.string(),
       publishDate: z.string().transform((str) => new Date(str)),
       keywords: z.array(z.string()),
+      author: reference('authors'),
       coverImage: image().refine((img) => img.width >= 360, {
         message: "Cover Image must be at least 1200 pixels wide!",
       }),
@@ -22,7 +23,16 @@ const projectsCollection = defineCollection({
     z.object({
       title: z.string(),
       link: z.string().url(),
-      description: z.string()
+      description: z.string(),
+    }),
+});
+
+const authorsCollection = defineCollection({
+  type: "data",
+  schema: () =>
+    z.object({
+      name: z.string(),
+      picture: z.string(),
     }),
 });
 
@@ -40,4 +50,5 @@ export const collections = {
   posts: postCollection,
   projects: projectsCollection,
   skills: skillsCollection,
+  authors: authorsCollection,
 };
