@@ -8,9 +8,9 @@ type Props = {
 const { link, title, description } = Astro.props;
 ---
 
-<article class="rounded-lg border h-full border-border p-8">
-  <div class="flex flex-col justify-between h-full">
-    <h3 class="text-5xl font-bold text-neutral-50 py-4">{title}</h3>
+<article class="h-full rounded-lg border border-border p-8">
+  <div class="flex h-full flex-col justify-between">
+    <h3 class="py-4 text-5xl font-bold text-neutral-50">{title}</h3>
     <div class="flex flex-col gap-8">
       <p>{description}</p>
       <a

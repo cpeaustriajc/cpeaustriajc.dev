@@ -93,7 +93,7 @@ export default async function Page() {
 
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary.
-    throw new Error(`Failed to fetch the data`)
+    throw new Error(`Failed to fetch the data`);
   }
   const posts = await res.json();
 
@@ -106,7 +106,7 @@ export default async function Page() {
         ))}
       </ul>
     </div>
-  )
+  );
 }
 ```
 
@@ -171,12 +171,12 @@ then on, `app/page.tsx`:
 
 ```jsx
 // app/page.tsx
-'use client'
+"use client";
 
-import { Suspense } from 'react'
-import { Skeleton } from '@/components/ui/skeleton' // Example
-import { Profile } from '@/components/profile'
-import { ErrorBoundary } from 'react-error-boundary' // npm install react-error-boundary
+import { Suspense } from "react";
+import { Skeleton } from "@/components/ui/skeleton"; // Example
+import { Profile } from "@/components/profile";
+import { ErrorBoundary } from "react-error-boundary"; // npm install react-error-boundary
 
 export default function Page() {
   return (
@@ -185,7 +185,7 @@ export default function Page() {
         <Profile />
       </Suspense>
     </ErrorBoundary>
-  )
+  );
 }
 ```
 
@@ -198,7 +198,6 @@ It looks much cleaner and doesn't actually need to use optional chaining operato
 > handle suspense when it comes to data fetching.
 
 > React Suspense **does not** detect when data is fetched inside > an Effect or event handler.
-
 
 ## Tips and Tricks
 
@@ -225,7 +224,6 @@ I am active on the following social media platforms.
 
 - [Twitter](https://twitter.com/jaycedotbin)
 - [GitHub](https://github.com/jaycedotbin)
-
 
 ### References
 

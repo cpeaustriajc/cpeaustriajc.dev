@@ -8,7 +8,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "format": "prettier --write .",
+    "format": "prettier -w \"**/*\" --ignore-unknown",
     "test:e2e": "playwright test"
   },
   "license": "CC-BY-4.0",

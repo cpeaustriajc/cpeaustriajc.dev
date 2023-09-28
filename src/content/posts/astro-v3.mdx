@@ -40,7 +40,7 @@ On `src/components/BaseSEO.astro`:
 // src/components/BaseSEO.astro
 // Added it to the common head tags so that it
 // can be reused throughout the layouts
-import {ViewTransitions} from 'astro:transitions';
+import { ViewTransitions } from "astro:transitions";
 ---
 
 <meta charset="utf-8" />
@@ -58,7 +58,7 @@ Then, I added it to the `src/layouts/BaseLayout.astro`
 ---
 // src/layouts/BaseLayout.astro
 // Add the BaseSEO components to the top level <head> tag
-import BaseSEO from '~/components/BaseSEO.astro'
+import BaseSEO from "~/components/BaseSEO.astro";
 ---
 
 <html dir="ltr" lang="en">
@@ -109,8 +109,8 @@ Example for the `Image` component:
 
 ```astro
 ---
-import { Image } from 'astro:assets';
-import myImage from '../assets/image.png';
+import { Image } from "astro:assets";
+import myImage from "../assets/image.png";
 ---
 
 <Image src={myImage} alt="A really cool looking image!" />
@@ -121,7 +121,7 @@ For the `getImage` function, I use it to optimize OpenGraph images:
 ```astro
 ---
 import { getImage } from "astro:assets";
-import myBackground from "../background.png"
+import myBackground from "../background.png";
 
 const optimizedOGImage = await getImage({
   src: myBackground,
