@@ -3,7 +3,7 @@ title: Portfolio V2
 description: My thought process when I was building the second revision/redesign of my portfolio site
 coverImage: ~/assets/images/posts/portfolio-v2.jpg
 coverImageAlt: The new default opengraph image for my personal portfolio
-publishDate: 9/10/2023, 9:02:33 PM UTC+8
+publishDate: 2023-09-10T09:02:33
 author: john-carlo-austria
 keywords:
   - Astro

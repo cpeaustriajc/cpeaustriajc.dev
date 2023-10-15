@@ -3,7 +3,7 @@ title: How to fix the @apply and @tailwind warning in VSCode when using Tailwind
 description: A tutorial on how to fix the @apply and @tailwind warning when using VS Code with TailwindCSS
 coverImage: ~/assets/images/posts/tailwindcss-at-apply-warning.jpg
 coverImageAlt: CSS Code in a computer screen
-publishDate: 8/9/2023, 8:30:24 PM UTC+8
+publishDate: 2023-09-08T08:30:24
 author: john-carlo-austria
 keywords:
   - Tutorial
