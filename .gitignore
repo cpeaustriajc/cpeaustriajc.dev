@@ -24,3 +24,6 @@ dist
 /test-results/
 /playwright-report/
 /playwright/.cache/
+
+# Ignore .obsidian folders
+.obsidian
