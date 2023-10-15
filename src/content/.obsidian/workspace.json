@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/2023-10-15-using-obsidian-as-a-cms.md",
+                "file": "_templates/post.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "posts/2023-10-15-using-obsidian-as-a-cms.md",
+                "file": "_templates/post.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "posts/2023-10-15-using-obsidian-as-a-cms.md",
+                "file": "_templates/post.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "posts/2023-10-15-using-obsidian-as-a-cms.md"
+                "file": "_templates/post.md"
               }
             }
           },
@@ -158,12 +158,12 @@
   },
   "active": "325168b8b7c97b1a",
   "lastOpenFiles": [
+    "posts/2023-08-31-astro-v3.md",
+    "_templates/post.md",
+    "posts/2023-10-15-using-obsidian-as-a-cms.md",
     "posts/2023-09-08-tailwindcss-at-apply-warning.md",
     "posts/2023-09-10-portfolio-v2.md",
     "posts/2023-09-01-next-13-data-fetching.md",
-    "posts/2023-08-31-astro-v3.md",
-    "posts/2023-10-15-using-obsidian-as-a-cms.md",
-    "_templates/post.md",
     "_templates",
     "templates/post.md",
     "templates"
