@@ -9,7 +9,9 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
   output: "static",
   adapter: vercel({
-    analytics: true,
+    webAnalytics: {
+      enabled: true,
+    },
     imageService: true,
   }),
   image: {
