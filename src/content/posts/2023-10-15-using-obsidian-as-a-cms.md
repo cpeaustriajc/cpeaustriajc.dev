@@ -10,7 +10,7 @@ keywords:
   - Astro
   - CMS
   - Blog
-draft: true
+draft: false
 ---
 Obsidian introduced a new editing feature called properties, in the help section of obsidian, it states that properties help you organize information about a note. Adding properties to a note helps you track structured data such as text, links, dates and numbers.
 
