@@ -12,9 +12,11 @@ keywords:
   - Blog
 draft: false
 ---
+
 Obsidian introduced a new editing feature called properties, in the help section of obsidian, it states that properties help you organize information about a note. Adding properties to a note helps you track structured data such as text, links, dates and numbers.
 
 The properties feature supports the following types:
+
 - Text
 - List
 - Number
@@ -27,11 +29,13 @@ Which are basically basic data types for `yaml` files, which means that when you
 To get started with using Obsidian, I opened the content folder in my personal site repository and create a vault in it.
 ![Open The Vault](~/assets/gifs/open-vault.gif)
 Next, I ignored the dot obsidian folder if you are not syncing with git, so append it to your `.gitignore` file
+
 ```diff
 ...
 + .obsidian
 
 ```
+
 After that, I created an `_templates` folder in your content collections so that it can be used to create templates for blog posts for obsidian to use in the templates core plugin.
 
 It should look like this:
@@ -40,18 +44,20 @@ It should look like this:
 ├───_templates
 └───posts
 ```
+
 that way, the Astro compiler will not read the templates folder but can still be seen and specified in obsidian's templates plugin configuration.
 
 In the template folder, I created a `post.md` file with the properties that reflect the ones specified in the `config.ts` file:
+
 ```md
 ---
-title: 
-description: 
-coverImage: 
-coverImageAlt: 
-publishDate: 
-author: 
-keywords: 
+title:
+description:
+coverImage:
+coverImageAlt:
+publishDate:
+author:
+keywords:
 draft: true
 ---
 ```
