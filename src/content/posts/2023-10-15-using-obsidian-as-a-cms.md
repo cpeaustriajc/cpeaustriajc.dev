@@ -40,7 +40,7 @@ After that, I created an `_templates` folder in your content collections so that
 
 It should look like this:
 
-```plaintext
+```
 ├───_templates
 └───posts
 ```
