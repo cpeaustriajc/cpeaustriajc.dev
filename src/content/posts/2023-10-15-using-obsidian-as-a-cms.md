@@ -35,7 +35,8 @@ Next, I ignored the dot obsidian folder if you are not syncing with git, so appe
 After that, I created an `_templates` folder in your content collections so that it can be used to create templates for blog posts for obsidian to use in the templates core plugin.
 
 It should look like this:
-```text
+
+```plaintext
 ├───_templates
 └───posts
 ```
