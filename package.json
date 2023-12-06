@@ -13,25 +13,25 @@
   },
   "license": "CC-BY-4.0",
   "devDependencies": {
-    "@astrojs/rss": "^3.0.0",
+    "@astrojs/rss": "^4.0.0",
     "@astrojs/sitemap": "^3.0.3",
-    "@astrojs/tailwind": "^5.0.2",
+    "@astrojs/tailwind": "^5.0.3",
     "@axe-core/playwright": "^4.8.1",
     "@fontsource-variable/inter": "^5.0.15",
     "@fontsource-variable/roboto-mono": "^5.0.16",
-    "@playwright/test": "^1.39.0",
+    "@playwright/test": "^1.40.1",
     "@tailwindcss/typography": "^0.5.10",
-    "astro": "3.5.0",
-    "prettier": "^3.0.3",
-    "prettier-plugin-astro": "^0.12.1",
-    "prettier-plugin-tailwindcss": "^0.5.7",
-    "sharp": "0.32.6",
-    "tailwindcss": "^3.3.5",
-    "typescript": "^5.2.2"
+    "astro": "4.0.1",
+    "prettier": "^3.1.0",
+    "prettier-plugin-astro": "^0.12.2",
+    "prettier-plugin-tailwindcss": "^0.5.9",
+    "sharp": "0.33.0",
+    "tailwindcss": "^3.3.6",
+    "typescript": "^5.3.2"
   },
   "dependencies": {
-    "@astrojs/mdx": "1.1.4",
-    "@astrojs/vercel": "^5.2.0",
+    "@astrojs/mdx": "2.0.0",
+    "@astrojs/vercel": "^6.0.0",
     "@tailwindcss/container-queries": "^0.1.1"
   }
 }
