@@ -18,5 +18,5 @@ export default defineConfig({
     domains: ["avatars.githubusercontent.com"],
   },
   integrations: [sitemap(), tailwind(), mdx()],
-  site: "https://jaycedotbin.me",
+  site: "https://jayzers.vercel.app",
 });
