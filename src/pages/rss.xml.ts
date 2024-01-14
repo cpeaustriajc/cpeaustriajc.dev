@@ -9,7 +9,7 @@ export async function GET() {
     title: "Posts | John Carlo Austria",
     description:
       "John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines.",
-    site: "https://jaycedotbin.me",
+    site: "https://jayzers.vercel.app",
     items: posts.map((post) => ({
       title: post.data.title,
       pubDate: post.data.publishDate,

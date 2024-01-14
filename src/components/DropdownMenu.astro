@@ -1,51 +1,36 @@
+---
+import HamburgerMenu from "~/components/assets/HamburgerMenu.astro";
+import { dropdownMenuItem } from "./ui/dropdown-menu";
+---
+
 <dropdown-menu class="relative md:hidden">
   <button
     type="button"
     class="inline-flex items-center justify-center gap-2 rounded bg-neutral-900 px-2 py-2 text-sm font-medium leading-6 text-neutral-50 md:hidden"
-    ><svg
-      width="24"
-      height="24"
-      viewBox="0 0 15 15"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      ><path
-        d="M1.5 3C1.22386 3 1 3.22386 1 3.5C1 3.77614 1.22386 4 1.5 4H13.5C13.7761 4 14 3.77614 14 3.5C14 3.22386 13.7761 3 13.5 3H1.5ZM1 7.5C1 7.22386 1.22386 7 1.5 7H13.5C13.7761 7 14 7.22386 14 7.5C14 7.77614 13.7761 8 13.5 8H1.5C1.22386 8 1 7.77614 1 7.5ZM1 11.5C1 11.2239 1.22386 11 1.5 11H13.5C13.7761 11 14 11.2239 14 11.5C14 11.7761 13.7761 12 13.5 12H1.5C1.22386 12 1 11.7761 1 11.5Z"
-        fill="currentColor"
-        fill-rule="evenodd"
-        clip-rule="evenodd"></path></svg
-    ><span class="sr-only">Hamburger Menu</span></button
   >
+    <HamburgerMenu />
+    <span class="sr-only">Hamburger Menu</span>
+  </button>
 
   <ul
     data-state="closed"
     class="absolute right-0 z-10 flex translate-y-2 flex-col gap-2 rounded border border-neutral-800 bg-neutral-900 bg-opacity-25 p-4 text-neutral-50 opacity-0 backdrop-blur transition-opacity"
   >
     <li>
-      <a
-        href="https://read.cv/jaycedotbin"
-        class="focus-visible:ring-ring inline-flex h-9 w-full items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-violet-500 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50"
+      <a href="https://read.cv/jayzersdotdev" class={dropdownMenuItem()}
         >Resume</a
       >
     </li>
     <li>
-      <a
-        href="/posts"
-        class="focus-visible:ring-ring inline-flex h-9 w-full items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-violet-500 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50"
-        >Posts</a
-      >
+      <a href="/posts" class={dropdownMenuItem()}>Posts</a>
     </li>
     <li>
-      <a
-        href="/projects"
-        class="focus-visible:ring-ring inline-flex h-9 w-full items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-violet-500 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50"
-        >Projects</a
-      >
+      <a href="/projects" class={dropdownMenuItem()}>Projects</a>
     </li>
     <li>
       <a
         href="mailto:cpe.austria.johncarlo@gmail.com"
-        class="focus-visible:ring-ring inline-flex h-9 w-full items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-violet-500 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50"
-        >Contact</a
+        class={dropdownMenuItem()}>Contact</a
       >
     </li>
   </ul>

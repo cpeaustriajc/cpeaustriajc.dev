@@ -15,6 +15,10 @@ export default {
         elevated: colors.neutral["700"],
         border: colors.neutral["800"],
         primary: colors.blue["600"],
+        card: {
+          DEFAULT: colors.neutral["950"],
+          foreground: colors.neutral["50"],
+        }
       },
       fontFamily: {
         sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],

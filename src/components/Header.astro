@@ -6,6 +6,7 @@
 import DropdownMenu from "./DropdownMenu.astro";
 import { Image } from "astro:assets";
 import Logo from "~/assets/images/home/logo.png";
+import { button } from "~/components/ui/button";
 ---
 
 <header>
@@ -29,7 +30,7 @@ import Logo from "~/assets/images/home/logo.png";
       <ul class="flex flex-row items-center gap-4">
         <li>
           <a
-            href="https://read.cv/jaycedotbin"
+            href="https://read.cv/jayzersdotdev"
             rel="noopener noreferrer"
             target="_blank"
             class="rounded-full text-sm font-medium text-foreground outline-offset-8 transition-colors duration-500 hover:text-primary focus:outline focus:outline-2 focus:outline-primary"
@@ -57,8 +58,7 @@ import Logo from "~/assets/images/home/logo.png";
     </nav>
     <a
       href="mailto:cpe.austria.johncarlo@gmail.com"
-      class="hidden items-center justify-center gap-2 rounded-full px-3 py-2 text-sm font-medium leading-6 text-foreground shadow-[0_0_16px_4px] shadow-primary ring-1 ring-primary transition-all duration-500 hover:bg-primary hover:ring-primary focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent md:inline-flex"
-      >Contact</a
+      class:list={["hidden", "md:inline-flex", button()]}>Contact</a
     >
     <DropdownMenu />
   </div>
