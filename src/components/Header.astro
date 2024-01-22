@@ -9,105 +9,57 @@ import Logo from "~/assets/images/home/logo.png";
 import { button } from "~/components/ui/button";
 ---
 
-<header>
-  <div class="header-container">
-    <a
-      href="/"
-      class="rounded-full transition-shadow duration-500 hover:ring-2 hover:ring-primary focus:outline focus:outline-2 focus:outline-primary"
-    >
-      <Image
-        src={Logo}
-        width={48}
-        height={48}
-        format="svg"
-        loading="eager"
-        alt="The brand logo for John Carlo Austria, a computer engineer."
-      />
-    </a>
-    <nav
-      class="hidden rounded-full border border-neutral-50/5 bg-neutral-50/5 px-3 py-2 md:block"
-    >
-      <ul class="flex flex-row items-center gap-4">
-        <li>
-          <a
-            href="https://read.cv/jayzersdotdev"
-            rel="noopener noreferrer"
-            target="_blank"
-            class="rounded-full text-sm font-medium text-foreground outline-offset-8 transition-colors duration-500 hover:text-primary focus:outline focus:outline-2 focus:outline-primary"
-          >
-            Resume
-          </a>
-        </li>
-        <li>
-          <a
-            href="/posts"
-            class="rounded-full text-sm font-medium text-foreground outline-offset-8 transition-colors duration-500 hover:text-primary focus:outline focus:outline-2 focus:outline-primary"
-          >
-            Posts
-          </a>
-        </li>
-        <li>
-          <a
-            href="/#projects"
-            class="rounded-full text-sm font-medium text-foreground outline-offset-8 transition-colors duration-500 hover:text-primary focus:outline focus:outline-2 focus:outline-primary"
-          >
-            Projects
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <a
-      href="mailto:cpe.austria.johncarlo@gmail.com"
-      class:list={["hidden", "md:inline-flex", button()]}>Contact</a
-    >
-    <DropdownMenu />
-  </div>
+<header
+  class="sticky left-0 top-0 lg:top-4 grid grid-flow-col w-full lg:w-auto place-content-between place-items-center gap-8 lg:rounded-full lg:border lg:border-neutral-50/5 z-10 bg-neutral-50/5 px-8 py-4 backdrop-blur-sm lg:px-24"
+>
+  <a
+    href="/"
+    class="rounded-full transition-shadow duration-500 hover:ring-2 hover:ring-primary focus:outline focus:outline-2 focus:outline-primary"
+  >
+    <Image
+      src={Logo}
+      width={48}
+      height={48}
+      format="svg"
+      loading="eager"
+      alt="The brand logo for John Carlo Austria, a computer engineer."
+    />
+  </a>
+  <nav
+    class="hidden rounded-full border border-neutral-50/5 bg-neutral-50/5 px-3 py-2 backdrop-blur-lg md:block"
+  >
+    <ul class="flex flex-row items-center gap-4">
+      <li>
+        <a
+          href="https://read.cv/jayzersdotdev"
+          rel="noopener noreferrer"
+          target="_blank"
+          class="rounded-full text-sm font-medium text-foreground outline-offset-8 transition-colors duration-500 hover:text-primary focus:outline focus:outline-2 focus:outline-primary"
+        >
+          Resume
+        </a>
+      </li>
+      <li>
+        <a
+          href="/posts"
+          class="rounded-full text-sm font-medium text-foreground outline-offset-8 transition-colors duration-500 hover:text-primary focus:outline focus:outline-2 focus:outline-primary"
+        >
+          Posts
+        </a>
+      </li>
+      <li>
+        <a
+          href="/#projects"
+          class="rounded-full text-sm font-medium text-foreground outline-offset-8 transition-colors duration-500 hover:text-primary focus:outline focus:outline-2 focus:outline-primary"
+        >
+          Projects
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <a
+    href="mailto:cpe.austria.johncarlo@gmail.com"
+    class:list={["hidden", "md:inline-flex", button(), "bg-neutral-50/5"]}>Contact</a
+  >
+  <DropdownMenu />
 </header>
-<style>
-  header {
-    position: sticky;
-    left: 0;
-    top: 0;
-    width: 100%;
-    padding-inline: 2rem;
-    -webkit-backdrop-filter: blur(16px);
-    backdrop-filter: blur(16px);
-    background: rgba(0, 0, 4, 0.05);
-    z-index: 10;
-  }
-
-  .header-container {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    padding-block: 1rem;
-    justify-content: space-between;
-    position: relative;
-  }
-
-  .header-container::before {
-    background: radial-gradient(
-      62.87% 100% at 50% 100%,
-      rgba(255, 255, 255, 0.12) 0%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    bottom: 0;
-    content: "";
-    height: 1px;
-    left: 0;
-    position: absolute;
-    width: 100%;
-  }
-
-  @media (min-width: 768px) {
-    .header-container {
-      padding-inline: 2rem;
-    }
-  }
-
-  @media (min-width: 1440px) {
-    .header-container {
-      padding-inline: 20rem;
-    }
-  }
-</style>

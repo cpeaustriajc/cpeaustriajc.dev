@@ -42,52 +42,45 @@ const meta = {
 ---
 
 <BaseLayout {meta}>
-  <main class="px-4 font-sans lg:px-40">
-    <header>
-      <section class="flex flex-row">
-        <div class="absolute flex gap-2">
-          <a
-            href="/posts"
-            class="rounded-md p-1 text-sm font-medium leading-6 text-neutral-400 transition-colors duration-500 hover:text-neutral-50 focus:outline focus:outline-2 focus:outline-violet-400"
-            ><ArrowLeft />Back</a
-          >
-        </div>
-        <div class="mx-auto max-w-prose">
-          <div>
-            <span class="text-sm text-neutral-500">Post</span>
-            <span
-              role="separator"
-              aria-orientation="vertical"
-              class="mx-1 text-sm text-neutral-500"
-            >
-              |
-            </span>
-            <time
-              datetime={entry.data.publishDate.toISOString()}
-              class="text-sm text-neutral-500"
-            >
-              {date}
-            </time>
-          </div>
-          <h1 class="text-4xl font-bold text-neutral-50">
-            {entry.data.title}
-          </h1>
-          <span class="inline-flex gap-2 text-neutral-500">
-            <Image
-              src={author.data.picture}
-              class="rounded-full"
-              width={24}
-              height={24}
-              quality={75}
-              format="webp"
-              loading="eager"
-              alt={`The GitHub profile photo of ${author.data.name}`}
-            />
-            {author.data.name}
-          </span>
-        </div>
-      </section>
-      <figure class="flex flex-col items-center justify-center py-4">
+  <main
+    class="grid w-full place-content-center place-items-center px-4 py-4 font-sans"
+  >
+    <header
+      aria-label="Post Title and Image"
+      class="grid gap-x-4 md:grid-cols-[repeat(1,min-content),minmax(320px,1024px)] md:grid-rows-[repeat(4,min-content),1fr]"
+    >
+      <a
+        href="/posts"
+        class="hidden grid-flow-col items-center gap-1 place-self-start rounded-md text-sm font-medium text-neutral-400 transition-colors duration-500 hover:text-neutral-50 focus:outline focus:outline-2 focus:outline-violet-400 md:col-start-1 md:inline-grid"
+        ><ArrowLeft class="h-2 w-2 align-middle" />Back</a
+      >
+      <time
+        class="border-neutral-500 px-1 text-sm text-neutral-500 md:col-start-2"
+        datetime={entry.data.publishDate.toISOString()}
+      >
+        {date}
+      </time>
+      <h1
+        class="text-balance text-4xl font-bold text-neutral-50 md:col-start-2"
+      >
+        {entry.data.title}
+      </h1>
+      <figure
+        class="gap-2 text-neutral-500 md:col-start-2 md:inline-grid md:grid-flow-col md:grid-cols-[24px,1fr]"
+      >
+        <Image
+          src={author.data.picture}
+          class="rounded-full"
+          width={24}
+          height={24}
+          quality={75}
+          format="webp"
+          loading="eager"
+          alt={`The GitHub profile photo of ${author.data.name}`}
+        />
+        <figcaption>{author.data.name}</figcaption>
+      </figure>
+      <figure class="place-self-center py-4 md:col-span-3">
         <Image
           src={entry.data.coverImage}
           alt={entry.data.coverImageAlt}
@@ -98,11 +91,11 @@ const meta = {
           loading="eager"
           class="not-prose aspect-[16/9] rounded"
         />
-        <figcaption>{entry.data.coverImageAlt}</figcaption>
+        <figcaption class="text-center">{entry.data.coverImageAlt}</figcaption>
       </figure>
     </header>
     <article
-      class="prose mx-auto dark:prose-invert focus:outline focus:outline-2 focus:outline-violet-400 prose-code:font-mono prose-pre:font-mono"
+      class="prose-pre:w-prose prose prose-blue prose-invert text-pretty focus:outline focus:outline-2 focus:outline-violet-400 prose-pre:font-mono"
     >
       <Content />
     </article>
