@@ -8,11 +8,14 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
   output: "static",
   adapter: vercel({
-    imageService: true
+    imageService: true,
   }),
   image: {
-    domains: ["avatars.githubusercontent.com"]
+    domains: ["avatars.githubusercontent.com"],
   },
   integrations: [sitemap(), tailwind(), mdx()],
-  site: "https://jayzers.vercel.app"
+  markdown: {
+    shikiConfig: { wrap: true, theme: "vitesse-black" },
+  },
+  site: "https://jayzers.vercel.app",
 });
