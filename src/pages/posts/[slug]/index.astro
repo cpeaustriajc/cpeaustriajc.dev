@@ -51,7 +51,7 @@ const meta = {
     >
       <a
         href="/posts"
-        class="hidden grid-flow-col items-center gap-1 place-self-start rounded-md text-sm font-medium text-neutral-400 transition-colors duration-500 hover:text-neutral-50 focus:outline focus:outline-2 focus:outline-violet-400 md:col-start-1 md:inline-grid"
+        class="hidden grid-flow-col items-center gap-1 place-self-start rounded-md text-sm font-medium text-neutral-400 transition-colors duration-500 hover:text-neutral-50 focus:outline focus:outline-2 focus:outline-primary md:col-start-1 md:inline-grid"
         ><ArrowLeft class="h-2 w-2 align-middle" />Back</a
       >
       <time
@@ -76,7 +76,7 @@ const meta = {
           quality={75}
           format="webp"
           loading="eager"
-          alt={`The GitHub profile photo of ${author.data.name}`}
+          alt={`${author.data.name}, the author of the blog post`}
         />
         <figcaption>{author.data.name}</figcaption>
       </figure>
