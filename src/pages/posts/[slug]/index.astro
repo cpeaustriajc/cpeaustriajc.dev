@@ -76,7 +76,7 @@ const meta = {
         <figcaption>{entry.data.coverImageAlt}</figcaption>
       </figure>
     </header>
-    <article class="post">
+    <article class="content">
       <Content />
     </article>
   </main>
@@ -92,10 +92,12 @@ const meta = {
     display: inline flex;
     place-items: center;
     gap: var(--size-2);
+    margin: unset;
   }
 
   .author img {
     display: inline;
+    border-radius: var(--radius-round);
   }
 
   header {
@@ -110,6 +112,11 @@ const meta = {
     align-items: center;
   }
 
+  .cover-image {
+    margin-inline: unset;
+    margin-block: var(--size-7);
+  }
+
   header figure,
   header time,
   header h1 {
@@ -122,22 +129,5 @@ const meta = {
 
   h1 {
     max-inline-size: var(--size-header-2);
-  }
-
-  article {
-    padding-block: var(--size-3);
-    max-inline-size: var(--size-content-3);
-  }
-
-  article :where(a) {
-    font-weight: var(--font-weight-5);
-  }
-
-  article :where(strong) {
-    font-weight: var(--font-weight-6);
-  }
-
-  article :where(pre) {
-    border-radius: var(--radius-2);
   }
 </style>

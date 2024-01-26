@@ -5,6 +5,7 @@ import DefaultOGImage from "~/assets/images/opengraph/home.jpg";
 import { getImage } from "astro:assets";
 import type { SEOProps } from "~/types/common";
 import "~/styles/styles.css";
+import "~/styles/variables.css"
 
 type Props = {
   meta: SEOProps;
@@ -53,26 +54,5 @@ const OGImageURL = new URL(optimizedOGImage.src, Astro.url);
   <body>
     <Header />
     <slot />
-    <style is:global>
-      :where(*),
-      :where(*::before),
-      :where(*::after) {
-        box-sizing: border-box;
-      }
-
-      img {
-        display: block;
-        max-inline-size: 100%;
-      }
-
-      :where(body) {
-        display: grid;
-        height: 100dvh;
-        place-items: center;
-        color: var(--gray-0);
-        background-color: var(--gray-9);
-        font-family: "Inter", sans-serif;
-      }
-    </style>
   </body>
 </html>
