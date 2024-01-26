@@ -3,21 +3,6 @@
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cssvar.files": [
-    "src/**/*.css",
-  ],
-  "cssvar.extensions": [
-    "css",
-    "scss",
-    "sass",
-    "less",
-    "postcss",
-    "vue",
-    "svelte",
-    "astro",
-    "ts",
-    "tsx",
-    "js",
-    "jsx"
-  ]
+  "cssvar.files": ["src/styles/styles.css"],
+  "cssvar.extensions": ["css", "astro"]
 }
