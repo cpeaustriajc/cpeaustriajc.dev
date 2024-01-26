@@ -2,5 +2,22 @@
   "prettier.documentSelectors": ["**/*.astro"],
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "cssvar.files": [
+    "src/**/*.css",
+  ],
+  "cssvar.extensions": [
+    "css",
+    "scss",
+    "sass",
+    "less",
+    "postcss",
+    "vue",
+    "svelte",
+    "astro",
+    "ts",
+    "tsx",
+    "js",
+    "jsx"
+  ]
 }

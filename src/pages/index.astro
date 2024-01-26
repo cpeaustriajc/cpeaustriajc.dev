@@ -19,10 +19,17 @@ const meta: SEOProps = {
 ---
 
 <BaseLayout {meta}>
-  <main class="scroll-smooth px-4 lg:pt-16 xl:px-40">
+  <main>
     <Hero />
     <About />
     <Skills />
     <Projects />
   </main>
 </BaseLayout>
+
+<style>
+  main {
+    scroll-behavior: smooth;
+    padding-inline: var(--size-fluid-3)
+  }
+</style>

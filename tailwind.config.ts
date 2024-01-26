@@ -21,8 +21,8 @@ export default {
         }
       },
       fontFamily: {
-        sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
-        mono: ["Roboto Mono Variable", ...defaultTheme.fontFamily.mono],
+        sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        mono: ["Roboto Mono", ...defaultTheme.fontFamily.mono],
       },
       animation: {
         "gradient-x": "gradient-x 4s ease infinite",
