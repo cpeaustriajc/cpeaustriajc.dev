@@ -1,6 +1,4 @@
 ---
-import { button } from "./ui/button";
-
 type Props = {
   title: string;
   link: string;
@@ -10,18 +8,15 @@ type Props = {
 const { link, title, description } = Astro.props;
 ---
 
-<article
-  class="bg-card text-card-foreground h-full rounded-lg border border-border p-8"
->
-  <div class="grid h-full items-stretch">
-    <div>
-      <h3 class="py-4 text-5xl font-bold text-neutral-50">{title}</h3>
-    </div>
-    <div class="justify-self-start">
-      <p>{description}</p>
-    </div>
-    <div class="pt-8 self-end">
-      <a href={link} target="_blank" class:list={["w-full",button()]}> View on GitHub</a>
-    </div>
-  </div>
-</article>
+<h3>{title}</h3>
+<p>{description}</p>
+<a href={link} target="_blank" class="btn">View on GitHub</a>
+
+<style>
+  h3 {
+    margin: unset;
+  }
+  p {
+    margin: unset;
+  }
+</style>

@@ -6,18 +6,9 @@ const projects = await getCollection("projects");
 ---
 
 <section>
-  <h2
-    id="projects"
-    class="text-6xl font-bold leading-loose text-neutral-50 md:text-8xl"
-  >
-    Projects
-  </h2>
-  <p class="py-4 text-xl font-semibold text-neutral-400">
-    The list of projects that I made or was part of throughout the years.
-  </p>
-  <ul
-    class="grid gap-12 py-8 max-sm:grid-flow-row max-sm:overflow-x-scroll md:grid-cols-2 xl:grid-cols-4"
-  >
+  <h2 id="projects">Projects</h2>
+  <p>The list of projects that I made or was part of throughout the years.</p>
+  <ul>
     {
       projects.map((project) => (
         <li>
@@ -31,3 +22,38 @@ const projects = await getCollection("projects");
     }
   </ul>
 </section>
+
+<style>
+  ul {
+    display: grid;
+    padding: unset;
+    list-style-type: none;
+    column-gap: var(--size-3);
+    row-gap: var(--size-3);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  li {
+    display: grid;
+    grid-template-rows: min-content 1fr 2.25em;
+    background-image: linear-gradient(
+      180deg,
+      hsl(210, 9%, 15%) 0%,
+      hsl(210, 9%, 10%) 100%
+    );
+    border: solid var(--border-size-1) hsl(var(--gray-1-hsl) / 5%);
+    border-radius: var(--radius-2);
+    padding-inline: var(--size-3);
+    padding-block: var(--size-2);
+    align-items: start;
+    justify-items: stretch;
+    row-gap: var(--size-6);
+  }
+</style>
+
+
+<style>
+  section {
+    max-width: 65ch;
+  }
+</style>

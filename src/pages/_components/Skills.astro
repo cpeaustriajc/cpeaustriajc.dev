@@ -5,14 +5,10 @@ import Badge from "~/components/Badge.astro";
 const skills = await getCollection("skills");
 ---
 
-<section class="py-48 md:py-96">
-  <h2 class="text-6xl font-bold leading-loose text-neutral-50 md:text-8xl">
-    Skills
-  </h2>
-  <p class="text-xl font-semibold text-neutral-50 md:text-6xl">
-    The tech stack that I use to help me go from development to production
-  </p>
-  <ul class="grid grid-cols-2 gap-4 py-8 md:grid-cols-3">
+<section>
+  <h2>Skills</h2>
+  <p>The tech stack that I use to help me go from development to production</p>
+  <ul>
     {
       skills.map((skill) => (
         <li>
@@ -26,3 +22,26 @@ const skills = await getCollection("skills");
     }
   </ul>
 </section>
+
+<style>
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: var(--size-3);
+    padding: unset;
+  }
+
+  li {
+    display: inline grid;
+    grid-template-columns: min-content auto;
+    grid-template-rows: 1fr 1fr;
+    list-style-type: none;
+    column-gap: var(--size-2);
+  }
+</style>
+
+<style>
+  section {
+    max-width: 65ch;
+  }
+</style>

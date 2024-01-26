@@ -2,5 +2,7 @@
   "prettier.documentSelectors": ["**/*.astro"],
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "cssvar.files": ["src/styles/styles.css", "src/styles/variables.css"],
+  "cssvar.extensions": ["css", "astro"]
 }

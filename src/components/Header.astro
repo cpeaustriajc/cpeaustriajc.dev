@@ -3,63 +3,65 @@
  * Header was inspired by https://reflect.app
  */
 
-import DropdownMenu from "./DropdownMenu.astro";
 import { Image } from "astro:assets";
 import Logo from "~/assets/images/home/logo.png";
-import { button } from "~/components/ui/button";
 ---
 
-<header
-  class="sticky left-0 top-0 lg:top-4 grid grid-flow-col w-full lg:w-auto place-content-between place-items-center gap-8 lg:rounded-full lg:border lg:border-neutral-50/5 z-10 bg-neutral-50/5 px-8 py-4 backdrop-blur-sm lg:px-24"
->
-  <a
-    href="/"
-    class="rounded-full transition-shadow duration-500 hover:ring-2 hover:ring-primary focus:outline focus:outline-2 focus:outline-primary"
-  >
+<header>
+  <a href="/" class="navigation-link">
     <Image
       src={Logo}
       width={48}
       height={48}
-      format="svg"
       loading="eager"
       alt="The brand logo for John Carlo Austria, a computer engineer."
     />
   </a>
-  <nav
-    class="hidden rounded-full border border-neutral-50/5 bg-neutral-50/5 px-3 py-2 backdrop-blur-lg md:block"
-  >
-    <ul class="flex flex-row items-center gap-4">
+  <nav>
+    <ul>
       <li>
         <a
           href="https://read.cv/jayzersdotdev"
           rel="noopener noreferrer"
           target="_blank"
-          class="rounded-full text-sm font-medium text-foreground outline-offset-8 transition-colors duration-500 hover:text-primary focus:outline focus:outline-2 focus:outline-primary"
+          class="navigation-link"
         >
           Resume
         </a>
       </li>
       <li>
-        <a
-          href="/posts"
-          class="rounded-full text-sm font-medium text-foreground outline-offset-8 transition-colors duration-500 hover:text-primary focus:outline focus:outline-2 focus:outline-primary"
-        >
-          Posts
-        </a>
+        <a href="/posts" class="navigation-link"> Posts</a>
       </li>
       <li>
-        <a
-          href="/#projects"
-          class="rounded-full text-sm font-medium text-foreground outline-offset-8 transition-colors duration-500 hover:text-primary focus:outline focus:outline-2 focus:outline-primary"
-        >
-          Projects
-        </a>
+        <a href="/#projects" class="navigation-link"> Projects</a>
       </li>
     </ul>
   </nav>
-  <a
-    href="mailto:cpe.austria.johncarlo@gmail.com"
-    class:list={["hidden", "md:inline-flex", button(), "bg-neutral-50/5"]}>Contact</a
+  <a href="mailto:cpe.austria.johncarlo@gmail.com" class="btn contact"
+    >Contact</a
   >
-  <DropdownMenu />
 </header>
+
+<style>
+  header {
+    display: inline grid;
+    grid-auto-flow: column;
+    place-content: space-between;
+    place-items: center;
+    padding-inline: var(--size-7);
+    padding-block: var(--size-3);
+    gap: var(--size-7);
+  }
+
+  ul {
+    display: inline grid;
+    grid-auto-flow: column;
+    padding: 0;
+    gap: var(--size-7);
+    list-style-type: none;
+
+    & li {
+      padding: 0;
+    }
+  }
+</style>

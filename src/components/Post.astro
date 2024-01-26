@@ -19,44 +19,80 @@ const isoDate = posts.data.publishDate.toISOString();
 ---
 
 <li>
-  <a
-    href={`/posts/${posts.slug}`}
-    class="relative inline-flex flex-col rounded transition-all duration-300 hover:ring-2 hover:ring-primary hover:ring-offset-4 hover:ring-offset-neutral-950"
-  >
+  <h2>
+    {posts.data.title}
+  </h2>
+  <time datetime={isoDate}>
+    {formattedDate}
+  </time>
+  <figure>
     <Image
       src={posts.data.coverImage}
       alt={posts.data.coverImageAlt}
-      class="aspect-[16/9] rounded"
       width={640}
       height={360}
       quality={75}
       format="webp"
       loading="eager"
     />
-    <div
-      class="absolute bottom-0 flex h-[75%] w-full flex-col justify-end gap-2 rounded bg-gradient-to-t from-neutral-950 to-transparent px-4 pb-2"
-    >
-      <div>
-        <h2 class="line-clamp-1 font-bold text-foreground">
-          {posts.data.title}
-        </h2>
-        <time datetime={isoDate} class="text-xs text-neutral-500">
-          {formattedDate}
-        </time>
-      </div>
-      <span class="inline-flex items-center gap-2 text-xs">
-        <Image
-          src={author.data.picture}
-          width={24}
-          height={24}
-          class="rounded-full"
-          alt={`${author.data.name}, the author of the blog post`}
-        />
-        {author.data.name}
-      </span>
-      <p class="line-clamp-2 text-sm leading-6 text-foreground">
-        {posts.data.description}
-      </p>
-    </div>
-  </a>
+  </figure>
+
+  <figure class="author">
+    <Image
+      src={author.data.picture}
+      width={24}
+      height={24}
+      alt={`${author.data.name}, the author of the blog post`}
+    />
+    <figcaption>
+      {author.data.name}
+    </figcaption>
+  </figure>
+  <p>
+    {posts.data.description}
+  </p>
+  <a href={`/posts/${posts.slug}`}>Read</a>
 </li>
+
+<style>
+  li {
+    display: grid;
+    gap: var(--size-2);
+    grid-template-rows:
+      minmax(64px, auto)
+      minmax(var(--font-size-1), auto)
+      minmax(auto, 360px)
+      minmax(var(--font-size-1), auto)
+      minmax(16px, 84px)
+      min-content;
+  }
+  figure {
+    margin: unset;
+  }
+
+  h1 {
+    max-inline-size: var(--size-content-2);
+    text-wrap: balance;
+  }
+
+  .author {
+    display: inline flex;
+    gap: var(--size-2);
+    place-items: center;
+  }
+
+  .author img {
+    border-radius: var(--radius-round);
+  }
+
+  a {
+    display: inline;
+    color: var(--blue-5);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: var(--size-1);
+    }
+  }
+</style>
