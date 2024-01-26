@@ -42,35 +42,18 @@ const meta = {
 ---
 
 <BaseLayout {meta}>
-  <main
-    class="grid w-full place-content-center place-items-center px-4 py-4 font-sans"
-  >
-    <header
-      aria-label="Post Title and Image"
-      class="grid gap-x-4 md:grid-cols-[repeat(1,min-content),minmax(320px,1024px)] md:grid-rows-[repeat(4,min-content),1fr]"
-    >
-      <a
-        href="/posts"
-        class="hidden grid-flow-col items-center gap-1 place-self-start rounded-md text-sm font-medium text-neutral-400 transition-colors duration-500 hover:text-neutral-50 focus:outline focus:outline-2 focus:outline-primary md:col-start-1 md:inline-grid"
-        ><ArrowLeft class="h-2 w-2 align-middle" />Back</a
-      >
-      <time
-        class="border-neutral-500 px-1 text-sm text-neutral-500 md:col-start-2"
-        datetime={entry.data.publishDate.toISOString()}
-      >
+  <main>
+    <header aria-label="Post Title and Image">
+      <a href="/posts"><ArrowLeft />Back</a>
+      <time datetime={entry.data.publishDate.toISOString()}>
         {date}
       </time>
-      <h1
-        class="text-balance text-4xl font-bold text-neutral-50 md:col-start-2"
-      >
+      <h1>
         {entry.data.title}
       </h1>
-      <figure
-        class="gap-2 text-neutral-500 md:col-start-2 md:inline-grid md:grid-flow-col md:grid-cols-[24px,1fr]"
-      >
+      <figure>
         <Image
           src={author.data.picture}
-          class="rounded-full"
           width={24}
           height={24}
           quality={75}
@@ -80,7 +63,7 @@ const meta = {
         />
         <figcaption>{author.data.name}</figcaption>
       </figure>
-      <figure class="place-self-center py-4 md:col-span-3">
+      <figure>
         <Image
           src={entry.data.coverImage}
           alt={entry.data.coverImageAlt}
@@ -89,14 +72,11 @@ const meta = {
           quality={75}
           format="webp"
           loading="eager"
-          class="not-prose aspect-[16/9] rounded"
         />
-        <figcaption class="text-center">{entry.data.coverImageAlt}</figcaption>
+        <figcaption>{entry.data.coverImageAlt}</figcaption>
       </figure>
     </header>
-    <article
-      class="prose-pre:w-prose prose prose-blue prose-invert text-pretty focus:outline focus:outline-2 focus:outline-violet-400 prose-pre:font-mono"
-    >
+    <article>
       <Content />
     </article>
   </main>

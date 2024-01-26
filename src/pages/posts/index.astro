@@ -20,15 +20,11 @@ const meta = {
 ---
 
 <BaseLayout {meta}>
-  <main class="px-4 lg:px-40">
+  <main>
     <header>
-      <h1
-        class="text-5xl font-bold capitalize leading-loose text-neutral-50"
-      >
-        Posts
-      </h1>
+      <h1>Posts</h1>
     </header>
-    <ul class="grid gap-4 md:grid-cols-2">
+    <ul>
       {sortedPosts.map((instance) => <Post posts={instance} />)}
     </ul>
   </main>

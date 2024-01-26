@@ -19,42 +19,35 @@ const isoDate = posts.data.publishDate.toISOString();
 ---
 
 <li>
-  <a
-    href={`/posts/${posts.slug}`}
-    class="relative inline-flex flex-col rounded transition-all duration-300 hover:ring-2 hover:ring-primary hover:ring-offset-4 hover:ring-offset-neutral-950"
-  >
+  <a href={`/posts/${posts.slug}`}>
     <Image
       src={posts.data.coverImage}
       alt={posts.data.coverImageAlt}
-      class="aspect-[16/9] rounded"
       width={640}
       height={360}
       quality={75}
       format="webp"
       loading="eager"
     />
-    <div
-      class="absolute bottom-0 flex h-[75%] w-full flex-col justify-end gap-2 rounded bg-gradient-to-t from-neutral-950 to-transparent px-4 pb-2"
-    >
+    <div>
       <div>
-        <h2 class="line-clamp-1 font-bold text-foreground">
+        <h2>
           {posts.data.title}
         </h2>
-        <time datetime={isoDate} class="text-xs text-neutral-500">
+        <time datetime={isoDate}>
           {formattedDate}
         </time>
       </div>
-      <span class="inline-flex items-center gap-2 text-xs">
+      <span>
         <Image
           src={author.data.picture}
           width={24}
           height={24}
-          class="rounded-full"
           alt={`${author.data.name}, the author of the blog post`}
         />
         {author.data.name}
       </span>
-      <p class="line-clamp-2 text-sm leading-6 text-foreground">
+      <p>
         {posts.data.description}
       </p>
     </div>
