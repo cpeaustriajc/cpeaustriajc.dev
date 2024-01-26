@@ -19,7 +19,13 @@ const isoDate = posts.data.publishDate.toISOString();
 ---
 
 <li>
-  <a href={`/posts/${posts.slug}`}>
+  <h2>
+    {posts.data.title}
+  </h2>
+  <time datetime={isoDate}>
+    {formattedDate}
+  </time>
+  <figure>
     <Image
       src={posts.data.coverImage}
       alt={posts.data.coverImageAlt}
@@ -29,27 +35,61 @@ const isoDate = posts.data.publishDate.toISOString();
       format="webp"
       loading="eager"
     />
-    <div>
-      <div>
-        <h2>
-          {posts.data.title}
-        </h2>
-        <time datetime={isoDate}>
-          {formattedDate}
-        </time>
-      </div>
-      <span>
-        <Image
-          src={author.data.picture}
-          width={24}
-          height={24}
-          alt={`${author.data.name}, the author of the blog post`}
-        />
-        {author.data.name}
-      </span>
-      <p>
-        {posts.data.description}
-      </p>
-    </div>
-  </a>
+  </figure>
+
+  <figure class="author">
+    <Image
+      src={author.data.picture}
+      width={24}
+      height={24}
+      alt={`${author.data.name}, the author of the blog post`}
+    />
+    <figcaption>
+      {author.data.name}
+    </figcaption>
+  </figure>
+  <p>
+    {posts.data.description}
+  </p>
+  <a href={`/posts/${posts.slug}`}>Read</a>
 </li>
+
+<style>
+  li {
+    display: grid;
+    gap: var(--size-2);
+    grid-template-rows:
+      minmax(64px, auto)
+      minmax(var(--font-size-1), auto)
+      minmax(auto, 360px)
+      minmax(var(--font-size-1), auto)
+      minmax(16px, 84px)
+      min-content;
+  }
+
+  h1 {
+    max-inline-size: var(--size-content-2);q
+    text-wrap: balance;
+  }
+
+  .author {
+    display: inline flex;
+    gap: var(--size-2);
+    place-items: center;
+  }
+
+  .author img {
+    border-radius: var(--radius-round);
+  }
+
+  a {
+    display: inline;
+    color: var(--blue-5);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: var(--size-1);
+    }
+  }
+</style>

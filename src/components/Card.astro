@@ -8,15 +8,6 @@ type Props = {
 const { link, title, description } = Astro.props;
 ---
 
-<article>
-  <div>
-    <div>
-      <h3>{title}</h3>
-    </div>
-    <div></div>
-    <p>{description}</p>
-  </div>
-  <div>
-    <a href={link} target="_blank" class="btn">View on GitHub</a>
-  </div>
-</article>
+<h3>{title}</h3>
+<p>{description}</p>
+<a href={link} target="_blank" class="btn">View on GitHub</a>

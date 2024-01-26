@@ -4,6 +4,7 @@ import Header from "~/components/Header.astro";
 import DefaultOGImage from "~/assets/images/opengraph/home.jpg";
 import { getImage } from "astro:assets";
 import type { SEOProps } from "~/types/common";
+import "~/styles/styles.css";
 
 type Props = {
   meta: SEOProps;
@@ -48,15 +49,6 @@ const OGImageURL = new URL(optimizedOGImage.src, Astro.url);
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link href="https://unpkg.com/open-props" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/open-props/normalize.min.css"
-    />
-    <link
-      href="https://unpkg.com/open-props/colors-hsl.min.css"
-      rel="stylesheet"
-    />
   </head>
   <body>
     <Header />
@@ -68,52 +60,18 @@ const OGImageURL = new URL(optimizedOGImage.src, Astro.url);
         box-sizing: border-box;
       }
 
+      img {
+        display: block;
+        max-inline-size: 100%;
+      }
+
       :where(body) {
         display: grid;
+        height: 100dvh;
         place-items: center;
         color: var(--gray-0);
-        background-color: var(--gray-12);
+        background-color: var(--gray-9);
         font-family: "Inter", sans-serif;
-      }
-
-      @keyframes gradient-x {
-        0%, 100%: {
-          background-size: 200% 200%;
-          background-position: left center;
-        }
-        50%: {
-          background-size: 200% 200%;
-          background-position: right center;
-        }
-
-        @keyframes fade-in {
-          0% {
-            opacity: 0;
-            transform: translateY(4rem);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      }
-
-      .in-view {
-        animation-timeline: view(block 25% 25%);
-        animation-name: scroll-fade;
-        animation-fill-mode: both;
-        animation-timing-function: ease-in-out;
-        transform-origin: top;
-        animation-duration: 500ms;
-      }
-
-      @keyframes scroll-fade {
-        0% {
-          opacity: 0;
-        }
-        100% {
-          opacity: 1;
-        }
       }
     </style>
   </body>

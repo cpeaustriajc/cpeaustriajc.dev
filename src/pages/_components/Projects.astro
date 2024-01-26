@@ -5,20 +5,31 @@ import { getCollection } from "astro:content";
 const projects = await getCollection("projects");
 ---
 
-<section>
-  <h2 id="projects">Projects</h2>
-  <p>The list of projects that I made or was part of throughout the years.</p>
-  <ul>
-    {
-      projects.map((project) => (
-        <li>
-          <Card
-            title={project.data.title}
-            link={project.data.link}
-            description={project.data.description}
-          />
-        </li>
-      ))
-    }
-  </ul>
-</section>
+<h2 id="projects">Projects</h2>
+<p>The list of projects that I made or was part of throughout the years.</p>
+<ul>
+  {
+    projects.map((project) => (
+      <li>
+        <Card
+          title={project.data.title}
+          link={project.data.link}
+          description={project.data.description}
+        />
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  ul {
+    display: grid;
+    padding: unset;
+    list-style-type: none;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+
+  li {
+    display: grid;
+  }
+</style>

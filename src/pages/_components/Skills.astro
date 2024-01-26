@@ -5,20 +5,34 @@ import Badge from "~/components/Badge.astro";
 const skills = await getCollection("skills");
 ---
 
-<section>
-  <h2>Skills</h2>
-  <p>The tech stack that I use to help me go from development to production</p>
-  <ul>
-    {
-      skills.map((skill) => (
-        <li>
-          <Badge
-            icon={skill.data.icon}
-            title={skill.data.title}
-            description={skill.data.description}
-          />
-        </li>
-      ))
-    }
-  </ul>
-</section>
+<h2>Skills</h2>
+<p>The tech stack that I use to help me go from development to production</p>
+<ul>
+  {
+    skills.map((skill) => (
+      <li>
+        <Badge
+          icon={skill.data.icon}
+          title={skill.data.title}
+          description={skill.data.description}
+        />
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  ul {
+    display: inline grid;
+    grid-template-columns: repeat(6, minmax(200px, 1fr));
+    gap: var(--size-3);
+  }
+
+  li {
+    display: inline grid;
+    grid-template-columns: min-content auto;
+    grid-template-rows: 1fr 1fr;
+    list-style-type: none;
+    column-gap: var(--size-2);
+  }
+</style>

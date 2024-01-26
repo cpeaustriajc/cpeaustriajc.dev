@@ -51,7 +51,7 @@ const meta = {
       <h1>
         {entry.data.title}
       </h1>
-      <figure>
+      <figure class="author">
         <Image
           src={author.data.picture}
           width={24}
@@ -63,7 +63,7 @@ const meta = {
         />
         <figcaption>{author.data.name}</figcaption>
       </figure>
-      <figure>
+      <figure class="cover-image">
         <Image
           src={entry.data.coverImage}
           alt={entry.data.coverImageAlt}
@@ -76,8 +76,68 @@ const meta = {
         <figcaption>{entry.data.coverImageAlt}</figcaption>
       </figure>
     </header>
-    <article>
+    <article class="post">
       <Content />
     </article>
   </main>
 </BaseLayout>
+
+<style>
+  main {
+    display: grid;
+    place-items: center;
+  }
+
+  .author {
+    display: inline flex;
+    place-items: center;
+    gap: var(--size-2);
+  }
+
+  .author img {
+    display: inline;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    column-gap: var(--size-3);
+  }
+
+  header a {
+    grid-column-start: 1;
+    display: inline flex;
+    align-items: center;
+  }
+
+  header figure,
+  header time,
+  header h1 {
+    grid-column-start: 2;
+  }
+
+  .cover-image:has(figcaption) {
+    text-align: center;
+  }
+
+  h1 {
+    max-inline-size: var(--size-header-2);
+  }
+
+  article {
+    padding-block: var(--size-3);
+    max-inline-size: var(--size-content-3);
+  }
+
+  article :where(a) {
+    font-weight: var(--font-weight-5);
+  }
+
+  article :where(strong) {
+    font-weight: var(--font-weight-6);
+  }
+
+  article :where(pre) {
+    border-radius: var(--radius-2);
+  }
+</style>

@@ -8,17 +8,20 @@ type Props = {
 const { icon, title, description } = Astro.props;
 ---
 
-<div>
-  <iconify-icon
-    icon={icon}
-    width="1.5em"
-    height="1.5em"
-    inline
-    alt={`Icon for ${title}`}></iconify-icon>
-  <div>
-    <p>{title}</p>
-    <p>{description}</p>
-  </div>
-</div>
+<iconify-icon
+  icon={icon}
+  width="1.5em"
+  height="1.5em"
+  inline
+  alt={`Icon for ${title}`}></iconify-icon>
+<strong>{title}</strong>
+<small>{description}</small>
 <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"
 ></script>
+
+<style>
+  iconify-icon {
+    grid-row: span 2;
+    place-self: center;
+  }
+</style>
