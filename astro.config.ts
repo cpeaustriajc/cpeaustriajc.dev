@@ -9,7 +9,7 @@ export default defineConfig({
   },
   integrations: [sitemap()],
   markdown: {
-    shikiConfig: { wrap: true, theme: "vitesse-black" },
+    shikiConfig: {theme: "vitesse-black" },
   },
   site: "https://jayzers.vercel.app",
 });
