@@ -49,17 +49,28 @@ const OGImageURL = new URL(optimizedOGImage.src, Astro.url);
       rel="stylesheet"
     />
     <link href="https://unpkg.com/open-props" rel="stylesheet" />
-    <link href="https://unpkg.com/open-props/colors-hsl.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/open-props/normalize.min.css"/>
+    <link
+      href="https://unpkg.com/open-props/colors-hsl.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <Header />
     <slot />
-    <style>
-      body {
+    <style is:global>
+      :where(*),
+      :where(*::before),
+      :where(*::after) {
+        box-sizing: border-box;
+      }
+
+      :where(body) {
         display: grid;
         place-items: center;
         color: var(--gray-0);
         background-color: var(--gray-12);
+        font-family: 'Inter', sans-serif;
       }
     </style>
   </body>
