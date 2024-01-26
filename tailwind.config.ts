@@ -6,6 +6,9 @@ import plugin from "tailwindcss/plugin";
 import type { Config } from "tailwindcss";
 
 export default {
+  corePlugins: {
+    preflight: false,
+  },
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
@@ -18,7 +21,7 @@ export default {
         card: {
           DEFAULT: colors.neutral["950"],
           foreground: colors.neutral["50"],
-        }
+        },
       },
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
