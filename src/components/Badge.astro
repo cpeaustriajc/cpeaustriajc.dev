@@ -23,7 +23,11 @@ const { icon, title, description } = Astro.props;
   iconify-icon {
     grid-row: span 2;
     place-self: center;
-    background-image: linear-gradient(180deg, var(--gray-7) 0%,var(--gray-8) 30%);
+    background-image: linear-gradient(
+      180deg,
+      var(--gray-7) 0%,
+      var(--gray-8) 30%
+    );
     padding: var(--size-2);
     border: solid var(--border-size-1) hsl(var(--gray-1-hsl) / 5%);
     border-radius: var(--radius-2);
