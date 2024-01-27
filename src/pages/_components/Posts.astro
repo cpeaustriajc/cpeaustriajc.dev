@@ -1,0 +1,26 @@
+---
+import { getCollection } from "astro:content";
+import Post from "~/components/Post.astro";
+
+const posts = await getCollection("posts", ({ data }) => {
+  return import.meta.env.PROD ? data.draft !== true : true;
+}).then((posts) =>
+  posts.sort((a, b) => Number(b.data.publishDate) - Number(a.data.publishDate)),
+);
+---
+
+<section>
+  <h2 id="posts">Posts</h2>
+  <ul>
+    {posts.map((instance) => <Post posts={instance} />)}
+  </ul>
+</section>
+
+<style>
+    ul {
+        padding: unset;
+    }
+    section {
+        max-width: 65ch;
+    }
+</style>

@@ -44,7 +44,6 @@ const meta = {
 <BaseLayout {meta}>
   <main>
     <header aria-label="Post Title and Image">
-      <a href="/posts"><ArrowLeft />Back</a>
       <time datetime={entry.data.publishDate.toISOString()}>
         {date}
       </time>
@@ -102,14 +101,6 @@ const meta = {
 
   header {
     display: grid;
-    grid-template-columns: min-content 1fr;
-    column-gap: var(--size-3);
-  }
-
-  header a {
-    grid-column-start: 1;
-    display: inline flex;
-    align-items: center;
   }
 
   .cover-image {
