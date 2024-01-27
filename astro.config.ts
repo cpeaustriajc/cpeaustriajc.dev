@@ -6,13 +6,8 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
   image: {
-    domains: ["avatars.githubusercontent.com"]
+    domains: ["avatars.githubusercontent.com"],
   },
   integrations: [sitemap(), icon()],
-  markdown: {
-    shikiConfig: {
-      theme: "vitesse-black"
-    }
-  },
-  site: "https://jayzers.vercel.app"
+  site: "https://jayzers.vercel.app",
 });
