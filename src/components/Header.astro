@@ -3,6 +3,7 @@
  * Header was inspired by https://reflect.app
  */
 
+import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import Logo from "~/assets/images/home/logo.png";
 ---
@@ -11,8 +12,8 @@ import Logo from "~/assets/images/home/logo.png";
   <a href="/" class="navigation-link">
     <Image
       src={Logo}
-      width={48}
-      height={48}
+      width={24}
+      height={24}
       loading="eager"
       alt="The brand logo for John Carlo Austria, a computer engineer."
     />
@@ -21,36 +22,48 @@ import Logo from "~/assets/images/home/logo.png";
     <ul>
       <li>
         <a
-          href="https://read.cv/jayzersdotdev"
+          href="https://github.com/jeyceedotdev"
+          class="icon navigation-link"
           rel="noopener noreferrer"
           target="_blank"
-          class="navigation-link"
         >
-          Resume
+          <Icon name="carbon:logo-github" size={20} title="Github" />
         </a>
       </li>
       <li>
-        <a href="/#posts" class="navigation-link"> Posts</a>
+        <a
+          href="https://twitter.com/jeyceedotdev"
+          class="icon navigation-link"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <Icon name="carbon:logo-twitter" size={20} title="Twitter" />
+        </a>
       </li>
       <li>
-        <a href="/#projects" class="navigation-link"> Projects</a>
+        <a
+          href="mailto:cpe.austria.johncarlo@gmail.com"
+          class="icon navigation-link"
+          ><Icon name="carbon:email" size={20} title="Email" /></a
+        >
       </li>
     </ul>
   </nav>
-  <a href="mailto:cpe.austria.johncarlo@gmail.com" class="btn contact"
-    >Contact</a
-  >
 </header>
 
 <style>
+  .icon {
+    color: var(--gray-1);
+    aspect-ratio: 1 / 1;
+  }
+
   header {
-    display: inline grid;
+    display: grid;
     grid-auto-flow: column;
     place-content: space-between;
     place-items: center;
-    padding-inline: var(--size-7);
-    padding-block: var(--size-3);
     gap: var(--size-7);
+    width: 65ch;
   }
 
   ul {
