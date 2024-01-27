@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 type Props = {
   icon: string;
   title: string;
@@ -8,19 +9,12 @@ type Props = {
 const { icon, title, description } = Astro.props;
 ---
 
-<iconify-icon
-  icon={icon}
-  width="1.5em"
-  height="1.5em"
-  inline
-  alt={`Icon for ${title}`}></iconify-icon>
+<Icon name={icon} size={36} title={title} />
 <strong>{title}</strong>
 <small>{description}</small>
-<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"
-></script>
 
 <style>
-  iconify-icon {
+  [data-icon] {
     grid-row: span 2;
     place-self: center;
     background-image: linear-gradient(
