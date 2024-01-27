@@ -14,6 +14,7 @@
     "@astrojs/rss": "^4.0.2",
     "@astrojs/sitemap": "^3.0.5",
     "@axe-core/playwright": "^4.8.2",
+    "@iconify-json/carbon": "^1.1.28",
     "@iconify-json/logos": "^1.1.42",
     "@playwright/test": "^1.40.1",
     "astro": "^4.2.1",
