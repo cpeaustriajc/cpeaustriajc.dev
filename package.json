@@ -11,17 +11,14 @@
   },
   "license": "CC-BY-4.0",
   "devDependencies": {
-    "@astrojs/rss": "^4.0.2",
-    "@astrojs/sitemap": "^3.0.5",
-    "@axe-core/playwright": "^4.8.2",
-    "@iconify-json/carbon": "^1.1.28",
-    "@iconify-json/logos": "^1.1.42",
-    "@playwright/test": "^1.40.1",
-    "astro": "^4.2.1",
-    "astro-icon": "^1.0.3",
-    "prettier": "^3.1.1",
-    "prettier-plugin-astro": "^0.12.3",
-    "sharp": "^0.33.2",
-    "typescript": "^5.3.3"
+    "@astrojs/rss": "^4",
+    "@astrojs/sitemap": "^3",
+    "@iconify-json/carbon": "^1",
+    "@iconify-json/logos": "^1",
+    "astro": "^4",
+    "astro-icon": "^1",
+    "prettier": "^3",
+    "prettier-plugin-astro": "^0.13.0",
+    "typescript": "^5"
   }
 }
