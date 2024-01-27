@@ -4,8 +4,8 @@ import Header from "~/components/Header.astro";
 import DefaultOGImage from "~/assets/images/opengraph/home.jpg";
 import { getImage } from "astro:assets";
 import type { SEOProps } from "~/types/common";
-import "~/styles/styles.css";
-import "~/styles/variables.css";
+import CSSVariables from "~/components/CSSVariables.astro";
+import GlobalStyles from "~/components/GlobalStyles.astro";
 
 type Props = {
   meta: SEOProps;
@@ -54,5 +54,7 @@ const OGImageURL = new URL(optimizedOGImage.src, Astro.url);
   <body>
     <Header />
     <slot />
+    <GlobalStyles />
+    <CSSVariables />
   </body>
 </html>
