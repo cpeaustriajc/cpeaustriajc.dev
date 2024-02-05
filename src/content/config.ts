@@ -1,4 +1,4 @@
-import { z, defineCollection, reference } from "astro:content";
+import { defineCollection, reference, z } from "astro:content";
 
 const postCollection = defineCollection({
   type: "content",
@@ -36,19 +36,8 @@ const authorsCollection = defineCollection({
     }),
 });
 
-const skillsCollection = defineCollection({
-  type: "data",
-  schema: () =>
-    z.object({
-      title: z.string(),
-      icon: z.string(),
-      description: z.string(),
-    }),
-});
-
 export const collections = {
   posts: postCollection,
   projects: projectsCollection,
-  skills: skillsCollection,
   authors: authorsCollection,
 };
