@@ -1,8 +1,7 @@
 ---
+import { Image, Picture } from "astro:assets";
+import { getCollection, getEntry, type CollectionEntry } from "astro:content";
 import BaseLayout from "~/layouts/BaseLayout.astro";
-import { Image } from "astro:assets";
-import { getCollection, type CollectionEntry, getEntry } from "astro:content";
-import ArrowLeft from "~/components/assets/ArrowLeft.astro";
 
 type Props = {
   entry: CollectionEntry<"posts">;
@@ -63,13 +62,11 @@ const meta = {
         <figcaption>{author.data.name}</figcaption>
       </figure>
       <figure class="cover-image">
-        <Image
+        <Picture
           src={entry.data.coverImage}
           alt={entry.data.coverImageAlt}
-          width={960}
-          height={540}
-          quality={75}
-          format="webp"
+          widths={[240, 480, 640, 1280, 1920]}
+          formats={["jpeg", "webp", "avif"]}
           loading="eager"
         />
         <figcaption>{entry.data.coverImageAlt}</figcaption>

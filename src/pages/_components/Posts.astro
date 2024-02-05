@@ -20,7 +20,9 @@ const posts = await getCollection("posts", ({ data }) => {
   ul {
     padding: unset;
   }
-  section {
-    max-width: 65ch;
+  @media screen and (min-width: 768px) {
+    section {
+      max-width: 1280px;
+    }
   }
 </style>

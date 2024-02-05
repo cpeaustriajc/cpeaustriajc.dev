@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { Image, Picture } from "astro:assets";
 import { getEntry, type CollectionEntry } from "astro:content";
 
 type Props = {
@@ -25,14 +25,12 @@ const isoDate = posts.data.publishDate.toISOString();
   <time datetime={isoDate}>
     {formattedDate}
   </time>
-  <figure>
-    <Image
+  <figure class="post">
+    <Picture
       src={posts.data.coverImage}
       alt={posts.data.coverImageAlt}
-      width={640}
-      height={360}
-      quality={75}
-      format="webp"
+      widths={[240, 480, 640, 1280, 1920]}
+      formats={["jpeg", "webp", "avif"]}
       loading="eager"
     />
   </figure>
@@ -61,13 +59,18 @@ const isoDate = posts.data.publishDate.toISOString();
     grid-template-rows:
       minmax(64px, auto)
       minmax(var(--font-size-1), auto)
-      minmax(auto, 360px)
+      auto
       minmax(var(--font-size-1), auto)
       minmax(16px, 84px)
       min-content;
   }
+
   figure {
     margin: unset;
+  }
+
+  .post img {
+    height: auto;
   }
 
   h1 {

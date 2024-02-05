@@ -1,10 +1,10 @@
 ---
-import BaseLayout from "~/layouts/BaseLayout.astro";
-import type { SEOProps } from "~/types/common";
 import OGImage from "~/assets/images/opengraph/home.jpg";
+import BaseLayout from "~/layouts/BaseLayout.astro";
 import About from "~/pages/_components/About.astro";
 import Projects from "~/pages/_components/Projects.astro";
-import Posts from "~/pages/_components/Posts.astro";
+import type { SEOProps } from "~/types/common";
+import Posts from "./_components/Posts.astro";
 
 const meta: SEOProps = {
   description:
@@ -29,7 +29,13 @@ const meta: SEOProps = {
   main {
     scroll-behavior: smooth;
     display: grid;
-    place-items: center;
-    padding-inline: 4rem;
+    padding-inline: 1rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    main {
+      padding-inline: 1rem;
+      place-items: center;
+    }
   }
 </style>
