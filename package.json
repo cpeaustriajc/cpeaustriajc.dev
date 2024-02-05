@@ -5,9 +5,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "format": "prettier -w \"**/*\" --ignore-unknown",
-    "test:e2e": "playwright test"
+    "preview": "astro preview"
   },
   "license": "CC-BY-4.0",
   "devDependencies": {
