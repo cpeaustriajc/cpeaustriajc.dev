@@ -39,19 +39,15 @@ const projects = await getCollection("projects");
     }
 
     ul {
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
     }
   }
 
   li {
     display: grid;
     grid-template-rows: min-content 1fr 2.25em;
-    background-image: linear-gradient(
-      180deg,
-      hsl(210, 9%, 15%) 0%,
-      hsl(210, 9%, 10%) 100%
-    );
-    border: solid var(--border-size-1) hsl(var(--gray-1-hsl) / 5%);
+    background: hsl(var(--gray-10-hsl));
+    border: solid var(--border-size-1) hsl(var(--gray-7-hsl));
     border-radius: var(--radius-2);
     padding-inline: var(--size-3);
     padding-block: var(--size-2);

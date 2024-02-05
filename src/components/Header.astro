@@ -12,8 +12,8 @@ import Logo from "~/assets/images/home/logo.png";
   <a href="/" class="navigation-link">
     <Image
       src={Logo}
-      width={24}
-      height={24}
+      width={48}
+      height={48}
       loading="eager"
       alt="The brand logo for John Carlo Austria, a computer engineer."
     />
@@ -27,7 +27,7 @@ import Logo from "~/assets/images/home/logo.png";
           rel="noopener noreferrer"
           target="_blank"
         >
-          <Icon name="carbon:logo-github" size={20} title="Github" />
+          <Icon name="carbon:logo-github" size={24} title="Github" />
         </a>
       </li>
       <li>
@@ -37,14 +37,14 @@ import Logo from "~/assets/images/home/logo.png";
           rel="noopener noreferrer"
           target="_blank"
         >
-          <Icon name="carbon:logo-twitter" size={20} title="Twitter" />
+          <Icon name="carbon:logo-twitter" size={24} title="Twitter" />
         </a>
       </li>
       <li>
         <a
           href="mailto:cpe.austria.johncarlo@gmail.com"
           class="icon navigation-link"
-          ><Icon name="carbon:email" size={20} title="Email" /></a
+          ><Icon name="carbon:email" size={24} title="Email" /></a
         >
       </li>
     </ul>
@@ -63,8 +63,7 @@ import Logo from "~/assets/images/home/logo.png";
     place-content: space-between;
     place-items: center;
     gap: var(--size-7);
-    padding-inline: 4rem;
-    width: 100%;
+    padding-inline: 1rem;
   }
 
   ul {
@@ -81,7 +80,7 @@ import Logo from "~/assets/images/home/logo.png";
 
   @media screen and (min-width: 768px) {
     header {
-      max-width: 1280px;
+      padding-inline: var(--size-13);
     }
   }
 </style>

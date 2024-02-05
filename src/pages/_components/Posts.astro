@@ -24,5 +24,11 @@ const posts = await getCollection("posts", ({ data }) => {
     section {
       max-width: 1280px;
     }
+
+    ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
   }
 </style>
