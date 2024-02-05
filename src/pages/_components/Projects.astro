@@ -28,9 +28,15 @@ const projects = await getCollection("projects");
     display: grid;
     padding: unset;
     list-style-type: none;
+    grid-auto-flow: row;
     column-gap: var(--size-3);
     row-gap: var(--size-3);
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  @media screen and (min-width: 768px) {
+    ul {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
   }
 
   li {
