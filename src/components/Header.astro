@@ -64,6 +64,7 @@ import Logo from "~/assets/images/home/logo.png";
     place-items: center;
     gap: var(--size-7);
     width: 65ch;
+    padding-inline: 4rem;
   }
 
   ul {
@@ -75,6 +76,12 @@ import Logo from "~/assets/images/home/logo.png";
 
     & li {
       padding: 0;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    header {
+      padding: unset;
     }
   }
 </style>
