@@ -3,7 +3,6 @@ import BaseLayout from "~/layouts/BaseLayout.astro";
 import type { SEOProps } from "~/types/common";
 import OGImage from "~/assets/images/opengraph/home.jpg";
 import About from "~/pages/_components/About.astro";
-import Skills from "~/pages/_components/Skills.astro";
 import Projects from "~/pages/_components/Projects.astro";
 import Posts from "~/pages/_components/Posts.astro";
 
@@ -21,7 +20,6 @@ const meta: SEOProps = {
 <BaseLayout {meta}>
   <main>
     <About />
-    <Skills />
     <Projects />
     <Posts/>
   </main>
