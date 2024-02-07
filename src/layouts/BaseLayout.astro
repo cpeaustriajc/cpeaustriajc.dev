@@ -5,10 +5,15 @@ import BaseHead from "~/components/BaseSEO.astro";
 import CSSVariables from "~/components/CSSVariables.astro";
 import GlobalStyles from "~/components/GlobalStyles.astro";
 import Header from "~/components/Header.astro";
-import type { SEOProps } from "~/types/common";
 
 type Props = {
-  meta: SEOProps;
+  meta: {
+    title: string;
+    description: string;
+    image?: ImageMetadata;
+    imageAlt?: string;
+    keywords: string[];
+  };
 };
 
 const { meta } = Astro.props;
