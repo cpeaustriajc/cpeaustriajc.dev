@@ -8,7 +8,7 @@ import GlobalStyles from "~/components/GlobalStyles.astro";
 import Header from "~/components/Header.astro";
 
 type Props = {
-  meta: CollectionEntry<"meta">;
+  meta: Omit<CollectionEntry<"meta">, "id" | "collection">;
 };
 
 const { meta } = Astro.props;
