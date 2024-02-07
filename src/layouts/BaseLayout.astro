@@ -1,5 +1,6 @@
 ---
 import { getImage } from "astro:assets";
+import { type CollectionEntry } from "astro:content";
 import DefaultOGImage from "~/assets/images/opengraph/home.jpg";
 import BaseHead from "~/components/BaseSEO.astro";
 import CSSVariables from "~/components/CSSVariables.astro";
@@ -7,47 +8,42 @@ import GlobalStyles from "~/components/GlobalStyles.astro";
 import Header from "~/components/Header.astro";
 
 type Props = {
-  meta: {
-    title: string;
-    description: string;
-    image?: ImageMetadata;
-    imageAlt?: string;
-    keywords: string[];
-  };
+  meta: CollectionEntry<"meta">;
 };
 
 const { meta } = Astro.props;
 
 const optimizedOGImage = await getImage({
-  src: meta.image ?? DefaultOGImage,
+  src: meta.data.image ?? DefaultOGImage,
   width: 1200,
   height: 630,
   format: "jpeg",
 });
+
 const OGImageURL = new URL(optimizedOGImage.src, Astro.url);
 ---
 
 <html dir="ltr" lang="en">
   <head>
     <BaseHead />
-    <title>{meta.title}</title>
+    <title>{meta.data.title}</title>
     <meta name="color-scheme" content="dark" />
-    <meta name="description" content={meta.description} />
-    <meta name="keywords" content={meta.keywords?.join(", ")} />
+    <meta name="description" content={meta.data.description} />
+    <meta name="keywords" content={meta.data.keywords.join(", ")} />
     <meta name="generator" content={Astro.generator} />
-    <meta property="og:title" content={meta.title} />
+    <meta property="og:title" content={meta.data.title} />
     <meta property="og:url" content={Astro.url.href} />
-    <meta property="og:description" content={meta.description} />
+    <meta property="og:description" content={meta.data.description} />
     <meta property="og:type" content="website" />
     <meta property="og:image" content={OGImageURL} />
-    <meta property="og:image:alt" content={meta.imageAlt ?? meta.title} />
+    <meta property="og:image:alt" content={meta.data.imageAlt ?? meta.data.title} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="twitter:creator" content="@jayzersdotdev" />
-    <meta name="twitter:description" content={meta.description} />
+    <meta name="twitter:description" content={meta.data.description} />
     <meta property="twitter:domain" content="https://jayzers.vercel.app" />
     <meta property="twitter:image" content={OGImageURL} />
-    <meta property="twitter:image:alt" content={meta.imageAlt ?? meta.title} />
-    <meta name="twitter:title" content={meta.title} />
+    <meta property="twitter:image:alt" content={meta.data.imageAlt ?? meta.data.title} />
+    <meta name="twitter:title" content={meta.data.title} />
     <meta property="twitter:url" content={Astro.url.href} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

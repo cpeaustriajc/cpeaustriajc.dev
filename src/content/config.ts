@@ -36,8 +36,20 @@ const authorsCollection = defineCollection({
     }),
 });
 
+const metaCollection = defineCollection({
+  type: "data",
+  schema: ({ image }) => z.object({
+    title: z.string(),
+    description: z.string(),
+    image: image(),
+    imageAlt: z.string(),
+    keywords: z.array(z.string())
+  })
+})
+
 export const collections = {
   posts: postCollection,
   projects: projectsCollection,
   authors: authorsCollection,
+  meta: metaCollection,
 };

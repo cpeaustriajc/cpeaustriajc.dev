@@ -1,18 +1,10 @@
 ---
-import OGImage from "~/assets/images/opengraph/home.jpg";
+import { getEntry } from 'astro:content';
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import Projects from "~/pages/_components/Projects.astro";
 import Posts from "./_components/Posts.astro";
 
-const meta = {
-  description:
-    "John Carlo Austria's is a computer engineering student based in " +
-    "San Pablo, Laguna, Philippines. He is a fullstack developer who " +
-    "specializes in building high quality, accessible products.",
-  title: "Portfolio | John Carlo Austria",
-  keywords: ["Web Developer", "Software Engineer", "Fullstack Developer"],
-  image: OGImage,
-};
+const meta = await getEntry("meta", "home")
 ---
 
 <BaseLayout {meta}>
