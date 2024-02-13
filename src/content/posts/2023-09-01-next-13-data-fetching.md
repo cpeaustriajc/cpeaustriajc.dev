@@ -4,7 +4,7 @@ description: How to fetch data with the new Next.js 13 App Router, and some tips
 coverImage: ~/assets/images/posts/next-13-data-fetching.jpg
 coverImageAlt: Close up photography of mining rig
 publishDate: 2023-09-01T10:34:35
-author: john-carlo-austria
+author: jeyceedotdev
 keywords:
   - Web Development
   - Next.js

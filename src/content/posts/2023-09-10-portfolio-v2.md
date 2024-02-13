@@ -4,7 +4,7 @@ description: My thought process when I was building the second revision/redesign
 coverImage: ~/assets/images/posts/portfolio-v2.jpg
 coverImageAlt: The new default opengraph for my personal portfolio
 publishDate: 2023-09-10T09:02:33
-author: john-carlo-austria
+author: jeyceedotdev
 keywords:
   - Astro
   - TailwindCSS

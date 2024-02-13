@@ -4,7 +4,7 @@ description: The people at obsidian created a new feature called properties whic
 coverImage: ~/assets/images/posts/using-obsidian-as-a-cms.jpg
 coverImageAlt: The logo of Astro at the top and Obsidian at the bottom with a plus icon in the middle
 publishDate: 2023-10-15T23:25:00
-author: john-carlo-austria
+author: jeyceedotdev
 keywords:
   - Obsidian
   - Astro

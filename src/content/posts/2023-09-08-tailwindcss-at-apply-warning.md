@@ -4,7 +4,7 @@ description: A tutorial on how to fix the @apply and @tailwind warning when usin
 coverImage: ~/assets/images/posts/tailwindcss-at-apply-warning.jpg
 coverImageAlt: CSS Code in a computer screen
 publishDate: 2023-09-08T08:30:24
-author: john-carlo-austria
+author: jeyceedotdev
 keywords:
   - Tutorial
   - TailwindCSS
