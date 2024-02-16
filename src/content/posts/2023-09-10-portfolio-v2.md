@@ -1,7 +1,7 @@
 ---
 title: Portfolio V2
 description: My thought process when I was building the second revision/redesign of my portfolio site
-coverImage: ~/assets/images/posts/portfolio-v2.jpg
+coverImage: ./2023-09-10-portfolio-v2.jpg
 coverImageAlt: The new default opengraph for my personal portfolio
 publishDate: 2023-09-10T09:02:33
 author: jeyceedotdev
