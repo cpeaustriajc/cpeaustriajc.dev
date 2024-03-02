@@ -222,8 +222,8 @@ your current and new projects.
 
 I am active on the following social media platforms.
 
-- [Twitter](https://twitter.com/jayzersdotdev)
-- [GitHub](https://github.com/jayzersdotdev)
+- [Twitter](https://twitter.com/jeyceedotdev)
+- [GitHub](https://github.com/jeyceedotdev)
 
 ### References
 
