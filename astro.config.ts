@@ -9,5 +9,5 @@ export default defineConfig({
     domains: ["avatars.githubusercontent.com"],
   },
   integrations: [sitemap(), icon()],
-  site: "https://jeycee.vercel.app",
+  site: "https://fujiwara.pages.dev/",
 });
