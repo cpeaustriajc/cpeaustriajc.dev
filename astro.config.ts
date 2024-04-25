@@ -9,5 +9,5 @@ export default defineConfig({
     domains: ["avatars.githubusercontent.com"],
   },
   integrations: [sitemap(), icon()],
-  site: "https://fujiwara.pages.dev/",
+  site: "https://fujiwaracj.github.io",
 });
