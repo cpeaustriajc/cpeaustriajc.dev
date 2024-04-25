@@ -2,6 +2,10 @@
   @layer base, components, content;
 
   @layer base {
+    :root {
+      color-scheme: light dark;
+    }
+
     :where(*),
     :where(*::before),
     :where(*::after) {
@@ -16,8 +20,8 @@
     :where(body) {
       margin: unset;
       min-height: 100dvh;
-      color: var(--gray-1);
-      background-color: var(--gray-11);
+      color: light-dark(var(--gray-11), var(--gray-1));
+      background-color: light-dark(var(--gray-1), var(--gray-11));
       font-family: "Inter", sans-serif;
     }
   }

@@ -46,7 +46,7 @@ const projects = await getCollection("projects");
   li {
     display: grid;
     grid-template-rows: min-content 1fr 2.25em;
-    background: hsl(var(--gray-10-hsl));
+    background: light-dark(hsl(var(--gray-4-hsl)), hsl(var(--gray-10-hsl)));
     border: solid var(--border-size-1) hsl(var(--gray-7-hsl));
     border-radius: var(--radius-2);
     padding-inline: var(--size-3);
