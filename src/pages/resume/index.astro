@@ -1,0 +1,256 @@
+---
+import { Image, getImage } from "astro:assets";
+import DefaultOGImage from "~/assets/images/opengraph/home.jpg";
+
+const optimizedOGImage = await getImage({
+  src: DefaultOGImage,
+  width: 1200,
+  height: 630,
+  format: "jpeg",
+});
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const OGImageURL = new URL(optimizedOGImage.src, Astro.url);
+const meta = {
+  data: {
+    title: "Resume - John Carlo Austria",
+    description: "John Carlo Austria's Resume",
+  },
+};
+---
+
+<html>
+  <head>
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={meta.data.description} />
+    <meta property="og:title" content={meta.data.title} />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:description" content={meta.data.description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={OGImageURL} />
+    <meta property="og:image:alt" content={meta.data.title} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:creator" content="@fujiwaracj" />
+    <meta name="twitter:description" content={meta.data.description} />
+    <meta property="twitter:domain" content="https://jayzers.vercel.app" />
+    <meta property="twitter:image" content={OGImageURL} />
+    <meta property="twitter:image:alt" content={meta.data.title} />
+    <meta name="twitter:title" content={meta.data.title} />
+    <meta property="twitter:url" content={Astro.url.href} />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <title>{meta.data.title}</title>
+  </head>
+  <body>
+    <main style="width: 65ch; margin-inline: auto">
+      <section>
+        <header
+          style="display: flex;justify-content: space-between;flex-direction: row"
+        >
+          <div>
+            <h1
+              style="font-size: 1rem;font-weight: 700;letter-spacing: 0.05ch;"
+            >
+              John Carlo Austria
+            </h1>
+            <strong style="font-size: 1rem;font-weight: 500"
+              >Computer Engineering Student</strong
+            >
+          </div>
+          <Image
+            src={import("./photo.jpg")}
+            width={64}
+            height={64}
+            style="margin-block: 0.25rem;border-radius:4px"
+            alt="Portrait photo of John Carlo Austria"
+          />
+        </header>
+        <ul
+          style="display: grid;grid-template-columns: repeat(2, minmax(0,1fr));list-style-type: none;gap: 0.5rem;justify-content: space-between;padding: unset;"
+        >
+          <li>
+            <a
+              href="https://google.com/maps/place/San+Gabriel,+San+Pablo+City,+Laguna"
+              target="_blank">San Gabriel, San Pablo City, Laguna</a
+            >
+          </li>
+          <li style="justify-self:end">
+            <a href="tel:+639561454411">+63 956 145 4411</a>
+          </li>
+          <li>
+            <a href="mailto:cpe.austria.johncarlo@gmail.com"
+              >cpe.austria.johncarlo@gmail.com</a
+            >
+          </li>
+          <li style="justify-self:end">
+            <a href="http://fujiwaracj.github.io">fujiwaracj.github.io</a>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Experience</h2>
+        <ul>
+          <li>
+            <h3>Freelance Work (Present)</h3>
+            <p>Mobile Apps, Web Apps, Websites, etc.</p>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Projects</h2>
+        <ul>
+          <li>
+            <h3>Tanjerin: AI Chatbot (2024)</h3>
+            <p>
+              An AI Chatbot that gives you recipes based on the image uploaded
+              or the text prompt that you gave.
+            </p>
+          </li>
+          <li>
+            <h3>Learning Management System (2023-2024)</h3>
+            <p>
+              A project created for our software design course in the 1st
+              semester of our 3rd year
+            </p>
+          </li>
+          <li>
+            <h3>Atcloud: Weather App (2023)</h3>
+            <p>A simple web app to check the weather.</p>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Education</h2>
+        <ul>
+          <li>
+            <h3>2021-2025</h3>
+            <h4>
+              Pamantasan ng Lungsod ng San Pablo (Bachelor of Science in
+              Computer Engineering)
+            </h4>
+            <ul>
+              <li>
+                Organizations: Society of Future Computer Engineers, Institute
+                of Future Computer Engineers of the Philippines
+              </li>
+              <li>Achievements: Dean's Lister</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Certificates</h2>
+        <ul>
+          <li>
+            <h3>Arduino Microprocessor Crash Course</h3>
+            <p>
+              Issued: <time datetime="01-05-2024">January 5, 2024</time>
+            </p>
+          </li>
+          <li>
+            <h3>National Fire Prevention Month: Safety Seminar</h3>
+            <p>
+              Issued: <time datetime="01-05-2024">March 8, 2024</time>
+            </p>
+          </li>
+          <li>
+            <h3>Responsive Web Design Developer Certification</h3>
+            <p>
+              Issued: <time datetime="09-16-2023">Semptember 16, 2023</time>
+            </p>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Skills</h2>
+        <p>
+          React, TypeScript, JavaScript, HTML, CSS, C++, Java, Go, Rust,
+          Node.js, Next.js, React Native, Expo, Supabase, Vercel
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
+
+<style is:global>
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Inter;
+    margin: 0;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+</style>
+
+<style>
+  a {
+    font-weight: bold;
+    text-decoration: underline;
+    text-underline-offset: 0.3rem;
+    color: #2997ff;
+  }
+
+  a:hover {
+    text-underline-offset: 0.35rem;
+    transition: text-underline-offset 250ms ease-in;
+  }
+
+  main {
+    margin-inline: 2rem;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h5,
+  a {
+    font-size: 14px;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
+
+  ul,
+  ol {
+    margin-block: 0.35rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-block: 0.25rem;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+    max-inline-size: 65ch;
+  }
+
+  body {
+    font-family: sans-serif;
+  }
+</style>
