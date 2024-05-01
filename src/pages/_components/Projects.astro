@@ -11,13 +11,11 @@ const projects = await getCollection("projects");
   <ul>
     {
       projects.map((project) => (
-        <li>
-          <Card
-            title={project.data.title}
-            link={project.data.link}
-            description={project.data.description}
-          />
-        </li>
+        <Card
+          title={project.data.title}
+          link={project.data.link}
+          description={project.data.description}
+        />
       ))
     }
   </ul>
@@ -41,18 +39,5 @@ const projects = await getCollection("projects");
     ul {
       grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
     }
-  }
-
-  li {
-    display: grid;
-    grid-template-rows: min-content 1fr 2.25em;
-    background: light-dark(hsl(var(--gray-3-hsl)), hsl(var(--gray-10-hsl)));
-    border: solid var(--border-size-1) hsl(var(--gray-6-hsl));
-    border-radius: var(--radius-2);
-    padding-inline: var(--size-3);
-    padding-block: var(--size-2);
-    align-items: start;
-    justify-items: stretch;
-    row-gap: var(--size-6);
   }
 </style>

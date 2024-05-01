@@ -8,15 +8,33 @@ type Props = {
 const { link, title, description } = Astro.props;
 ---
 
-<h3>{title}</h3>
-<p>{description}</p>
-<a href={link} target="_blank" class="btn">View on GitHub</a>
+<li>
+  <h3>{title}</h3>
+  <p>{description}</p>
+  <a href={link} target="_blank" class="btn">View on GitHub</a>
+</li>
 
 <style>
   h3 {
     margin: unset;
   }
+
   p {
     margin: unset;
+  }
+
+  li {
+    display: grid;
+    grid-template-rows: min-content 1fr 2.25em;
+    background: light-dark(hsl(var(--gray-3-hsl)), hsl(var(--gray-10-hsl)));
+    border-style: solid;
+    border-width: var(--border-size-1);
+    border-color: light-dark(hsl(var(--gray-4-hsl)), hsl(var(--gray-8-hsl)));
+    border-radius: var(--radius-2);
+    padding-inline: var(--size-3);
+    padding-block: var(--size-2);
+    align-items: start;
+    justify-items: stretch;
+    row-gap: var(--size-6);
   }
 </style>
