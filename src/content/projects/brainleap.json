@@ -1,5 +1,7 @@
 {
   "title": "Brainleap",
+  "status": "archived",
+  "site": "https://brainleap.vercel.app",
   "link": "https://github.com/fujiwaracj/brainleap",
   "description": "A software design project I made for college, an e-learning platform with AI"
 }

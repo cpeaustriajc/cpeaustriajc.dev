@@ -24,6 +24,8 @@ const projectsCollection = defineCollection({
       title: z.string(),
       link: z.string().url(),
       description: z.string(),
+      status: z.enum(["active", "archived"]),
+      site: z.string().url(),
     }),
 });
 
@@ -38,14 +40,15 @@ const authorsCollection = defineCollection({
 
 const metaCollection = defineCollection({
   type: "data",
-  schema: ({ image }) => z.object({
-    title: z.string(),
-    description: z.string(),
-    image: image(),
-    imageAlt: z.string(),
-    keywords: z.array(z.string())
-  })
-})
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      image: image(),
+      imageAlt: z.string(),
+      keywords: z.array(z.string()),
+    }),
+});
 
 export const collections = {
   posts: postCollection,

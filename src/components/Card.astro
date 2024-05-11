@@ -3,15 +3,27 @@ type Props = {
   title: string;
   link: string;
   description: string;
+  site: string;
+  status: "active" | "archived";
 };
 
-const { link, title, description } = Astro.props;
+const { link, title, description, site, status } = Astro.props;
 ---
 
 <li>
-  <h3>{title}</h3>
+  <h3>{title} {status === "archived" && "(Archived)"}</h3>
   <p>{description}</p>
-  <a href={link} target="_blank" class="btn">View on GitHub</a>
+  <a
+    href={link}
+    target="_blank"
+    class="btn">View on GitHub</a
+  >
+  <a
+    href={site}
+    target="_blank"
+    class:list={["btn", status === "archived" && "disabled"]}
+    >View Application</a
+  >
 </li>
 
 <style>
@@ -36,5 +48,11 @@ const { link, title, description } = Astro.props;
     align-items: start;
     justify-items: stretch;
     row-gap: var(--size-6);
+  }
+
+  .disabled {
+    opacity: 50%;
+    cursor: not-allowed;
+    pointer-events: none;
   }
 </style>

@@ -54,46 +54,65 @@ const meta = {
         >
           <div>
             <h1
-              style="font-size: 1rem;font-weight: 700;letter-spacing: 0.05ch;"
+              style="font-size: 1.25rem;font-weight: 800;letter-spacing: 0.05ch;"
             >
               John Carlo Austria
             </h1>
             <strong style="font-size: 1rem;font-weight: 500"
               >Computer Engineering Student</strong
             >
+            <ul
+              style="display: flex;flex-direction:column;list-style-type: none;gap: 0.25rem;padding: unset;"
+            >
+              <li>
+                <a
+                  href="https://google.com/maps/place/San+Gabriel,+San+Pablo+City,+Laguna"
+                  target="_blank">San Gabriel, San Pablo City, Laguna</a
+                >
+              </li>
+              <li style="justify-self:end">
+                <a href="tel:+639561454411">+63 956 145 4411</a>
+              </li>
+              <li>
+                <a href="mailto:cpe.austria.johncarlo@gmail.com"
+                  >cpe.austria.johncarlo@gmail.com</a
+                >
+              </li>
+            </ul>
           </div>
           <Image
             src={import("./photo.jpg")}
-            width={64}
-            height={64}
+            width={128}
+            height={128}
             style="margin-block: 0.25rem;border-radius:4px"
             alt="Portrait photo of John Carlo Austria"
           />
         </header>
-        <ul
-          style="display: grid;grid-template-columns: repeat(2, minmax(0,1fr));list-style-type: none;gap: 0.5rem;justify-content: space-between;padding: unset;"
-        >
+      </section>
+      <section>
+        <div style="border-bottom: 1px solid;">
+          <h2>Skills (Technical)</h2>
+        </div>
+        <ul>
           <li>
-            <a
-              href="https://google.com/maps/place/San+Gabriel,+San+Pablo+City,+Laguna"
-              target="_blank">San Gabriel, San Pablo City, Laguna</a
-            >
-          </li>
-          <li style="justify-self:end">
-            <a href="tel:+639561454411">+63 956 145 4411</a>
+            Programming (React, TypeScript, JavaScript, HTML, CSS, C++, Java,
+            Go, Rust, Node.js, Next.js, React Native, Expo, Supabase, Vercel)
           </li>
           <li>
-            <a href="mailto:cpe.austria.johncarlo@gmail.com"
-              >cpe.austria.johncarlo@gmail.com</a
-            >
+            Computer Literacy (Windows 10, Linux)
           </li>
-          <li style="justify-self:end">
-            <a href="http://fujiwaracj.github.io">fujiwaracj.github.io</a>
+          <li>
+            MS Office Knowledge
+          </li>
+          <li>
+            Knowledge in Figma
           </li>
         </ul>
       </section>
       <section>
-        <h2>Experience</h2>
+        <div style="border-bottom: 1px solid;">
+          <h2>Experience</h2>
+        </div>
         <ul>
           <li>
             <h3>Freelance Work (Present)</h3>
@@ -102,7 +121,9 @@ const meta = {
         </ul>
       </section>
       <section>
-        <h2>Projects</h2>
+        <div style="border-bottom: 1px solid;">
+          <h2>Projects</h2>
+        </div>
         <ul>
           <li>
             <h3>Tanjerin: AI Chatbot (2024)</h3>
@@ -125,7 +146,9 @@ const meta = {
         </ul>
       </section>
       <section>
-        <h2>Education</h2>
+        <div style="border-bottom: 1px solid;">
+          <h2>Education</h2>
+        </div>
         <ul>
           <li>
             <h3>2021-2025</h3>
@@ -144,7 +167,9 @@ const meta = {
         </ul>
       </section>
       <section>
-        <h2>Certificates</h2>
+        <div style="border-bottom: 1px solid;">
+          <h2>Certificates</h2>
+        </div>
         <ul>
           <li>
             <h3>Arduino Microprocessor Crash Course</h3>
@@ -165,13 +190,6 @@ const meta = {
             </p>
           </li>
         </ul>
-      </section>
-      <section>
-        <h2>Skills</h2>
-        <p>
-          React, TypeScript, JavaScript, HTML, CSS, C++, Java, Go, Rust,
-          Node.js, Next.js, React Native, Expo, Supabase, Vercel
-        </p>
       </section>
     </main>
   </body>
@@ -241,13 +259,14 @@ const meta = {
   h4,
   h5,
   h6 {
-    margin-block: 0.25rem;
+    margin-block: 0.15rem;
     text-wrap: balance;
   }
 
   p {
     text-wrap: pretty;
     max-inline-size: 65ch;
+    margin-block: 0.25rem;
   }
 
   body {

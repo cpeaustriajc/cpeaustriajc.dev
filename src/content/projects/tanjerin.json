@@ -1,5 +1,7 @@
 {
-    "title": "Tanjerin",
-    "link": "https://github.com/fujiwaracj/tanjerin",
-    "description": "Create AI generated recipes using AI"
+  "title": "Tanjerin",
+  "status": "active",
+  "link": "https://github.com/fujiwaracj/tanjerin",
+  "site": "https://tanjerin.vercel.app",
+  "description": "Create AI generated recipes using AI"
 }
