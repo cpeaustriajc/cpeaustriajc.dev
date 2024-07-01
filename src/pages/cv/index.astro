@@ -67,21 +67,27 @@ const meta = {
               <li>
                 <a
                   href="https://google.com/maps/place/San+Gabriel,+San+Pablo+City,+Laguna"
+                  style="font-size: 12px;font-weight: 400;"
                   target="_blank">San Gabriel, San Pablo City, Laguna</a
                 >
               </li>
               <li style="justify-self:end">
-                <a href="tel:+639561454411">+63 956 145 4411</a>
+                <a
+                  href="tel:+639561454411"
+                  style="font-size: 12px;font-weight: 400;">+63 956 145 4411</a
+                >
               </li>
               <li>
-                <a href="mailto:cpe.austria.johncarlo@gmail.com"
+                <a
+                  href="mailto:cpe.austria.johncarlo@gmail.com"
+                  style="font-size: 12px;font-weight: 400;"
                   >cpe.austria.johncarlo@gmail.com</a
                 >
               </li>
             </ul>
           </div>
           <Image
-            src={import("./photo.jpg")}
+            src={import("./_photo.jpg")}
             width={128}
             height={128}
             style="margin-block: 0.25rem;border-radius:4px"
@@ -93,17 +99,33 @@ const meta = {
         <div style="border-bottom: 1px solid;">
           <h2>Skills (Technical)</h2>
         </div>
+        <h3>Programming Languages</h3>
+        <ul>
+          <li>HTML, CSS, JavaScript, TypeScript, C++, Java, Go, Rust, HDL</li>
+        </ul>
+        <h3>Tools</h3>
         <ul>
           <li>
-            Programming (React, TypeScript, JavaScript, HTML, CSS, C++, Java,
-            Go, Rust, Node.js, Next.js, React Native, Expo, Supabase, Vercel)
+            Git, GitHub, Figma, VS Code, Postman, Supabase, Firebase, Vercel,
+            Microsoft Office, Docker
           </li>
-          <li>Computer Literacy (Windows 10, Linux)</li>
-          <li>MS Office Knowledge</li>
-          <li>
-            Knowledge in Figma, Git,GitHub, Firebase, Supabase, Postgres, API
-            design, Web Design
-          </li>
+        </ul>
+        <div style="border-bottom: 1px solid">
+          <h3>Frontend Technologies</h3>
+        </div>
+        <h4>Frameworks</h4>
+        <ul>
+          <li>Next.js, Astro, Expo, React Native</li>
+        </ul>
+        <h4>Libraries</h4>
+        <ul>
+          <li>React, Vue, Angular, Svelte, Solid</li>
+          <li>Bootstrap, Tailwind CSS</li>
+        </ul>
+        <h4></h4>
+        <h3>Operating Systems</h3>
+        <ul>
+          <li>Windows 10, Linux</li>
         </ul>
       </section>
       <section>
@@ -111,11 +133,10 @@ const meta = {
           <h2>Skills (Soft)</h2>
         </div>
         <ul>
-          <li>Communication</li>
-          <li>Problem Solving</li>
-          <li>Teamwork</li>
-          <li>Leadership</li>
-          <li>Time Management</li>
+          <li>
+            Communication, Problem Solving, Teamwork, Leadership, Time
+            Management
+          </li>
         </ul>
       </section>
       <section>
@@ -144,8 +165,8 @@ const meta = {
           <li>
             <h3>Markdone (2023)</h3>
             <p>
-              A markdown editor for the web, I built it in two months, and it's
-              still in progress. I envision it as a tool to use for writing blog
+              A markdown editor for the web, built in two months, and it's still
+              in progress. I envision it as a tool to use for writing blog
               posts, and other content focused documents with markdown.
             </p>
           </li>
@@ -191,6 +212,9 @@ const meta = {
           <li>
             <h3>2019-2020</h3>
             <h4>San Pablo Colleges (Senior High School)</h4>
+            <ul>
+              <li>Achievements: Created a game for our school project</li>
+            </ul>
           </li>
           <li>
             <h3>2015-2019</h3>
@@ -202,6 +226,9 @@ const meta = {
           <li>
             <h3>2009-2015</h3>
             <h4>Dapdapan Elementary School</h4>
+            <ul>
+              <li>Achievements: Fifth place in regional science quiz bee</li>
+            </ul>
           </li>
         </ul>
       </section>
@@ -252,9 +279,9 @@ const meta = {
 <style>
   a {
     font-weight: bold;
-    text-decoration: underline;
+    text-decoration: none;
     text-underline-offset: 0.3rem;
-    color: #2997ff;
+    color: light-dark(#000000, #fff);
   }
 
   a:hover {
@@ -300,6 +327,11 @@ const meta = {
   h6 {
     margin-block: 0.15rem;
     text-wrap: balance;
+  }
+
+  h2 {
+    font-weight: 800;
+    margin-block: 0.5rem;
   }
 
   p {
