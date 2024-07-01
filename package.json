@@ -9,11 +9,11 @@
   },
   "license": "CC-BY-4.0",
   "devDependencies": {
-    "@astrojs/rss": "^4.0.6",
+    "@astrojs/rss": "4.0.7",
     "@astrojs/sitemap": "^3.1.6",
     "@iconify-json/carbon": "^1.1.35",
     "@iconify-json/logos": "^1.1.43",
-    "astro": "^4.10.3",
+    "astro": "4.11.3",
     "astro-icon": "^1.1.0",
     "prettier": "^3.3.2",
     "prettier-plugin-astro": "^0.13.0",
