@@ -67,14 +67,20 @@ const meta = {
               <li>
                 <a
                   href="https://google.com/maps/place/San+Gabriel,+San+Pablo+City,+Laguna"
+                  style="font-size: 12px;font-weight: 400;"
                   target="_blank">San Gabriel, San Pablo City, Laguna</a
                 >
               </li>
               <li style="justify-self:end">
-                <a href="tel:+639561454411">+63 956 145 4411</a>
+                <a
+                  href="tel:+639561454411"
+                  style="font-size: 12px;font-weight: 400;">+63 956 145 4411</a
+                >
               </li>
               <li>
-                <a href="mailto:cpe.austria.johncarlo@gmail.com"
+                <a
+                  href="mailto:cpe.austria.johncarlo@gmail.com"
+                  style="font-size: 12px;font-weight: 400;"
                   >cpe.austria.johncarlo@gmail.com</a
                 >
               </li>
@@ -94,13 +100,19 @@ const meta = {
           <h2>Skills (Technical)</h2>
         </div>
         <ul>
-          <li>
-            Programming (React, TypeScript, JavaScript, HTML, CSS, C++, Java,
-            Go, Rust, Node.js, Next.js, React Native, Expo, Supabase, Vercel)
-          </li>
-          <li>Computer Literacy (Windows 10, Linux)</li>
-          <li>MS Office Knowledge</li>
-          <li>Knowledge in Figma</li>
+          <li>Programming</li>
+          <li>Computer Literacy</li>
+          <li>MS Office</li>
+          <li>Figma</li>
+        </ul>
+        <div style="border-bottom: 1px solid;">
+          <h2>Skills (Soft)</h2>
+        </div>
+        <ul>
+          <li>Leadership</li>
+          <li>Teamwork</li>
+          <li>Communication</li>
+          <li>Problem Solving</li>
         </ul>
       </section>
       <section>
@@ -124,6 +136,14 @@ const meta = {
             <p>
               An AI Chatbot that gives you recipes based on the image uploaded
               or the text prompt that you gave.
+            </p>
+          </li>
+          <li>
+            <h3>Markdone (2023)</h3>
+            <p>
+              A markdown editor for the web, built in two months, and it's still
+              in progress. I envision it as a tool to use for writing blog
+              posts, and other content focused documents with markdown.
             </p>
           </li>
           <li>
@@ -156,6 +176,20 @@ const meta = {
                 of Future Computer Engineers of the Philippines
               </li>
               <li>Achievements: Dean's Lister</li>
+            </ul>
+          </li>
+          <li>
+            <h3>2020-2021</h3>
+            <h4>Crecencia Drusila Lopez Senior High School (ICT)</h4>
+            <ul>
+              <li>Achievements: With Honors</li>
+            </ul>
+          </li>
+          <li>
+            <h3>2019-2020</h3>
+            <h4>San Pablo Colleges (Senior High School)</h4>
+            <ul>
+              <li>Achievements: Created a game for our school project</li>
             </ul>
           </li>
         </ul>
@@ -205,11 +239,17 @@ const meta = {
 </style>
 
 <style>
+  html {
+    margin-inline: auto;
+    max-width: 8.5in;
+    max-height: 13in;
+  }
+
   a {
     font-weight: bold;
-    text-decoration: underline;
+    text-decoration: none;
     text-underline-offset: 0.3rem;
-    color: #2997ff;
+    color: light-dark(#000000, #fff);
   }
 
   a:hover {
@@ -229,6 +269,10 @@ const meta = {
   h5,
   h5,
   a {
+    font-size: 12px;
+  }
+
+  ul li {
     font-size: 14px;
   }
 
