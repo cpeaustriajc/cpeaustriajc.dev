@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+---
+
+<header
+  style="display: flex;justify-content: space-between;flex-direction: row"
+>
+  <div>
+    <h1 style="font-size: 1.25rem;font-weight: 800;letter-spacing: 0.05ch;">
+      John Carlo Austria
+    </h1>
+    <ul
+      style="display: flex;flex-direction:column;list-style-type: none;gap: 0.25rem;padding: unset;"
+    >
+      <li>
+        Location:
+        <a
+          href="https://google.com/maps/place/San+Gabriel,+San+Pablo+City,+Laguna"
+          style="font-size: 14px;font-weight: 400;"
+          target="_blank">San Gabriel, San Pablo City, Laguna</a
+        >
+      </li>
+      <li style="justify-self:end">
+        Contact Number:
+        <a href="tel:+639561454411" style="font-size: 14px;font-weight: 400;"
+          >+63 956 145 4411</a
+        >
+      </li>
+      <li>
+        Email:
+        <a
+          href="mailto:cpe.austria.johncarlo@gmail.com"
+          style="font-size: 14px;font-weight: 400;"
+          >cpe.austria.johncarlo@gmail.com</a
+        >
+      </li>
+      <li>
+        LinkedIn:
+        <a
+          href="https://jayzers.vercel.app"
+          style="font-size: 14px;font-weight: 400;"
+          >linkedin.com/in/cpeaustriajc/</a
+        >
+      </li>
+    </ul>
+  </div>
+  <Image
+    src={import("~/assets/images/profile/_photo.jpg")}
+    width={128}
+    height={128}
+    style="margin-block: 0.25rem;border-radius:4px"
+    alt="Portrait photo of John Carlo Austria"
+  />
+</header>
