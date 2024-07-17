@@ -1,7 +1,7 @@
 ---
 /**
- * Header was inspired by https://reflect.app
- */
+  * Header was inspired by https://reflect.app
+  */
 
 import { Icon } from "astro-icon/components";
 ---
@@ -50,43 +50,52 @@ import { Icon } from "astro-icon/components";
         <a
           href="mailto:cpe.austria.johncarlo@gmail.com"
           class="icon navigation-link"
-          ><Icon name="carbon:email" size={24} title="Email" /></a
         >
+          <Icon name="carbon:email" size={24} title="Email" />
+        </a
+        >
+      </li>
+      <li>
+        <a
+          href="/cv"
+          class="icon navigation-link">
+          <Icon name="carbon:document" size={24} title="Email" />
+        </a>
       </li>
     </ul>
   </nav>
 </header>
 
 <style>
-  .icon {
-    color: light-dark(var(--gray-11), var(--gray-1));
-    aspect-ratio: 1 / 1;
-  }
-
-  header {
-    display: grid;
-    grid-auto-flow: column;
-    place-content: space-between;
-    place-items: center;
-    gap: var(--size-7);
-    padding-inline: 1rem;
-  }
-
-  ul {
-    display: inline grid;
-    grid-auto-flow: column;
-    padding: 0;
-    gap: var(--size-7);
-    list-style-type: none;
-
-    & li {
-      padding: 0;
+    .icon {
+        color: light-dark(var(--gray-11), var(--gray-1));
+        aspect-ratio: 1 / 1;
     }
-  }
 
-  @media screen and (min-width: 768px) {
     header {
-      padding-inline: var(--size-13);
+        display: grid;
+        grid-auto-flow: column;
+        place-content: space-between;
+        place-items: center;
+        gap: var(--size-7);
+        padding-inline: 1rem;
     }
-  }
+
+    ul {
+        display: inline grid;
+        grid-auto-flow: column;
+        padding: 0;
+        gap: var(--size-7);
+        list-style-type: none;
+
+        & li {
+            padding: 0;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        header {
+            padding-inline: var(--size-13);
+        }
+    }
 </style>
