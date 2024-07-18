@@ -11,7 +11,7 @@ const { posts } = Astro.props;
 const formattedDate = posts.data.publishDate.toLocaleDateString("en-PH", {
   year: "numeric",
   month: "long",
-  day: "numeric",
+  day: "numeric"
 });
 const author = await getEntry(posts.data.author);
 
@@ -54,63 +54,65 @@ const isoDate = posts.data.publishDate.toISOString();
 </li>
 
 <style>
-  li {
-    list-style-type: none;
-    padding: var(--size-2);
-    border-radius: var(--radius-2);
-  }
+    li {
+        list-style-type: none;
+        padding: var(--size-2);
+        border-radius: var(--radius-2);
+        transition: all 250ms ease-in-out;
+        background:  light-dark(var(--gray-3), var(--gray-10));
+        border: var(--border-size-1) solid light-dark(var(--gray-6), var(--gray-7));
+    }
 
-  li a {
-    display: grid;
-    gap: var(--size-3);
-    grid-template-rows:
+    li a {
+        display: grid;
+        gap: var(--size-3);
+        grid-template-rows:
       100px
       minmax(var(--font-size-1), auto)
       auto
       minmax(var(--font-size-1), auto)
       minmax(16px, 72px);
-  }
+    }
 
-  li:hover {
-    transform: scale(105%);
-    background-color: light-dark(var(--gray-1), var(--gray-11));
-    border: var(--border-size-1) solid light-dark(var(--gray-6), var(--gray-7));
-    transition: all 250ms ease-in-out;
-  }
+    li:hover {
+        transform: scale(105%);
+        background-color: light-dark(var(--gray-1), var(--gray-11));
+        transition: all 250ms ease-in-out;
+    }
 
-  figure {
-    margin: unset;
-  }
+    figure {
+        margin: unset;
+    }
 
-  time {
-    font-size: 0.9rem;
-    font-weight: var(--font-weight-8);
-    color: var(--gray-6);
-  }
+    time {
+        font-size: 0.9rem;
+        font-weight: var(--font-weight-8);
+        color: var(--gray-6);
+    }
 
-  .post img {
-    aspect-ratio: 16 / 9;
-    border-radius: 8px;
-    height: auto;
-  }
+    .post img {
+        aspect-ratio: 16 / 9;
+        border-radius: 8px;
+        height: auto;
+    }
 
-  h1 {
-    max-inline-size: var(--size-content-2);
-    text-wrap: balance;
-  }
+    h1 {
+        max-inline-size: var(--size-content-2);
+        text-wrap: balance;
+    }
 
-  .author {
-    display: inline flex;
-    gap: var(--size-2);
-    place-items: center;
-  }
+    .author {
+        display: inline flex;
+        gap: var(--size-2);
+        place-items: center;
+    }
 
-  .author img {
-    border-radius: var(--radius-round);
-  }
+    .author img {
+        border-radius: var(--radius-round);
+    }
 
-  a {
-    color: unset;
-    text-decoration: none;
-  }
+    a {
+        color: unset;
+        text-decoration: none;
+    }
 </style>
