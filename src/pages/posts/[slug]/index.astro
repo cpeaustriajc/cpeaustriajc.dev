@@ -1,6 +1,7 @@
 ---
 import { Image, Picture } from "astro:assets";
 import { getCollection, getEntry, type CollectionEntry } from "astro:content";
+import Reactions from "~/components/Reactions.svelte";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 
 type Props = {
@@ -75,9 +76,14 @@ const meta = {
         <figcaption>{entry.data.coverImageAlt}</figcaption>
       </figure>
     </header>
-    <article class="content">
-      <Content />
-    </article>
+    <div style="position: relative;">
+      <aside>
+        <Reactions client:only="svelte" />
+      </aside>
+      <article class="content">
+        <Content />
+      </article>
+    </div>
   </main>
 </BaseLayout>
 
