@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jayzers.vercel.app/sitemap-index.xml
+Sitemap: https://cpeaustriajc.github.io/sitemap-index.xml

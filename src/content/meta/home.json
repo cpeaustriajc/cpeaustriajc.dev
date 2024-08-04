@@ -1,7 +1,7 @@
 {
-    "title": "Portfolio | fujiwaracj",
-    "description" :"fujiwaracj is a computer engineering student based in San Pablo City, Laguna, Philippines.",
-    "keywords":["Computer Engineer"],
-    "image": "~/assets/images/opengraph/home.jpg",
-    "imageAlt":""
+  "title": "Portfolio | fujiwaracj",
+  "description": "fujiwaracj is a computer engineering student based in San Pablo City, Laguna, Philippines.",
+  "keywords": ["Computer Engineer"],
+  "image": "~/assets/images/opengraph/home.jpg",
+  "imageAlt": ""
 }

@@ -13,11 +13,7 @@ const { link, title, description, site, status } = Astro.props;
 <li>
   <h3>{title} {status === "archived" && "(Archived)"}</h3>
   <p>{description}</p>
-  <a
-    href={link}
-    target="_blank"
-    class="btn">View on GitHub</a
-  >
+  <a href={link} target="_blank" class="btn">View on GitHub</a>
   <a
     href={site}
     target="_blank"

@@ -1,10 +1,10 @@
 ---
-import { getEntry } from 'astro:content';
+import { getEntry } from "astro:content";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import Projects from "~/pages/_components/Projects.astro";
 import Posts from "./_components/Posts.astro";
 
-const meta = await getEntry("meta", "home")
+const meta = await getEntry("meta", "home");
 ---
 
 <BaseLayout {meta}>
