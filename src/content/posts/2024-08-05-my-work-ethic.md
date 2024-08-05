@@ -10,7 +10,7 @@ keywords:
   - Work Ethic
   - Reflection
   - Work
-draft: true
+draft: false
 ---
 
 This is honestly something that I did not expect at all, but I have made a
