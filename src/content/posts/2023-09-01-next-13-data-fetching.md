@@ -223,7 +223,7 @@ your current and new projects.
 I am active on the following social media platforms.
 
 - [Twitter](https://twitter.com/cjfujiwara)
-- [GitHub](https://github.com/fujiwaracj)
+- [GitHub](https://github.com/cpeaustriajc)
 
 ### References
 

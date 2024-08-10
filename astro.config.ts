@@ -10,5 +10,5 @@ export default defineConfig({
     domains: ["avatars.githubusercontent.com", "https://emojicdn.elk.sh/"],
   },
   integrations: [sitemap(), icon(), svelte()],
-  site: "https://fujiwaracj.github.io",
+  site: "https://cpeaustriajc.github.io",
 });
