@@ -22,5 +22,8 @@
     "sharp": "^0.33.4",
     "svelte": "^4.2.18",
     "typescript": "^5.5.4"
+  },
+  "overrides": {
+    "cheerio": "1.0.0-rc.12"
   }
 }
