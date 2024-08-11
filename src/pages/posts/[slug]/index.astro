@@ -77,12 +77,12 @@ const meta = {
       </figure>
     </header>
     <div style="position: relative;">
-      <aside>
-        <Reactions />
-      </aside>
       <article class="content">
         <Content />
       </article>
+      <aside>
+        <Reactions />
+      </aside>
     </div>
   </main>
 </BaseLayout>
@@ -131,10 +131,25 @@ const meta = {
   }
 
   .cover-image:has(figcaption) {
+    font-size: var(--font-size-0);
     text-align: center;
   }
 
   h1 {
     max-inline-size: var(--size-header-2);
+  }
+
+  .content {
+    font-size: var(--font-size-2);
+  }
+
+  @media (min-width: 768px) {
+    .cover-image:has(figcaption) {
+      font-size: var(--font-size-1);
+    }
+
+    .content {
+      font-size: var(--font-size-3);
+    }
   }
 </style>
