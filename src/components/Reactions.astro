@@ -172,15 +172,17 @@
 
 <style>
   reactions-list {
-    position: absolute;
-    top: 25px;
-    left: -90px;
+    position: relative;
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1rem;
     border-radius: 9999px;
     padding: 1rem;
-    background-color: hsl(var(--gray-1-hsl) / 5%);
+    margin-inline: 1.5rem;
+    background-color: hsl(var(--gray-3-hsl) / 5%);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px hsl(var(--gray-5-hsl) / 0.5);
   }
 
   label {
@@ -195,28 +197,30 @@
   }
 
   label img {
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.5s var(--ease-spring-1);
   }
 
   label:hover img {
-    transform: scale(1.1);
+    transform: scale(1.25);
   }
 
   input[type="radio"]:checked + img {
     transform: scale(1.5);
     filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
-    animation: pulse 0.5s ease-in-out;
+    animation:
+      var(--animation-bounce) forwards,
+      var(--animation-scale-up) forwards;
+    animation-timing-function: var(--ease-spring-1);
+    animation-duration: 1.25s;
   }
 
-  @keyframes pulse {
-    0% {
-      transform: scale(1.35);
-    }
-    50% {
-      transform: scale(1.75);
-    }
-    100% {
-      transform: scale(1.5);
+  @media (min-width: 768px) {
+    reactions-list {
+      position: absolute;
+      flex-direction: column;
+      top: 25px;
+      left: -90px;
+      gap: 2rem;
     }
   }
 </style>
