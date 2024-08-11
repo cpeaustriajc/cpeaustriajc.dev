@@ -1,7 +1,7 @@
 ---
 import { Image, Picture } from "astro:assets";
 import { getCollection, getEntry, type CollectionEntry } from "astro:content";
-import Reactions from "~/components/Reactions.svelte";
+import Reactions from "~/components/Reactions.astro";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 
 type Props = {
@@ -77,9 +77,9 @@ const meta = {
       </figure>
     </header>
     <div style="position: relative;">
-      <!-- <aside>
-        <Reactions client:only="svelte" />
-      </aside> -->
+      <aside>
+        <Reactions />
+      </aside>
       <article class="content">
         <Content />
       </article>
