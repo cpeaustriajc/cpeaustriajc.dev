@@ -9,10 +9,6 @@
     | "surprised";
 
   class ReactionsList extends HTMLElement {
-    constructor() {
-      super();
-    }
-
     private likeCount = 0;
     private loveCount = 0;
     private dislikeCount = 0;
@@ -31,8 +27,56 @@
       surprised: false,
     };
 
+    constructor() {
+      super();
+    }
+
+    attributeChangedCallback(name: string, oldValue: string, newValue: string) {
+      if (name === "reaction") {
+        this.handleReaction(newValue as Reactions);
+      }
+    }
+
+    connectedCallback() {
+      this.loadReactionFromStorage();
+      const inputs: NodeListOf<Element> = document.querySelectorAll(
+        'reactions-list input[type="radio"]',
+      );
+      inputs.forEach((input: Element) => {
+        input.addEventListener("change", () => {
+          this.handleReaction((input as HTMLInputElement).value as Reactions);
+        });
+      });
+    }
+
+    disconnectedCallback() {
+      const inputs: NodeListOf<Element> = document.querySelectorAll(
+        'reactions-list input[type="radio"]',
+      );
+      inputs.forEach((input: Element) => {
+        (input as HTMLInputElement).disabled = false;
+      });
+    }
+
+    private loadReactionFromStorage() {
+      const savedReaction = localStorage.getItem(
+        "reaction",
+      ) as Reactions | null;
+      if (savedReaction && this.usedReactions.hasOwnProperty(savedReaction)) {
+        this.handleReaction(savedReaction);
+        const input = this.querySelector(
+          `input[value="${savedReaction}"]`,
+        ) as HTMLInputElement;
+        if (input) {
+          input.checked = true;
+        }
+      }
+    }
     handleReaction(reaction: Reactions) {
-      if (!this.usedReactions[reaction]) {
+      if (
+        !this.usedReactions[reaction] ||
+        localStorage.getItem("reaction") === reaction
+      ) {
         switch (reaction) {
           case "like":
             this.likeCount++;
@@ -56,14 +100,17 @@
             this.surprisedCount++;
             break;
         }
+
+        this.usedReactions[reaction] = true;
+
         const inputs: NodeListOf<Element> = document.querySelectorAll(
           'reactions-list input[type="radio"]',
         );
         inputs.forEach((input: Element) => {
           (input as HTMLInputElement).disabled = true;
         });
+        localStorage.setItem("reaction", reaction);
 
-        // Optionally, you can add a visual indicator that the reaction was recorded
         const selectedLabel = document.querySelector(
           `label[for="${reaction}"]`,
         );
@@ -95,7 +142,13 @@
     />
   </label>
   <label for="haha">
-    <input type="radio" name="reaction" id="haha" value="haha" />
+    <input
+      type="radio"
+      name="reaction"
+      id="haha"
+      value="haha"
+      onchange="this.handleReaction('haha')"
+    />
     <img src="https://emojicdn.elk.sh/😂" width="24" height="24" alt="Haha" />
   </label>
   <label for="sad">
