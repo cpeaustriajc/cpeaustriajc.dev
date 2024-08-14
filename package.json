@@ -21,6 +21,6 @@
     "typescript": "^5.5.4"
   },
   "overrides": {
-    "cheerio": "^4.0.0"
+    "@iconify/tools": "^4.0.0"
   }
 }
