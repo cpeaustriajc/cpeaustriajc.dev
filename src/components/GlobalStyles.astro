@@ -21,8 +21,21 @@
       margin: unset;
       min-height: 100dvh;
       color: light-dark(var(--gray-11), var(--gray-1));
-      background-color: light-dark(var(--gray-1), var(--gray-11));
+      background-color: light-dark(var(--gray-1), var(--gray-9));
       font-family: "Inter", sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .astro-code,
+      .astro-code span {
+        color: var(--shiki-dark) !important;
+        background-color: var(--shiki-dark-bg) !important;
+        /* Optional, if you also want font styles */
+        font-family: "Roboto Mono", monospace !important;
+        font-style: var(--shiki-dark-font-style) !important;
+        font-weight: var(--shiki-dark-font-weight) !important;
+        text-decoration: var(--shiki-dark-text-decoration) !important;
+      }
     }
   }
 
@@ -35,7 +48,7 @@
       color: var(--blue-0);
       border-radius: var(--radius-2);
       background: var(--blue-10);
-      border-color: hsl(var(--blue-6-hsl));
+      border-color: var(--blue-6);
       height: 2.25em;
       border-style: solid;
       border-width: var(--border-size-1);
@@ -45,7 +58,7 @@
       padding-block: var(--size-2);
       padding-inline: var(--size-3);
       transition-property: all;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-timing-function: var(--ease-1);
       transition-duration: 200ms;
       text-decoration: none;
 
@@ -59,19 +72,6 @@
       border-radius: var(--radius-round);
     }
 
-    .btn.contact {
-      display: none;
-      background-color: hsl(var(--gray-1-hsl) / 5%);
-      font-size: var(--font-size-0);
-      box-shadow: 0 0 16px 4px hsl(var(--blue-1-hsl));
-    }
-
-    @media (min-width: 768px) {
-      .btn.contact {
-        display: inline flex;
-      }
-    }
-
     .navigation-link {
       border-radius: var(--radius-round);
       font-size: var(--font-size-0);
@@ -80,7 +80,7 @@
       outline-offset: var(--size-1);
       text-decoration: none;
       transition-property: color, background-color, border-color, fill, stroke;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-timing-function: var(--ease-1);
       transition-duration: 500ms;
     }
 
@@ -96,15 +96,54 @@
   }
 
   @layer content {
-    .content p {
-      margin-block: var(--size-3);
+    .content {
+      padding-block: var(--size-3);
+      max-inline-size: var(--size-content-3);
+      padding-inline: var(--size-2);
     }
 
-    .content:has(p) {
-      text-wrap: pretty;
+    .content :where(h1) {
+      color: light-dark(var(--gray-11), var(--gray-2));
+      font-size: var(--font-size-fluid-3);
+      line-height: var(--font-lineheight-3);
+      font-weight: var(--font-weight-6);
+    }
+
+    .content :where(h2) {
+      color: light-dark(var(--gray-11), var(--gray-2));
+      font-size: var(--font-size-fluid-2);
+      line-height: var(--font-lineheight-3);
+      font-weight: var(--font-weight-6);
+    }
+
+    .content :where(h3) {
+      color: light-dark(var(--gray-11), var(--gray-2));
+      font-size: var(--font-size-fluid-1);
+      line-height: var(--font-lineheight-3);
+      font-weight: var(--font-weight-6);
+    }
+
+    .content :where(h4) {
+      color: light-dark(var(--gray-11), var(--gray-2));
       font-size: var(--font-size-fluid-0);
       line-height: var(--font-lineheight-3);
-      margin-inline: var(--size-fluid-3);
+      font-weight: var(--font-weight-6);
+    }
+
+    .content :where(p) {
+      text-wrap: pretty;
+      margin-block: var(--size-3);
+      font-size: var(--font-size-fluid-1);
+      line-height: var(--font-lineheight-3);
+      color: light-dark(var(--gray-11), var(--gray-4));
+    }
+
+    .content :where(li) {
+      text-wrap: pretty;
+      margin-block: var(--size-3);
+      font-size: var(--font-size-fluid-1);
+      line-height: var(--font-lineheight-3);
+      color: light-dark(var(--gray-11), var(--gray-4));
     }
 
     .content :where(pre) {
@@ -113,15 +152,10 @@
       line-height: var(--font-lineheight-3);
     }
 
-    .content img {
+    .content :where(img) {
       width: max-content;
       height: auto;
       display: block;
-    }
-
-    .content {
-      padding-block: var(--size-3);
-      max-inline-size: var(--size-content-3);
     }
 
     .content :where(a) {
@@ -129,6 +163,7 @@
     }
 
     .content :where(strong) {
+      color: light-dark(var(--gray-11), var(--gray-2));
       font-weight: var(--font-weight-6);
     }
 

@@ -5,23 +5,21 @@ import Card from "~/components/Card.astro";
 const projects = await getCollection("projects");
 ---
 
-<section>
-  <h2 id="projects">Projects</h2>
-  <p>The list of projects that I made or was part of throughout the years.</p>
-  <ul>
-    {
-      projects.map((project) => (
-        <Card
-          title={project.data.title}
-          link={project.data.link}
-          description={project.data.description}
-          site={project.data.site}
-          status={project.data.status}
-        />
-      ))
-    }
-  </ul>
-</section>
+<h2 id="projects">Projects</h2>
+<p>The list of projects that I made or was part of throughout the years.</p>
+<ul>
+  {
+    projects.map((project) => (
+      <Card
+        title={project.data.title}
+        link={project.data.link}
+        description={project.data.description}
+        site={project.data.site}
+        status={project.data.status}
+      />
+    ))
+  }
+</ul>
 
 <style>
   ul {
@@ -34,10 +32,6 @@ const projects = await getCollection("projects");
   }
 
   @media screen and (min-width: 768px) {
-    section {
-      max-width: 1280px;
-    }
-
     ul {
       grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
     }

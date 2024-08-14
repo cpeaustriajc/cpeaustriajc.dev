@@ -7,6 +7,14 @@ export default defineConfig({
   image: {
     domains: ["avatars.githubusercontent.com", "https://emojicdn.elk.sh/"],
   },
+  markdown: {
+    shikiConfig: {
+      themes: {
+        light: "github-light",
+        dark: "github-dark",
+      },
+    },
+  },
   integrations: [sitemap(), icon()],
   site: "https://cpeaustriajc.github.io",
 });

@@ -34,10 +34,10 @@ const { link, title, description, site, status } = Astro.props;
   li {
     display: grid;
     grid-template-rows: min-content 1fr 2.25em;
-    background: light-dark(hsl(var(--gray-3-hsl)), hsl(var(--gray-10-hsl)));
+    background: light-dark(var(--gray-3), var(--gray-10));
     border-style: solid;
     border-width: var(--border-size-1);
-    border-color: light-dark(hsl(var(--gray-4-hsl)), hsl(var(--gray-8-hsl)));
+    border-color: light-dark(var(--gray-4), var(--gray-8));
     border-radius: var(--radius-2);
     padding-inline: var(--size-3);
     padding-block: var(--size-2);

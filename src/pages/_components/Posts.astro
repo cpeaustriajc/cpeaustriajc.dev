@@ -9,26 +9,20 @@ const posts = await getCollection("posts", ({ data }) => {
 );
 ---
 
-<section>
-  <h2 id="posts">Posts</h2>
-  <ol>
-    {posts.map((instance) => <Post posts={instance} />)}
-  </ol>
-</section>
+<h2 id="posts">Posts</h2>
+<ol>
+  {posts.map((instance) => <Post posts={instance} />)}
+</ol>
 
 <style>
   ol {
+    display: grid;
     padding: unset;
+    gap: 1rem;
   }
   @media screen and (min-width: 768px) {
-    section {
-      max-width: 1280px;
-    }
-
     ol {
-      display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1rem;
     }
   }
 </style>

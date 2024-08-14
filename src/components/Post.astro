@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 import { Image, Picture } from "astro:assets";
 import { getEntry, type CollectionEntry } from "astro:content";
 
@@ -19,38 +20,37 @@ const isoDate = posts.data.publishDate.toISOString();
 ---
 
 <li>
-  <a href={`/posts/${posts.slug}`}>
-    <h2>
-      {posts.data.title}
-    </h2>
-    <time datetime={isoDate}>
-      {formattedDate}
-    </time>
-    <figure class="post">
-      <Picture
-        src={posts.data.coverImage}
-        alt={posts.data.coverImageAlt}
-        widths={[240, 480, 640, 1280, 1920]}
-        formats={["jpeg", "webp", "avif"]}
-        loading="lazy"
-      />
-    </figure>
+  <h2>
+    {posts.data.title}
+  </h2>
+  <time datetime={isoDate}>
+    {formattedDate}
+  </time>
+  <figure class="post">
+    <Picture
+      src={posts.data.coverImage}
+      alt={posts.data.coverImageAlt}
+      widths={[240, 480, 640, 1280, 1920]}
+      formats={["jpeg", "webp", "avif"]}
+      loading="lazy"
+    />
+  </figure>
 
-    <figure class="author">
-      <Image
-        src={author.data.picture}
-        width={24}
-        height={24}
-        alt={`${author.data.name}, the author of the blog post`}
-      />
-      <figcaption>
-        {author.data.name}
-      </figcaption>
-    </figure>
-    <p>
-      {posts.data.description}
-    </p>
-  </a>
+  <figure class="author">
+    <Image
+      src={author.data.picture}
+      width={24}
+      height={24}
+      alt={`${author.data.name}, the author of the blog post`}
+    />
+    <figcaption>
+      {author.data.name}
+    </figcaption>
+  </figure>
+  <p>
+    {posts.data.description}
+  </p>
+  <a href={`/posts/${posts.slug}`}>Read <Icon name="carbon:arrow-right"  /></a>
 </li>
 
 <style>
@@ -61,21 +61,28 @@ const isoDate = posts.data.publishDate.toISOString();
     transition: all 250ms ease-in-out;
     background: light-dark(var(--gray-3), var(--gray-10));
     border: var(--border-size-1) solid light-dark(var(--gray-6), var(--gray-7));
-  }
-
-  li a {
-    display: grid;
+    display: inline grid;
     gap: var(--size-3);
     grid-template-rows:
-      100px
+      96px
       minmax(var(--font-size-1), auto)
       auto
       minmax(var(--font-size-1), auto)
-      minmax(16px, 72px);
+      minmax(16px, 96px)
+      36px;
   }
 
-  li:hover {
-    background-color: light-dark(var(--gray-1), var(--gray-11));
+  a {
+    display: inline flex;
+    align-items: center;
+    color: light-dark(var(--blue-6), var(--blue-3));
+    width: min-content;
+    font-size: var(--font-size-4);
+    gap: var(--size-1)
+  }
+
+  a:hover {
+    color: light-dark(var(--blue-7), var(--blue-4));
   }
 
   figure {
@@ -95,7 +102,7 @@ const isoDate = posts.data.publishDate.toISOString();
   }
 
   h1 {
-    max-inline-size: var(--size-content-2);
+    max-inline-size: var(--size-header-3);
     text-wrap: balance;
   }
 
@@ -107,10 +114,5 @@ const isoDate = posts.data.publishDate.toISOString();
 
   .author img {
     border-radius: var(--radius-round);
-  }
-
-  a {
-    color: unset;
-    text-decoration: none;
   }
 </style>

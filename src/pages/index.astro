@@ -1,16 +1,28 @@
 ---
 import { getEntry } from "astro:content";
 import BaseLayout from "~/layouts/BaseLayout.astro";
+import { Content as Summary } from "~/pages/_components/Summary.md";
+import { Content as Experience } from "~/pages/_components/Experience.md";
 import Projects from "~/pages/_components/Projects.astro";
-import Posts from "./_components/Posts.astro";
+import Posts from "~/pages/_components/Posts.astro";
 
 const meta = await getEntry("meta", "home");
 ---
 
 <BaseLayout {meta}>
   <main>
-    <Projects />
-    <Posts />
+    <section class="content">
+      <Summary />
+    </section>
+    <section class="content">
+      <Experience />
+    </section>
+    <section>
+      <Projects />
+    </section>
+    <section>
+      <Posts />
+    </section>
   </main>
 </BaseLayout>
 
@@ -19,6 +31,11 @@ const meta = await getEntry("meta", "home");
     scroll-behavior: smooth;
     display: grid;
     padding-inline: 1rem;
+  }
+
+  section {
+    margin-inline: auto;
+    max-width: 1280px;
   }
 
   @media screen and (min-width: 768px) {
