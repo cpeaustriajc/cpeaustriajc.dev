@@ -5,7 +5,7 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
   image: {
-    domains: ["avatars.githubusercontent.com", "https://emojicdn.elk.sh/"],
+    domains: ["avatars.githubusercontent.com", "emojicdn.elk.sh"],
   },
   markdown: {
     shikiConfig: {
