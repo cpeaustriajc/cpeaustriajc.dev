@@ -1,7 +1,6 @@
 ---
 import { Image, Picture } from "astro:assets";
 import { getCollection, getEntry, type CollectionEntry } from "astro:content";
-import Reactions from "~/components/Reactions.astro";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 
 type Props = {
@@ -80,9 +79,6 @@ const meta = {
       <article class="content">
         <Content />
       </article>
-      <aside>
-        <Reactions />
-      </aside>
     </div>
   </main>
 </BaseLayout>
