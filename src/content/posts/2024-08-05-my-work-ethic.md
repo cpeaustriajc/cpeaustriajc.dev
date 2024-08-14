@@ -2,7 +2,7 @@
 title: My work ethic as an intern
 description: A reflection of my work ethic as an intern and why I don't believe that it is something that shouldn't be copied
 coverImage: ./2024-08-05-my-work-ethic.jpg
-coverImageAlt: An AI generated image of a person at a desk with books and crumpled paper, their face pixelated, with a glowing globe graphic and a backdrop of brick walls and binary code streams.
+coverImageAlt: A person at a desk with books and crumpled paper, their face pixelated, with a glowing globe graphic and a backdrop of brick walls and binary code streams. (AI Generated Content)
 publishDate: 2024-08-05T08:34:05
 author: cpeaustriajc
 keywords:
