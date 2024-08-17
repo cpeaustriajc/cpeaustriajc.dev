@@ -15,7 +15,6 @@
     "@fontsource-variable/roboto-mono": "^5.0.19",
     "@fontsource/inter": "^5.0.20",
     "@iconify-json/carbon": "^1.1.37",
-    "@iconify-json/logos": "^1.1.44",
     "astro": "^4.14.2",
     "astro-icon": "^1.1.1",
     "open-props": "^1.7.5",
