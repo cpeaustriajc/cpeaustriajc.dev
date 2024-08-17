@@ -17,12 +17,8 @@ const posts = await getCollection("posts", ({ data }) => {
 <style>
   ol {
     display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
     padding: unset;
     gap: 1rem;
-  }
-  @media screen and (min-width: 768px) {
-    ol {
-      grid-template-columns: 1fr 1fr;
-    }
   }
 </style>
