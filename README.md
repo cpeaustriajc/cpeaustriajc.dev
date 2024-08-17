@@ -15,6 +15,6 @@ a plain html if I wanted to.
 - [Astro]
 - [TypeScript]
 
-[license]: https://img.shields.io/github/license/cpeaustriajc/portfolio
+[license]: https://img.shields.io/github/license/cpeaustriajc/cpeaustriajc.github.io
 [astro]: https://astro.build
 [typescript]: https://typescriptlang.org
