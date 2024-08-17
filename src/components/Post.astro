@@ -31,7 +31,7 @@ const isoDate = posts.data.publishDate.toISOString();
       src={posts.data.coverImage}
       alt={posts.data.coverImageAlt}
       widths={[240, 480, 640, 1280, 1920]}
-      formats={["jpeg", "webp", "avif"]}
+      formats={["webp", "avif"]}
       loading="lazy"
     />
   </figure>
@@ -50,7 +50,7 @@ const isoDate = posts.data.publishDate.toISOString();
   <p>
     {posts.data.description}
   </p>
-  <a href={`/posts/${posts.slug}`}>Read <Icon name="carbon:arrow-right"  /></a>
+  <a href={`/posts/${posts.slug}`}>Read <Icon name="carbon:arrow-right" /></a>
 </li>
 
 <style>
@@ -61,15 +61,10 @@ const isoDate = posts.data.publishDate.toISOString();
     transition: all 250ms ease-in-out;
     background: light-dark(var(--gray-3), var(--gray-10));
     border: var(--border-size-1) solid light-dark(var(--gray-6), var(--gray-7));
-    display: inline grid;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
     gap: var(--size-3);
-    grid-template-rows:
-      96px
-      minmax(var(--font-size-1), auto)
-      auto
-      minmax(var(--font-size-1), auto)
-      minmax(16px, 96px)
-      36px;
   }
 
   a {
@@ -78,7 +73,7 @@ const isoDate = posts.data.publishDate.toISOString();
     color: light-dark(var(--blue-6), var(--blue-3));
     width: min-content;
     font-size: var(--font-size-4);
-    gap: var(--size-1)
+    gap: var(--size-1);
   }
 
   a:hover {

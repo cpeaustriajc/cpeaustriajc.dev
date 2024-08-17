@@ -19,7 +19,7 @@ const optimizedOGImage = await getImage({
   src: meta.data.image ?? DefaultOGImage,
   width: 1200,
   height: 630,
-  format: "jpeg",
+  format: "webp",
 });
 
 const OGImageURL = new URL(optimizedOGImage.src, Astro.url);
