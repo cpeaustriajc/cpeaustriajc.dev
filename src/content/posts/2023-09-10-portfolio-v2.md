@@ -1,9 +1,9 @@
 ---
-title: Portfolio V2
+title: My Though Process on how I Redesigned my Portfolio
 description: My thought process when I was building the second revision/redesign of my portfolio site
 coverImage: ./2023-09-10-portfolio-v2.jpg
 coverImageAlt: The new default opengraph for my personal portfolio
-publishDate: 2023-09-10T09:02:33
+publishDate: 2023-09-10T09:02:33+08:00
 author: cpeaustriajc
 keywords:
   - Astro

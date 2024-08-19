@@ -1,9 +1,9 @@
 ---
-title: Next.js 13 Data Fetching with App Router
+title: Next.js 13 Data Fetching with the newest App Router
 description: How to fetch data with the new Next.js 13 App Router, and some tips and tricks.
 coverImage: ./2023-09-01-next-13-data-fetching.jpg
-coverImageAlt: Close up photography of mining rig
-publishDate: 2023-09-01T10:34:35
+coverImageAlt: The close-up photo shows a mining rig with multiple GPUs, cooling fans, and power cables, all neatly arranged on a motherboard within a metal frame.
+publishDate: 2023-09-01T10:34:35+08:00
 author: cpeaustriajc
 keywords:
   - Web Development

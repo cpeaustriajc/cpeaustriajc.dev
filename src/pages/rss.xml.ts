@@ -6,9 +6,9 @@ export async function GET() {
     return import.meta.env.PROD ? data.draft !== true : true;
   });
   return rss({
-    title: "Posts | John Carlo Austria",
+    title: "John Carlo Austria's Posts | Web Dev, Computer Engineer",
     description:
-      "John Carlo Austria's Personal Portfolio, A frontend developer based in the Philippines.",
+      "John Carlo Austria's Personal Portfolio, A Computer Engineer based in the Philippines.",
     site: "https://cpeaustriajc.github.io",
     items: posts.map((post) => ({
       title: post.data.title,

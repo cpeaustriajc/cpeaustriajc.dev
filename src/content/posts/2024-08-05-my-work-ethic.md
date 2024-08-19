@@ -1,9 +1,9 @@
 ---
-title: My work ethic as an intern
+title: A Reflection on the State of my Work Ethic as an Intern
 description: A reflection of my work ethic as an intern and why I don't believe that it is something that shouldn't be copied
 coverImage: ./2024-08-05-my-work-ethic.jpg
-coverImageAlt: A person at a desk with books and crumpled paper, their face pixelated, with a glowing globe graphic and a backdrop of brick walls and binary code streams. (AI Generated Content)
-publishDate: 2024-08-05T08:34:05
+coverImageAlt: A pixelated person at a desk with books and crumpled paper, a glowing globe, brick walls, and binary code streams. (AI Generated Content)
+publishDate: 2024-08-05T08:34:05+08:00
 author: cpeaustriajc
 keywords:
   - Internship

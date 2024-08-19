@@ -1,9 +1,9 @@
 ---
-title: Obsidian's new properties feature and how it became the perfect feature for Astro
+title: Is Obsidian's New Properties Feature The Perfect for Astro?
 description: The people at obsidian created a new feature called properties which are frontmatter metadata making it a perfect local CMS for Astro
 coverImage: ./2023-10-15-using-obsidian-as-a-cms.jpg
 coverImageAlt: The logo of Astro at the top and Obsidian at the bottom with a plus icon in the middle
-publishDate: 2023-10-15T23:25:00
+publishDate: 2023-10-15T23:25:00+08:00
 author: cpeaustriajc
 keywords:
   - Obsidian

@@ -1,6 +1,6 @@
 ---
 title: A reflection in College as a Computer Engineering Student
-publishDate: 2024-01-25T13:43:33.364Z
+publishDate: 2024-01-25T13:43:33+08:00
 description: A reflection on my life in college as a computer engineering student
 author: cpeaustriajc
 coverImage: ./2024-01-25-reflection-on-college-engineering-student.jpeg
@@ -9,7 +9,6 @@ draft: false
 keywords:
   - college
   - computer engineer
-slug: reflection-college-computer-engineering-student
 ---
 
 In my three years as a computer engineer student, I have experienced the
