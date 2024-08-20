@@ -22,7 +22,7 @@
       min-height: 100dvh;
       color: light-dark(var(--gray-11), var(--gray-1));
       background-color: light-dark(var(--gray-1), var(--gray-9));
-      font-family: "Inter", sans-serif;
+      font-family: var(--font-neo-grotesque);
     }
 
     @media (prefers-color-scheme: dark) {
@@ -31,7 +31,7 @@
         color: var(--shiki-dark) !important;
         background-color: var(--shiki-dark-bg) !important;
         /* Optional, if you also want font styles */
-        font-family: "Roboto Mono", monospace !important;
+        font-family: var(--font-monospace-code) !important;
         font-style: var(--shiki-dark-font-style) !important;
         font-weight: var(--shiki-dark-font-weight) !important;
         text-decoration: var(--shiki-dark-text-decoration) !important;
@@ -150,6 +150,13 @@
       overflow-x: scroll;
       font-size: var(--font-size-fluid-0);
       line-height: var(--font-lineheight-3);
+    }
+
+    .content :where(p code) {
+        font-family: var(--font-monospace-code);
+        background-color: light-dark(var(--gray-3), var(--gray-8));
+        border-radius: var(--radius-2);
+        padding: var(--size-1);
     }
 
     .content :where(img) {
