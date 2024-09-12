@@ -11,8 +11,8 @@
   "devDependencies": {
     "@astrojs/rss": "4.0.7",
     "@astrojs/sitemap": "^3.1.6",
-    "@fontsource-variable/inter": "^5.0.21",
-    "@fontsource-variable/roboto-mono": "^5.0.21",
+    "@fontsource-variable/inter": "^5.1.0",
+    "@fontsource-variable/roboto-mono": "^5.1.0",
     "@iconify-json/carbon": "^1.2.1",
     "astro": "^4.15.4",
     "astro-icon": "^1.1.1",
