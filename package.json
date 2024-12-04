@@ -13,14 +13,14 @@
     "@astrojs/sitemap": "^3.2.1",
     "@fontsource-variable/inter": "^5.1.0",
     "@fontsource-variable/roboto-mono": "^5.1.0",
-    "@iconify-json/carbon": "^1.2.1",
-    "astro": "^4.16.6",
-    "astro-icon": "^1.1.1",
-    "open-props": "^1.7.6",
-    "prettier": "^3.3.3",
+    "@iconify-json/carbon": "^1.2.4",
+    "astro": "^5.0.2",
+    "astro-icon": "^1.1.4",
+    "open-props": "^1.7.7",
+    "prettier": "^3.4.1",
     "prettier-plugin-astro": "^0.14.1",
     "sharp": "^0.33.5",
-    "typescript": "^5.6.2"
+    "typescript": "^5.7.2"
   },
-  "packageManager": "npm@10.8.2+sha512.c7f0088c520a46596b85c6f8f1da943400199748a0f7ea8cb8df75469668dc26f6fb3ba26df87e2884a5ebe91557292d0f3db7d0929cdb4f14910c3032ac81fb"
+  "packageManager": "npm@10.9.1"
 }
