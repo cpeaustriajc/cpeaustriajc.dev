@@ -10,13 +10,13 @@ import GlobalStyles from "~/components/GlobalStyles.astro";
 import Header from "~/components/Header.astro";
 
 type Props = {
-  meta: Omit<CollectionEntry<"meta">, "id" | "collection">;
+  meta: Omit<CollectionEntry<"meta">, "id" | "collection"> | undefined;
 };
 
 const { meta } = Astro.props;
 
 const optimizedOGImage = await getImage({
-  src: meta.data.image ?? DefaultOGImage,
+  src: meta?.data.image ?? DefaultOGImage,
   width: 1200,
   height: 630,
   format: "webp",
@@ -28,29 +28,29 @@ const OGImageURL = new URL(optimizedOGImage.src, Astro.url);
 <html dir="ltr" lang="en">
   <head>
     <BaseHead />
-    <title>{meta.data.title}</title>
-    <meta name="description" content={meta.data.description} />
-    <meta name="keywords" content={meta.data.keywords.join(", ")} />
+    <title>{meta?.data.title}</title>
+    <meta name="description" content={meta?.data.description} />
+    <meta name="keywords" content={meta?.data.keywords.join(", ")} />
     <meta name="generator" content={Astro.generator} />
-    <meta property="og:title" content={meta.data.title} />
+    <meta property="og:title" content={meta?.data.title} />
     <meta property="og:url" content={Astro.url.href} />
-    <meta property="og:description" content={meta.data.description} />
+    <meta property="og:description" content={meta?.data.description} />
     <meta property="og:type" content="website" />
     <meta property="og:image" content={OGImageURL} />
     <meta
       property="og:image:alt"
-      content={meta.data.imageAlt ?? meta.data.title}
+      content={meta?.data.imageAlt ?? meta?.data.title}
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="twitter:creator" content="@cpeaustriajc" />
-    <meta name="twitter:description" content={meta.data.description} />
+    <meta name="twitter:description" content={meta?.data.description} />
     <meta property="twitter:domain" content="https://cpeaustriajc.github.io" />
     <meta property="twitter:image" content={OGImageURL} />
     <meta
       property="twitter:image:alt"
-      content={meta.data.imageAlt ?? meta.data.title}
+      content={meta?.data.imageAlt ?? meta?.data.title}
     />
-    <meta name="twitter:title" content={meta.data.title} />
+    <meta name="twitter:title" content={meta?.data.title} />
     <meta property="twitter:url" content={Astro.url.href} />
   </head>
   <body>
