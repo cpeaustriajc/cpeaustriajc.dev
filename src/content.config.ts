@@ -34,6 +34,7 @@ const authorsCollection = defineCollection({
     z.object({
       name: z.string(),
       picture: z.string(),
+      url: z.string().url(),
     }),
 });
 
