@@ -13,12 +13,3 @@ const posts = await getCollection("posts", ({ data }) => {
 <ol>
   {posts.map((instance) => <Post posts={instance} />)}
 </ol>
-
-<style>
-  ol {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-    padding: unset;
-    gap: 1rem;
-  }
-</style>

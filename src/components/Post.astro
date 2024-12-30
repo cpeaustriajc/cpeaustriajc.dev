@@ -1,6 +1,4 @@
 ---
-import { Icon } from "astro-icon/components";
-import { Image, Picture } from "astro:assets";
 import { getEntry, type CollectionEntry } from "astro:content";
 
 type Props = {
@@ -14,36 +12,19 @@ const formattedDate = posts.data.publishDate.toLocaleDateString("en-PH", {
   month: "long",
   day: "numeric",
 });
+
 const author = await getEntry(posts.data.author);
 
 const isoDate = posts.data.publishDate.toISOString();
 ---
 
 <li>
-  <figure class="post">
-    <Picture
-      src={posts.data.coverImage}
-      alt={posts.data.coverImageAlt}
-      widths={[240, 480]}
-      formats={["webp", "avif"]}
-      loading="lazy"
-    />
-  </figure>
-
-  <figure class="author">
-    <Image
-      src={author.data.picture}
-      width={24}
-      height={24}
-      alt={`${author.data.name}, the author of the blog post`}
-    />
-    <figcaption>
-      {author.data.name}
-    </figcaption>
-  </figure>
   <h2>
     {posts.data.title}
   </h2>
+  <p>
+    By <a href={author.data.url}>{author.data.name}</a>
+  </p>
   <time datetime={isoDate}>
     {formattedDate}
   </time>
@@ -52,75 +33,3 @@ const isoDate = posts.data.publishDate.toISOString();
   </p>
   <a href={`/posts/${posts.id}`}>Read More 🡒</a>
 </li>
-
-<style>
-  li {
-    list-style-type: none;
-    padding-inline: var(--size-2);
-    padding-block: var(--size-4);
-    border-radius: var(--radius-2);
-    transition: all 250ms ease-in-out;
-    background: light-dark(var(--gray-3), var(--gray-10));
-    border: var(--border-size-1) solid light-dark(var(--gray-6), var(--gray-8));
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    gap: var(--size-1);
-  }
-
-  a {
-    display: inline;
-    align-self: start;
-    color: light-dark(var(--gray-6), var(--gray-3));
-    font-size: var(--font-size-2);
-    gap: var(--size-1);
-  }
-
-  a:hover {
-    color: light-dark(var(--blue-7), var(--blue-4));
-  }
-
-  figure {
-    margin: unset;
-  }
-
-  time {
-    font-size: 0.9rem;
-    font-weight: var(--font-weight-8);
-    color: var(--gray-6);
-  }
-
-  .post img {
-    aspect-ratio: 16 / 9;
-    border-radius: 8px;
-    height: auto;
-  }
-
-  h2 {
-    max-inline-size: var(--size-header-3);
-    text-overflow: ellipsis;
-    line-clamp: 2;
-    overflow: hidden;
-    text-wrap: nowrap;
-  }
-
-  p {
-    font-size: var(--font-size-1);
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    line-clamp: 3;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .author {
-    display: inline flex;
-    gap: var(--size-2);
-    place-items: center;
-  }
-
-  .author img {
-    border-radius: var(--radius-round);
-  }
-</style>

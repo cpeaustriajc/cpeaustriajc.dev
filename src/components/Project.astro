@@ -1,6 +1,4 @@
 ---
-import { Icon } from "astro-icon/components";
-
 type Props = {
   title: string;
   link: string;
@@ -13,71 +11,18 @@ const { link, title, description, site, status } = Astro.props;
 ---
 
 <li>
-  <div class="content">
+  <div>
     <h3>{title} {status === "archived" && "(Archived)"}</h3>
     <p>{description}</p>
   </div>
-  <div class="actions">
-    <a href={link} target="_blank" class="btn"
-      ><Icon name="carbon:application-web" /> APPLICATION</a
-    >
+  <div>
+    <a href={link} target="_blank">GITHUB</a>
     <a
       href={site}
       target="_blank"
       class:list={["btn", status === "archived" && "disabled"]}
     >
-      <Icon name="carbon:logo-github" />
-      GITHUB</a
-    >
+      APPLICATION
+    </a>
   </div>
 </li>
-
-<style>
-  h3 {
-    margin: unset;
-  }
-
-  p {
-    margin: unset;
-  }
-
-  .btn {
-    width: 100%;
-  }
-
-  .content {
-    display: block;
-    padding-inline: unset;
-    max-inline-size: max-content;
-  }
-
-  .content p {
-    font-size: var(--font-size-1);
-  }
-
-  li {
-    display: grid;
-    align-content: space-between;
-    aspect-ratio: 1 / 1;
-    background: light-dark(var(--gray-3), var(--gray-10));
-    border-style: solid;
-    border-width: var(--border-size-1);
-    border-color: light-dark(var(--gray-6), var(--gray-8));
-    border-radius: var(--radius-2);
-    padding: var(--size-3);
-  }
-
-  .actions {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--size-2);
-  }
-
-  .disabled {
-    opacity: 50%;
-    cursor: not-allowed;
-    pointer-events: none;
-  }
-</style>

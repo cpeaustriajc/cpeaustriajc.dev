@@ -20,20 +20,3 @@ const projects = await getCollection("projects");
     ))
   }
 </ul>
-
-<style>
-  ul {
-    display: grid;
-    padding: unset;
-    list-style-type: none;
-    grid-auto-flow: row;
-    column-gap: var(--size-3);
-    row-gap: var(--size-3);
-  }
-
-  @media screen and (min-width: 768px) {
-    ul {
-      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-    }
-  }
-</style>

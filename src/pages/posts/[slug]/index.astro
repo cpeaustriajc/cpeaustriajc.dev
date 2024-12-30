@@ -53,92 +53,11 @@ const meta = {
       <h1>
         {entry.data.title}
       </h1>
-      <figure class="author">
-        <Image
-          src={author?.data.picture!}
-          width={24}
-          height={24}
-          quality={75}
-          format="webp"
-          loading="eager"
-          alt={`${author?.data.name}, the author of the blog post`}
-        />
-        <figcaption>{author?.data.name}</figcaption>
-      </figure>
-      <figure class="cover-image">
-        <Picture
-          src={entry.data.coverImage}
-          alt={entry.data.coverImageAlt}
-          widths={[240, 480, 640, 1280, 1920]}
-          formats={["webp", "avif"]}
-          loading="eager"
-        />
-        <figcaption>{entry.data.coverImageAlt}</figcaption>
-      </figure>
     </header>
-    <div style="position: relative;">
-      <article class="content">
+    <div>
+      <article>
         <Content />
       </article>
     </div>
   </main>
 </BaseLayout>
-
-<style>
-  main {
-    display: grid;
-    place-items: center;
-  }
-
-  .author {
-    display: inline flex;
-    place-items: center;
-    gap: var(--size-2);
-    margin: unset;
-  }
-
-  .author img {
-    display: inline;
-    border-radius: var(--radius-round);
-  }
-
-  header {
-    display: grid;
-    padding-inline: var(--size-2);
-    max-inline-size: 960px;
-  }
-
-  .cover-image {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-inline: unset;
-  }
-
-  .cover-image img {
-    border-radius: var(--radius-3);
-    border: solid var(--border-size-1) var(--gray-7);
-    height: auto;
-  }
-
-  header figure,
-  header time,
-  header h1 {
-    grid-column-start: 2;
-  }
-
-  .cover-image:has(figcaption) {
-    font-size: var(--font-size-0);
-    text-align: center;
-  }
-
-  h1 {
-    max-inline-size: var(--size-header-3);
-  }
-
-  @media (min-width: 768px) {
-    .cover-image:has(figcaption) {
-      font-size: var(--font-size-1);
-    }
-  }
-</style>
