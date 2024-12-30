@@ -12,12 +12,7 @@
   "devDependencies": {
     "@astrojs/rss": "^4.0.10",
     "@astrojs/sitemap": "^3.2.1",
-    "@fontsource-variable/inter": "^5.1.1",
-    "@fontsource-variable/roboto-mono": "^5.1.1",
-    "@iconify-json/carbon": "^1.2.4",
     "astro": "^5.1.1",
-    "astro-icon": "^1.1.5",
-    "open-props": "^1.7.9",
     "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1",
     "typescript": "^5.7.2"
