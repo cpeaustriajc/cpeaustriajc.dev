@@ -1,6 +1,5 @@
 import sitemap from "@astrojs/sitemap";
 import { defineConfig } from "astro/config";
-import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,6 +14,6 @@ export default defineConfig({
       },
     },
   },
-  integrations: [sitemap(), icon()],
+  integrations: [sitemap()],
   site: "https://cpeaustriajc.github.io",
 });
