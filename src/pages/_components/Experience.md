@@ -2,7 +2,7 @@
 
 **Converge ICT Solutions, Inc.**
 
-Intern -- July 2024-September 2024
+Associate Software Engineer -- July 2024-September 2024
 
 Currently working as a software engineering intern during summer
 break where I built an internal application for the company to
