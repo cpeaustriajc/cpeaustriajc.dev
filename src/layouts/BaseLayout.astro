@@ -3,7 +3,8 @@ import { getImage } from "astro:assets";
 import { type CollectionEntry } from "astro:content";
 import DefaultOGImage from "~/assets/images/opengraph/home.jpg";
 import BaseHead from "~/components/BaseSEO.astro";
-import Header from "~/components/Header.astro";
+import Aside from "~/components/Aside.astro";
+import BaseStyles from "~/components/BaseStyles.astro";
 
 type Props = {
   meta: Omit<CollectionEntry<"meta">, "id" | "collection"> | undefined;
@@ -48,9 +49,10 @@ const OGImageURL = new URL(optimizedOGImage.src, Astro.url);
     />
     <meta name="twitter:title" content={meta?.data.title} />
     <meta property="twitter:url" content={Astro.url.href} />
+    <BaseStyles />
   </head>
   <body>
-    <Header />
+    <Aside />
     <slot />
-      </body>
+  </body>
 </html>
