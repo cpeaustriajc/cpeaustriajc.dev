@@ -1,5 +1,5 @@
 import sitemap from "@astrojs/sitemap";
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,6 +13,13 @@ export default defineConfig({
         dark: "github-dark",
       },
     },
+  },
+  experimental: {
+    fonts: [{
+        provider: fontProviders.google(),
+        name: 'Space Mono',
+        cssVariable: '--font-mono',
+    }]
   },
   integrations: [sitemap()],
   site: "https://cpeaustriajc.github.io",

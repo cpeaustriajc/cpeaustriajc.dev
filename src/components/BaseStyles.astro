@@ -1,9 +1,6 @@
 <style is:global>
-  * {
-    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
-      "Liberation Mono", "Courier New", monospace;
-  }
   body {
+    font-family: var(--font-mono);
     display: flex;
     flex-direction: row;
     font-size: 14px;
@@ -26,9 +23,9 @@
     transition: color 0.25s ease-in;
 
     &:hover {
-        color: hsl(212, 84%, 62%);
+      color: hsl(212, 84%, 62%);
     }
-}
+  }
 
   article {
     width: 60ch;
