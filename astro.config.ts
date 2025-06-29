@@ -19,6 +19,10 @@ export default defineConfig({
         provider: fontProviders.google(),
         name: 'Space Mono',
         cssVariable: '--font-mono',
+    }, {
+        provider: fontProviders.google(),
+        name: 'Inter',
+        cssVariable: '--font-sans',
     }]
   },
   integrations: [sitemap()],

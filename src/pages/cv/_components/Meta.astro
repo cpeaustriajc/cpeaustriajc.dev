@@ -1,4 +1,5 @@
 ---
+import { Font } from "astro:assets";
 import { getImage } from "astro:assets";
 import DefaultOGImage from "~/assets/images/opengraph/home.jpg";
 
@@ -44,4 +45,5 @@ const meta = {
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <title>{meta.data.title}</title>
+  <Font cssVariable="--font-sans" preload />
 </head>
