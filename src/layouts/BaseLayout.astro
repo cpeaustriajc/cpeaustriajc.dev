@@ -1,13 +1,11 @@
 ---
+import "./src/styles/global.css";
 import { getImage, Font } from "astro:assets";
 import { type CollectionEntry } from "astro:content";
 import DefaultOGImage from "~/assets/images/opengraph/home.jpg";
-import BaseHead from "~/components/BaseSEO.astro";
-import Aside from "~/components/Aside.astro";
-import BaseStyles from "~/components/BaseStyles.astro";
 
 type Props = {
-  meta: Omit<CollectionEntry<"meta">, "id" | "collection"> | undefined;
+  meta?: Omit<CollectionEntry<"meta">, "id" | "collection"> | undefined;
 };
 
 const { meta } = Astro.props;
@@ -19,13 +17,20 @@ const optimizedOGImage = await getImage({
   format: "webp",
 });
 
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const OGImageURL = new URL(optimizedOGImage.src, Astro.url);
 ---
 
 <html dir="ltr" lang="en">
   <head>
-    <BaseHead />
-    <title>{meta?.data.title}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="color-scheme" content="light dark" />
     <meta name="description" content={meta?.data.description} />
     <meta name="keywords" content={meta?.data.keywords.join(", ")} />
     <meta name="generator" content={Astro.generator} />
@@ -49,11 +54,10 @@ const OGImageURL = new URL(optimizedOGImage.src, Astro.url);
     />
     <meta name="twitter:title" content={meta?.data.title} />
     <meta property="twitter:url" content={Astro.url.href} />
-    <Font cssVariable="--font-mono" preload />
-    <BaseStyles />
+    <Font cssVariable="--font-sans" preload />
+    <title>{meta?.data.title}</title>
   </head>
-  <body>
-    <Aside />
+  <body class="bg-gray-100 text-gray-900 dark:bg-gray-950 dark:text-gray-100">
     <slot />
   </body>
 </html>
