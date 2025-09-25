@@ -11,5 +11,5 @@ const posts = await getCollection("posts", ({ data }) => {
 
 <h2 id="posts">Posts</h2>
 <ol>
-  {posts.map((instance) => <Post posts={instance} />)}
+  {posts.map((instance) => <Post post={instance} />)}
 </ol>

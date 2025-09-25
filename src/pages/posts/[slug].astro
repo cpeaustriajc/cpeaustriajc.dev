@@ -44,14 +44,24 @@ const meta = {
 ---
 
 <BaseLayout {meta}>
-  <main>
-    <header aria-label="Post Title and Image">
-      <time datetime={entry.data.publishDate.toISOString()}>
-        {date}
-      </time>
+  <main
+    class="prose dark:prose-invert lg:prose-lg mx-auto max-w-prose px-4 py-8"
+  >
+    <nav>
+      <a
+        href="/posts"
+        class="text-sm text-blue-600 no-underline hover:underline dark:text-blue-300"
+        >Back to posts</a
+      >
+    </nav>
+
+    <header aria-label="Post Title">
       <h1>
         {entry.data.title}
       </h1>
+      <time datetime={entry.data.publishDate.toISOString()}>
+        {date}
+      </time>
       <p>
         By <a href={author?.data.url}>{author?.data.name}</a>
       </p>

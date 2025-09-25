@@ -2,34 +2,40 @@
 import { getEntry, type CollectionEntry } from "astro:content";
 
 type Props = {
-  posts: CollectionEntry<"posts">;
+  post: CollectionEntry<"posts">;
 };
 
-const { posts } = Astro.props;
+const { post } = Astro.props;
 
-const formattedDate = posts.data.publishDate.toLocaleDateString("en-PH", {
+const formattedDate = post.data.publishDate.toLocaleDateString("en-PH", {
   year: "numeric",
   month: "long",
   day: "numeric",
 });
 
-const author = await getEntry(posts.data.author);
+const author = await getEntry(post.data.author);
 
-const isoDate = posts.data.publishDate.toISOString();
+const isoDate = post.data.publishDate.toISOString();
 ---
 
-<li>
-  <p>
-    {posts.data.title}
+<article class="flex h-full w-full flex-col rounded-sm p-4 pb-6">
+  <p class="mb-1 text-base leading-tight font-semibold">
+    {post.data.title}
   </p>
-  <p>
-    By <a href={author.data.url}>{author.data.name}</a>
+  <div class="text-muted-foreground mb-2 text-sm">
+    <p class="mb-0">
+      By <a
+        class="text-blue-600 hover:underline dark:text-blue-300"
+        href={author.data.url}>{author.data.name}</a
+      >
+    </p>
+    <time class="mt-1 block text-xs" datetime={isoDate}>{formattedDate}</time>
+  </div>
+  <p class="mb-3 text-sm leading-normal text-neutral-300">
+    {post.data.description}
   </p>
-  <time datetime={isoDate}>
-    {formattedDate}
-  </time>
-  <p>
-    {posts.data.description}
-  </p>
-  <a href={`/posts/${posts.id}`}>Read More 🡒</a>
-</li>
+  <a
+    class="text-sm text-blue-600 hover:underline dark:text-blue-300"
+    href={`/posts/${post.id}`}>Read More</a
+  >
+</article>
