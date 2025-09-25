@@ -3,6 +3,7 @@ import "~/styles/global.css";
 import { getImage, Font } from "astro:assets";
 import { type CollectionEntry } from "astro:content";
 import DefaultOGImage from "~/assets/images/opengraph/home.jpg";
+import { ClientRouter } from "astro:transitions";
 
 type Props = {
   meta?: Omit<CollectionEntry<"meta">, "id" | "collection"> | undefined;
@@ -21,7 +22,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const OGImageURL = new URL(optimizedOGImage.src, Astro.url);
 ---
 
-<html dir="ltr" lang="en">
+<html dir="ltr" lang="en" transition:name="root" transition:animate="none">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -56,8 +57,11 @@ const OGImageURL = new URL(optimizedOGImage.src, Astro.url);
     <meta property="twitter:url" content={Astro.url.href} />
     <Font cssVariable="--font-sans" preload />
     <title>{meta?.data.title}</title>
+    <ClientRouter />
   </head>
-  <body class="bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-50">
+  <body
+    class="bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-50"
+  >
     <slot />
   </body>
 </html>
