@@ -3,8 +3,6 @@ import { defineConfig, fontProviders } from "astro/config";
 
 import tailwindcss from "@tailwindcss/vite";
 
-import icon from "astro-icon";
-
 import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
@@ -25,14 +23,14 @@ export default defineConfig({
   experimental: {
     fonts: [
       {
-        provider: fontProviders.google(),
+        provider: fontProviders.bunny(),
         name: "Inter",
         cssVariable: "--font-sans",
       },
     ],
   },
 
-  integrations: [sitemap(), icon()],
+  integrations: [sitemap()],
   site: "https://cpeaustriajc.github.io",
 
   vite: {
