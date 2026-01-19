@@ -10,20 +10,20 @@
   },
   "license": "CC-BY-4.0",
   "devDependencies": {
-    "@astrojs/rss": "^4.0.14",
-    "@astrojs/sitemap": "^3.6.0",
-    "@iconify-json/lucide": "^1.2.82",
+    "@astrojs/rss": "^4.0.15",
+    "@astrojs/sitemap": "^3.7.0",
+    "@iconify-json/lucide": "^1.2.86",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.1.18",
-    "astro": "^5.16.6",
+    "astro": "^5.16.11",
     "astro-icon": "^1.1.5",
-    "prettier": "^3.7.4",
+    "prettier": "^3.8.0",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "sharp": "^0.34.5",
     "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3",
-    "wrangler": "^4.54.0"
+    "wrangler": "^4.59.2"
   },
   "packageManager": "pnpm@10.13.1+sha512.37ebf1a5c7a30d5fabe0c5df44ee8da4c965ca0c5af3dbab28c3a1681b70a256218d05c81c9c0dcf767ef6b8551eb5b960042b9ed4300c59242336377e01cfad",
   "dependencies": {
