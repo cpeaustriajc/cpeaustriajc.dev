@@ -19,17 +19,13 @@ export default defineConfig({
       },
     },
   },
-
-  experimental: {
-    fonts: [
-      {
-        provider: fontProviders.bunny(),
-        name: "Inter",
-        cssVariable: "--font-sans",
-      },
-    ],
-  },
-
+  fonts: [
+    {
+      provider: fontProviders.bunny(),
+      name: "Inter",
+      cssVariable: "--font-sans",
+    },
+  ],
   integrations: [sitemap()],
   site: "https://cpeaustriajc.github.io",
 
