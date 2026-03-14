@@ -27,3 +27,5 @@ dist
 
 # Ignore .obsidian folders
 .obsidian
+
+.wrangler/

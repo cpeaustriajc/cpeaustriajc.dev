@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import {
   type CollectionEntry,
   getCollection,
@@ -45,8 +46,8 @@ const meta = {
 ---
 
 <BaseLayout {meta}>
-  <article class="mx-auto max-w-2xl px-6 pt-16 pb-24" transition:animate="slide">
-    <nav class="mb-8">
+  <article transition:animate="slide">
+    <nav class="mx-auto max-w-3xl px-6 pt-16">
       <a
         href="/posts"
         class="text-sm font-medium text-apple-accent transition-colors hover:text-apple-accent-hover dark:text-apple-accent-dark dark:hover:text-apple-accent-hover-dark"
@@ -55,17 +56,34 @@ const meta = {
       </a>
     </nav>
 
-    <header>
-      <h1
-        class="text-4xl font-semibold tracking-tighter-apple sm:text-5xl"
-      >
-        {entry.data.title}
-      </h1>
-      <p class="mt-4 text-sm text-apple-text-secondary">
+    <header class="mx-auto mt-10 max-w-3xl px-6">
+      <div class="flex items-center gap-3 text-sm text-apple-text-secondary">
         <time datetime={entry.data.publishDate.toISOString()}>
           {date}
         </time>
-        <span class="mx-2">&middot;</span>
+        {entry.data.keywords.length > 0 && (
+          <>
+            <span>&middot;</span>
+            <div class="flex flex-wrap gap-2">
+              {entry.data.keywords.slice(0, 3).map((keyword) => (
+                <span class="rounded-full border border-apple-border px-2.5 py-0.5 text-xs dark:border-apple-border-dark">
+                  {keyword}
+                </span>
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+      <h1
+        class="mt-4 text-4xl font-semibold tracking-tighter-apple text-balance sm:text-5xl"
+      >
+        {entry.data.title}
+      </h1>
+      <p class="mt-4 text-lg leading-relaxed text-apple-text-secondary">
+        {entry.data.description}
+      </p>
+      <p class="mt-4 text-sm text-apple-text-secondary">
+        By{' '}
         <a
           href={author?.data.url}
           class="text-apple-accent hover:text-apple-accent-hover dark:text-apple-accent-dark dark:hover:text-apple-accent-hover-dark"
@@ -77,8 +95,21 @@ const meta = {
       </p>
     </header>
 
+    <figure class="mx-auto mt-10 max-w-4xl px-6">
+      <Image
+        src={entry.data.coverImage}
+        alt={entry.data.coverImageAlt}
+        widths={[480, 768, 1024]}
+        sizes="(max-width: 768px) 100vw, 896px"
+        class="w-full rounded-2xl object-cover"
+      />
+      <figcaption class="mt-3 text-center text-sm text-apple-text-secondary">
+        {entry.data.coverImageAlt}
+      </figcaption>
+    </figure>
+
     <div
-      class="prose dark:prose-invert lg:prose-lg mt-12 max-w-none prose-headings:tracking-tight prose-a:text-apple-accent prose-a:no-underline hover:prose-a:underline dark:prose-a:text-apple-accent-dark"
+      class="prose dark:prose-invert lg:prose-lg mx-auto mt-12 max-w-3xl px-6 pb-24 prose-headings:tracking-tight prose-a:text-apple-accent prose-a:no-underline hover:prose-a:underline dark:prose-a:text-apple-accent-dark"
     >
       <Content />
     </div>
