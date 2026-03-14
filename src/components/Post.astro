@@ -1,21 +1,21 @@
 ---
-import { getEntry, type CollectionEntry } from "astro:content";
+import { getEntry, type CollectionEntry } from 'astro:content'
 
 type Props = {
-  post: CollectionEntry<"posts">;
-};
+  post: CollectionEntry<'posts'>
+}
 
-const { post } = Astro.props;
+const { post } = Astro.props
 
-const formattedDate = post.data.publishDate.toLocaleDateString("en-PH", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-});
+const formattedDate = post.data.publishDate.toLocaleDateString('en-PH', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+})
 
-const author = await getEntry(post.data.author);
+const author = await getEntry(post.data.author)
 
-const isoDate = post.data.publishDate.toISOString();
+const isoDate = post.data.publishDate.toISOString()
 ---
 
 <article class="flex h-full w-full flex-col rounded-sm p-4 pb-6">

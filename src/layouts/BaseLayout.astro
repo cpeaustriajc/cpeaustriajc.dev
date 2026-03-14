@@ -1,25 +1,25 @@
 ---
-import "~/styles/global.css";
-import { getImage, Font } from "astro:assets";
-import { type CollectionEntry } from "astro:content";
-import DefaultOGImage from "~/assets/images/opengraph/home.jpg";
-import { ClientRouter } from "astro:transitions";
+import '~/styles/global.css'
+import { getImage, Font } from 'astro:assets'
+import { type CollectionEntry } from 'astro:content'
+import DefaultOGImage from '~/assets/images/opengraph/home.jpg'
+import { ClientRouter } from 'astro:transitions'
 
 type Props = {
-  meta?: Omit<CollectionEntry<"meta">, "id" | "collection"> | undefined;
-};
+  meta?: Omit<CollectionEntry<'meta'>, 'id' | 'collection'> | undefined
+}
 
-const { meta } = Astro.props;
+const { meta } = Astro.props
 
 const optimizedOGImage = await getImage({
   src: meta?.data.image ?? DefaultOGImage,
   width: 1200,
   height: 630,
-  format: "webp",
-});
+  format: 'webp',
+})
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const OGImageURL = new URL(optimizedOGImage.src, Astro.url);
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const OGImageURL = new URL(optimizedOGImage.src, Astro.url)
 ---
 
 <html dir="ltr" lang="en" transition:name="root" transition:animate="none">

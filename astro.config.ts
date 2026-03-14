@@ -1,39 +1,39 @@
-import sitemap from "@astrojs/sitemap";
-import { defineConfig, fontProviders } from "astro/config";
+import sitemap from '@astrojs/sitemap'
+import { defineConfig, fontProviders } from 'astro/config'
 
-import tailwindcss from "@tailwindcss/vite";
+import tailwindcss from '@tailwindcss/vite'
 
-import cloudflare from "@astrojs/cloudflare";
+import cloudflare from '@astrojs/cloudflare'
 
 // https://astro.build/config
 export default defineConfig({
   image: {
-    domains: ["avatars.githubusercontent.com", "emojicdn.elk.sh"],
+    domains: ['avatars.githubusercontent.com', 'emojicdn.elk.sh'],
   },
 
   markdown: {
     shikiConfig: {
       themes: {
-        light: "github-light",
-        dark: "github-dark",
+        light: 'github-light',
+        dark: 'github-dark',
       },
     },
   },
   fonts: [
     {
       provider: fontProviders.bunny(),
-      name: "Inter",
-      cssVariable: "--font-sans",
+      name: 'Inter',
+      cssVariable: '--font-sans',
     },
   ],
   integrations: [sitemap()],
-  site: "https://cpeaustriajc.github.io",
+  site: 'https://cpeaustriajc.github.io',
 
   vite: {
     plugins: [tailwindcss()],
   },
 
   adapter: cloudflare({
-    imageService: "compile",
+    imageService: 'compile',
   }),
-});
+})

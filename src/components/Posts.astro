@@ -1,12 +1,12 @@
 ---
-import { getCollection } from "astro:content";
-import Post from "~/components/Post.astro";
+import { getCollection } from 'astro:content'
+import Post from '~/components/Post.astro'
 
-const posts = await getCollection("posts", ({ data }) => {
-  return import.meta.env.PROD ? data.draft !== true : true;
+const posts = await getCollection('posts', ({ data }) => {
+  return import.meta.env.PROD ? data.draft !== true : true
 }).then((posts) =>
   posts.sort((a, b) => Number(b.data.publishDate) - Number(a.data.publishDate)),
-);
+)
 ---
 
 <h2 id="posts">Posts</h2>

@@ -1,37 +1,37 @@
 ---
-import { render } from "astro:content";
-import { getCollection, getEntry, type CollectionEntry } from "astro:content";
-import BaseLayout from "~/layouts/BaseLayout.astro";
+import { render } from 'astro:content'
+import { getCollection, getEntry, type CollectionEntry } from 'astro:content'
+import BaseLayout from '~/layouts/BaseLayout.astro'
 
 type Props = {
-  entry: CollectionEntry<"posts">;
-  author: CollectionEntry<"authors">;
-};
+  entry: CollectionEntry<'posts'>
+  author: CollectionEntry<'authors'>
+}
 
 export async function getStaticPaths() {
-  const postEntries = await getCollection("posts", ({ data }) => {
-    return import.meta.env.PROD ? data.draft !== true : true;
-  });
+  const postEntries = await getCollection('posts', ({ data }) => {
+    return import.meta.env.PROD ? data.draft !== true : true
+  })
 
   return postEntries.map((postEntry) => ({
     params: { slug: postEntry.id },
     props: { entry: postEntry },
-  }));
+  }))
 }
 
-const { entry } = Astro.props;
+const { entry } = Astro.props
 
-const date = entry.data.publishDate.toLocaleDateString("en-PH", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-  hour: "numeric",
-  minute: "numeric",
-});
+const date = entry.data.publishDate.toLocaleDateString('en-PH', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  hour: 'numeric',
+  minute: 'numeric',
+})
 
-const { Content } = await render(entry);
+const { Content } = await render(entry)
 
-const author = await getEntry("authors", entry.data.author.id);
+const author = await getEntry('authors', entry.data.author.id)
 const meta = {
   data: {
     title: entry.data.title,
@@ -40,7 +40,7 @@ const meta = {
     imageAlt: entry.data.coverImageAlt,
     keywords: entry.data.keywords,
   },
-};
+}
 ---
 
 <BaseLayout {meta}>
