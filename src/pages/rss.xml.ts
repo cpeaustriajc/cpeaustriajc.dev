@@ -9,7 +9,7 @@ export async function GET() {
     title: "John Carlo Austria's Posts | Web Dev, Computer Engineer",
     description:
       "John Carlo Austria's Personal Portfolio, A Computer Engineer based in the Philippines.",
-    site: 'https://cpeaustriajc.github.io',
+    site: 'https://cpeaustriajc.dev',
     items: posts.map((post) => ({
       title: post.data.title,
       pubDate: post.data.publishDate,

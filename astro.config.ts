@@ -27,7 +27,7 @@ export default defineConfig({
     },
   ],
   integrations: [sitemap()],
-  site: 'https://cpeaustriajc.github.io',
+  site: 'https://cpeaustriajc.dev',
 
   vite: {
     plugins: [tailwindcss()],
