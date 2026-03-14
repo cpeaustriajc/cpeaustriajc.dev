@@ -1,9 +1,8 @@
+import cloudflare from '@astrojs/cloudflare'
 import sitemap from '@astrojs/sitemap'
-import { defineConfig, fontProviders } from 'astro/config'
 
 import tailwindcss from '@tailwindcss/vite'
-
-import cloudflare from '@astrojs/cloudflare'
+import { defineConfig, fontProviders } from 'astro/config'
 
 // https://astro.build/config
 export default defineConfig({

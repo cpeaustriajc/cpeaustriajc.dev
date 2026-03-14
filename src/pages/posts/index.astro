@@ -1,14 +1,12 @@
 ---
-import BaseLayout from '~/layouts/BaseLayout.astro'
 import { getCollection, getEntry } from 'astro:content'
 import Post from '~/components/Post.astro'
+import BaseLayout from '~/layouts/BaseLayout.astro'
 
 const posts = await getCollection('posts', ({ data }) => {
   return import.meta.env.PROD ? data.draft !== true : true
 }).then((posts) =>
-  posts.sort(
-    (a, b) => Number(b.data.publishDate) - Number(a.data.publishDate),
-  ),
+  posts.sort((a, b) => Number(b.data.publishDate) - Number(a.data.publishDate)),
 )
 const meta = await getEntry('meta', 'posts')
 ---

@@ -1,11 +1,11 @@
 ---
 import '~/styles/global.css'
-import { getImage, Font } from 'astro:assets'
-import { type CollectionEntry } from 'astro:content'
-import DefaultOGImage from '~/assets/images/opengraph/home.jpg'
+import { Font, getImage } from 'astro:assets'
+import type { CollectionEntry } from 'astro:content'
 import { ClientRouter } from 'astro:transitions'
-import Nav from '~/components/Nav.astro'
+import DefaultOGImage from '~/assets/images/opengraph/home.jpg'
 import Footer from '~/components/Footer.astro'
+import Nav from '~/components/Nav.astro'
 
 type Props = {
   meta?: Omit<CollectionEntry<'meta'>, 'id' | 'collection'> | undefined
