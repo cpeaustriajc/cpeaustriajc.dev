@@ -5,7 +5,6 @@ import BaseLayout from '~/layouts/BaseLayout.astro'
 
 type Props = {
   entry: CollectionEntry<'posts'>
-  author: CollectionEntry<'authors'>
 }
 
 export async function getStaticPaths() {
@@ -25,8 +24,6 @@ const date = entry.data.publishDate.toLocaleDateString('en-PH', {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
-  hour: 'numeric',
-  minute: 'numeric',
 })
 
 const { Content } = await render(entry)
@@ -44,33 +41,42 @@ const meta = {
 ---
 
 <BaseLayout {meta}>
-  <main
-    class="prose dark:prose-invert lg:prose-lg mx-auto max-w-prose px-4 py-8"
-    transition:animate="slide"
-  >
-    <nav>
+  <article class="mx-auto max-w-2xl px-6 pt-16 pb-24" transition:animate="slide">
+    <nav class="mb-8">
       <a
         href="/posts"
-        class="text-sm text-blue-600 no-underline hover:underline dark:text-blue-300"
-        >Back to posts</a
+        class="text-sm font-medium text-apple-accent transition-colors hover:text-apple-accent-hover dark:text-apple-accent-dark dark:hover:text-apple-accent-hover-dark"
       >
+        &larr; All Posts
+      </a>
     </nav>
 
-    <header aria-label="Post Title">
-      <h1>
+    <header>
+      <h1
+        class="text-4xl font-semibold tracking-tighter-apple sm:text-5xl"
+      >
         {entry.data.title}
       </h1>
-      <time datetime={entry.data.publishDate.toISOString()}>
-        {date}
-      </time>
-      <p>
-        By <a href={author?.data.url}>{author?.data.name}</a>
+      <p class="mt-4 text-sm text-apple-text-secondary">
+        <time datetime={entry.data.publishDate.toISOString()}>
+          {date}
+        </time>
+        <span class="mx-2">&middot;</span>
+        <a
+          href={author?.data.url}
+          class="text-apple-accent hover:text-apple-accent-hover dark:text-apple-accent-dark dark:hover:text-apple-accent-hover-dark"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {author?.data.name}
+        </a>
       </p>
     </header>
-    <div>
-      <article>
-        <Content />
-      </article>
+
+    <div
+      class="prose dark:prose-invert lg:prose-lg mt-12 max-w-none prose-headings:tracking-tight prose-a:text-apple-accent prose-a:no-underline hover:prose-a:underline dark:prose-a:text-apple-accent-dark"
+    >
+      <Content />
     </div>
-  </main>
+  </article>
 </BaseLayout>

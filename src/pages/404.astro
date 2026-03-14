@@ -3,15 +3,25 @@ import BaseLayout from '~/layouts/BaseLayout.astro'
 ---
 
 <BaseLayout>
-  <main class="grid min-h-dvh place-items-center">
-    <section class="container mx-auto flex flex-col items-center justify-center gap-4 p-4">
-      <p>Weird, this page doesn't exist... let's go back shall we?</p>
-
+  <div class="flex min-h-[calc(100dvh-3rem)] items-center justify-center px-6">
+    <div class="text-center">
+      <p class="text-sm font-semibold text-apple-accent dark:text-apple-accent-dark">
+        404
+      </p>
+      <h1
+        class="mt-2 text-4xl font-semibold tracking-tighter-apple sm:text-5xl"
+      >
+        Page not found
+      </h1>
+      <p class="mt-4 text-apple-text-secondary">
+        The page you're looking for doesn't exist.
+      </p>
       <a
         href="/"
-        class="font-medium text-blue-600 underline-offset-2 hover:underline dark:text-blue-300"
-        >Go to Home</a
+        class="mt-6 inline-block text-sm font-medium text-apple-accent transition-colors hover:text-apple-accent-hover dark:text-apple-accent-dark dark:hover:text-apple-accent-hover-dark"
       >
-    </section>
-  </main>
+        &larr; Go home
+      </a>
+    </div>
+  </div>
 </BaseLayout>

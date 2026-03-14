@@ -1,2 +1,40 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+
+@theme {
+  --color-apple-bg: #F5F5F7;
+  --color-apple-bg-dark: #000000;
+  --color-apple-surface: #FFFFFF;
+  --color-apple-surface-dark: #1C1C1E;
+  --color-apple-text: #1D1D1F;
+  --color-apple-text-dark: #F5F5F7;
+  --color-apple-text-secondary: #86868B;
+  --color-apple-accent: #0071E3;
+  --color-apple-accent-dark: #2997FF;
+  --color-apple-accent-hover: #0077ED;
+  --color-apple-accent-hover-dark: #2DA5FF;
+  --color-apple-border: #D2D2D7;
+  --color-apple-border-dark: #38383A;
+
+  --tracking-tight-apple: -0.022em;
+  --tracking-tighter-apple: -0.032em;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--color-apple-accent);
+    color: white;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    ::selection {
+      background-color: var(--color-apple-accent-dark);
+    }
+  }
+}

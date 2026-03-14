@@ -1,51 +1,65 @@
 ---
 import { getEntry } from 'astro:content'
 import BaseLayout from '~/layouts/BaseLayout.astro'
+import Projects from '~/components/Projects.astro'
 
 const meta = await getEntry('meta', 'home')
 ---
 
 <BaseLayout {meta}>
-  <main class="grid min-h-dvh place-items-center">
-    <section class="container mx-auto">
+  <section class="flex min-h-[calc(100dvh-3rem)] items-center justify-center px-6">
+    <div class="text-center">
       <h1
-        class="scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance dark:text-neutral-300"
+        class="text-5xl font-semibold tracking-tighter-apple text-balance sm:text-6xl lg:text-7xl"
       >
         John Carlo Austria
       </h1>
-      <h2 class="text-center text-lg font-bold text-neutral-500">
+      <p class="mt-4 text-lg text-apple-text-secondary sm:text-xl">
         Computer Engineer
-      </h2>
-      <ul
-        class="mt-4 flex flex-row items-center justify-center gap-2 text-lg font-semibold"
+      </p>
+      <div class="mt-6 flex items-center justify-center gap-6">
+        <a
+          href="https://github.com/cpeaustriajc"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm font-medium text-apple-accent transition-colors hover:text-apple-accent-hover dark:text-apple-accent-dark dark:hover:text-apple-accent-hover-dark"
+        >
+          GitHub &rarr;
+        </a>
+        <a
+          href="https://linkedin.com/in/cpeaustriajc"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm font-medium text-apple-accent transition-colors hover:text-apple-accent-hover dark:text-apple-accent-dark dark:hover:text-apple-accent-hover-dark"
+        >
+          LinkedIn &rarr;
+        </a>
+        <a
+          href="https://bsky.app/profile/cpeaustriajc.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm font-medium text-apple-accent transition-colors hover:text-apple-accent-hover dark:text-apple-accent-dark dark:hover:text-apple-accent-hover-dark"
+        >
+          Bluesky &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-5xl px-6 pb-24">
+    <h2
+      class="mb-8 text-center text-3xl font-semibold tracking-tight-apple sm:text-4xl"
+    >
+      Projects
+    </h2>
+    <Projects limit={4} />
+    <div class="mt-8 text-center">
+      <a
+        href="/projects"
+        class="text-sm font-medium text-apple-accent transition-colors hover:text-apple-accent-hover dark:text-apple-accent-dark dark:hover:text-apple-accent-hover-dark"
       >
-        <li>
-          <a
-            href="https://github.com/cpeaustriajc"
-            class="font-medium text-blue-600 underline-offset-2 hover:underline dark:text-blue-300"
-            target="_blank"
-          >
-            GitHub
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://linkedin.com/in/cpeaustriajc"
-            class="font-medium text-blue-600 underline-offset-2 hover:underline dark:text-blue-300"
-            target="_blank"
-          >
-            LinkedIn
-          </a>
-        </li>
-        <li>
-          <a
-            href="/posts"
-            class="font-medium text-blue-600 underline-offset-2 hover:underline dark:text-blue-300"
-          >
-            Posts
-          </a>
-        </li>
-      </ul>
-    </section>
-  </main>
+        View all projects &rarr;
+      </a>
+    </div>
+  </section>
 </BaseLayout>

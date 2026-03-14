@@ -4,6 +4,8 @@ import { getImage, Font } from 'astro:assets'
 import { type CollectionEntry } from 'astro:content'
 import DefaultOGImage from '~/assets/images/opengraph/home.jpg'
 import { ClientRouter } from 'astro:transitions'
+import Nav from '~/components/Nav.astro'
+import Footer from '~/components/Footer.astro'
 
 type Props = {
   meta?: Omit<CollectionEntry<'meta'>, 'id' | 'collection'> | undefined
@@ -60,8 +62,12 @@ const OGImageURL = new URL(optimizedOGImage.src, Astro.url)
     <ClientRouter />
   </head>
   <body
-    class="bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-50"
+    class="flex min-h-dvh flex-col bg-apple-bg text-apple-text dark:bg-apple-bg-dark dark:text-apple-text-dark"
   >
-    <slot />
+    <Nav />
+    <main class="flex-1 pt-12">
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>

@@ -1,0 +1,32 @@
+---
+const year = new Date().getFullYear()
+
+const links = [
+  { href: 'https://github.com/cpeaustriajc', label: 'GitHub' },
+  { href: 'https://linkedin.com/in/cpeaustriajc', label: 'LinkedIn' },
+  { href: 'https://bsky.app/profile/cpeaustriajc.dev', label: 'Bluesky' },
+  { href: '/rss.xml', label: 'RSS' },
+]
+---
+
+<footer class="border-t border-apple-border/50 dark:border-apple-border-dark/50">
+  <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+    <p class="text-xs text-apple-text-secondary">
+      &copy; {year} John Carlo Austria
+    </p>
+    <ul class="flex items-center gap-4">
+      {links.map(({ href, label }) => (
+        <li>
+          <a
+            href={href}
+            class="text-xs text-apple-text-secondary transition-colors hover:text-apple-text dark:hover:text-apple-text-dark"
+            target={href.startsWith('http') ? '_blank' : undefined}
+            rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+          >
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</footer>

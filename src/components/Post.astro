@@ -18,24 +18,27 @@ const author = await getEntry(post.data.author)
 const isoDate = post.data.publishDate.toISOString()
 ---
 
-<article class="flex h-full w-full flex-col rounded-sm p-4 pb-6">
-  <p class="mb-1 text-base leading-tight font-semibold">
-    {post.data.title}
-  </p>
-  <div class="text-muted-foreground mb-2 text-sm">
-    <p class="mb-0">
-      By <a
-        class="text-blue-600 hover:underline dark:text-blue-300"
-        href={author.data.url}>{author.data.name}</a
-      >
-    </p>
-    <time class="mt-1 block text-xs" datetime={isoDate}>{formattedDate}</time>
-  </div>
-  <p class="mb-3 text-sm leading-normal text-neutral-300">
+<article
+  class="group relative flex h-full flex-col rounded-2xl border border-apple-border bg-apple-surface p-8 transition-shadow hover:shadow-lg dark:border-apple-border-dark dark:bg-apple-surface-dark dark:hover:shadow-white/5"
+>
+  <time
+    class="text-xs text-apple-text-secondary"
+    datetime={isoDate}
+  >
+    {formattedDate}
+  </time>
+  <h3 class="mt-2 text-lg font-semibold tracking-tight-apple">
+    <a
+      href={`/posts/${post.id}`}
+      class="transition-colors group-hover:text-apple-accent dark:group-hover:text-apple-accent-dark after:absolute after:inset-0"
+    >
+      {post.data.title}
+    </a>
+  </h3>
+  <p class="mt-2 flex-1 text-sm leading-relaxed text-apple-text-secondary">
     {post.data.description}
   </p>
-  <a
-    class="text-sm text-blue-600 hover:underline dark:text-blue-300"
-    href={`/posts/${post.id}`}>Read More</a
-  >
+  <p class="mt-4 text-xs text-apple-text-secondary">
+    By {author.data.name}
+  </p>
 </article>

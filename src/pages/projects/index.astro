@@ -1,0 +1,23 @@
+---
+import { getEntry } from 'astro:content'
+import BaseLayout from '~/layouts/BaseLayout.astro'
+import Projects from '~/components/Projects.astro'
+
+const meta = await getEntry('meta', 'projects')
+---
+
+<BaseLayout {meta}>
+  <div class="mx-auto max-w-5xl px-6 pt-16 pb-24">
+    <h1
+      class="text-4xl font-semibold tracking-tighter-apple sm:text-5xl"
+    >
+      Projects
+    </h1>
+    <p class="mt-3 text-lg text-apple-text-secondary">
+      Software and experiments I've built.
+    </p>
+    <div class="mt-12">
+      <Projects />
+    </div>
+  </div>
+</BaseLayout>

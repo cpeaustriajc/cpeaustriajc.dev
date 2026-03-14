@@ -2,21 +2,15 @@
 import { getCollection } from 'astro:content'
 import Project from '~/components/Project.astro'
 
-const projects = await getCollection('projects')
+type Props = {
+  limit?: number
+}
+
+const { limit } = Astro.props
+const allProjects = await getCollection('projects')
+const projects = limit ? allProjects.slice(0, limit) : allProjects
 ---
 
-<h2 id="projects">Projects</h2>
-
-<ul>
-  {
-    projects.map((project) => (
-      <Project
-        title={project.data.title}
-        link={project.data.link}
-        description={project.data.description}
-        site={project.data.site}
-        status={project.data.status}
-      />
-    ))
-  }
-</ul>
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+  {projects.map((project) => <Project project={project} />)}
+</div>
