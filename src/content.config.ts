@@ -1,5 +1,6 @@
-import { defineCollection, reference, z } from 'astro:content'
-import { file, glob } from 'astro/loaders'
+import { defineCollection, reference } from 'astro:content'
+import { glob } from 'astro/loaders'
+import { z } from 'astro/zod'
 
 const postCollection = defineCollection({
   loader: glob({ pattern: '**/*.md', base: 'src/data/blog' }),
@@ -21,10 +22,10 @@ const projectsCollection = defineCollection({
   schema: () =>
     z.object({
       title: z.string(),
-      link: z.string().url(),
+      link: z.url(),
       description: z.string(),
       status: z.enum(['active', 'archived']),
-      site: z.string().url(),
+      site: z.url(),
     }),
 })
 
@@ -34,7 +35,7 @@ const authorsCollection = defineCollection({
     z.object({
       name: z.string(),
       picture: z.string(),
-      url: z.string().url(),
+      url: z.url(),
     }),
 })
 
