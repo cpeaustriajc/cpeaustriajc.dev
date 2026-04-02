@@ -1,42 +1,42 @@
 {{ define "main" }}
-<div class="mx-auto max-w-3xl px-6 pt-16 pb-24">
-  <h1 class="text-4xl font-semibold tracking-tighter-apple sm:text-5xl">
+<div class="page-header">
+  <h1 class="page-title">
     Posts
   </h1>
-  <p class="mt-3 text-lg text-apple-text-secondary">
+  <p class="page-subtitle">
     Articles and tutorials on engineering and technology.
   </p>
 
   {{ $posts := .Pages.ByDate.Reverse }}
 
   {{ with index $posts 0 }}
-    {{ $author := index hugo.Data.authors .Params.author }}
-    <article class="group relative mt-12">
+    {{ $author := index (hugo.Data).authors .Params.author }}
+    <article class="featured-post">
       {{ with .Params.keywords }}
         {{ if gt (len .) 0 }}
-          <div class="flex flex-wrap gap-2">
+          <div class="badge-list">
             {{ range . }}
-              <span class="rounded-full border border-apple-border px-2.5 py-0.5 text-xs text-apple-text-secondary dark:border-apple-border-dark">
+              <span class="badge">
                 {{ . }}
               </span>
             {{ end }}
           </div>
         {{ end }}
       {{ end }}
-      <h2 class="mt-4 text-2xl font-semibold tracking-tight-apple sm:text-3xl">
-        <a href="{{ .RelPermalink }}" class="transition-colors group-hover:text-apple-accent dark:group-hover:text-apple-accent-dark after:absolute after:inset-0">
+      <h2 class="featured-post-title">
+        <a href="{{ .RelPermalink }}" class="featured-post-link">
           {{ .Title }}
         </a>
       </h2>
-      <p class="mt-3 text-lg leading-relaxed text-apple-text-secondary">
+      <p class="featured-post-desc">
         {{ .Description }}
       </p>
-      <p class="mt-3 text-sm text-apple-text-secondary">
+      <p class="featured-post-meta">
         <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
           {{ .Date.Format "January 2, 2006" }}
         </time>
         {{ with $author }}
-          <span class="mx-2">&middot;</span>
+          <span class="meta-dot">&middot;</span>
           {{ .name }}
         {{ end }}
       </p>
@@ -46,8 +46,8 @@
   {{ $remaining := after 1 $posts }}
   {{ $grouped := $remaining.GroupByDate "2006" }}
   {{ range $grouped }}
-    <section class="mt-16">
-      <h2 class="border-b border-apple-border pb-4 text-sm font-semibold uppercase tracking-widest text-apple-text-secondary dark:border-apple-border-dark">
+    <section class="year-section">
+      <h2 class="year-heading">
         {{ .Key }}
       </h2>
       {{ range .Pages }}

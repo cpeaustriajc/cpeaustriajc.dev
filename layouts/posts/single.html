@@ -1,23 +1,23 @@
 {{ define "main" }}
-{{ $author := index hugo.Data.authors .Params.author }}
+{{ $author := index (hugo.Data).authors .Params.author }}
 <article>
-  <nav class="mx-auto max-w-3xl px-6 pt-16">
-    <a href="/posts/" class="text-sm font-medium text-apple-accent transition-colors hover:text-apple-accent-hover dark:text-apple-accent-dark dark:hover:text-apple-accent-hover-dark">
+  <nav class="post-nav">
+    <a href="/posts/" class="link-accent">
       &larr; All Posts
     </a>
   </nav>
 
-  <header class="mx-auto mt-10 max-w-3xl px-6">
-    <div class="flex items-center gap-3 text-sm text-apple-text-secondary">
+  <header class="post-header">
+    <div class="post-meta">
       <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
         {{ .Date.Format "January 2, 2006" }}
       </time>
       {{ with .Params.keywords }}
         {{ if gt (len .) 0 }}
           <span>&middot;</span>
-          <div class="flex flex-wrap gap-2">
+          <div class="badge-list">
             {{ range first 3 . }}
-              <span class="rounded-full border border-apple-border px-2.5 py-0.5 text-xs dark:border-apple-border-dark">
+              <span class="badge">
                 {{ . }}
               </span>
             {{ end }}
@@ -25,23 +25,23 @@
         {{ end }}
       {{ end }}
     </div>
-    <h1 class="mt-4 text-4xl font-semibold tracking-tighter-apple text-balance sm:text-5xl">
+    <h1 class="post-title">
       {{ .Title }}
     </h1>
-    <p class="mt-4 text-lg leading-relaxed text-apple-text-secondary">
+    <p class="post-desc">
       {{ .Description }}
     </p>
     {{ with $author }}
-      <p class="mt-4 text-sm text-apple-text-secondary">
+      <p class="post-author">
         By
-        <a href="{{ .url }}" class="text-apple-accent hover:text-apple-accent-hover dark:text-apple-accent-dark dark:hover:text-apple-accent-hover-dark" target="_blank" rel="noopener noreferrer">
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">
           {{ .name }}
         </a>
       </p>
     {{ end }}
   </header>
 
-  <div class="prose lg:prose-lg mx-auto mt-12 max-w-3xl px-6 pb-24">
+  <div class="post-content prose prose-lg">
     {{ .Content }}
   </div>
 </article>

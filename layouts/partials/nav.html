@@ -1,14 +1,14 @@
 {{ $currentPath := .RelPermalink }}
-<nav class="fixed top-0 right-0 left-0 z-50 h-12 border-b border-apple-border/50 bg-apple-surface/80 backdrop-blur-xl backdrop-saturate-150 dark:border-apple-border-dark/50 dark:bg-apple-surface-dark/80">
-  <div class="mx-auto flex h-full max-w-5xl items-center justify-between px-6">
+<nav class="nav">
+  <div class="nav-inner">
     <a href="/" aria-label="Home">
-      <img src="/apple-touch-icon.png" alt="CJ" class="size-7 rounded-full" width="28" height="28">
+      <img src="/apple-touch-icon.png" alt="CJ" class="nav-logo" width="28" height="28">
     </a>
-    <ul class="flex items-center gap-6">
+    <ul class="nav-links">
       {{ range slice (dict "href" "/" "label" "Home") (dict "href" "/projects/" "label" "Projects") (dict "href" "/posts/" "label" "Posts") }}
         {{ $isActive := cond (eq .href "/") (eq $currentPath "/") (hasPrefix $currentPath .href) }}
         <li>
-          <a href="{{ .href }}" class="text-xs font-medium transition-colors {{ if $isActive }}text-apple-text dark:text-apple-text-dark{{ else }}text-apple-text-secondary hover:text-apple-text dark:hover:text-apple-text-dark{{ end }}">
+          <a href="{{ .href }}" class="nav-link{{ if $isActive }} active{{ end }}">
             {{ .label }}
           </a>
         </li>

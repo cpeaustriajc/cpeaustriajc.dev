@@ -1,6 +1,6 @@
 {{ with resources.Get "css/global.css" }}
   {{ $opts := dict "minify" (not hugo.IsDevelopment) }}
-  {{ with . | css.TailwindCSS $opts }}
+  {{ with . | css.Build $opts }}
     {{ if hugo.IsDevelopment }}
       <link rel="stylesheet" href="{{ .RelPermalink }}">
     {{ else }}

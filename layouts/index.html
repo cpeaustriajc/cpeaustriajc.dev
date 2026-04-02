@@ -1,15 +1,15 @@
 {{ define "main" }}
-<section class="flex min-h-[calc(100dvh-3rem)] items-center justify-center px-6">
-  <div class="text-center">
-    <h1 class="text-5xl font-semibold tracking-tighter-apple text-balance sm:text-6xl lg:text-7xl">
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="hero-title">
       John Carlo Austria
     </h1>
-    <p class="mt-4 text-lg text-apple-text-secondary sm:text-xl">
+    <p class="hero-subtitle">
       Computer Engineer
     </p>
-    <div class="mt-6 flex items-center justify-center gap-6">
+    <div class="hero-links">
       {{ range slice (dict "href" "https://github.com/cpeaustriajc" "label" "GitHub") (dict "href" "https://linkedin.com/in/cpeaustriajc" "label" "LinkedIn") (dict "href" "https://bsky.app/profile/cpeaustriajc.dev" "label" "Bluesky") }}
-        <a href="{{ .href }}" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-apple-accent transition-colors hover:text-apple-accent-hover dark:text-apple-accent-dark dark:hover:text-apple-accent-hover-dark">
+        <a href="{{ .href }}" target="_blank" rel="noopener noreferrer" class="link-accent">
           {{ .label }} &rarr;
         </a>
       {{ end }}
@@ -17,17 +17,17 @@
   </div>
 </section>
 
-<section class="mx-auto max-w-5xl px-6 pb-24">
-  <h2 class="mb-8 text-center text-3xl font-semibold tracking-tight-apple sm:text-4xl">
+<section class="section">
+  <h2 class="section-title">
     Projects
   </h2>
-  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+  <div class="project-grid">
     {{ range hugo.Data.projects }}
       {{ partial "project-card.html" . }}
     {{ end }}
   </div>
-  <div class="mt-8 text-center">
-    <a href="/projects/" class="text-sm font-medium text-apple-accent transition-colors hover:text-apple-accent-hover dark:text-apple-accent-dark dark:hover:text-apple-accent-hover-dark">
+  <div class="section-footer">
+    <a href="/projects/" class="link-accent">
       View all projects &rarr;
     </a>
   </div>
