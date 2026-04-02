@@ -1,0 +1,25 @@
+<article class="flex flex-col gap-4 rounded-2xl border border-apple-border bg-apple-surface p-8 transition-shadow hover:shadow-lg dark:border-apple-border-dark dark:bg-apple-surface-dark dark:hover:shadow-white/5">
+  <div class="flex-1">
+    <div class="mb-2 flex items-center gap-3">
+      <h3 class="text-lg font-semibold tracking-tight-apple">
+        {{ .title }}
+      </h3>
+      <span class="rounded-full px-2.5 py-0.5 text-xs font-medium {{ if eq .status "active" }}bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400{{ else }}bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400{{ end }}">
+        {{ if eq .status "active" }}Active{{ else }}Archived{{ end }}
+      </span>
+    </div>
+    <p class="text-sm leading-relaxed text-apple-text-secondary">
+      {{ .description }}
+    </p>
+  </div>
+  <div class="flex items-center gap-4">
+    <a href="{{ .link }}" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-apple-accent transition-colors hover:text-apple-accent-hover dark:text-apple-accent-dark dark:hover:text-apple-accent-hover-dark">
+      Source Code &rarr;
+    </a>
+    {{ if eq .status "active" }}
+      <a href="{{ .site }}" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-apple-accent transition-colors hover:text-apple-accent-hover dark:text-apple-accent-dark dark:hover:text-apple-accent-hover-dark">
+        Live Site &rarr;
+      </a>
+    {{ end }}
+  </div>
+</article>

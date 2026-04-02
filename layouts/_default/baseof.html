@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    {{ partial "head.html" . }}
+    {{ with (templates.Defer (dict "key" "global")) }}
+      {{ partial "css.html" . }}
+    {{ end }}
+  </head>
+  <body class="flex min-h-dvh flex-col bg-apple-bg text-apple-text dark:bg-apple-bg-dark dark:text-apple-text-dark">
+    {{ partial "nav.html" . }}
+    <main class="flex-1 pt-12">
+      {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "footer.html" . }}
+  </body>
+</html>

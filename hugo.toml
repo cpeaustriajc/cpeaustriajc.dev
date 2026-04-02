@@ -1,0 +1,44 @@
+baseURL = 'https://cpeaustriajc.dev/'
+languageCode = 'en-us'
+title = 'John Carlo Austria'
+
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = 'assets/notwatching/hugo_stats\.json'
+    target = 'css'
+  [[build.cachebusters]]
+    source = '(postcss|tailwind)\.config\.js'
+    target = 'css'
+
+[[module.mounts]]
+  source = 'assets'
+  target = 'assets'
+
+[[module.mounts]]
+  source = 'hugo_stats.json'
+  target = 'assets/notwatching/hugo_stats.json'
+  disableWatch = true
+
+[params]
+  description = 'John Carlo Austria is a computer engineering student based in San Pablo City, Laguna, Philippines.'
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+    guessSyntax = true
+    tabWidth = 2
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[outputs]
+  home = ['html']
+  section = ['html', 'rss']
+
+[taxonomies]
+
+[sitemap]
+  changeFreq = 'weekly'
+  priority = 0.5

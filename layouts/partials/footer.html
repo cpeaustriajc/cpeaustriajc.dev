@@ -1,0 +1,17 @@
+<footer class="border-t border-apple-border/50 dark:border-apple-border-dark/50">
+  <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+    <p class="text-xs text-apple-text-secondary">
+      &copy; {{ now.Format "2006" }} John Carlo Austria
+    </p>
+    <ul class="flex items-center gap-4">
+      {{ range slice (dict "href" "https://github.com/cpeaustriajc" "label" "GitHub") (dict "href" "https://linkedin.com/in/cpeaustriajc" "label" "LinkedIn") (dict "href" "https://bsky.app/profile/cpeaustriajc.dev" "label" "Bluesky") (dict "href" "/posts/index.xml" "label" "RSS") }}
+        <li>
+          <a href="{{ .href }}" class="text-xs text-apple-text-secondary transition-colors hover:text-apple-text dark:hover:text-apple-text-dark"
+            {{ if hasPrefix .href "http" }}target="_blank" rel="noopener noreferrer"{{ end }}>
+            {{ .label }}
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+</footer>

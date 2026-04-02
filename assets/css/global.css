@@ -1,0 +1,383 @@
+@import "tailwindcss";
+@source "hugo_stats.json";
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  --color-apple-bg: #f5f5f7;
+  --color-apple-bg-dark: #000000;
+  --color-apple-surface: #ffffff;
+  --color-apple-surface-dark: #1c1c1e;
+  --color-apple-text: #1d1d1f;
+  --color-apple-text-dark: #f5f5f7;
+  --color-apple-text-secondary: #86868b;
+  --color-apple-accent: #0071e3;
+  --color-apple-accent-dark: #2997ff;
+  --color-apple-accent-hover: #0077ed;
+  --color-apple-accent-hover-dark: #2da5ff;
+  --color-apple-border: #d2d2d7;
+  --color-apple-border-dark: #38383a;
+
+  --tracking-tight-apple: -0.022em;
+  --tracking-tighter-apple: -0.032em;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--color-apple-accent);
+    color: white;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    ::selection {
+      background-color: var(--color-apple-accent-dark);
+    }
+  }
+}
+
+/* Prose — replaces @tailwindcss/typography */
+
+.prose {
+  line-height: 1.75;
+  color: var(--color-apple-text);
+}
+
+@media (prefers-color-scheme: dark) {
+  .prose {
+    color: var(--color-apple-text-dark);
+  }
+}
+
+.prose :where(p):not(:where(.not-prose *)) {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+.prose :where(h1):not(:where(.not-prose *)) {
+  font-size: 2.25em;
+  font-weight: 700;
+  letter-spacing: var(--tracking-tighter-apple);
+  line-height: 1.1;
+  margin-top: 0;
+  margin-bottom: 0.9em;
+}
+
+.prose :where(h2):not(:where(.not-prose *)) {
+  font-size: 1.5em;
+  font-weight: 600;
+  letter-spacing: var(--tracking-tight-apple);
+  line-height: 1.3;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.prose :where(h3):not(:where(.not-prose *)) {
+  font-size: 1.25em;
+  font-weight: 600;
+  letter-spacing: var(--tracking-tight-apple);
+  line-height: 1.5;
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+}
+
+.prose :where(h4):not(:where(.not-prose *)) {
+  font-weight: 600;
+  letter-spacing: var(--tracking-tight-apple);
+  line-height: 1.5;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose :where(a):not(:where(.not-prose *)) {
+  color: var(--color-apple-accent);
+  text-decoration: none;
+}
+
+.prose :where(a):not(:where(.not-prose *)):hover {
+  text-decoration: underline;
+}
+
+@media (prefers-color-scheme: dark) {
+  .prose :where(a):not(:where(.not-prose *)) {
+    color: var(--color-apple-accent-dark);
+  }
+}
+
+.prose :where(strong):not(:where(.not-prose *)) {
+  font-weight: 600;
+}
+
+.prose :where(blockquote):not(:where(.not-prose *)) {
+  font-style: italic;
+  border-left: 0.25rem solid var(--color-apple-border);
+  padding-left: 1em;
+  margin-top: 1.6em;
+  margin-bottom: 1.6em;
+  color: var(--color-apple-text-secondary);
+}
+
+@media (prefers-color-scheme: dark) {
+  .prose :where(blockquote):not(:where(.not-prose *)) {
+    border-left-color: var(--color-apple-border-dark);
+  }
+}
+
+.prose :where(ul):not(:where(.not-prose *)) {
+  list-style-type: disc;
+  padding-left: 1.625em;
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+.prose :where(ol):not(:where(.not-prose *)) {
+  list-style-type: decimal;
+  padding-left: 1.625em;
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+.prose :where(li):not(:where(.not-prose *)) {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose :where(code):not(:where(.not-prose, pre *)) {
+  font-size: 0.875em;
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .prose :where(code):not(:where(.not-prose, pre *)) {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.prose :where(pre):not(:where(.not-prose *)) {
+  overflow-x: auto;
+  font-size: 0.875em;
+  line-height: 1.7;
+  margin-top: 1.7em;
+  margin-bottom: 1.7em;
+  border-radius: 0.75rem;
+  padding: 1em 1.5em;
+}
+
+.prose :where(pre code):not(:where(.not-prose *)) {
+  background-color: transparent;
+  padding: 0;
+  font-weight: 400;
+  font-size: inherit;
+  border-radius: 0;
+}
+
+.prose :where(hr):not(:where(.not-prose *)) {
+  border-color: var(--color-apple-border);
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .prose :where(hr):not(:where(.not-prose *)) {
+    border-color: var(--color-apple-border-dark);
+  }
+}
+
+.prose :where(img):not(:where(.not-prose *)) {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-radius: 0.75rem;
+}
+
+/* lg:prose-lg */
+@media (min-width: 1024px) {
+  .lg\:prose-lg {
+    font-size: 1.125rem;
+    line-height: 1.8;
+  }
+
+  .lg\:prose-lg :where(p):not(:where(.not-prose *)) {
+    margin-top: 1.3em;
+    margin-bottom: 1.3em;
+  }
+
+  .lg\:prose-lg :where(h2):not(:where(.not-prose *)) {
+    font-size: 1.667em;
+    margin-top: 1.867em;
+    margin-bottom: 1.067em;
+  }
+
+  .lg\:prose-lg :where(h3):not(:where(.not-prose *)) {
+    font-size: 1.333em;
+    margin-top: 1.667em;
+    margin-bottom: 0.667em;
+  }
+
+  .lg\:prose-lg :where(pre):not(:where(.not-prose *)) {
+    font-size: 0.889em;
+    line-height: 1.75;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border-radius: 0.75rem;
+    padding: 1.2em 1.6em;
+  }
+}
+
+/* Syntax highlighting — GitHub Light */
+.bg { background-color: #f6f8fa; }
+.chroma { background-color: #f6f8fa; -webkit-text-size-adjust: none; }
+.chroma .err { color: #f6f8fa; background-color: #82071e }
+.chroma .lnlinks { outline: none; text-decoration: none; color: inherit }
+.chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+.chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+.chroma .hl { background-color: #dedede }
+.chroma .lnt { white-space: pre; -webkit-user-select: none; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em; color: #7f7f7f }
+.chroma .ln { white-space: pre; -webkit-user-select: none; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em; color: #7f7f7f }
+.chroma .line { display: flex; }
+.chroma .k { color: #cf222e }
+.chroma .kc { color: #cf222e }
+.chroma .kd { color: #cf222e }
+.chroma .kn { color: #cf222e }
+.chroma .kp { color: #cf222e }
+.chroma .kr { color: #cf222e }
+.chroma .kt { color: #cf222e }
+.chroma .na { color: #1f2328 }
+.chroma .nc { color: #1f2328 }
+.chroma .no { color: #0550ae }
+.chroma .nd { color: #0550ae }
+.chroma .ni { color: #6639ba }
+.chroma .nl { color: #900; font-weight: bold }
+.chroma .nn { color: #24292e }
+.chroma .nx { color: #1f2328 }
+.chroma .nt { color: #0550ae }
+.chroma .nb { color: #6639ba }
+.chroma .bp { color: #6a737d }
+.chroma .nv { color: #953800 }
+.chroma .vc { color: #953800 }
+.chroma .vg { color: #953800 }
+.chroma .vi { color: #953800 }
+.chroma .vm { color: #953800 }
+.chroma .nf { color: #6639ba }
+.chroma .fm { color: #6639ba }
+.chroma .s { color: #0a3069 }
+.chroma .sa { color: #0a3069 }
+.chroma .sb { color: #0a3069 }
+.chroma .sc { color: #0a3069 }
+.chroma .dl { color: #0a3069 }
+.chroma .sd { color: #0a3069 }
+.chroma .s2 { color: #0a3069 }
+.chroma .se { color: #0a3069 }
+.chroma .sh { color: #0a3069 }
+.chroma .si { color: #0a3069 }
+.chroma .sx { color: #0a3069 }
+.chroma .sr { color: #0a3069 }
+.chroma .s1 { color: #0a3069 }
+.chroma .ss { color: #032f62 }
+.chroma .m { color: #0550ae }
+.chroma .mb { color: #0550ae }
+.chroma .mf { color: #0550ae }
+.chroma .mh { color: #0550ae }
+.chroma .mi { color: #0550ae }
+.chroma .il { color: #0550ae }
+.chroma .mo { color: #0550ae }
+.chroma .o { color: #0550ae }
+.chroma .ow { color: #0550ae }
+.chroma .p { color: #1f2328 }
+.chroma .c { color: #57606a }
+.chroma .ch { color: #57606a }
+.chroma .cm { color: #57606a }
+.chroma .c1 { color: #57606a }
+.chroma .cs { color: #57606a }
+.chroma .cp { color: #57606a }
+.chroma .cpf { color: #57606a }
+.chroma .gd { color: #82071e; background-color: #ffebe9 }
+.chroma .ge { color: #1f2328 }
+.chroma .gi { color: #116329; background-color: #dafbe1 }
+.chroma .go { color: #1f2328 }
+.chroma .gl { text-decoration: underline }
+.chroma .w { color: #fff }
+
+/* Syntax highlighting — GitHub Dark */
+@media (prefers-color-scheme: dark) {
+  .bg { color: #e6edf3; background-color: #0d1117; }
+  .chroma { color: #e6edf3; background-color: #0d1117; }
+  .chroma .err { color: #f85149 }
+  .chroma .hl { background-color: #6e7681 }
+  .chroma .lnt { color: #737679 }
+  .chroma .ln { color: #6e7681 }
+  .chroma .k { color: #ff7b72 }
+  .chroma .kc { color: #79c0ff }
+  .chroma .kd { color: #ff7b72 }
+  .chroma .kn { color: #ff7b72 }
+  .chroma .kp { color: #79c0ff }
+  .chroma .kr { color: #ff7b72 }
+  .chroma .kt { color: #ff7b72 }
+  .chroma .nc { color: #f0883e; font-weight: bold }
+  .chroma .no { color: #79c0ff; font-weight: bold }
+  .chroma .nd { color: #d2a8ff; font-weight: bold }
+  .chroma .ni { color: #ffa657 }
+  .chroma .ne { color: #f0883e; font-weight: bold }
+  .chroma .nl { color: #79c0ff; font-weight: bold }
+  .chroma .nn { color: #ff7b72 }
+  .chroma .py { color: #79c0ff }
+  .chroma .nt { color: #7ee787 }
+  .chroma .nv { color: #79c0ff }
+  .chroma .vc { color: #79c0ff }
+  .chroma .vg { color: #79c0ff }
+  .chroma .vi { color: #79c0ff }
+  .chroma .vm { color: #79c0ff }
+  .chroma .nf { color: #d2a8ff; font-weight: bold }
+  .chroma .fm { color: #d2a8ff; font-weight: bold }
+  .chroma .l { color: #a5d6ff }
+  .chroma .ld { color: #79c0ff }
+  .chroma .s { color: #a5d6ff }
+  .chroma .sa { color: #79c0ff }
+  .chroma .sb { color: #a5d6ff }
+  .chroma .sc { color: #a5d6ff }
+  .chroma .dl { color: #79c0ff }
+  .chroma .sd { color: #a5d6ff }
+  .chroma .s2 { color: #a5d6ff }
+  .chroma .se { color: #79c0ff }
+  .chroma .sh { color: #79c0ff }
+  .chroma .si { color: #a5d6ff }
+  .chroma .sx { color: #a5d6ff }
+  .chroma .sr { color: #79c0ff }
+  .chroma .s1 { color: #a5d6ff }
+  .chroma .ss { color: #a5d6ff }
+  .chroma .m { color: #a5d6ff }
+  .chroma .mb { color: #a5d6ff }
+  .chroma .mf { color: #a5d6ff }
+  .chroma .mh { color: #a5d6ff }
+  .chroma .mi { color: #a5d6ff }
+  .chroma .il { color: #a5d6ff }
+  .chroma .mo { color: #a5d6ff }
+  .chroma .o { color: #ff7b72; font-weight: bold }
+  .chroma .ow { color: #ff7b72; font-weight: bold }
+  .chroma .c { color: #8b949e; font-style: italic }
+  .chroma .ch { color: #8b949e; font-style: italic }
+  .chroma .cm { color: #8b949e; font-style: italic }
+  .chroma .c1 { color: #8b949e; font-style: italic }
+  .chroma .cs { color: #8b949e; font-weight: bold; font-style: italic }
+  .chroma .cp { color: #8b949e; font-weight: bold; font-style: italic }
+  .chroma .cpf { color: #8b949e; font-weight: bold; font-style: italic }
+  .chroma .gd { color: #ffa198; background-color: #490202 }
+  .chroma .ge { font-style: italic }
+  .chroma .gr { color: #ffa198 }
+  .chroma .gh { color: #79c0ff; font-weight: bold }
+  .chroma .gi { color: #56d364; background-color: #0f5323 }
+  .chroma .go { color: #8b949e }
+  .chroma .gp { color: #8b949e }
+  .chroma .gs { font-weight: bold }
+  .chroma .gu { color: #79c0ff }
+  .chroma .gt { color: #ff7b72 }
+  .chroma .gl { text-decoration: underline }
+  .chroma .w { color: #6e7681 }
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cpeaustriajc.dev/sitemap-index.xml
